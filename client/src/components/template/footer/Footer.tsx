@@ -1,10 +1,10 @@
 import { Container } from '@mui/material'
 import LogoSocialMedia from './LogoSocialMedia'
-import LinksInfoMedia from './LinksInfo'
+import LinksInfo from './LinksInfo'
+import CopyrightTermsConditions from './CopyrightTermsConditions'
 import './Footer.styles.css'
 
 type FooterProps = {
-
 }
 
 const Footer: React.FC<FooterProps> = () => {
@@ -12,7 +12,8 @@ const Footer: React.FC<FooterProps> = () => {
     <footer>
       <Container maxWidth="lg">
         <LogoSocialMedia />
-        <LinksInfoMedia />
+        <LinksInfo />
+        <CopyrightTermsConditions />
       </Container>
     </footer>
   )
