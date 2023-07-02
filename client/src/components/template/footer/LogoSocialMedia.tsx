@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Grid, Typography } from '@mui/material'
+import {
+  Grid,
+  Typography
+} from '@mui/material'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import LogoText from '../../atom/LogoText'
@@ -15,7 +18,9 @@ const LogoSocialMedia: React.FC<LogoSocialMediaProps> = () => {
       </Grid>
       <Grid item xs={ 12 } sm={ 3 }>
         <Typography align="right">
-          Seguinos <Link to="/" className="links-footer-social"><InstagramIcon /></Link> <Link to="/" className="links-footer-social"><LinkedInIcon /></Link>
+          Seguinos
+          <Link to="/" className="links-footer-social"><InstagramIcon /></Link>
+          <Link to="/" className="links-footer-social"><LinkedInIcon /></Link>
         </Typography>
       </Grid>
     </Grid>

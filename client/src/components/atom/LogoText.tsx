@@ -12,7 +12,8 @@ const LogoText: React.FC<LogoTextProps> = () => {
       fontSize: '1.75rem'
     } }>
       <Link to="/" className="link-logo">
-        <span className="primary-light">App</span><span className="primary">artamentos</span>
+        <span className="primary-light">App</span>
+        <span className="primary">artamentos</span>
       </Link>
     </Typography>
 

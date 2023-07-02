@@ -1,6 +1,11 @@
 export const YEAR = new Date().getFullYear()
 
-export const SERVICES = [
+export type textLink = {
+  text: string,
+  to: string
+}
+
+export const SERVICES: textLink[] = [
   {
     text: 'Compra',
     to: '/search'
@@ -15,7 +20,7 @@ export const SERVICES = [
   }
 ]
 
-export const COMPANY = [
+export const COMPANY:  textLink[] = [
   {
     text: 'Quienes somos',
     to: '/about'

@@ -1,13 +1,20 @@
-import { Button, ButtonProps } from '@mui/material'
+import {
+  Button,
+  ButtonProps
+} from '@mui/material'
+
+type variantBtn = 'contained' | 'outlined' | 'text'
 
 interface PrimaryButtonProps extends ButtonProps {
   text: string,
-  variant?: 'contained' | 'outlined' | 'text'
+  variant?: variantBtn
 }
 
-
-//TODO: agregar todo lo necesario para que sea un boton reutilizable
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({ text, variant, ...props }) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({
+  text,
+  variant,
+  ...props
+}) => {
   return (
     <Button
       variant={ variant ? variant : 'contained' }

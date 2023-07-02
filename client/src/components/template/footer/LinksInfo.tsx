@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom'
-import { Grid, List, ListItem, Typography } from '@mui/material'
+import {
+  Grid,
+  Typography
+} from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import PhoneIcon from '@mui/icons-material/Phone'
 import EmailIcon from '@mui/icons-material/Email'
-import { COMPANY, SERVICES } from './footerConstants'
 import Subtitle from '../../atom/Subtitle'
+import LinkList from '../../molecule/LinkList'
+import { COMPANY, SERVICES } from './footerConstants'
 
 type LinksInfoProps = {
 }
@@ -20,23 +24,11 @@ const LinksInfo: React.FC<LinksInfoProps> = () => {
     >
       <Grid item xs={ 12 } sm={ 4 }>
         <Subtitle title="servicios" />
-        <List>
-          { SERVICES && SERVICES.map(
-            service => <ListItem key={ service.text }>
-              <Link to={ service.to } className="links-footer">{ service.text }</Link>
-            </ListItem>)
-          }
-        </List>
+        <LinkList list={SERVICES} />
       </Grid>
       <Grid item xs={ 12 } sm={ 4 }>
         <Subtitle title="empresa" />
-        <List>
-          { COMPANY && COMPANY.map(
-            company => <ListItem key={ company.text }>
-              <Link to={ company.to } className="links-footer">{ company.text }</Link>
-            </ListItem>)
-          }
-        </List>
+        <LinkList list={COMPANY} />
       </Grid>
       <Grid item xs={ 12 } sm={ 4 }>
         <Subtitle title="información" padding="16px 16px 16px 0px" />
