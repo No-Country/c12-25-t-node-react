@@ -1,13 +1,28 @@
 footer {
-  background-color: var(--bg-gray);
+  background-color: var(--bg-light);
   padding: 1rem 0.75rem;
   min-height: 1rem;
 }
 
+/* Logo colors */
 .primary-light {
   color: var(--primary-light);
-} 
+}
 
 .primary {
-  color:var(--primary);
+  color: var(--primary);
+}
+
+/* Links */
+.link-logo {
+  text-decoration: none;
+}
+
+.links-footer {
+  text-decoration: none;
+  color: var(--bg-dark);
+}
+
+.links-footer:hover {
+  color: var(--primary);
 }
