@@ -1,3 +1,7 @@
+import { Container } from '@mui/material'
+import './Footer.styles.css'
+import LogoSocialMedia from './LogoSocialMedia'
+
 type FooterProps = {
   /* aca van las props, ej:
   title: string
@@ -8,7 +12,11 @@ type FooterProps = {
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <footer>Footer</footer>
+    <footer>
+      <Container maxWidth="lg">
+        <LogoSocialMedia />
+      </Container>
+    </footer>
   )
 }
 
