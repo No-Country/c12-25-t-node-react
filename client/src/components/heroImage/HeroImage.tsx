@@ -7,7 +7,7 @@ const HeroImage = ()=> {
               <img
                   src={heroImage}
                   alt="Imagen"
-                  style={{  }}
+                  style={{ width: '100%', height: '50vh', objectFit: 'cover' }}
               />
           </Grid>
       </Grid>
