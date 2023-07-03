@@ -1,5 +1,5 @@
 import PrimaryButton from "../components/atom/PrimaryButton"
-import HeroImage from "../components/heroImage/HeroImage.tsx";
+import HeroImage from "../components/atom/heroImage/HeroImage.tsx";
 
 
 type HomeProps = {
