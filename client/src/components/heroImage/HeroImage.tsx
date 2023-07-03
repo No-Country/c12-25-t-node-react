@@ -1,6 +1,7 @@
 import heroImage from '../../assets/heroImage/heroImage.png'
 import { Grid } from '@material-ui/core'
 import './HeroImage.styles.css'
+
 const HeroImage = ()=> {
   return (
       <Grid container>
@@ -14,4 +15,5 @@ const HeroImage = ()=> {
       </Grid>
   )
 }
+
 export default HeroImage
