@@ -1,6 +1,5 @@
 import { Grid } from '@mui/material'
 import heroImage from '../../../assets/heroImage.png'
-
 import './HeroImage.styles.css'
 
 const HeroImage = () => {
