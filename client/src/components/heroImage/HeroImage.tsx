@@ -1,12 +1,16 @@
-
-import {Image} from "@mui/icons-material";
 import heroImage from '../../assets/heroImage/heroImage.png'
-import {Avatar} from "@mui/material";
+import { Grid } from '@material-ui/core';
 const HeroImage = ()=> {
   return (
-      <div className="banner-container">
-          <img src={heroImage} alt="Mi Imagen" className="banner-image" />
-      </div>
+      <Grid container>
+          <Grid item xs={12}>
+              <img
+                  src={heroImage}
+                  alt="Imagen"
+                  style={{  }}
+              />
+          </Grid>
+      </Grid>
   )
 }
 export default HeroImage
