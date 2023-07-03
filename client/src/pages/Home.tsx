@@ -1,4 +1,6 @@
 import PrimaryButton from "../components/atom/PrimaryButton"
+import HeroImage from "../components/atom/heroImage/HeroImage.tsx";
+
 
 type HomeProps = {
   /* aca van las props, ej:
@@ -11,6 +13,7 @@ type HomeProps = {
 const Home: React.FC<HomeProps> = () => {
   return (
     <main>
+      <HeroImage/>
       <PrimaryButton text="Home" />
     </main>
   )
