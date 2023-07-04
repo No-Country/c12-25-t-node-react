@@ -15,7 +15,6 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <main>
       <HeroImage />
-      <PrimaryButton text="Home" />
       <FeaturedForSaleAcordion />
       <FeaturedForRentAcordion />
     </main>

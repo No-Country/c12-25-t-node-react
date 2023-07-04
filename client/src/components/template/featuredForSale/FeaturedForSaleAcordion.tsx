@@ -1,13 +1,18 @@
+import { useNavigate } from 'react-router-dom'
+import { Box, Typography } from '@mui/material'
 import FeaturedCard from '../../molecule/FeaturedCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { Box, Button, Typography } from '@mui/material'
+import PrimaryButton from '../../atom/PrimaryButton'
 import './featuredForSaleAcordion.styles.css'
 
 const FeaturedForSaleAcordion = () => {
+  const navigate = useNavigate()
+  const handleClick = () => navigate('/search')
+
   return (
     <section className="featured-for-sale-acordion">
       <Box
@@ -17,22 +22,21 @@ const FeaturedForSaleAcordion = () => {
           marginBottom: 2,
         }}
       >
-        <Typography variant="h4" component="p" sx={{ alignSelf: 'center' }}>
-          <span style={{ fontWeight: 'normal' }}>Destacados</span>
-          <span style={{ fontWeight: 'bold' }}> en venta</span>
+        <Typography variant="h2"  sx={{ alignSelf: 'center' }}>
+          Destacados <span style={{ fontWeight: '800' }}> en venta</span>
         </Typography>
-        <Button
+        <PrimaryButton
+          text="Ver todos"
           variant="outlined"
-          sx={{
+          sx={ {
             display: 'inline-block',
             paddingY: 0.5,
             paddingX: 1,
             fontSize: '0.8rem',
             borderRadius: 3,
-          }}
-        >
-          Ver todos
-        </Button>
+          } }
+          onClick={ handleClick}
+        />
       </Box>
       <Swiper
         navigation={true}
