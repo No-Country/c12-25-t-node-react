@@ -1,3 +1,6 @@
+import HeroImage from '../components/atom/heroImage/HeroImage'
+import termsAndConditionBanner from '../assets/terms-condition-banner.png'
+
 type TermsConditionsProps = {
   /* aca van las props, ej:
   title: string
@@ -8,7 +11,12 @@ type TermsConditionsProps = {
 
 const TermsConditions: React.FC<TermsConditionsProps> = () => {
   return (
-    <main>Terms and Conditions</main>
+    <main>
+      <HeroImage
+        imgSrc={ termsAndConditionBanner }
+        imgHeight="23vh"
+      />
+    </main>
   )
 }
 
