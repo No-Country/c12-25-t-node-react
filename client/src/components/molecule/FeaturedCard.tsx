@@ -11,9 +11,7 @@ import PrimaryButton from '../atom/PrimaryButton'
 import IconButton from '@mui/material/IconButton'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 
-type FeaturedCardProps = {}
-
-const FeaturedCard: React.FC<FeaturedCardProps> = () => {
+const FeaturedCard = () => {
   return (
     <Card
       style={{ boxShadow: '0px 4px 10px grey' }}

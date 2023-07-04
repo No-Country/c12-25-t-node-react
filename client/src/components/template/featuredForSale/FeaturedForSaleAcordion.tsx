@@ -6,8 +6,6 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Box, Button, Typography } from '@mui/material'
 import './featuredForSaleAcordion.styles.css'
-// type FeaturedForSaleAcordionProps = {
-// };
 
 const FeaturedForSaleAcordion = () => {
   return (
@@ -23,7 +21,16 @@ const FeaturedForSaleAcordion = () => {
           <span style={{ fontWeight: 'normal' }}>Destacados</span>
           <span style={{ fontWeight: 'bold' }}> en venta</span>
         </Typography>
-        <Button variant="outlined" className="ver-todos-btn">
+        <Button
+          variant="outlined"
+          sx={{
+            display: 'inline-block',
+            paddingY: 0.5,
+            paddingX: 1,
+            fontSize: '0.8rem',
+            borderRadius: 3,
+          }}
+        >
           Ver todos
         </Button>
       </Box>
