@@ -1,17 +1,17 @@
-import FeaturedCard from '../../molecule/FeaturedCard'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Box, Button, Typography } from '@mui/material'
-import './featuredForSaleAcordion.styles.css'
+import './featuredForRentAcordion.styles.css'
+import FeaturedCard from '../../molecule/FeaturedCard'
 // type FeaturedForSaleAcordionProps = {
 // };
 
-const FeaturedForSaleAcordion = () => {
+const FeaturedForRentAcordion = () => {
   return (
-    <section className="featured-for-sale-acordion">
+    <section className="featured-for-rent-acordion">
       <Box
         sx={{
           display: 'flex',
@@ -21,7 +21,7 @@ const FeaturedForSaleAcordion = () => {
       >
         <Typography variant="h4" component="p" sx={{ alignSelf: 'center' }}>
           <span style={{ fontWeight: 'normal' }}>Destacados</span>
-          <span style={{ fontWeight: 'bold' }}> en venta</span>
+          <span style={{ fontWeight: 'bold' }}> en alquiler</span>
         </Typography>
         <Button variant="outlined" className="ver-todos-btn">
           Ver todos
@@ -34,12 +34,12 @@ const FeaturedForSaleAcordion = () => {
         spaceBetween={30}
         breakpoints={{
           768: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 3,
-            spaceBetween: 10,
+            slidesPerView: 4,
+            spaceBetween: 50,
           },
         }}
         className="mySwiper"
@@ -73,4 +73,4 @@ const FeaturedForSaleAcordion = () => {
   )
 }
 
-export default FeaturedForSaleAcordion
+export default FeaturedForRentAcordion

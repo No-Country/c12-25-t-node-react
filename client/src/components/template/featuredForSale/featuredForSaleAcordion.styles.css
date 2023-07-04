@@ -1,0 +1,11 @@
+.featured-for-sale-acordion .ver-todos-btn {
+  display: inline-block;
+  padding: 5px 8px;
+  font-size: small;
+  border-radius: 15px;
+}
+
+.featured-for-sale-acordion {
+  padding: 10px 50px;
+  /* margin-bottom: 5px; */
+}

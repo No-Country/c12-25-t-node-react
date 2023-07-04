@@ -1,10 +1,10 @@
-import { Button, ButtonProps } from "@mui/material";
+import { Button, ButtonProps } from '@mui/material'
 
-type variantBtn = "contained" | "outlined" | "text";
+type variantBtn = 'contained' | 'outlined' | 'text'
 
 interface PrimaryButtonProps extends ButtonProps {
-  text: string;
-  variant?: variantBtn;
+  text: string
+  variant?: variantBtn
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
@@ -13,10 +13,10 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   ...props
 }) => {
   return (
-    <Button variant={variant ? variant : "contained"} {...props}>
+    <Button variant={variant ? variant : 'contained'} {...props}>
       {text}
     </Button>
-  );
-};
+  )
+}
 
-export default PrimaryButton;
+export default PrimaryButton
