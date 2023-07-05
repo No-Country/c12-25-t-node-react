@@ -6,19 +6,23 @@ import {
 
 type TextBoxProps = {
   children?: ReactNode
-  paperMinHeight?: string
+  paperMinHeight?: string,
+  paperWidth?: string,
+  paperMargin?: string
 }
 
 const TextBox: React.FC<TextBoxProps> = ({
   paperMinHeight,
-  children
+  children,
+  paperWidth,
+  paperMargin
 }) => {
   return (
     <Box
       sx={ {
-        width: '80%',
+        width: `${ paperWidth ? paperWidth : '80%' }`,
         maxWidth: '800px',
-        margin: '2rem auto',
+        margin: `${ paperMargin ? paperMargin : '2rem auto' }`,
         position: 'relative',
         top: '-290px',
       } }
