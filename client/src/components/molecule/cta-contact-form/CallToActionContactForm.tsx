@@ -19,24 +19,24 @@ const CallToActionContactForm: React.FC<ImageWithTextProps> = ({
   });
 
   const TextContainer = styled(Box)(({ textPosition }: { textPosition: string }) => ({
-    position: "absolute",
-    backgroundColor: "#f9f9f9",
-    padding: "10px 30px",
-    width: "50%",
-    height: "75%",
-    display:"flex",
-    flexDirection: "column",
-    gap: "25px",
-    borderRadius: "20px",
-    filter: "drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25))",
-    top: "50%",
-    transform: "translateY(-50%)",
-    ...(textPosition === "left"
+    position: 'absolute',
+    backgroundColor: '#f9f9f9',
+    padding: '10px 30px',
+    width: '50%',
+    height: '75%',
+    display:'flex',
+    flexDirection: 'column',
+    gap: '25px',
+    borderRadius: '20px',
+    filter: 'drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25))',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    ...(textPosition === 'left'
       ? {
-        left: "0",
+        left: '0',
       }
       : {
-        right: "0",
+        right: '0',
       }),
   }));
 
@@ -46,14 +46,14 @@ const CallToActionContactForm: React.FC<ImageWithTextProps> = ({
         <TextContainer textPosition={textPosition}>
           {textPosition === "left" ? (
             <>
-             <Typography variant="body1">¿Tenés una propiedad que querés comercializar?</Typography>
+             <Typography align="left" variant="body1">¿Tenés una propiedad que <strong>comercializar</strong> ?</Typography>
               <Link to={"/contact"}>
                 <PrimaryButton text={"Contactanos"}></PrimaryButton>
               </Link>
             </>
           ) : (
             <>
-              <Typography variant="body1">¿Estás buscando invertir en un desarrollo inmobiliario?</Typography>
+              <Typography align="left" variant="body1">¿Estás buscando <strong>invertir en un desarrollo inmobiliario</strong>?</Typography>
               <Link to={"/contact"}>
                 <PrimaryButton text={"Contactanos"}></PrimaryButton>
               </Link>
