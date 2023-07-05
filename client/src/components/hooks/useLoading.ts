@@ -1,16 +1,42 @@
-import { useEffect, useState } from 'react'
+import { createContext, useState } from "react";
 
-export default (): [boolean, Function, Function] => {
-  const [loading, setLoading ] = useState<boolean>(false)
-  const [loaders, setLoaders ] = useState<number>(0)
+interface LoadingState {
+  loading: boolean
+}
 
-  const addLoading = () => setLoaders(prevState => prevState + 1)
+// Create context
+interface LoadingContextProps extends LoadingState {
+  addLoading: () => void;
+  removeLoading: () => void;
+}
 
-  const removeLoading = () => setTimeout(() => setLoaders(prevState => prevState -1), 200)
+export const LoadingContext = createContext<LoadingContextProps>({
+  loading: false,
+  addLoading: () => { },
+  removeLoading: () => { },
+})
 
-  useEffect(() => {
-    setLoading(loaders > 0)
-  }, [loaders])
 
-  return [loading, addLoading, removeLoading]
+export const useLoading = (): LoadingContextProps => {
+  const [loadingState, setLoadingState] = useState<LoadingState>({
+    loading: false,
+  });
+
+  const addLoading = () => {
+    setLoadingState((prevState) => ({
+      ...prevState,
+      loading: true,
+    }))
+  }
+
+  const removeLoading = () => {
+    setTimeout(() => {
+      setLoadingState((prevState) => ({
+        ...prevState,
+        loading: false,
+      }))
+    }, 5000);
+  }
+
+  return { ...loadingState, addLoading, removeLoading };
 }
