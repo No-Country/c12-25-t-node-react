@@ -31,8 +31,8 @@ const Subtitle: React.FC<SubtitleProps> = ({
       sx={ {
         textAlign: `${textAlign? textAlign: 'left'}`,
         fontWeight: `${ fontWeight ? fontWeight : '800' }`,
-        textTransform: `${ textTransform ? textTransform : 'uppercase' }`,
-        padding: `${ padding ? padding : '16px !important' }`,
+        textTransform: `${ textTransform ? textTransform : 'none' }`,
+        padding: `${ padding ? padding : '16px' }`,
         color: `${textColor ? textColor: 'primary'}`
       } }
       variant={variant}
