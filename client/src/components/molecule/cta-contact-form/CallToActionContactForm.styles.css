@@ -1,0 +1,10 @@
+.image-with-text.left{
+    display: flex;
+    justify-content: flex-end;
+
+}
+.image-with-text.right{
+}
+.image-with-text{
+    margin: 50px;
+}
