@@ -5,31 +5,37 @@ import {
 
 type alignText = 'center' | 'inherit' | 'justify' | 'left' | 'right'
 type transformText = 'none' | 'capitalize' | 'uppercase' | 'lowercase' 
+type variantText = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
 interface SubtitleProps extends TypographyProps {
   title: string,
-  align?: alignText,
+  textAlign?: alignText,
   fontWeight?: string,
   textTransform?: transformText,
   padding?: string,
+  variant: variantText,
+  textColor?: string
 }
 
 const Subtitle: React.FC<SubtitleProps> = ({
   title,
-  align,
+  textAlign,
   fontWeight,
   textTransform,
-  padding
+  padding,
+  variant,
+  textColor
 }) => {
   return (
     <Typography
       sx={ {
-        align: `${align? align: 'left'}`,
+        textAlign: `${textAlign? textAlign: 'left'}`,
         fontWeight: `${ fontWeight ? fontWeight : '800' }`,
-        textTransform: `${ textTransform ? textTransform : 'uppercase' }`,
-        padding: `${ padding ? padding : '16px !important' }`
+        textTransform: `${ textTransform ? textTransform : 'none' }`,
+        padding: `${ padding ? padding : '16px' }`,
+        color: `${textColor ? textColor: 'primary'}`
       } }
-      variant="h2"
+      variant={variant}
     >
       { title }
     </Typography>

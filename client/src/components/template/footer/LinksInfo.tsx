@@ -23,15 +23,15 @@ const LinksInfo: React.FC<LinksInfoProps> = () => {
       } }
     >
       <Grid item xs={ 12 } sm={ 4 }>
-        <Subtitle title="servicios" />
-        <LinkList list={SERVICES} />
+        <Subtitle title="servicios" variant="h3" textTransform="uppercase" />
+        <LinkList list={ SERVICES } />
       </Grid>
       <Grid item xs={ 12 } sm={ 4 }>
-        <Subtitle title="empresa" />
-        <LinkList list={COMPANY} />
+        <Subtitle title="empresa" variant="h3" textTransform="uppercase"/>
+        <LinkList list={ COMPANY } />
       </Grid>
       <Grid item xs={ 12 } sm={ 4 }>
-        <Subtitle title="información" padding="16px 16px 16px 0px" />
+        <Subtitle title="información" variant="h3" textTransform="uppercase" padding="16px 16px 16px 0px" />
         <Typography sx={ { lineHeight: '34px' } }><LocationOnIcon /> Direccción de la oficina</Typography>
         <Typography sx={ { lineHeight: '34px' } }><WhatsAppIcon /> Whatsapp de contacto</Typography>
         <Typography sx={ { lineHeight: '34px' } }><PhoneIcon /> Teléfono de contacto</Typography>

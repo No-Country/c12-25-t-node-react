@@ -1,5 +1,6 @@
 import PrimaryButton from "../components/atom/PrimaryButton"
-import HeroImage from "../components/atom/heroImage/HeroImage.tsx";
+import HeroImage from '../components/atom/heroImage/HeroImage.tsx'
+import heroImageBanner from '../assets/heroImage.png'
 
 
 type HomeProps = {
@@ -13,8 +14,7 @@ type HomeProps = {
 const Home: React.FC<HomeProps> = () => {
   return (
     <main>
-      <HeroImage/>
-      <PrimaryButton text="Home" />
+      <HeroImage imgSrc={heroImageBanner} />
     </main>
   )
 }
