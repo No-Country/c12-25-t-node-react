@@ -19,7 +19,7 @@ interface FeaturedCardProps {
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const navigate = useNavigate()
-  const handleClick = () => navigate('/search')
+  const handleClick = () => navigate(`/detail/${id}`)
   const {
     id,
     description,
