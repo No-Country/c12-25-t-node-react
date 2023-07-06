@@ -1,3 +1,7 @@
+import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
+import TextBox from '../components/molecule/text-box/TextBox'
+import aboutBanner from '../assets/about-us-banner.png'
+
 type AboutProps = {
   /* aca van las props, ej:
   title: string
@@ -8,7 +12,12 @@ type AboutProps = {
 
 const About: React.FC<AboutProps> = () => {
   return (
-    <main>About</main>
+    <BannerAndBackgroundPage imgSrc={aboutBanner}> 
+      <TextBox>
+
+      </TextBox>
+      {/* TODO: section team goes here*/}
+    </BannerAndBackgroundPage>
   )
 }
 
