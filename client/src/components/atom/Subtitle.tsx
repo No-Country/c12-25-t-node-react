@@ -13,7 +13,7 @@ interface SubtitleProps extends TypographyProps {
   fontWeight?: string,
   textTransform?: transformText,
   padding?: string,
-  variant: variantText,
+  variant?: variantText,
   textColor?: string
 }
 
@@ -32,15 +32,15 @@ const Subtitle: React.FC<SubtitleProps> = ({
     <Typography
       sx={ {
         textAlign: `${ textAlign ? textAlign : 'left' }`,
-        fontWeight: `${ fontWeight ? fontWeight : '800' }`,
+        fontWeight: `${ fontWeight ? fontWeight : '500' }`,
         textTransform: `${ textTransform ? textTransform : 'none' }`,
         padding: `${ padding ? padding : '16px' }`,
-        color: `${ textColor ? textColor : 'primary' }`
+        color: `${ textColor ? textColor : '#1B17E7' }`
       } }
-      variant={ variant }
+      variant={ `${variant?variant: 'h2'}` }
     >
       { titleBold &&
-        <>{ title } <Box component="span" sx={ { fontWeight: `${ titleBoldWeight }` } }>{ titleBold }</Box> </>
+        <>{ title } <Box component="span" sx={ { fontWeight: `${ titleBoldWeight?titleBoldWeight: '700' }` } }>{ titleBold }</Box> </>
       }
       { !titleBold && <>{ title }</> }
     </Typography>
