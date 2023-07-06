@@ -11,39 +11,55 @@ import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled'
 import IconButton from '@mui/material/IconButton'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import PrimaryButton from '../atom/PrimaryButton'
+import { Estates } from '../../pages/Home'
 
-const FeaturedCard = () => {
+interface FeaturedCardProps {
+  estate: Estates
+}
+
+const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const navigate = useNavigate()
   const handleClick = () => navigate('/search')
-
+  const {
+    id,
+    description,
+    adress,
+    area,
+    bedrooms,
+    bathrooms,
+    cars,
+    image,
+    forRent,
+    forSale,
+  } = estate
   return (
     <Card
-      style={ { boxShadow: '0px 4px 10px grey' } }
-      sx={ { maxWidth: 400, borderRadius: 5 } }
+      style={{ boxShadow: '0px 4px 10px grey' }}
+      sx={{ maxWidth: 350, height: 365, borderRadius: 5, boxShadow: 3 }}
     >
       <CardMedia
-        sx={ { height: 200, objectFit: 'fill' } }
+        sx={{ height: 200, objectFit: 'fill' }}
         component="img"
-        src="https://img.freepik.com/foto-gratis/casa-aislada-campo_1303-23773.jpg"
+        src={image}
         title="demo house"
       />
-      <CardContent sx={ { position: 'relative' } }>
+      <CardContent sx={{ position: 'relative', pb: 0 }}>
         <IconButton
           size="small"
-          sx={ {
+          sx={{
             position: 'absolute',
             right: -1,
             top: -180,
             marginRight: 1,
             backgroundColor: 'white',
             borderRadius: 3,
-          } }
+          }}
         >
           <FavoriteBorderIcon />
         </IconButton>
         <PrimaryButton
           text="Ver más"
-          sx={ {
+          sx={{
             position: 'absolute',
             top: -20,
             right: -1,
@@ -51,43 +67,56 @@ const FeaturedCard = () => {
             display: 'inline-block',
             fontSize: '0.8rem',
             letterSpacing: '1px',
-          } }
-          onClick={ handleClick}
+          }}
+          onClick={handleClick}
         />
-        <Typography variant="body1" color="text.primary" sx={{marginTop: '1rem'}}>
-          Casa 5 dormitorios en Villa Urquiza
-        </Typography>
-        <Typography
-          variant="body2"
-          color="text.primary"
-          fontWeight={ 'bold' }
-          fontSize={ '1rem' }
-          marginTop={ 2 }
-          marginBottom={ 2 }
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+          }}
         >
-          Av. Monroe 4511
-        </Typography>
+          <Typography
+            variant="body1"
+            color="text.primary"
+            sx={{ marginTop: '1rem' }}
+          >
+            {description}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="text.primary"
+            fontWeight={'bold'}
+            fontSize={'1rem'}
+            marginTop={2}
+            marginBottom={2}
+          >
+            {adress}
+          </Typography>
 
-        <Box sx={ { display: 'flex', justifyContent: 'space-between' } }>
-          <Box sx={ { display: 'flex' } }>
-            <SquareFootIcon className="primary-light" />
-            <Typography>680 m</Typography>
-          </Box>
-          <Box sx={ { display: 'flex' } }>
-            <BedIcon className="primary-light" />
-            <Typography>5</Typography>
-          </Box>
-          <Box sx={ { display: 'flex' } }>
-            <BathtubIcon className="primary-light" />
-            <Typography>2</Typography>
-          </Box>
-          <Box sx={ { display: 'flex' } }>
-            <DirectionsCarFilledIcon className="primary-light" />
-            <Typography>2</Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: 'flex' }}>
+              <SquareFootIcon className="primary-light" />
+              <Typography>{area} m</Typography>
+            </Box>
+            <Box sx={{ display: 'flex' }}>
+              <BedIcon className="primary-light" />
+              <Typography>{bedrooms}</Typography>
+            </Box>
+            <Box sx={{ display: 'flex' }}>
+              <BathtubIcon className="primary-light" />
+              <Typography>{bathrooms}</Typography>
+            </Box>
+            <Box sx={{ display: 'flex' }}>
+              <DirectionsCarFilledIcon className="primary-light" />
+              <Typography>{cars}</Typography>
+            </Box>
           </Box>
         </Box>
       </CardContent>
     </Card>
   )
 }
+
 export default FeaturedCard

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "description": "Casa 5 dormitorios en Villa Urquiza bla bla bla bla bla bla bla",
+    "adress": "Av. Monroe 4511",
+    "area": 680,
+    "bedrooms": 5,
+    "bathrooms": 2,
+    "cars": 2,
+    "image": "https://img.freepik.com/foto-gratis/casa-aislada-campo_1303-23773.jpg",
+    "forRent": false,
+    "forSale": true
+  },
+  {
+    "id": "2",
+    "description": "Casa 3 dormitorios en Belgrano",
+    "adress": "Belgrano 1122",
+    "area": 500,
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "cars": 1,
+    "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0192/BTE0192_022.jpg?2508531",
+    "forRent": false,
+    "forSale": true
+  },
+  {
+    "id": "3",
+    "description": "Depto. 2 dormitorios en Villa Urquiza",
+    "adress": "Calle Falsa 123",
+    "area": 400,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "cars": 1,
+    "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/CAB/CAB0537/CAB0537_025.jpg?7830492",
+    "forRent": false,
+    "forSale": true
+  },
+  {
+    "id": "4",
+    "description": "Casa 6 dormitorios en Caballito",
+    "adress": "Tucuman 2020",
+    "area": 800,
+    "bedrooms": 6,
+    "bathrooms": 3,
+    "cars": 2,
+    "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0366/BTE0366_013.jpg?6078960",
+    "forRent": false,
+    "forSale": true
+  },
+  {
+    "id": "5",
+    "description": "Casa 5 dormitorios en Palermo bla bla bla bla bla bla",
+    "adress": "Av. Colon 4511",
+    "area": 680,
+    "bedrooms": 5,
+    "bathrooms": 2,
+    "cars": 2,
+    "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0262/BTE0262_040.jpg?4367729",
+    "forRent": true,
+    "forSale": false
+  },
+  {
+    "id": "6",
+    "description": "Casa 5 dormitorios en Belgrano",
+    "adress": "Av. Monroe 4511",
+    "area": 680,
+    "bedrooms": 5,
+    "bathrooms": 2,
+    "cars": 2,
+    "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0367/BTE0367_007.jpg?6078994",
+    "forRent": true,
+    "forSale": false
+  },
+  {
+    "id": "7",
+    "description": "Casa 2 dormitorios en Caballito",
+    "adress": "Tucuman 2020",
+    "area": 450,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "cars": 1,
+    "image": "https://static.tokkobroker.com/pictures/11055892942182246447020128903573715270373791300168206487275312176201108507058.jpg",
+    "forRent": true,
+    "forSale": false
+  },
+  {
+    "id": "8",
+    "description": "Monoambiente en Palermo",
+    "adress": "Av. Colon 4511",
+    "area": 60,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "cars": 0,
+    "image": "https://static.tokkobroker.com/dev_pictures/96435571093605556412912572701291500258704136786162861324493348734375725697611.jpg",
+    "forRent": true,
+    "forSale": false
+  },
+  {
+    "id": "9",
+    "description": "Casa 2 dormitorios en Belgrano",
+    "adress": "Av. Monroe 4511",
+    "area": 450,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "cars": 1,
+    "image": "https://static.tokkobroker.com/pictures/24672447552371337884378725557928502700752729530374436627833715030097382444585.jpg",
+    "forRent": true,
+    "forSale": false
+  }
+]
