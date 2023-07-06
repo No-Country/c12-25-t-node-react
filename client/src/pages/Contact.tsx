@@ -1,3 +1,6 @@
+import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
+import contactUsBanner from '../assets/contact-us-banner.png'
+
 type ContactProps = {
   /* aca van las props, ej:
   title: string
@@ -8,7 +11,7 @@ type ContactProps = {
 
 const Contact: React.FC<ContactProps> = () => {
   return (
-    <main>Contact</main>
+    <BannerAndBackgroundPage imgSrc={contactUsBanner} />
   )
 }
 
