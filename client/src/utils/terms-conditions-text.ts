@@ -1,15 +1,4 @@
-import { textLink } from "../components/template/footer/footerConstants"
-
 export const INTRODUCTION = "Esta Web pertenece a la Empresa Appartamentos SA (en adelante LA EMPRESA) y su acceso y utilización está sujeta a la aceptación y cumplimiento de los términos y condiciones que se exponen a continuación:"
-
-export type Terms = {
-  terms: Term[]
-}
-
-export type Term = {
-  title: string
-  text: string[]
-}
 
 export const CONDITIONS = [
   {

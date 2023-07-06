@@ -1,8 +1,4 @@
 import { ReactNode } from 'react'
-import {
-  Box,
-  Paper,
-} from '@mui/material'
 import './BannerAndBackGroundPage.styles.css'
 import HeroImage from '../../atom/heroImage/HeroImage'
 
