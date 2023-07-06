@@ -18,7 +18,10 @@ const TermsConditions: React.FC<TermsConditionsProps> = () => {
     <BannerAndBackgroundPage imgSrc={ termsAndConditionBanner } >
       <TextBox>
         <Subtitle
-          title="Términos y condiciones del sitio"
+          title="Términos y condiciones de "
+          fontWeight="500"
+          titleBold="uso del sitio"
+          titleBoldWeight="600"
           variant="h2"
           textColor="#1B17E7"
           textAlign="center"
