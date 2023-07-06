@@ -1,37 +1,48 @@
-import { 
-  Typography, 
-  TypographyProps 
+import {
+  Box,
+  Typography,
+  TypographyProps
 } from '@mui/material'
-
-type alignText = 'center' | 'inherit' | 'justify' | 'left' | 'right'
-type transformText = 'none' | 'capitalize' | 'uppercase' | 'lowercase' 
+import { alignText, transformText, variantText } from '../../utils/types'
 
 interface SubtitleProps extends TypographyProps {
   title: string,
-  align?: alignText,
+  titleBold?: string,
+  titleBoldWeight?: string,
+  textAlign?: alignText,
   fontWeight?: string,
   textTransform?: transformText,
   padding?: string,
+  variant: variantText,
+  textColor?: string
 }
 
 const Subtitle: React.FC<SubtitleProps> = ({
   title,
-  align,
+  titleBold,
+  titleBoldWeight,
+  textAlign,
   fontWeight,
   textTransform,
-  padding
+  padding,
+  variant,
+  textColor
 }) => {
   return (
     <Typography
       sx={ {
-        align: `${align? align: 'left'}`,
+        textAlign: `${ textAlign ? textAlign : 'left' }`,
         fontWeight: `${ fontWeight ? fontWeight : '800' }`,
-        textTransform: `${ textTransform ? textTransform : 'uppercase' }`,
-        padding: `${ padding ? padding : '16px !important' }`
+        textTransform: `${ textTransform ? textTransform : 'none' }`,
+        padding: `${ padding ? padding : '16px' }`,
+        color: `${ textColor ? textColor : 'primary' }`
       } }
-      variant="h2"
+      variant={ variant }
     >
-      { title }
+      { titleBold &&
+        <>{ title } <Box component="span" sx={ { fontWeight: `${ titleBoldWeight }` } }>{ titleBold }</Box> </>
+      }
+      { !titleBold && <>{ title }</> }
     </Typography>
   )
 }

@@ -3,20 +3,35 @@ import { createTheme } from "@mui/material/styles"
 declare module "@mui/material/styles" {
   interface Palette {
     primaryBlackish: string
-    primaryBackground: string
-    primaryBackground2: string
+    primaryLight: string
+    primaryLighter: string
+    primaryDarker: string,
+    bgDark: string,
+    bgGray: string,
+    bgLight: string
+    bgLighter: string
   }
   interface PaletteOptions {
     primaryBlackish: string
-    primaryBackground: string
-    primaryBackground2: string
+    primaryLight: string
+    primaryLighter: string
+    primaryDarker: string
+    bgDark: string
+    bgGray: string
+    bgLight: string
+    bgLighter: string
   }
 }
 
 export interface CustomStyleProps {
-  primaryBackground?: string,
-  primaryBackground2?: string,
   primaryBlackish?: string,
+  primaryLight?: string,
+  primaryLighter?: string,
+  primaryDarker?: string,
+  bgDark?: string,
+  bgGray?: string,
+  bgLight?: string,
+  bgLighter?: string
 }
 
 declare module '@mui/material/styles' {
@@ -40,8 +55,13 @@ declare module '@mui/material/Typography' {
 export const appArtamentosTheme = createTheme({
   palette: {
     primaryBlackish: '#010108',
-    primaryBackground: '#F1F1F9',
-    primaryBackground2: '#F5F5F5',
+    primaryLight: '#1DAEFF',
+    primaryLighter: '#D8D8FB',
+    primaryDarker: '#0C0C39',
+    bgDark: '#010108',
+    bgGray: '#787979',
+    bgLight: '#F1F1F9',
+    bgLighter: '#F5F5F5',
     primary: {
       main: '#1B17E7'
     },
@@ -66,9 +86,9 @@ export const appArtamentosTheme = createTheme({
       fontWeight: 700
     },
     h2: {
-      fontSize: '22px',
-      lineHeight: '32px',
-      fontWeight: 700
+      fontSize: '28px',
+      lineHeight: '30px',
+      fontWeight: 600
     },
     h3: {
       fontSize: '18px',
@@ -78,27 +98,27 @@ export const appArtamentosTheme = createTheme({
     h4: {
       fontSize: '18px',
       lineHeight: '24px',
-      fontWeight: 700
+      fontWeight: 600
     },
     h5: {
       fontSize: '15px',
       lineHeight: '21px',
-      fontWeight: 600
+      fontWeight: 500
     },
     body1: {
-      fontFamily: 'Nunito Sans, sans-serif',
+      fontFamily: 'Montserrat, sans-serif',
       fontSize: '15px',
       lineHeight: '25px',
       fontWeight: 400
     },
     body2: {
-      fontFamily: 'Nunito Sans, sans-serif',
-      fontSize: '13px',
-      lineHeight: '15px',
-      fontWeight: 600
+      fontFamily: 'Montserrat, sans-serif',
+      fontSize: '15px',
+      lineHeight: '25px',
+      fontWeight: 300
     },
     caption: {
-      fontFamily: 'Nunito Sans, sans-serif',
+      fontFamily: 'Montserrat, sans-serif',
       fontSize: '11px',
       lineHeight: '15px',
       fontWeight: 600
@@ -349,7 +369,7 @@ export const appArtamentosTheme = createTheme({
             fontSize: '15px',
             lineHeight: '17px',
             color: 'black',
-            backgroundColor: theme.palette.primaryBackground
+            backgroundColor: theme.palette.bgLight
           }
         })
       }
@@ -382,7 +402,7 @@ export const appArtamentosTheme = createTheme({
     MuiChip: {
       styleOverrides: {
         colorPrimary: ({ theme }) => ({
-          background: theme.palette.primaryBackground,
+          background: theme.palette.bgLight,
           borderRadius: '8px',
           fontSize: '9px',
           fontWeight: 700,
@@ -393,7 +413,7 @@ export const appArtamentosTheme = createTheme({
     MuiDivider: {
       styleOverrides: {
         root: ({ theme }) => ({
-          borderColor: theme.palette.primaryBackground,
+          borderColor: theme.palette.bgLight,
           borderWidth: '1px'
         })
       }

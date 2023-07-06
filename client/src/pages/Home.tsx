@@ -1,15 +1,13 @@
-import FeaturedForSaleAcordion from '../components/template/featuredAcordion/FeaturedAcordion.tsx'
-import HeroImage from '../components/atom/heroImage/HeroImage.tsx'
 import mockApiData from '../api/mockApi.json'
 import { useState, useEffect } from 'react'
+import HeroImage from '../components/atom/heroImage/HeroImage.tsx'
+import CallToActionContactForm from '../components/molecule/cta-contact-form/CallToActionContactForm.tsx'
+import heroImageBanner from '../assets/heroImage.png'
+import ImageCtaLeft from '../assets/imageCtaRight.png'
+import ImageCtaRight from '../assets/imageCtaLeft.png'
+import FeaturedAcordion from '../components/template/featuredAcordion/FeaturedAcordion.tsx'
 
-type HomeProps = {
-  /* aca van las props, ej:
-  title: string
-  Y luego se desestructuran en:
-  const Home: React.FC<HomeProps> = ({title}) => {
-  */
-}
+type HomeProps = {}
 export interface Estates {
   id: string
   description: string
@@ -37,9 +35,14 @@ const Home: React.FC<HomeProps> = () => {
   }, [])
   return (
     <main>
-      <HeroImage />
-      <FeaturedForSaleAcordion textTitle="venta" estates={estatesForSale} />
-      <FeaturedForSaleAcordion textTitle="alquiler" estates={estatesForRent} />
+      <FeaturedAcordion textTitle="venta" estates={estatesForSale} />
+      <FeaturedAcordion textTitle="alquiler" estates={estatesForRent} />
+      <HeroImage imgSrc={heroImageBanner} />
+      <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
+      <CallToActionContactForm
+        imageUrl={ImageCtaRight}
+        textPosition={'right'}
+      />
     </main>
   )
 }
