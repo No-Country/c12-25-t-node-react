@@ -42,7 +42,7 @@ const TitleText: React.FC<TitleTextProps> = ({
         textTransform={ textTransform ? textTransform : 'none' }
         padding={ padding ? padding : '16px' }
       />
-      { textToShow && textToShow.map(text => <Typography sx={ { padding: `${ paddingText ? paddingText : '16px' }` } }>{ text }</Typography>) }
+      { textToShow && textToShow.map(text => <Typography key={`${text.slice(0,9)}`} sx={ { padding: `${ paddingText ? paddingText : '16px' }` } }>{ text }</Typography>) }
     </Box>
   )
 }
