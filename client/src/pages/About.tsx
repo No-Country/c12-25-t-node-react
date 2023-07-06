@@ -1,8 +1,9 @@
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import TextBox from '../components/molecule/text-box/TextBox'
-import TitleText from '../components/molecule/title-text/TitleText'
+import TitleText from '../components/molecule/text/Text'
 import aboutBanner from '../assets/about-us-banner.png'
 import { ABOUT_US_TEXT } from '../utils/about-us-text'
+import Subtitle from '../components/atom/Subtitle'
 
 type AboutProps = {
 }
@@ -10,12 +11,15 @@ type AboutProps = {
 const About: React.FC<AboutProps> = () => {
   return (
     <BannerAndBackgroundPage imgSrc={ aboutBanner }>
-      <TextBox>
-        <TitleText
+      <TextBox subTitle={
+        <Subtitle
           title="Conocé nuestra "
           titleBold="Empresa"
           padding="2rem 2rem 1rem"
-          variant="h2"
+        />
+      }
+      >
+        <TitleText
           textToShow={ ABOUT_US_TEXT }
           paddingText="0.25rem 2rem"
         />

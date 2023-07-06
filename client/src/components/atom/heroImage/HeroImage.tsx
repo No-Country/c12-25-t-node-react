@@ -9,9 +9,10 @@ const HeroImage: React.FC<HeroImageProps> = ({ imgSrc, imgHeight }) => {
     return (
         <Grid sx={ {
             height: `${ imgHeight ? imgHeight : '50vh' }`,
-            backgroundImage: `url(${imgSrc})`,
+            backgroundImage: `url(${ imgSrc })`,
+            backgroundPosition: 'center center',
             backgroundSize: 'cover',
-            backgroundPosition: 'center'
+            backgroundRepeat: 'no-repeat'
         } }>
         </Grid>
     )

@@ -9,6 +9,7 @@ import NotFound from './pages/PageNotFound'
 import Login from './pages/Login'
 import About from './pages/About'
 import TermsConditions from './pages/TerrmsConditions'
+import Favorites from './pages/Favorites'
 import './App.css'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about" element={ <About /> } />
         <Route path="/terms-conditions" element={ <TermsConditions /> } />
         <Route path="/login" element={ <Login /> } />
+        <Route path="/favorites" element={ <Favorites /> } />
         <Route path="*" element={ <NotFound /> } />
       </Routes>
       <Footer />
