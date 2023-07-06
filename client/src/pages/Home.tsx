@@ -1,11 +1,11 @@
-import mockApiData from '../api/mockApi.json'
 import { useState, useEffect } from 'react'
+import mockApiData from '../api/mockApi.json'
 import HeroImage from '../components/atom/heroImage/HeroImage.tsx'
 import CallToActionContactForm from '../components/molecule/cta-contact-form/CallToActionContactForm.tsx'
+import FeaturedAcordion from '../components/template/featuredAcordion/FeaturedAcordion.tsx'
 import heroImageBanner from '../assets/heroImage.png'
 import ImageCtaLeft from '../assets/imageCtaRight.png'
 import ImageCtaRight from '../assets/imageCtaLeft.png'
-import FeaturedAcordion from '../components/template/featuredAcordion/FeaturedAcordion.tsx'
 
 type HomeProps = {}
 export interface Estates {
@@ -33,16 +33,14 @@ const Home: React.FC<HomeProps> = () => {
     setStatesForSale(estatesOnlyForSale)
     setStatesForRent(estatesOnlyForRent)
   }, [])
+
   return (
     <main>
-      <FeaturedAcordion textTitle="venta" estates={estatesForSale} />
-      <FeaturedAcordion textTitle="alquiler" estates={estatesForRent} />
-      <HeroImage imgSrc={heroImageBanner} />
-      <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
-      <CallToActionContactForm
-        imageUrl={ImageCtaRight}
-        textPosition={'right'}
-      />
+      <HeroImage imgSrc={ heroImageBanner } />
+      <FeaturedAcordion textTitle="venta" estates={ estatesForSale } />
+      <FeaturedAcordion textTitle="alquiler" estates={ estatesForRent } />
+      <CallToActionContactForm imageUrl={ ImageCtaLeft } textPosition={ 'left' } />
+      <CallToActionContactForm imageUrl={ ImageCtaRight } textPosition={ 'right' } />
     </main>
   )
 }
