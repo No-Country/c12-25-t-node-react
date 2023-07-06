@@ -19,24 +19,24 @@ const CallToActionContactForm: React.FC<ImageWithTextProps> = ({
   textPosition,
 }) => {
   return (
-    <Container maxWidth="lg" className={ `image-with-text ${ textPosition }` }>
-      <Box sx={ { position: 'relative', display: 'inline-block' } }>
-        <img src={ imageUrl } alt="Imagen" className="image-container" /> 
+    <Container maxWidth="lg" className={`image-with-text ${textPosition}`}>
+      <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+        <img src={imageUrl} alt="Imagen" className="image-container" />
         <Box
-          sx={ styleBox }
-          className={ (textPosition === 'left') ? 'box-position-left' : 'box-position-right' }
+          sx={styleBox}
+          className={(textPosition === 'left') ? 'box-position-left' : 'box-position-right'}
         >
-          { textPosition === "left" ? (
+          {textPosition === "left" ? (
             <>
               <Typography align="left" variant="body1">¿Tenés una propiedad que <strong>comercializar</strong> ?</Typography>
-              <Link to={ "/contact" }><PrimaryButton text={ "Contactanos" } /></Link>
+              <Link to={"/contact"}><PrimaryButton text={"Contactanos"} /></Link>
             </>
           ) : (
             <>
               <Typography align="left" variant="body1">¿Estás buscando <strong>invertir en un desarrollo inmobiliario</strong>?</Typography>
-              <Link to={ "/contact" }><PrimaryButton text={ "Contactanos" } /> </Link>
+              <Link to={"/contact"}><PrimaryButton text={"Contactanos"} /> </Link>
             </>
-          ) }
+          )}
         </Box>
       </Box>
     </Container >
