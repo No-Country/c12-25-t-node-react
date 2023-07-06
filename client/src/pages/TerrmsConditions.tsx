@@ -33,9 +33,9 @@ const TermsConditions: React.FC<TermsConditionsProps> = () => {
           } }
         />
         <Box className="text-scroll">
-          <Typography sx={ { padding: '1.5rem 1.5rem' } }>{ INTRODUCTION }</Typography>
+          <Typography sx={ { padding: '1.5rem 2rem' } }>{ INTRODUCTION }</Typography>
           { CONDITIONS && CONDITIONS.map(condition => (
-            <Box key={ condition.title } sx={ { padding: '0.25rem 1.5rem 1rem' } }>
+            <Box key={ condition.title } sx={ { padding: '0.25rem 2rem 1rem' } }>
               <Subtitle title={ condition.title } variant="h3" padding="20px 0px!important" fontWeight="600" />
               {
                 condition.text.map((text, index) => <Typography key={ `a-${ index }` } sx={ { paddingBottom: '0.5rem' } }>{ text }</Typography>)
