@@ -13,10 +13,10 @@ type LogoSocialMediaProps = {
 const LogoSocialMedia: React.FC<LogoSocialMediaProps> = () => {
   return (
     <Grid container spacing={ 2 } sx={ { padding: '1rem 0rem' } }>
-      <Grid item xs={ 12 } sm={ 9 }>
+      <Grid item xs={ 12 } sm={ 8 }>
         <LogoText />
       </Grid>
-      <Grid item xs={ 12 } sm={ 3 }>
+      <Grid item xs={ 12 } sm={ 4 }>
         <Typography align="right">
           Seguinos
           <Link to="/" className="links-footer-social"><InstagramIcon /></Link>

@@ -20,6 +20,7 @@ interface FeaturedCardProps {
 const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const navigate = useNavigate()
   const handleClick = () => navigate(`/detail/${id}`)
+
   const {
     id,
     description,
@@ -29,9 +30,8 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
     bathrooms,
     cars,
     image,
-    forRent,
-    forSale,
   } = estate
+
   return (
     <Card
       style={{ boxShadow: '0px 4px 10px grey' }}
@@ -94,23 +94,18 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
           >
             {adress}
           </Typography>
-
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex' }}>
-              <SquareFootIcon className="primary-light" />
-              <Typography>{area} m</Typography>
+              <SquareFootIcon className="primary-light" /><Typography>{area} m</Typography>
             </Box>
             <Box sx={{ display: 'flex' }}>
-              <BedIcon className="primary-light" />
-              <Typography>{bedrooms}</Typography>
+              <BedIcon className="primary-light" /><Typography>{bedrooms}</Typography>
             </Box>
             <Box sx={{ display: 'flex' }}>
-              <BathtubIcon className="primary-light" />
-              <Typography>{bathrooms}</Typography>
+              <BathtubIcon className="primary-light" /><Typography>{bathrooms}</Typography>
             </Box>
             <Box sx={{ display: 'flex' }}>
-              <DirectionsCarFilledIcon className="primary-light" />
-              <Typography>{cars}</Typography>
+              <DirectionsCarFilledIcon className="primary-light" /><Typography>{cars}</Typography>
             </Box>
           </Box>
         </Box>
