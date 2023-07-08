@@ -22,20 +22,20 @@ const LinksInfo: React.FC<LinksInfoProps> = () => {
         paddingBottom: '1.5rem'
       } }
     >
-      <Grid item xs={ 12 } sm={ 4 }>
-        <Subtitle title="servicios" variant="h3" textTransform="uppercase" />
+      <Grid item xs={ 12 } sm={ 4 }  className="services-company">
+        <Subtitle title="servicios" variant="h3" textTransform="uppercase" textColor="#F1F1F9" />
         <LinkList list={ SERVICES } />
       </Grid>
-      <Grid item xs={ 12 } sm={ 4 }>
-        <Subtitle title="empresa" variant="h3" textTransform="uppercase"/>
+      <Grid item xs={ 12 } sm={ 4 } className="services-company">
+        <Subtitle title="empresa" variant="h3" textTransform="uppercase" textColor="#F1F1F9" />
         <LinkList list={ COMPANY } />
       </Grid>
       <Grid item xs={ 12 } sm={ 4 }>
-        <Subtitle title="información" variant="h3" textTransform="uppercase" padding="16px 16px 16px 0px" />
-        <Typography sx={ { lineHeight: '34px' } }><LocationOnIcon /> Direccción de la oficina</Typography>
-        <Typography sx={ { lineHeight: '34px' } }><WhatsAppIcon /> Whatsapp de contacto</Typography>
-        <Typography sx={ { lineHeight: '34px' } }><PhoneIcon /> Teléfono de contacto</Typography>
-        <Typography sx={ { lineHeight: '34px' } }><EmailIcon /> Correo de contacto</Typography>
+        <Subtitle title="información" variant="h3" textTransform="uppercase" padding="16px 16px 16px 0px" textColor="#F1F1F9" />
+        <Typography sx={ { lineHeight: '26px', paddingBottom: '12px', fontSize: '14px' } }><LocationOnIcon /> Independencia 111, Buenos Aires, Argentina</Typography>
+        <Typography sx={ { lineHeight: '25px', paddingBottom: '12px', fontSize: '14px'  } }><WhatsAppIcon />+ 54 11 2222 3333</Typography>
+        <Typography sx={ { lineHeight: '26px', paddingBottom: '12px', fontSize: '14px'  } }><PhoneIcon /> + 54 11 3333 4444</Typography>
+        <Typography sx={ { lineHeight: '26px', paddingBottom: '12px', fontSize: '14px'  } }><EmailIcon /> info@appartamentos.com</Typography>
       </Grid>
     </Grid>
   )
