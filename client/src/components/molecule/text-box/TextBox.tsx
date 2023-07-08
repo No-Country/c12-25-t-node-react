@@ -21,7 +21,6 @@ const TextBox: React.FC<TextBoxProps> = ({
 }) => {
   return (
     <>
-  
       <Box
         sx={ {
           width: `${ paperWidth ? paperWidth : '80%' }`,
