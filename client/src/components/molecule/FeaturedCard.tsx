@@ -35,7 +35,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   return (
     <Card
       style={{ boxShadow: '0px 4px 10px grey' }}
-      sx={{ maxWidth: 350, height: 365, borderRadius: 5, boxShadow: 3 }}
+      sx={{ maxWidth: 350, height: 378, borderRadius: 5, boxShadow: 3 }}
     >
       <CardMedia
         sx={{ height: 200, objectFit: 'fill' }}
@@ -80,7 +80,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
           <Typography
             variant="body1"
             color="text.primary"
-            sx={{ marginTop: '1rem' }}
+            sx={{ marginTop: '1rem', minHeight: '52px' }}
           >
             {description}
           </Typography>
