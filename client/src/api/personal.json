@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Mateo",
+    "lastName": "Pérez",
+    "position": "Asesor Comercial",
+    "mail": "#",
+    "whatsapp": "#",
+    "image": "mateoPerez.png"
+  },
+  {
+    "id": 2,
+    "name": "Sofía",
+    "lastName": "Martínez",
+    "position": "Asesor Comercial",
+    "mail": "#",
+    "whatsapp": "#",
+    "image": "sofiaMartinez.png"
+  },
+  {
+    "id": 3,
+    "name": "Valentina",
+    "lastName": "López",
+    "position": "Asesor Comercial",
+    "mail": "#",
+    "whatsapp": "#",
+    "image": "valentinaLopez.png"
+  },
+  {
+    "id": 4,
+    "name": "Leonardo",
+    "lastName": "Torres",
+    "position": "Asesor Comercial",
+    "mail": "#",
+    "whatsapp": "#",
+    "image": "leonardoTorres.png"
+  },
+  {
+    "id": 5,
+    "name": "Isabella",
+    "lastName": "García",
+    "position": "Asesor Comercial",
+    "mail": "#",
+    "whatsapp": "#",
+    "image": "isabellaGarcia.png"
+  },
+  {
+    "id": 6,
+    "name": "Daniel",
+    "lastName": "Gómez",
+    "position": "Asesor Comercial",
+    "mail": "#",
+    "whatsapp": "#",
+    "image": "danielGomez.png"
+  },
+  {
+    "id": 7,
+    "name": "Ismael",
+    "lastName": "Sepulveda",
+    "position": "Asesor Comercial",
+    "mail": "#",
+    "whatsapp": "#",
+    "image": "ismaelSepulveda.png"
+  }
+]
