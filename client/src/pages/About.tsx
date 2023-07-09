@@ -27,13 +27,32 @@ const About: React.FC<AboutProps> = () => {
           paddingText="0.25rem 2rem"
         />
       </TextBox>
-      {persons.map((item: any) => (
-        <CardsAbout key={item.id}
-          image={item.image}
-          name={item.name}
-          lastName={item.lastName}
-          position={item.position} />
-      ))}
+      {persons.map((item: any) => {
+        if (item.id <= 6) {
+          return (
+            <CardsAbout
+              key={item.id}
+              image={item.image}
+              name={item.name}
+              lastName={item.lastName}
+              position={item.position}
+              isSpecialCard={false}
+            />
+          );
+        } else if (item.id === 7) {
+          return (
+            <CardsAbout
+              key={item.id}
+              image={item.image}
+              name={item.name}
+              lastName={item.lastName}
+              position={item.position}
+              isSpecialCard={true} // Aplicar la propiedad isSpecialCard
+            />
+          );
+        }
+        return null;
+      })}
 
     </BannerAndBackgroundPage>
   )
