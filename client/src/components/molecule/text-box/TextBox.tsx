@@ -6,7 +6,7 @@ import {
 
 type TextBoxProps = {
   children?: ReactNode,
-  subTitle: React.ReactElement,
+  subTitle?: React.ReactElement,
   paperMinHeight?: string,
   paperWidth?: string,
   paperMargin?: string
@@ -21,7 +21,6 @@ const TextBox: React.FC<TextBoxProps> = ({
 }) => {
   return (
     <>
-  
       <Box
         sx={ {
           width: `${ paperWidth ? paperWidth : '80%' }`,
@@ -39,7 +38,7 @@ const TextBox: React.FC<TextBoxProps> = ({
             minHeight: `${ paperMinHeight ? paperMinHeight : '300px' }`
           } }
         >
-          {subTitle}
+          { subTitle }
           { children }
         </Paper>
       </Box>
