@@ -25,7 +25,8 @@ const CardsAbout: React.FC<CardsProps> = ({
       alignItems: 'center',
       ...(isSpecialCard && {
         height: '305px',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        justifyContent: 'flex-start'
       })
 
     }}>
@@ -37,20 +38,24 @@ const CardsAbout: React.FC<CardsProps> = ({
           height: '100px',
           margin: '19px',
           ...(isSpecialCard && {
-
+            display: 'flex',
+            alignSelf: 'flex-start'
           })
         }} />
       <CardContent sx={{
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around',
+        justifyContent: isSpecialCard ? 'space-between' : 'space-around',
         paddingTop: '22px',
         height: '100%',
         width: '100%',
         padding: '0 !important'
 
       }}>
-        <Box>
+        <Box sx={{
+          paddingLeft: isSpecialCard ? '20px' : 0,
+
+        }}>
           <Typography variant="h5" component="div" sx={{
             color: '#1B17E7',
             fontSize: '16px'
@@ -62,11 +67,12 @@ const CardsAbout: React.FC<CardsProps> = ({
           </Typography>
         </Box>
         {isSpecialCard ? (
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px', paddingRight: '14px' }}>
+          <Box sx={{ display: 'flex', justifyContent: isSpecialCard ? 'flex-end' : 'center', alignItems: 'center', gap: '8px', paddingRight: '14px' }}>
             <PrimaryButton text={"Solicitar Reunion"} sx={{
               fontFamily: 'Monserrat',
-              padding: '15px',
-              borderRadius: '10px'
+              padding: '20px',
+              borderRadius: '10px',
+              marginBottom: isSpecialCard ? '15px' : 0,
             }} />
           </Box>
         ) : (
