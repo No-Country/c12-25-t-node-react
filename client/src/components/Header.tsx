@@ -6,10 +6,8 @@ import {
   Tab,
   Box,
   IconButton,
-  Grid,
   useTheme,
   useMediaQuery,
-  Typography,
 } from '@mui/material'
 import LogoText from './atom/LogoText'
 import PrimaryButton from '../components/atom/PrimaryButton'
