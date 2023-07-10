@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useParams  } from 'react-router-dom'
 import { Container } from '@mui/material'
 import DetailProperty from '../components/molecule/detail-property/DetailProperty'
+import jsonData from '../api/state-detail-mock.json'
 
 type DetailProps = {
 }
@@ -75,6 +77,22 @@ const stateDetail = {
 const Detail: React.FC<DetailProps> = () => {
   // TODO: cuando este la parte del back hay que buscar la propiedad por el id y ahi setear el estado
   const [stateById, setStateById] = useState(stateDetail)
+  const params = useParams<{ id: string }>();
+  const id: number = parseInt(params.id, 10); // Convertir a númer
+
+  /*
+  De esta manera, parsedParamValue será de tipo number si el parámetro existe y tiene un valor numérico válido. Si el parámetro está ausente o no se puede convertir a number, parsedParamValue será NaN.
+  */
+
+  useEffect(() => {
+    const filteredState = jsonData.states_detail.find(
+      (state) => state.state_datail_id === id
+    )
+    if(filteredState === null) setStateById({})
+    setStateById(filteredState);
+  }, [id]);
+
+  
   const {
     covered_area,
     uncoverd_area,
