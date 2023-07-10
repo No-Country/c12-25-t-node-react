@@ -1,9 +1,9 @@
-export type StatesDetail = {
-  states_detail: StateDetail[];
+export type EstatesDetail = {
+  estates_detail: EstateDetail[];
 }
 
-export type StateDetail = {
-  state_datail_id:  number;
+export type EstateDetail = {
+  estate_datail_id:  number;
   name:             string;
   description:      string;
   zone:             string;
@@ -30,7 +30,7 @@ export type StateDetail = {
   grill:            number;
   credit_worthy:    boolean;
   professional_use: boolean;
-  state_photos:     StatePhoto[];
+  estate_photos:     EstatePhoto[];
   services:         Services;
   rooms:            { [key: string]: number };
 }
@@ -53,7 +53,7 @@ export type Services = {
   ascensor:    boolean;
 }
 
-export type StatePhoto = {
-  state_photo_id: number;
+export type EstatePhoto = {
+  estate_photo_id: number;
   url:            string;
 }

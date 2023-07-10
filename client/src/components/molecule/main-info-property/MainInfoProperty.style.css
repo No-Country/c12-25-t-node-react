@@ -1,0 +1,8 @@
+.back-link {
+  text-decoration: none;
+  color: #1DAEFF;
+}
+
+.back-link:hover {
+  color: #1B17E7;
+}

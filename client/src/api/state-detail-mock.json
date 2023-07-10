@@ -1,11 +1,12 @@
 {
-  "states_detail": [
+  "estates_detail": [
     {
-      "state_datail_id": 1,
+      "estate_datail_id": 1,
       "name": "Casa de 5 ambientes en Villa Urquiza",
       "description": "Casa de dos pisos con orientación oeste. Cuenta con 9 ambientes, gran living-comedor, cocina con doble mesada, lavadero espacioso , 2 baños completos, 5 dormitorios (dos de ellos con vestidor y balcón). Pisos de madera en combinación con porcelanato, aberturas de aluminio anodizado, cortina de enrollar en dormitorios, placares completos con interiores, calefacción prevista para colocación de estufa y agua caliente por termotanque a gas. Cocina con gran espacio de mesada en granito, bacha de acero inoxidable, cocina a gas instalada, mobiliario completo de bajo mesada más alacena, purificador y espacio técnico para heladera, microondas y lavarropas. Baños con ventilación natural, loza sanitaria y griferías de primeras marcas, vanitory incorporado con espejo y accesorios colocados, bañera y revestimiento en paredes. Jardín arbolado con cítricos y amplio espacio para incorporar pileta y asador."
       ,
       "zone": "Esta propiedad se encuentra situada en Villa Urquiza, un histórico barrio residencial que complementa su vida familiar, con una amplia oferta comercial, gastronómica y recreativa. Ubicado estrategicamente a una cuadra de plaza Zapiola y a cinco cuadras de la estación Juan Manuel de Rosas de la línea B de subterráneos, el inmueble posee gran conectividad con toda la ciudad.",
+      "address": "Av. Monroe 4511",
       "city": "Villa Urquiza",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -23,23 +24,22 @@
       "elevator": 0,
       "gym": 0,
       "antiquity": 3,
-      "state_id": 1,
+      "estate_id": 1,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
-      "professional_use": true,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -67,11 +67,11 @@
       }
     },
     {
-      "state_datail_id": 2,
+      "estate_datail_id": 2,
       "name": "Casa 3 dormitorios en Belgrano",
-      "description": "Casa de dos pisos con orientación este. Cuenta con 3 dormitorios y jardín."
-      ,
+      "description": "Casa de dos pisos con orientación este. Cuenta con 3 dormitorios y jardín.",
       "zone": "Esta propiedad se encuentra situada en Belgrano.",
+      "address": "Belgrano 1122",
       "city": "Belgrano",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -89,13 +89,13 @@
       "elevator": 0,
       "gym": 0,
       "antiquity": 15,
-      "state_id": 2,
+      "estate_id": 2,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
           "state_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
@@ -133,10 +133,11 @@
       }
     },
     {
-      "state_datail_id": 3,
-      "name": "Departamento 2 dormitorios en Villa Urquiza, con amplio balcón de 100mt2.",
-      "description": "Departamento 2 dormitorios en Villa Urquiza.",
+      "estate_datail_id": 3,
+      "name": "Departamento 2 dormitorios en Villa Urquiza",
+      "description": "Departamento 2 dormitorios en Villa Urquiza, con amplio balcón de 100mt2.",
       "zone": "Este departamento se encuentra situado en Villa Urquiza, un histórico barrio residencial que complementa su vida familiar, con una amplia oferta comercial, gastronómica y recreativa. Ubicado estrategicamente a una cuadra de plaza Zapiola y a cinco cuadras de la estación Juan Manuel de Rosas de la línea B de subterráneos, el inmueble posee gran conectividad con toda la ciudad.",
+      "address": "Calle Falsa 123",
       "city": "Villa Urquiza",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -154,23 +155,23 @@
       "elevator": 3,
       "gym": 0,
       "antiquity": 12,
-      "state_id": 3,
+      "estate_id": 3,
       "garden": false,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -198,10 +199,11 @@
       }
     },
     {
-      "state_datail_id": 4,
+      "estate_datail_id": 4,
       "name": "Casa 6 dormitorios en Caballito",
       "description": "Casa de 6 domitorios en Caballito, en Tucumán al 2020. DE 800mts2 totales. Cuenta con 6 habitaciones, 3 baños y garage para 2 autos.",
       "zone": "Esta propiedad se encuentra situada en Caballito.",
+      "address": "Belgrano 1122",
       "city": "Caballito",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -219,23 +221,23 @@
       "elevator": 0,
       "gym": 1,
       "antiquity": 10,
-      "state_id": 4,
+      "estate_id": 4,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -263,10 +265,11 @@
       }
     },
     {
-      "state_datail_id": 4,
+      "estate_datail_id": 4,
       "name": "Casa 6 dormitorios en Caballito",
       "description": "Casa de 6 domitorios en Caballito, en Tucumán al 2020. DE 800mts2 totales. Cuenta con 6 habitaciones, 3 baños y garage para 2 autos.",
       "zone": "Esta propiedad se encuentra situada en Caballito.",
+      "address": "Acoyte 123",
       "city": "Caballito",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -284,23 +287,23 @@
       "elevator": 0,
       "gym": 1,
       "antiquity": 10,
-      "state_id": 4,
+      "estate_id": 4,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -328,10 +331,11 @@
       }
     },
     {
-      "state_datail_id": 5,
+      "estate_datail_id": 5,
       "name": "Casa 5 dormitorios en Palermo",
       "description": "Casa de 5 domitorios en Palermo, en Av. Colón al 4511. De 680mts2 totales. Cuenta con 5 habitaciones, 2 baños y garage para 2 autos.",
       "zone": "Esta propiedad se encuentra situada en Palermo.",
+      "address": "Calle Falsa 123",
       "city": "Palermo",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -349,23 +353,23 @@
       "elevator": 0,
       "gym": 0,
       "antiquity": 3,
-      "state_id": 5,
+      "estate_id": 5,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -393,10 +397,11 @@
       }
     },
     {
-      "state_datail_id": 6,
+      "estate_datail_id": 6,
       "name": "Casa 5 dormitorios en Belgrano",
       "description": "Casa de 5 domitorios en Belgrano, en Av. Monroew al 4522. De 680mts2 totales. Cuenta con 5 habitaciones, 2 baños y garage para 2 autos.",
       "zone": "Esta propiedad se encuentra situada en Caballito.",
+      "address": "Tucumán 2020",
       "city": "Belgrano",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -414,23 +419,23 @@
       "elevator": 0,
       "gym": 1,
       "antiquity": 10,
-      "state_id": 6,
+      "estate_id": 6,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -458,10 +463,11 @@
       }
     },
     {
-      "state_datail_id": 7,
+      "estate_datail_id": 7,
       "name": "Casa 2 dormitorios en Caballito",
       "description": "Casa de 2 domitorios en Caballito, en Tucumán al 2020. De 450mts2 totales. Cuenta con 2 habitaciones, 1 baño y garage para 1 auto.",
       "zone": "Esta propiedad se encuentra situada en Caballito.",
+      "address": "Av. Colón 4511",
       "city": "Caballito",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -479,23 +485,23 @@
       "elevator": 4,
       "gym": 1,
       "antiquity": 10,
-      "state_id": 7,
+      "estate_id": 7,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -523,11 +529,12 @@
       }
     },
     {
-      "state_datail_id": 8,
+      "estate_datail_id": 8,
       "name": "Monoambiente en Palermo",
       "description": "Monoambiente en Palermo, en Av. Colón al 4511. De 60mts2 totales. Cuenta con 1 habitacion y 1 baños.",
       "zone": "Esta propiedad se encuentra situada en Palermo. No posee garage pero hay opción de alquilar cochera en el mismo edificio.",
-      "city": "Caballito",
+      "address": "Av. Colon 4511",
+      "city": "Palermo",
       "province": "Capital Federal",
       "country": "Argentina",
       "price": 120000,
@@ -544,23 +551,23 @@
       "elevator": 6,
       "gym": 1,
       "antiquity": 10,
-      "state_id": 8,
+      "estate_id": 8,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
@@ -588,11 +595,12 @@
       }
     },
     {
-      "state_datail_id": 9,
+      "estate_datail_id": 9,
       "name": "Casa de 2 dormitorios en Belgrano",
       "description": "Casa de 2 dormitorios en Belgrano, en Av. Monroe al 4511. De 450mts2 totales. Cuenta con 2 habitacion, 1 baños y cochera para 1 auto.",
       "zone": "Esta propiedad se encuentra situada en Belgrano.",
-      "city": "Caballito",
+      "address": "Av. Monroe 4511",
+      "city": "Belgrano",
       "province": "Capital Federal",
       "country": "Argentina",
       "price": 120000,
@@ -609,23 +617,23 @@
       "elevator": 6,
       "gym": 1,
       "antiquity": 10,
-      "state_id": 9,
+      "estate_id": 9,
       "garden": true,
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
-      "state_photos": [
+      "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://picsum.photos/id/208/367/267"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://picsum.photos/id/193/3578/2451"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://picsum.photos/id/217/367/267"
         }
       ],
