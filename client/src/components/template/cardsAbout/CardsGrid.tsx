@@ -1,19 +1,19 @@
-import { Container, Grid } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
 import CardsAbout from './CardsAbout'
 import persons from '../../../api/personal.json'
 
 const CardsGrid = () => {
 
   return (
-    <Container maxWidth="xl" sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+    <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'column' }}>
+      <Typography variant="body1" sx={{ fontSize: '25px', padding: '20px 26px', textAlign: { lg: 'left', md: 'center', sm: 'center', xs: 'center' } }}>Comunicate con nuestro <strong>equipo</strong></Typography>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          {/* Contenedor para el contenido */}
           <Grid container spacing={2} justifyContent="space-around">
             {/* First column */}
             <Grid item xs={12} sm={6} md={6} lg={3} xl={2} sx={gridStyleAbout}>
               {persons
-                .filter((item: any) => item.id <= 2) // Filtrar las primeras 2 cards
+                .filter((item: any) => item.id <= 2)
                 .map((item: any) => (
                   <CardsAbout
                     key={item.id}
@@ -43,7 +43,7 @@ const CardsGrid = () => {
             {/* Third column */}
             <Grid item xs={12} sm={6} md={6} lg={3} xl={2} sx={gridStyleAbout}>
               {persons
-                .filter((item: any) => item.id > 4 && item.id <= 6) // Filtrar las cards 5 y 6
+                .filter((item: any) => item.id > 4 && item.id <= 6)
                 .map((item: any) => (
                   <CardsAbout
                     key={item.id}
@@ -58,7 +58,7 @@ const CardsGrid = () => {
             {/* Fourth column */}
             <Grid item xs={12} sm={6} md={6} lg={3} xl={2} sx={gridStyleAbout}>
               {persons
-                .filter((item: any) => item.id === 7) // Filtrar la última card
+                .filter((item: any) => item.id === 7)
                 .map((item: any) => (
                   <CardsAbout
                     key={item.id}
