@@ -19,8 +19,8 @@ const CallToActionContactForm: React.FC<ImageWithTextProps> = ({
   textPosition,
 }) => {
   return (
-    <Container maxWidth="lg" className={`image-with-text ${textPosition}`}>
-      <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+    <Container maxWidth="lg" className={`image-with-text ${textPosition}`} >
+      <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', padding: '1rem 0rem' }}>
         <img src={imageUrl} alt="Imagen" className="image-container" />
         <Box
           sx={styleBox}
@@ -40,9 +40,8 @@ const CallToActionContactForm: React.FC<ImageWithTextProps> = ({
         </Box>
       </Box>
     </Container >
-
-  );
-};
+  )
+}
 
 export default CallToActionContactForm;
 

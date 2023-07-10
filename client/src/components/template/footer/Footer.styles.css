@@ -19,3 +19,9 @@ footer {
 .links-footer-social:hover {
   color: var(--primary-light);
 }
+
+@media all and (max-width: 600px) {
+  .services-company {
+    display: none;
+  }
+}
