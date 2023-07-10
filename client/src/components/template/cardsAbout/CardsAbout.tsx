@@ -15,7 +15,17 @@ const CardsAbout: React.FC<CardsProps> = ({
 }) => {
   return (
     <Card sx={{
-      cardStyleAbout, ...(isSpecialCard && {
+      width: { xs: '175px', sm: '305px' },
+      height: { xs: 'auto', sm: '142px' },
+      background: '#F5F5F5',
+      borderRadius: '10px',
+      boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+      display: 'flex',
+      flexDirection: { xs: 'column', sm: 'row' },
+      justifyContent: { lg: 'center' },
+      alignItems: 'center',
+      marginBottom: '20px',
+      margin: { xs: '20px 10px', sm: '20px 0' }, ...(isSpecialCard && {
         width: { xs: '370px', sm: '305px' },
         height: { xs: 'auto', sm: '324px' },
         flexDirection: { xs: 'row', sm: 'column' },
@@ -82,17 +92,7 @@ const CardsAbout: React.FC<CardsProps> = ({
 export default CardsAbout
 
 const cardStyleAbout = {
-  width: { xs: '175px', sm: '305px' },
-  height: { xs: 'auto', sm: '142px' },
-  background: '#F5F5F5',
-  borderRadius: '10px',
-  boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-  display: 'flex',
-  flexDirection: { xs: 'column', sm: 'row' },
-  justifyContent: { lg: 'center' },
-  alignItems: 'center',
-  marginBottom: '20px',
-  margin: { xs: '20px 10px', sm: '20px 0' },
+
 }
 
 const buttonStyleAbout = {
