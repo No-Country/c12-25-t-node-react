@@ -1,65 +1,65 @@
 [
   {
     "id": 1,
-    "name": "Mateo",
-    "lastName": "Pérez",
+    "name": "Ismael",
+    "lastName": "Quintana",
     "position": "Asesor Comercial",
     "mail": "#",
     "whatsapp": "#",
-    "image": "mateoPerez.png"
+    "image": "ismaelQuintana.png"
   },
   {
     "id": 2,
-    "name": "Sofía",
-    "lastName": "Martínez",
+    "name": "Laura",
+    "lastName": "Suárez",
     "position": "Asesor Comercial",
     "mail": "#",
     "whatsapp": "#",
-    "image": "sofiaMartinez.png"
+    "image": "lauraSuarez.png"
   },
   {
     "id": 3,
-    "name": "Valentina",
-    "lastName": "López",
+    "name": "Marcos",
+    "lastName": "Farías",
     "position": "Asesor Comercial",
     "mail": "#",
     "whatsapp": "#",
-    "image": "valentinaLopez.png"
+    "image": "marcosFarias.png"
   },
   {
     "id": 4,
-    "name": "Leonardo",
-    "lastName": "Torres",
+    "name": "Jazmín",
+    "lastName": "Príncipe",
     "position": "Asesor Comercial",
     "mail": "#",
     "whatsapp": "#",
-    "image": "leonardoTorres.png"
+    "image": "jazminPrincipe.png"
   },
   {
     "id": 5,
-    "name": "Isabella",
-    "lastName": "García",
+    "name": "Marisa",
+    "lastName": "Civriatti",
     "position": "Asesor Comercial",
     "mail": "#",
     "whatsapp": "#",
-    "image": "isabellaGarcia.png"
+    "image": "marisaCiviratti.png"
   },
   {
     "id": 6,
-    "name": "Daniel",
-    "lastName": "Gómez",
+    "name": "Lautaro",
+    "lastName": "Márcico",
     "position": "Asesor Comercial",
     "mail": "#",
     "whatsapp": "#",
-    "image": "danielGomez.png"
+    "image": "lautaroMarcico.png"
   },
   {
     "id": 7,
-    "name": "Ismael",
-    "lastName": "Sepulveda",
-    "position": "Asesor Comercial",
+    "name": "Rubén Darío",
+    "lastName": "Martínez",
+    "position": "Gerente de ventas",
     "mail": "#",
     "whatsapp": "#",
-    "image": "ismaelSepulveda.png"
+    "image": "rubenDarioMartinez.png"
   }
 ]

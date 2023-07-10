@@ -28,9 +28,6 @@ const About: React.FC<AboutProps> = () => {
         />
       </TextBox>
       <CardsGrid />
-
-
-
     </BannerAndBackgroundPage>
   )
 }
