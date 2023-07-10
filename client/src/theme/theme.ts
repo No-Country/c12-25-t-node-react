@@ -1,13 +1,13 @@
-import { createTheme } from "@mui/material/styles"
+import { createTheme } from '@mui/material/styles'
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface Palette {
     primaryBlackish: string
     primaryLight: string
     primaryLighter: string
-    primaryDarker: string,
-    bgDark: string,
-    bgGray: string,
+    primaryDarker: string
+    bgDark: string
+    bgGray: string
     bgLight: string
     bgLighter: string
   }
@@ -24,35 +24,38 @@ declare module "@mui/material/styles" {
 }
 
 export interface CustomStyleProps {
-  primaryBlackish?: string,
-  primaryLight?: string,
-  primaryLighter?: string,
-  primaryDarker?: string,
-  bgDark?: string,
-  bgGray?: string,
-  bgLight?: string,
+  primaryBlackish?: string
+  primaryLight?: string
+  primaryLighter?: string
+  primaryDarker?: string
+  bgDark?: string
+  bgGray?: string
+  bgLight?: string
   bgLighter?: string
 }
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
-    anchor: React.CSSProperties;
+    anchor: React.CSSProperties
   }
 
   // allow configuration using `createTheme`
   interface TypographyVariantsOptions {
-    anchor?: React.CSSProperties;
+    anchor?: React.CSSProperties
   }
 }
 
 // Update the Typography's variant prop options
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
-    anchor: true;
+    anchor: true
   }
 }
 
 export const appArtamentosTheme = createTheme({
+  breakpoints: {
+    values: { xs: 0, sm: 600, md: 1006, lg: 1200, xl: 1536 },
+  },
   palette: {
     primaryBlackish: '#010108',
     primaryLight: '#1DAEFF',
@@ -63,121 +66,121 @@ export const appArtamentosTheme = createTheme({
     bgLight: '#F1F1F9',
     bgLighter: '#F5F5F5',
     primary: {
-      main: '#1B17E7'
+      main: '#1B17E7',
     },
     secondary: {
-      main: '#1DAEFF'
+      main: '#1DAEFF',
     },
     error: {
-      main: '#CD1812'
+      main: '#CD1812',
     },
     warning: {
-      main: '#FFBA33'
+      main: '#FFBA33',
     },
     success: {
-      main: '#1C8747'
-    }
+      main: '#1C8747',
+    },
   },
   typography: {
     fontFamily: 'Nunito, Nunito Sans, sans-serif',
     h1: {
       fontSize: '30px',
       lineHeight: '42px',
-      fontWeight: 700
+      fontWeight: 700,
     },
     h2: {
       fontSize: '28px',
       lineHeight: '30px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     h3: {
       fontSize: '18px',
       lineHeight: '24px',
-      fontWeight: 700
+      fontWeight: 700,
     },
     h4: {
       fontSize: '18px',
       lineHeight: '24px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     h5: {
       fontSize: '15px',
       lineHeight: '21px',
-      fontWeight: 500
+      fontWeight: 500,
     },
     body1: {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: '15px',
       lineHeight: '25px',
-      fontWeight: 400
+      fontWeight: 400,
     },
     body2: {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: '15px',
       lineHeight: '25px',
-      fontWeight: 300
+      fontWeight: 300,
     },
     caption: {
       fontFamily: 'Montserrat, sans-serif',
       fontSize: '11px',
       lineHeight: '15px',
-      fontWeight: 600
+      fontWeight: 600,
     },
     button: {
       fontSize: '15px',
       lineHeight: '21px',
       fontWeight: 700,
-      textTransform: 'none'
+      textTransform: 'none',
     },
     anchor: {
       fontSize: '13px',
       fontWeight: 700,
       color: '#1226AA',
       textDecoration: 'underline',
-    }
+    },
   },
   components: {
     MuiTextField: {
       defaultProps: {
-        variant: 'filled'
+        variant: 'filled',
       },
       styleOverrides: {
         root: {
           input: {
             '&[type=number]': {
-              'MozAppearance': 'textfield',
+              MozAppearance: 'textfield',
             },
             '&::-webkit-outer-spin-button': {
-              'WebkitAppearance': 'none',
+              WebkitAppearance: 'none',
               margin: 0,
             },
             '&::-webkit-inner-spin-button': {
-              'WebkitAppearance': 'none',
+              WebkitAppearance: 'none',
               margin: 0,
-            }
-          }
-        }
-      }
+            },
+          },
+        },
+      },
     },
     MuiInputLabel: {
       defaultProps: {
-        shrink: true
+        shrink: true,
       },
       styleOverrides: {
         root: {
           '&.Mui-error': {
-            color: 'black'
+            color: 'black',
           },
           '&.Mui-focused': {
-            color: 'black'
-          }
-        }
-      }
+            color: 'black',
+          },
+        },
+      },
     },
     MuiFilledInput: {
       defaultProps: {
         disableUnderline: true,
-        size: 'small'
+        size: 'small',
       },
       styleOverrides: {
         root: ({ theme }) => ({
@@ -195,18 +198,18 @@ export const appArtamentosTheme = createTheme({
           },
           '&.Mui-error': {
             borderColor: '#CD1812',
-          }
-        })
-      }
+          },
+        }),
+      },
     },
     MuiSelect: {
       defaultProps: {
-        variant: 'filled'
+        variant: 'filled',
       },
     },
     MuiButton: {
       defaultProps: {
-        disableRipple: true
+        disableRipple: true,
       },
       styleOverrides: {
         root: {
@@ -221,7 +224,7 @@ export const appArtamentosTheme = createTheme({
           },
           ':hover': {
             backgroundColor: '#BFBFBF',
-          }
+          },
         },
         outlined: {
           border: '2px solid',
@@ -231,27 +234,28 @@ export const appArtamentosTheme = createTheme({
           },
           ':focus': {
             color: 'white',
-            background: '#1226AA'
+            background: '#1226AA',
           },
           '&.Mui-disabled': {
             border: '2px solid #8F9193',
-            color: '#8F9193'
-          }
+            color: '#8F9193',
+          },
         },
         containedPrimary: {
           background: '#1B17E7',
           ':hover': {
-            backgroundColor: 'linear-gradient(270deg, #1226AA 0%, #121A52 103.21%)'
+            backgroundColor:
+              'linear-gradient(270deg, #1226AA 0%, #121A52 103.21%)',
           },
           ':focus': {
-            backgroundColor: '#121A52'
+            backgroundColor: '#121A52',
           },
           '&.Mui-disabled': {
             background: '#8F9193',
-            color: 'white'
-          }
+            color: 'white',
+          },
         },
-      }
+      },
     },
     MuiTableCell: {
       styleOverrides: {
@@ -262,27 +266,27 @@ export const appArtamentosTheme = createTheme({
           lineHeight: '21px',
           color: '#202327',
           textAlign: 'left',
-          borderBottom: 'none'
+          borderBottom: 'none',
         },
         head: {
           color: '#555555',
           fontSize: '13px',
           lineHeight: '15px',
-          fontFamily: 'Nunito Sans, sans-serif'
-        }
-      }
+          fontFamily: 'Nunito Sans, sans-serif',
+        },
+      },
     },
     MuiTableRow: {
       styleOverrides: {
         root: {
-          ":nth-of-type(odd)": {
+          ':nth-of-type(odd)': {
             background: 'rgba(231,233,247,0.4)',
-          }
+          },
         },
         head: {
-          backgroundColor: '#fff !important'
+          backgroundColor: '#fff !important',
         },
-      }
+      },
     },
     MuiSwitch: {
       styleOverrides: {
@@ -313,12 +317,10 @@ export const appArtamentosTheme = createTheme({
           '& .Mui-focusVisible': {
             backgroundColor: '#1226AA',
             color: '#F1F2FA',
-
           },
           '& .Mui-checked.Mui-focusVisible': {
             backgroundColor: 'black',
             color: 'white',
-
           },
           '& .MuiSwitch-thumb': {
             boxShadow: '0 2px 4px 0 rgb(0 35 11 / 20%)',
@@ -333,33 +335,35 @@ export const appArtamentosTheme = createTheme({
             borderRadius: 16 / 2,
             opacity: 1,
             backgroundColor:
-              theme.palette.mode === 'dark' ? 'rgba(255,255,255,.35)' : 'rgba(0,0,0,.25)',
+              theme.palette.mode === 'dark'
+                ? 'rgba(255,255,255,.35)'
+                : 'rgba(0,0,0,.25)',
             boxSizing: 'border-box',
-            ".Mui-checked.Mui-checked + &": {
+            '.Mui-checked.Mui-checked + &': {
               // Controls checked color for the track
               opacity: 0.1,
-              backgroundColor: "#fff"
-            }
-          }
-        })
-      }
+              backgroundColor: '#fff',
+            },
+          },
+        }),
+      },
     },
     MuiTypography: {
       styleOverrides: {
         //@ts-ignore
-        'anchor': {
+        anchor: {
           ':hover': {
-            cursor: 'pointer'
-          }
-        }
-      }
+            cursor: 'pointer',
+          },
+        },
+      },
     },
     MuiDialog: {
       styleOverrides: {
         paper: {
-          borderRadius: '8px'
-        }
-      }
+          borderRadius: '8px',
+        },
+      },
     },
     MuiSnackbar: {
       styleOverrides: {
@@ -369,35 +373,37 @@ export const appArtamentosTheme = createTheme({
             fontSize: '15px',
             lineHeight: '17px',
             color: 'black',
-            backgroundColor: theme.palette.bgLight
-          }
-        })
-      }
+            backgroundColor: theme.palette.bgLight,
+          },
+        }),
+      },
     },
-    MuiAutocomplete: { // fix popper wont open
+    MuiAutocomplete: {
+      // fix popper wont open
       defaultProps: {
         componentsProps: {
           popper: {
             sx: {
-              height: 0
-            }
+              height: 0,
+            },
           },
           paper: {
             sx: {
-              width: 'max-content'
-            }
-          }
-        }
-      }
+              width: 'max-content',
+            },
+          },
+        },
+      },
     },
-    MuiDatePicker: { // fix popper wont open
+    MuiDatePicker: {
+      // fix popper wont open
       defaultProps: {
         PopperProps: {
           sx: {
-            height: 0
-          }
-        }
-      }
+            height: 0,
+          },
+        },
+      },
     },
     MuiChip: {
       styleOverrides: {
@@ -406,36 +412,35 @@ export const appArtamentosTheme = createTheme({
           borderRadius: '8px',
           fontSize: '9px',
           fontWeight: 700,
-          color: theme.palette.primary.main
-        })
-      }
+          color: theme.palette.primary.main,
+        }),
+      },
     },
     MuiDivider: {
       styleOverrides: {
         root: ({ theme }) => ({
           borderColor: theme.palette.bgLight,
-          borderWidth: '1px'
-        })
-      }
+          borderWidth: '1px',
+        }),
+      },
     },
     MuiAlert: {
       defaultProps: {
         style: {
           borderRadius: '0.8rem',
-          fontSize: '1rem'
+          fontSize: '1rem',
         },
       },
       styleOverrides: {
         standardError: {
           border: '1px solid #CD1812',
-          background: 'rgba(244,67,54,0.1)'
+          background: 'rgba(244,67,54,0.1)',
         },
         standardSuccess: {
           border: '1px solid #66BB6A',
-          background: 'rgba(102, 187, 106, 0.1)'
-        }
-      }
-    }
-  }
-}
-)
+          background: 'rgba(102, 187, 106, 0.1)',
+        },
+      },
+    },
+  },
+})

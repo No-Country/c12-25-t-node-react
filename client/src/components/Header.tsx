@@ -1,8 +1,21 @@
 import { useState, useEffect } from 'react'
-import { AppBar, Toolbar, Tabs, Tab } from '@mui/material'
+import {
+  AppBar,
+  Toolbar,
+  Tabs,
+  Tab,
+  Box,
+  IconButton,
+  Grid,
+  useTheme,
+  useMediaQuery,
+  Typography,
+} from '@mui/material'
 import LogoText from './atom/LogoText'
 import PrimaryButton from '../components/atom/PrimaryButton'
 import { useNavigate, useLocation } from 'react-router-dom'
+import DrawerComp from './DrawerComp'
+import PersonIcon from '@mui/icons-material/Person'
 type HeaderProps = {
   /* aca van las props, ej:
   title: string
@@ -12,8 +25,13 @@ type HeaderProps = {
 }
 let tab = 0
 const Header: React.FC<HeaderProps> = () => {
-  let navigate = useNavigate()
-  let { pathname } = useLocation()
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+  const theme = useTheme()
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
+  console.log(theme)
+  console.log(isMd)
+
   useEffect(() => {
     switch (pathname) {
       case '/':
@@ -60,24 +78,63 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
       <AppBar position="fixed" sx={{ backgroundColor: 'white' }}>
-        <Toolbar>
-          <LogoText />
+        <Toolbar
+          disableGutters={true}
+          sx={{
+            justifyContent: 'space-between',
+            display: 'flex',
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', marginRight: 1 }}>
+            <DrawerComp />
+
+            <LogoText variant="h1" />
+          </Box>
           <Tabs
+            sx={{ display: { xs: 'none', md: 'flex', lg: 'flex' } }}
             textColor="primary"
             value={selectedTab}
             onChange={(e, value) => handleTab(value)}
             indicatorColor="primary"
           >
-            <Tab label="Home" sx={{ color: 'black', fontWeight: 10 }} />
+            <Tab
+              label="Home"
+              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
+            />
 
-            <Tab label="Propiedades" sx={{ color: 'black', fontWeight: 10 }} />
+            <Tab
+              label="Propiedades"
+              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
+            />
             <Tab
               label="Quienes somos"
-              sx={{ color: 'black', fontWeight: 10 }}
+              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
             />
-            <Tab label="Contacto" sx={{ color: 'black', fontWeight: 10 }} />
+            <Tab
+              label="Contacto"
+              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
+            />
           </Tabs>
-          <PrimaryButton text="Iniciar Sesión" sx={{ marginLeft: 'auto' }} />
+          {!isMd ? (
+            <PrimaryButton
+              text="Iniciar Sesión"
+              sx={{ marginRight: 2 }}
+              size="small"
+              onClick={() => navigate('/login')}
+            />
+          ) : (
+            <IconButton
+              sx={{
+                marginRight: 2,
+                boxShadow: 3,
+                borderRadius: 2,
+                color: 'black',
+              }}
+              onClick={() => navigate('/login')}
+            >
+              <PersonIcon />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
     </header>
