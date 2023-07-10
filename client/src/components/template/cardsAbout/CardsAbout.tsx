@@ -1,5 +1,4 @@
 import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
-import React from 'react'
 import { Email, WhatsApp } from '@mui/icons-material';
 import PrimaryButton from '../../atom/PrimaryButton';
 
@@ -11,8 +10,13 @@ interface CardsProps {
   isSpecialCard: boolean;
 }
 const CardsAbout: React.FC<CardsProps> = ({
-  image, name, lastName, position, isSpecialCard
+  image,
+  name,
+  lastName,
+  position,
+  isSpecialCard
 }) => {
+
   return (
     <Card sx={{
       width: { xs: '175px', sm: '305px' },
@@ -90,10 +94,6 @@ const CardsAbout: React.FC<CardsProps> = ({
 }
 
 export default CardsAbout
-
-const cardStyleAbout = {
-
-}
 
 const buttonStyleAbout = {
   borderRadius: '5px',
