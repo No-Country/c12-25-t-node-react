@@ -4,8 +4,8 @@ import TitleText from '../components/molecule/text/Text'
 import aboutBanner from '../assets/about-us-banner.png'
 import { ABOUT_US_TEXT } from '../utils/about-us-text'
 import Subtitle from '../components/atom/Subtitle'
-import CardsAbout from '../components/template/cardsAbout/CardsAbout'
-import persons from '../api/personal.json'
+import CardsGrid from '../components/template/cardsAbout/CardsGrid'
+
 
 type AboutProps = {
 }
@@ -27,32 +27,9 @@ const About: React.FC<AboutProps> = () => {
           paddingText="0.25rem 2rem"
         />
       </TextBox>
-      {persons.map((item: any) => {
-        if (item.id <= 6) {
-          return (
-            <CardsAbout
-              key={item.id}
-              image={item.image}
-              name={item.name}
-              lastName={item.lastName}
-              position={item.position}
-              isSpecialCard={false}
-            />
-          );
-        } else if (item.id === 7) {
-          return (
-            <CardsAbout
-              key={item.id}
-              image={item.image}
-              name={item.name}
-              lastName={item.lastName}
-              position={item.position}
-              isSpecialCard={true} // Aplicar la propiedad isSpecialCard
-            />
-          );
-        }
-        return null;
-      })}
+      <CardsGrid />
+
+
 
     </BannerAndBackgroundPage>
   )

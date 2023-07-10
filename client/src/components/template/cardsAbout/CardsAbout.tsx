@@ -1,6 +1,5 @@
 import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
 import React from 'react'
-import './CardsAbout.styles.css'
 import { Email, WhatsApp } from '@mui/icons-material';
 import PrimaryButton from '../../atom/PrimaryButton';
 
@@ -23,6 +22,7 @@ const CardsAbout: React.FC<CardsProps> = ({
       boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
       display: 'flex',
       alignItems: 'center',
+      margin: '50px',
       ...(isSpecialCard && {
         height: '305px',
         flexDirection: 'column',
