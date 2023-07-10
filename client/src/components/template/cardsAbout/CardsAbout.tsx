@@ -15,25 +15,12 @@ const CardsAbout: React.FC<CardsProps> = ({
 }) => {
   return (
     <Card sx={{
-      width: { xs: '175px', sm: '305px' },
-      height: { xs: 'auto', sm: '142px' },
-      background: '#F5F5F5',
-      borderRadius: '10px',
-      boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
-      display: 'flex',
-      flexDirection: { xs: 'column', sm: 'row' },
-      justifyContent: { lg: 'center' },
-      alignItems: 'center',
-      marginBottom: '20px',
-      margin: { xs: '20px 10px', sm: '20px 0' },
-      ...(isSpecialCard && {
+      cardStyleAbout, ...(isSpecialCard && {
         width: { xs: '370px', sm: '305px' },
         height: { xs: 'auto', sm: '324px' },
         flexDirection: { xs: 'row', sm: 'column' },
         justifyContent: 'flex-start',
-
       })
-
     }}>
       <CardMedia
         component="img"
@@ -63,19 +50,9 @@ const CardsAbout: React.FC<CardsProps> = ({
           textAlign: isSpecialCard ? { xs: 'left', sm: ' left' } : { xs: 'center', sm: 'left' },
           padding: isSpecialCard ? { xs: '5px', sm: ' 5px 15px' } : { xs: '5px', sm: '10px 0px' },
           marginBottom: isSpecialCard ? { xs: '20px' } : {},
-
-
         }}>
-          <Typography variant="h5" component="div" sx={{
-            color: '#1B17E7',
-            fontSize: '16px',
-            fontWeight: 'bold'
-          }}>
-            {name} {lastName}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {position}
-          </Typography>
+          <Typography variant="h5" component="div" sx={{ color: '#1B17E7', fontSize: '16px', fontWeight: 'bold' }}> {name} {lastName} </Typography>
+          <Typography variant="body2" color="text.secondary"> {position} </Typography>
         </Box>
         {isSpecialCard ? (
           <Box sx={{ display: 'flex', justifyContent: isSpecialCard ? 'flex-end' : 'center', alignItems: 'center', gap: '8px', paddingRight: '14px', }}>
@@ -89,10 +66,10 @@ const CardsAbout: React.FC<CardsProps> = ({
           </Box>
         ) : (
           <Box sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'flex-end' }, alignItems: 'center', gap: '8px', paddingRight: { xs: 'auto', sm: '14px' }, margin: { xs: '10px auto', sm: '0' } }}>
-            <IconButton color="secondary" size="small" sx={{ borderRadius: '5px', border: '1px solid #1DAEFF', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}>
+            <IconButton color="secondary" size="small" sx={buttonStyleAbout}>
               <Email fontSize="small" />
             </IconButton>
-            <IconButton color="secondary" size="small" sx={{ borderRadius: '5px', border: '1px solid #1DAEFF', boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)' }}>
+            <IconButton color="secondary" size="small" sx={buttonStyleAbout}>
               <WhatsApp fontSize="small" />
             </IconButton>
           </Box>
@@ -103,3 +80,23 @@ const CardsAbout: React.FC<CardsProps> = ({
 }
 
 export default CardsAbout
+
+const cardStyleAbout = {
+  width: { xs: '175px', sm: '305px' },
+  height: { xs: 'auto', sm: '142px' },
+  background: '#F5F5F5',
+  borderRadius: '10px',
+  boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+  display: 'flex',
+  flexDirection: { xs: 'column', sm: 'row' },
+  justifyContent: { lg: 'center' },
+  alignItems: 'center',
+  marginBottom: '20px',
+  margin: { xs: '20px 10px', sm: '20px 0' },
+}
+
+const buttonStyleAbout = {
+  borderRadius: '5px',
+  border: '1px solid #1DAEFF',
+  boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+}
