@@ -27,8 +27,7 @@ const Header: React.FC<HeaderProps> = () => {
   const { pathname } = useLocation()
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
-  console.log(theme)
-  console.log(isMd)
+  const tabArray = ['Home', 'Propiedades', 'Quienes somos', 'Contacto']
 
   useEffect(() => {
     switch (pathname) {
@@ -75,17 +74,23 @@ const Header: React.FC<HeaderProps> = () => {
   }
   return (
     <header>
-      <AppBar position="fixed" sx={{ backgroundColor: 'white' }}>
+      <AppBar position="fixed" sx={{ backgroundColor: '#f5f5f5' }}>
         <Toolbar
           disableGutters={true}
           sx={{
-            justifyContent: 'space-between',
             display: 'flex',
+            justifyContent: 'space-between',
           }}
         >
-          <Box sx={{ display: 'flex', alignItems: 'center', marginRight: 1 }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              marginRight: 1,
+              marginLeft: 2,
+            }}
+          >
             <DrawerComp />
-
             <LogoText variant="h1" />
           </Box>
           <Tabs
@@ -95,23 +100,13 @@ const Header: React.FC<HeaderProps> = () => {
             onChange={(e, value) => handleTab(value)}
             indicatorColor="primary"
           >
-            <Tab
-              label="Home"
-              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
-            />
-
-            <Tab
-              label="Propiedades"
-              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
-            />
-            <Tab
-              label="Quienes somos"
-              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
-            />
-            <Tab
-              label="Contacto"
-              sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
-            />
+            {tabArray.map((tab) => (
+              <Tab
+                label={tab}
+                key={tab}
+                sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
+              />
+            ))}
           </Tabs>
           {!isMd ? (
             <PrimaryButton

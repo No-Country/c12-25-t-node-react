@@ -6,11 +6,12 @@ import {
   IconButton,
   ListItemButton,
   Divider,
-  Button,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import { useNavigate } from 'react-router-dom'
 
 const DrawerComp = () => {
+  const navigate = useNavigate()
   const [openDrawer, setOpenDrawer] = useState(false)
   return (
     <>
@@ -22,37 +23,37 @@ const DrawerComp = () => {
         }}
       >
         <List>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/')}>
             <ListItemText>Home</ListItemText>
           </ListItemButton>
           <Divider />
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/search')}>
             <ListItemText>Propiedades</ListItemText>
           </ListItemButton>
           <Divider />
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/about')}>
             <ListItemText>Quienes somos</ListItemText>
           </ListItemButton>
           <Divider />
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate('/contact')}>
             <ListItemText>Contacto</ListItemText>
           </ListItemButton>
         </List>
       </Drawer>
-      <Button sx={{ padding: 0.5 }}>
-        <IconButton
-          onClick={() => setOpenDrawer(!openDrawer)}
-          sx={{
-            display: { xs: 'flex', md: 'none', lg: 'none' },
-            boxShadow: 3,
-            marginRight: 0,
-            borderRadius: 2,
-            color: 'black',
-          }}
-        >
-          <MenuIcon />
-        </IconButton>
-      </Button>
+
+      <IconButton
+        onClick={() => setOpenDrawer(!openDrawer)}
+        sx={{
+          display: { xs: 'flex', md: 'none', lg: 'none' },
+          padding: 0.5,
+          boxShadow: 3,
+          marginRight: 1,
+          borderRadius: 2,
+          color: 'black',
+        }}
+      >
+        <MenuIcon />
+      </IconButton>
     </>
   )
 }
