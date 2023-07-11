@@ -5,7 +5,7 @@ import persons from '../../../api/personal.json'
 const CardsGrid = () => {
 
   return (
-    <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'column' }}>
+    <Container maxWidth="xl" sx={{ display: 'flex', flexDirection: 'column', paddingBottom: '5rem', top: '-150px', position: 'relative' }}>
       <Typography variant="body1" sx={{ fontSize: '25px', padding: '20px 26px', textAlign: { lg: 'left', md: 'center', sm: 'center', xs: 'center' } }}>Comunicate con nuestro <strong>equipo</strong></Typography>
       <Grid container spacing={2}>
         <Grid item xs={12}>
@@ -21,6 +21,8 @@ const CardsGrid = () => {
                     name={item.name}
                     lastName={item.lastName}
                     position={item.position}
+                    whatsapp={item.whatsapp}
+                    mail={item.mail}
                     isSpecialCard={false}
                   />
                 ))}
@@ -36,6 +38,8 @@ const CardsGrid = () => {
                     name={item.name}
                     lastName={item.lastName}
                     position={item.position}
+                    whatsapp={item.whatsapp}
+                    mail={item.mail}
                     isSpecialCard={false}
                   />
                 ))}
@@ -51,6 +55,8 @@ const CardsGrid = () => {
                     name={item.name}
                     lastName={item.lastName}
                     position={item.position}
+                    whatsapp={item.whatsapp}
+                    mail={item.mail}
                     isSpecialCard={false}
                   />
                 ))}
@@ -66,6 +72,8 @@ const CardsGrid = () => {
                     name={item.name}
                     lastName={item.lastName}
                     position={item.position}
+                    whatsapp={item.whatsApp}
+                    mail={item.mail}
                     isSpecialCard={true}
                   />
                 ))}

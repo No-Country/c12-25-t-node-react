@@ -21,7 +21,6 @@ const About: React.FC<AboutProps> = () => {
         />
       }
       >
-
         <TitleText
           textToShow={ABOUT_US_TEXT}
           paddingText="0.25rem 2rem"
