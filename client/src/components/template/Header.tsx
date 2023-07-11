@@ -9,19 +9,16 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material'
-import LogoText from './atom/LogoText'
-import PrimaryButton from '../components/atom/PrimaryButton'
+import LogoText from '../atom/LogoText'
+import PrimaryButton from '../atom/PrimaryButton'
 import { useNavigate, useLocation } from 'react-router-dom'
-import DrawerComp from './DrawerComp'
+import DrawerNavBar from './DrawerNavBar'
 import PersonIcon from '@mui/icons-material/Person'
+
 type HeaderProps = {
-  /* aca van las props, ej:
-  title: string
-  Y luego se desestructuran en:
-  const Header: React.FC<HeaderProps> = ({title}) => {
-  */
 }
 let tab = 0
+
 const Header: React.FC<HeaderProps> = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
@@ -72,62 +69,63 @@ const Header: React.FC<HeaderProps> = () => {
         break
     }
   }
+
   return (
     <header>
-      <AppBar position="fixed" sx={{ backgroundColor: '#f5f5f5' }}>
+      <AppBar position="fixed" sx={ { backgroundColor: '#f5f5f5' } }>
         <Toolbar
-          disableGutters={true}
-          sx={{
+          disableGutters={ true }
+          sx={ {
             display: 'flex',
             justifyContent: 'space-between',
-          }}
+          } }
         >
           <Box
-            sx={{
+            sx={ {
               display: 'flex',
               alignItems: 'center',
               marginRight: 1,
               marginLeft: 2,
-            }}
+            } }
           >
-            <DrawerComp />
+            <DrawerNavBar />
             <LogoText variant="h1" />
           </Box>
           <Tabs
-            sx={{ display: { xs: 'none', md: 'flex', lg: 'flex' } }}
+            sx={ { display: { xs: 'none', md: 'flex', lg: 'flex' } } }
             textColor="primary"
-            value={selectedTab}
-            onChange={(e, value) => handleTab(value)}
+            value={ selectedTab }
+            onChange={ (e, value) => handleTab(value) }
             indicatorColor="primary"
           >
-            {tabArray.map((tab) => (
+            { tabArray.map((tab) => (
               <Tab
-                label={tab}
-                key={tab}
-                sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
+                label={ tab }
+                key={ tab }
+                sx={ { color: 'black', fontWeight: 10, marginRight: 2 } }
               />
-            ))}
+            )) }
           </Tabs>
-          {!isMd ? (
+          { !isMd ? (
             <PrimaryButton
               text="Iniciar Sesión"
-              sx={{ marginRight: 2 }}
+              sx={ { marginRight: 2 } }
               size="small"
-              onClick={() => navigate('/login')}
+              onClick={ () => navigate('/login') }
             />
           ) : (
             <IconButton
-              sx={{
+              sx={ {
                 marginRight: 2,
                 boxShadow: 3,
                 borderRadius: 2,
                 color: 'black',
-              }}
-              onClick={() => navigate('/login')}
+              } }
+              onClick={ () => navigate('/login') }
             >
               <PersonIcon />
             </IconButton>
-          )}
+          ) }
         </Toolbar>
       </AppBar>
     </header>

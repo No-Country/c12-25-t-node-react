@@ -11,7 +11,7 @@ const LogoText: React.FC<LogoTextProps> = ({ variant }) => {
       variant={variant ? variant : 'h4'}
       sx={{
         fontWeight: '900',
-        fontSize: '1.75rem',
+        fontSize: '1.5rem',
       }}
     >
       <Link to="/" className="link-logo">

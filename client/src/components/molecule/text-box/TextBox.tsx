@@ -27,7 +27,7 @@ const TextBox: React.FC<TextBoxProps> = ({
           maxWidth: '800px',
           margin: `${ paperMargin ? paperMargin : '2rem auto' }`,
           position: 'relative',
-          top: '-290px',
+          top: '-190px',
         } }
       >
         <Paper
