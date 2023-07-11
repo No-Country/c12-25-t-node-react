@@ -1,9 +1,16 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
+  Button,
   Grid,
   Paper,
   Typography
 } from '@mui/material'
+import dayjs, { Dayjs } from 'dayjs'
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { MobileDatePicker} from '@mui/x-date-pickers/MobileDatePicker'
 import { AreaIcon, BathRoomIcon, BedRoomIcon, GarageIcon, GardenIcon } from '../../atom/Icons'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -42,6 +49,7 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   const navigate = useNavigate()
   const handleClick = () => navigate(`${ redirectFromHome === 'true' ? '/' : 'search' }`)
   const formatedPrice = price.toLocaleString("es-AR", { useGrouping: true })
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2022-04-17'))
 
   return (
     <>
@@ -51,7 +59,7 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
         colorBtn="secondary"
         onClick={ handleClick }
       />
-      <Grid container>
+      <Grid container className="container-hero-detail">
         <Grid item xs={ 10 } sm={ 6 } md={ 5 } sx={ styles.titles }>
           <Typography variant="h3">{ address }</Typography>
           <Typography>{ name }</Typography>
@@ -61,8 +69,15 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
             elevation={ 8 }
             sx={ styles.boxContainer }
           >
-            <Grid container >
-              <Grid item xs={ 12 } md={ 6 } lg={9} sx={ { marginBottom: '1rem' } }>
+            <Grid container className="paper-container">
+              <Grid
+                item
+                xs={ 12 }
+                md={ 8 }
+                lg={ 9 }
+                sx={ { marginBottom: '1rem' } }
+                className="container-sliders"
+              >
                 <Swiper
                   navigation={ true }
                   modules={ [Navigation] }
@@ -72,34 +87,48 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                 >
                   { estatePhotos && estatePhotos.map(estatePhoto => (
                     <SwiperSlide
-                      key={`estate-photo-${estatePhoto.state_photo_id}`}
+                      key={ `estate-photo-${ estatePhoto.estate_photo_id }` }
                     >
-                      <img src={estatePhoto.url} width="100%" height={260}/>
+                      <img src={ estatePhoto.url } width="100%" height={ 320 } className="imgSlider" />
                     </SwiperSlide>
-                  ))}
+                  )) }
                 </Swiper>
               </Grid>
-              <Grid item xs={ 12 } md={ 6 } lg={3} sx={ styles.imgList }>
+              <Grid
+                item
+                xs={ 12 }
+                md={ 4 }
+                lg={ 3 }
+                sx={ styles.imgList }
+                className="container-photos"
+              >
                 { estatePhotos.map(photo => <img
-                  key={ `photo-${ photo.state_photo_id }` }
+                  key={ `photo-${ photo.estate_photo_id }` }
                   src={ photo.url }
-                  style={ { width: '277px', height: '158px' } } />)
+                  style={ { width: '250px', height: 'auto' } } />)
                 }
               </Grid>
-              <Grid item xs={ 12 } sm={ 8 } sx={ { marginTop: '1rem' } }>
+              <Grid item xs={ 12 } sm={ 7 } md={8} lg={ 9 } sx={ { marginTop: '1rem', padding: '1rem' } }>
                 <Typography variant="h3" color="primary">USD { formatedPrice }</Typography>
-                <Typography sx={ { margin: '1rem 1rem 1rem 0rem' } }><AreaIcon /> { totalArea } m2 totales <BedRoomIcon /> { bedrooms } dormitorios <BathRoomIcon /> { bathrooms } baños <GarageIcon /> { garage } cocheras { garden && <><GardenIcon /> jardín</> } </Typography>
+                <Typography sx={ { margin: '1rem 1rem 1rem 0rem' } }>
+                  <AreaIcon /> { totalArea } m2 totales <BedRoomIcon /> { bedrooms } dormitorios <BathRoomIcon /> { bathrooms } baños <GarageIcon /> { garage } cocheras { garden && <><GardenIcon /> jardín</> }
+                </Typography>
               </Grid>
-              <Grid item xs={ 12 } sm={ 4 } sx={ { marginTop: '1rem' } }>
+              <Grid item xs={ 12 } sm={ 5 } md={4} lg={ 3 } sx={ styles.containerBtnCta }>
                 <PrimaryButton
                   text="Consultar"
                   sx={ styles.btnCta }
                 />
-                <PrimaryButton
-                  text="Visitar"
-                  variant="outlined"
-                  sx={ styles.btnCta
-                  } />
+                <LocalizationProvider dateAdapter={ AdapterDayjs }>
+                  <DemoContainer components={ ['MobileDatePicker'] }>
+                    <MobileDatePicker
+                      label="Agendar visita"
+                      value={ selectedDate }
+                      format='DD / MM / YYYY'
+                      onChange={ (newValue) => setSelectedDate(newValue) }
+                    />
+                  </DemoContainer>
+                </LocalizationProvider>
               </Grid>
             </Grid>
           </Paper>
@@ -124,21 +153,27 @@ const styles = {
     padding: '0.5rem',
     borderRadius: '0.5rem 0.5rem 0rem 0rem'
   },
+  containerBtnCta: {
+    marginTop: '1rem',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '0rem 1rem',
+    gap: '1rem'
+  },
   btnCta: {
-    minWidth: '160px',
-    margin: '0rem 1rem 1rem 0rem'
+    minWidth: '140px',
   },
   boxContainer: {
     borderRadius: '0rem 0.5rem 0.5rem 0.5rem',
-    padding: '0rem 1rem 1rem 1rem',
+    padding: '0rem 0rem 1rem',
     marginBottom: '3rem'
   },
   imgList: {
-    display: { xs: 'none', sm: 'flex' },
+    display: { xs: 'none', sm: 'none', md: 'flex' },
     flexDirection: 'column',
-    alignContent: 'flex-end',
+    alignContent: 'center',
     justifyContent: 'flex-start',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     flexWwrap: 'wrap'
   }
 }

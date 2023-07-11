@@ -69,11 +69,11 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
       <Subtitle title="La propiedad" fontWeight="600" />
       <Text textToShow={ description } paddingText="16px 16px 0px" />
       <Grid container spacing={ 2 }>
-        <Grid item xs={ 12 } md={ 3 }>
+        <Grid item xs={ 12 } md={ 4 }>
           <Subtitle title="La zona" fontWeight="600" />
           <Text textToShow={ zone } paddingText="16px 16px 0px" />
         </Grid>
-        <Grid item xs={ 12 } md={ 9 }>
+        <Grid item xs={ 12 } md={ 8 }>
           <Paper
             elevation={ 8 }
             sx={ {
