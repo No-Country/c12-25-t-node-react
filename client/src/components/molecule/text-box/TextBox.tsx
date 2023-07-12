@@ -23,21 +23,21 @@ const TextBox: React.FC<TextBoxProps> = ({
     <>
 
       <Box
-        sx={{
-          width: `${paperWidth ? paperWidth : '80%'}`,
+        sx={ {
+          width: `${ paperWidth ? paperWidth : '80%' }`,
           maxWidth: '800px',
-          margin: `${paperMargin ? paperMargin : '2rem auto'}`,
+          margin: `${ paperMargin ? paperMargin : '2rem auto' }`,
           position: 'relative',
           top: '-190px',
-        }}
+        } }
       >
         <Paper
-          elevation={8}
-          sx={{
+          elevation={ 8 }
+          sx={ {
             borderRadius: '1rem',
             padding: '1rem 0rem 1.75rem',
-            minHeight: `${paperMinHeight ? paperMinHeight : '300px'}`
-          }}
+            minHeight: `${ paperMinHeight ? paperMinHeight : '300px' }`
+          } }
         >
           { subTitle }
           { children }
