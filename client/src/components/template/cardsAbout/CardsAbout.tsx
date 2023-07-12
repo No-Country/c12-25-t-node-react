@@ -19,6 +19,7 @@ import dayjs, { Dayjs } from 'dayjs'
 import { useState } from 'react'
 import PrimaryButton from '../../atom/PrimaryButton'
 import Subtitle from '../../atom/Subtitle'
+import ConfirmationModal from '../../molecule/confirmation-modal/ConfirmationModal'
 
 interface CardsProps {
   image: string,
@@ -46,7 +47,7 @@ const CardsAbout: React.FC<CardsProps> = ({
 }) => {
 
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2023-07-12'))
-  const [openDialog, setOpenDialog] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false)
   const handleConfirm = () => setOpenDialog(true)
   const handleCloseDialog = () => setOpenDialog(false)
 
@@ -208,23 +209,11 @@ const CardsAbout: React.FC<CardsProps> = ({
             </Box>
           ) }
       </CardContent>
-      <Dialog open={ openDialog } onClose={ handleCloseDialog } sx={ { padding: '1rem' } }>
-        <DialogTitle>
-          <Subtitle
-            title="Confirmación de la Solicitud de Reunión"
-            padding="2rem 1.75rem 0.25rem"
-          />
-        </DialogTitle>
-        <DialogContent>
-          <Box sx={ { padding: '0.5rem 1.75rem' } }>
-            <Typography sx={ { marginBottom: '0.75rem' } }> La solicitud de reunión para el día { selectedDate && dayjs(selectedDate).format('DD/MM/YYYY') } ha sido enviada.</Typography>
-            <Typography>¡Gracias por tu interés en reunirte con nosotros!</Typography>
-          </Box>
-        </DialogContent>
-        <DialogActions sx={ { padding: '1rem' } }>
-          <PrimaryButton text="Cerrar" onClick={ handleCloseDialog } />
-        </DialogActions>
-      </Dialog>
+      <ConfirmationModal
+        selectedDate={ selectedDate!! }
+        openDialog={ openDialog }
+        handleCloseDialog={ handleCloseDialog }
+      />
     </Card>
   )
 }
