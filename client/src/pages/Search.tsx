@@ -11,7 +11,7 @@ type SearchProps = {
 
 const Search: React.FC<SearchProps> = () => {
   return (
-    <BannerAndBackgroundPage imgSrc={searchBanner} imgHeight="200px"/>
+    <BannerAndBackgroundPage imgSrc={searchBanner} imgHeight="280px"/>
   )
 }
 
