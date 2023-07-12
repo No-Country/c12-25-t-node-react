@@ -17,15 +17,15 @@ function App() {
     <HashRouter>
       <Header />
       <Routes>
-        <Route path="/" element={ <Home /> } />
-        <Route path="/search" element={ <Search /> } />
-        <Route path="/detail/:id" element={ <Detail /> } />
-        <Route path="/contact" element={ <Contact /> } />
-        <Route path="/about" element={ <About /> } />
-        <Route path="/terms-conditions" element={ <TermsConditions /> } />
-        <Route path="/login" element={ <Login /> } />
-        <Route path="/favorites" element={ <Favorites /> } />
-        <Route path="*" element={ <NotFound /> } />
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </HashRouter>
