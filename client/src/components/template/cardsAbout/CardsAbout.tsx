@@ -1,6 +1,12 @@
-import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, CardMedia, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Typography } from '@mui/material'
 import { Email, WhatsApp } from '@mui/icons-material'
 import PrimaryButton from '../../atom/PrimaryButton'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { MobileDatePicker} from '@mui/x-date-pickers/MobileDatePicker'
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import dayjs, { Dayjs } from 'dayjs'
+import { useState } from 'react'
 
 interface CardsProps {
   image: string,
@@ -26,6 +32,17 @@ const CardsAbout: React.FC<CardsProps> = ({
   whatsapp,
   mail
 }) => {
+
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2023-07-12'))
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleConfirm = () => {
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
 
   return (
     <Card sx={{
@@ -105,16 +122,23 @@ const CardsAbout: React.FC<CardsProps> = ({
         </Box>
         {isSpecialCard ? (
           <Box sx={{ display: 'flex', justifyContent: isSpecialCard ? 'flex-end' : 'center', alignItems: 'center', gap: '8px', paddingRight: '14px' }}>
-            <PrimaryButton
-              text={"Solicitar Reunion"}
-              sx={{
+            <LocalizationProvider dateAdapter={ AdapterDayjs }>
+                  <DemoContainer components={ ['MobileDatePicker'] }sx={{
                 fontFamily: 'Monserrat',
                 fontSize: { xs: '14px', sm: '16px' },
-                padding: { xs: '10px', sm: '20px' },
+                padding: { xs: '10px', sm: '5px' },
                 borderRadius: '10px',
                 marginBottom: isSpecialCard ? { xs: '0px', sm: '15px' } : { xs: '0px', sm: '0px' },
-              }}
-            />
+              }}>
+                    <MobileDatePicker
+                      label="Solicitar reunion"
+                      value={ selectedDate }
+                      format='DD / MM / YYYY'
+                      onChange={ (newValue) => setSelectedDate(newValue) }
+                      onAccept={handleConfirm}
+                    />
+                  </DemoContainer>
+                </LocalizationProvider>
           </Box>
         ) : (
           <Box sx={{ display: { xs: 'none', sm: 'flex' }, justifyContent: { xs: 'center', sm: 'flex-end' }, alignItems: 'center', gap: '8px', paddingRight: { xs: 'auto', sm: '14px' }, margin: { xs: '10px auto', sm: '0' }, '@media (max-width: 330px)': { display: 'flex' } }}>
@@ -134,7 +158,24 @@ const CardsAbout: React.FC<CardsProps> = ({
           </Box>
         )}
       </CardContent>
-
+      <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <DialogTitle sx={{color: '#1B17E7'}}>Confirmación de la Solicitud de Reunión</DialogTitle>
+        <DialogContent>
+        <Box>
+            <Typography variant="body1" component="div" sx={{ marginBottom: '1rem' }}>
+              La solicitud de reunión para el día {selectedDate && dayjs(selectedDate).format('DD/MM/YYYY')} ha sido enviada.
+            </Typography>
+            <Typography variant="body2" component="div">
+              ¡Gracias por tu interés en reunirte con nosotros!
+            </Typography>
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog} color="primary">
+            Cerrar
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Card>
 
   )
