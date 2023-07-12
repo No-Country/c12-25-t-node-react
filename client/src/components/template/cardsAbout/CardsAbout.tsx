@@ -1,6 +1,6 @@
 import { Box, Card, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
-import { Email, WhatsApp } from '@mui/icons-material';
-import PrimaryButton from '../../atom/PrimaryButton';
+import { Email, WhatsApp } from '@mui/icons-material'
+import PrimaryButton from '../../atom/PrimaryButton'
 
 interface CardsProps {
   image: string,
