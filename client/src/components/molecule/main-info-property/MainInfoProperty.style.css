@@ -6,6 +6,9 @@
 .back-link:hover {
   color: var(--primary);
 }
+.container-hero-detail {
+  margin-top: 1rem;
+}
 
 .container-photos {
   max-height: 320px;

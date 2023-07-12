@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  Button,
+  Box,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   Grid,
   Paper,
   Typography
@@ -10,7 +14,7 @@ import dayjs, { Dayjs } from 'dayjs'
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { MobileDatePicker} from '@mui/x-date-pickers/MobileDatePicker'
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker'
 import { AreaIcon, BathRoomIcon, BedRoomIcon, GarageIcon, GardenIcon } from '../../atom/Icons'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -20,6 +24,8 @@ import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './MainInfoProperty.style.css'
 import { EstatePhoto } from '../../../model/state-detail'
+import Subtitle from '../../atom/Subtitle'
+import ConfirmationModal from '../confirmation-modal/ConfirmationModal'
 
 type MainInfoPropertyProps = {
   redirectFromHome: string | null
@@ -50,6 +56,9 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   const handleClick = () => navigate(`${ redirectFromHome === 'true' ? '/' : 'search' }`)
   const formatedPrice = price.toLocaleString("es-AR", { useGrouping: true })
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2022-04-17'))
+  const [openDialog, setOpenDialog] = useState(false)
+  const handleConfirm = () => setOpenDialog(true)
+  const handleCloseDialog = () => setOpenDialog(false)
 
   return (
     <>
@@ -108,13 +117,19 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                   style={ { width: '250px', height: 'auto' } } />)
                 }
               </Grid>
-              <Grid item xs={ 12 } sm={ 7 } md={8} lg={ 9 } sx={ { marginTop: '1rem', padding: '1rem' } }>
+              <Grid
+                item xs={ 12 }
+                sm={ 7 }
+                md={ 8 }
+                lg={ 9 }
+                sx={ { marginTop: '1rem', padding: '1rem' } }
+              >
                 <Typography variant="h3" color="primary">USD { formatedPrice }</Typography>
                 <Typography sx={ { margin: '1rem 1rem 1rem 0rem' } }>
                   <AreaIcon /> { totalArea } m2 totales <BedRoomIcon /> { bedrooms } dormitorios <BathRoomIcon /> { bathrooms } baños <GarageIcon /> { garage } cocheras { garden && <><GardenIcon /> jardín</> }
                 </Typography>
               </Grid>
-              <Grid item xs={ 12 } sm={ 5 } md={4} lg={ 3 } sx={ styles.containerBtnCta }>
+              <Grid item xs={ 12 } sm={ 5 } md={ 4 } lg={ 3 } sx={ styles.containerBtnCta }>
                 <PrimaryButton
                   text="Consultar"
                   sx={ styles.btnCta }
@@ -126,6 +141,7 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                       value={ selectedDate }
                       format='DD / MM / YYYY'
                       onChange={ (newValue) => setSelectedDate(newValue) }
+                      onAccept={ handleConfirm }
                     />
                   </DemoContainer>
                 </LocalizationProvider>
@@ -134,6 +150,11 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
           </Paper>
         </Grid>
       </Grid>
+      <ConfirmationModal
+        selectedDate={ selectedDate!! }
+        openDialog={ openDialog }
+        handleCloseDialog={ handleCloseDialog }
+      />
     </>
   )
 }

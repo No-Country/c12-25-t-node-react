@@ -133,7 +133,7 @@ const Detail: React.FC<DetailProps> = () => {
   const totalArea = covered_area + uncoverd_area
 
   return (
-    <Box sx={ { padding: '3rem 0rem 5rem', background: '#F5F5F5' } }>
+    <Box sx={ { padding: '5rem 0rem 5rem', background: '#F5F5F5' } }>
       <Container maxWidth="lg">
         <MainInfoProperty
           redirectFromHome={ redirectFromHome }
