@@ -5,11 +5,12 @@ import {
 } from '@mui/material'
 
 type TextBoxProps = {
-  children?: ReactNode,
-  subTitle?: React.ReactElement,
-  paperMinHeight?: string,
-  paperWidth?: string,
+  children?: ReactNode
+  subTitle?: React.ReactElement
+  paperMinHeight?: string
+  paperWidth?: string
   paperMargin?: string
+  boxTop?: string
 }
 
 const TextBox: React.FC<TextBoxProps> = ({
@@ -17,7 +18,8 @@ const TextBox: React.FC<TextBoxProps> = ({
   paperMinHeight,
   children,
   paperWidth,
-  paperMargin
+  paperMargin,
+  boxTop
 }) => {
   return (
     <>
@@ -27,7 +29,7 @@ const TextBox: React.FC<TextBoxProps> = ({
           maxWidth: '800px',
           margin: `${ paperMargin ? paperMargin : '2rem auto' }`,
           position: 'relative',
-          top: '-220px',
+          top: `${boxTop? boxTop :'-220px'}`,
         } }
       >
         <Paper

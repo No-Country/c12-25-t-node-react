@@ -4,6 +4,7 @@ import { Box, Container } from '@mui/material'
 import DetailProperty from '../components/molecule/detail-property/DetailProperty'
 import jsonData from '../api/state-detail-mock.json'
 import MainInfoProperty from '../components/molecule/main-info-property/MainInfoProperty'
+import ContactProperty from '../components/molecule/contact-property/ContactProperty'
 
 type DetailProps = {
 }
@@ -169,6 +170,7 @@ const Detail: React.FC<DetailProps> = () => {
           professionalUse={ professional_use }
           rooms={ rooms }
         />
+        <ContactProperty />
       </Container>
     </Box>
   )
