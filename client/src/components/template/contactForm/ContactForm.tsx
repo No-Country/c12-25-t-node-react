@@ -176,7 +176,7 @@ const styleText = {
 
 const styleButton = {
   display: 'flex',
-  justifyContent: { xs: 'center', md: 'flex-end' },
+  justifyContent: 'center',
   paddingRight: { xs: '0', md: '1.1rem' },
   '@media (max-width: 1010px)': {
     justifyContent: 'flex-end',
