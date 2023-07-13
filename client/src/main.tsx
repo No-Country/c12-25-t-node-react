@@ -4,14 +4,15 @@ import App from './App.tsx'
 import './index.css'
 import { appArtamentosTheme } from './theme/theme.ts'
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import SpinnerProvider from './context/SpinnerProvider.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <ThemeProvider 
-      theme={ appArtamentosTheme }
-    >
+    <ThemeProvider theme={ appArtamentosTheme }>
       <CssBaseline>
-        <App />
+        <SpinnerProvider>
+          <App />
+        </SpinnerProvider>
       </CssBaseline>
     </ThemeProvider>
   </React.StrictMode>,
