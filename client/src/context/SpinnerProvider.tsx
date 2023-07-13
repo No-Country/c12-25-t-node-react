@@ -43,14 +43,10 @@ const SpinnerProvider = ({ children }: SpinnerProviderProps) => {
             gap: '1.25rem'
           } }
         >
-          <img
-            src="https://img.icons8.com/emoji/58/house-emoji.png"
-            alt="Loader"
-            width="58"
-            height="58"
-          />
           <CircularProgress size="3rem" />
-          <Typography sx={{ fontWeight: '600', color: 'primary', letterSpacing: '1px'}}>Cargando...</Typography>
+          <Typography sx={ { fontWeight: '600', color: 'primary', letterSpacing: '1px' } }>
+            Cargando...
+          </Typography>
         </Box>
       </Backdrop>
       { children }
