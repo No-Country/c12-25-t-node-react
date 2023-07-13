@@ -23,7 +23,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './MainInfoProperty.style.css'
-import { EstatePhoto } from '../../../model/state-detail'
+import { EstatePhoto } from '../../../model/estate-detail'
 import Subtitle from '../../atom/Subtitle'
 import ConfirmationModal from '../confirmation-modal/ConfirmationModal'
 
