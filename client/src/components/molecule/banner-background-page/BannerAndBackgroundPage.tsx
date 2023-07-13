@@ -1,28 +1,26 @@
 import { ReactNode } from 'react'
-import {
-  Box,
-  Paper,
-} from '@mui/material'
-import './BannerAndBackGroundPage.styles.css'
+import { Box } from '@mui/material'
 import HeroImage from '../../atom/heroImage/HeroImage'
 
 type BannerAndBackgroundPageProps = {
+  imgSrc: string,
+  imgHeight?: string
   children?: ReactNode
-  imgSrc: string
 }
 
 const BannerAndBackgroundPage: React.FC<BannerAndBackgroundPageProps> = ({
   imgSrc,
+  imgHeight,
   children
 }) => {
   return (
-    <main className="banner-background-page">
+    <Box sx={ { background: '#F1F1F9' } }>
       <HeroImage
         imgSrc={ imgSrc }
-        imgHeight="400px"
+        imgHeight={ `${ imgHeight ? imgHeight : '460px' }` }
       />
       { children }
-    </main>
+    </Box>
   )
 }
 

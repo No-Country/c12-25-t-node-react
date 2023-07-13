@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Ismael",
+    "lastName": "Quintana",
+    "position": "Asesor Comercial",
+    "mail": "ismael.quintana@gmail.com",
+    "whatsapp": "541198765432",
+    "image": "ismaelQuintana.png"
+  },
+  {
+    "id": 2,
+    "name": "Laura",
+    "lastName": "Suárez",
+    "position": "Asesor Comercial",
+    "mail": "laura.suarez@gmail.com",
+    "whatsapp": "541112345678",
+    "image": "lauraSuarez.png"
+  },
+  {
+    "id": 3,
+    "name": "Marcos",
+    "lastName": "Farías",
+    "position": "Asesor Comercial",
+    "mail": "marcos.farias@gmail.com",
+    "whatsapp": "541145678901",
+    "image": "marcosFarias.png"
+  },
+  {
+    "id": 4,
+    "name": "Jazmín",
+    "lastName": "Príncipe",
+    "position": "Asesor Comercial",
+    "mail": "jazmin.principe@gmail.com",
+    "whatsapp": "541121098765",
+    "image": "jazminPrincipe.png"
+  },
+  {
+    "id": 5,
+    "name": "Marisa",
+    "lastName": "Civriatti",
+    "position": "Asesor Comercial",
+    "mail": "marisa.civriatti@gmail.com",
+    "whatsapp": "541156789012",
+    "image": "marisaCiviratti.png"
+  },
+  {
+    "id": 6,
+    "name": "Lautaro",
+    "lastName": "Márcico",
+    "position": "Asesor Comercial",
+    "mail": "lautaro.marcico@gmail.com",
+    "whatsapp": "541121098765",
+    "image": "lautaroMarcico.png"
+  },
+  {
+    "id": 7,
+    "name": "Rubén Darío",
+    "lastName": "Martínez",
+    "position": "Gerente de ventas",
+    "mail": "#",
+    "whatsapp": "541121098765",
+    "image": "rubenDarioMartinez.png"
+  }
+]
