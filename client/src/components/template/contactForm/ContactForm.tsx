@@ -1,28 +1,22 @@
 import { useState } from 'react'
 import { Box, TextField, Button, Dialog, DialogTitle, DialogContent, DialogActions, InputLabel, Typography } from '@mui/material'
 import './ContactForm.styles.css'
+import { FormDetail, FormError, InitialState } from '../../../model/form';
+import InputForm from '../../atom/InputForm';
+import PrimaryButton from '../../atom/PrimaryButton'
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    message: '',
-  })
-  const [errors, setErrors] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    message: '',
-  })
+  const [formData, setFormData] = useState<FormDetail>(InitialState)
+  const [errors, setErrors] = useState<FormError>(InitialState)
 
   const [openModal, setOpenModal] = useState(false);
 
   const handleChange = (e: any) => {
-    setFormData({
-      ...formData,
-      fullName: e.target.value,
-    })
+    const { name, value } = e.target;
+  setFormData((prevFormData) => ({
+    ...prevFormData,
+    [name]: value,
+  }));
   }
 
   const handleSubmit = (e: any) => {
@@ -57,6 +51,7 @@ const ContactForm = () => {
 
     if (Object.values(errors).every((error) => error === '')) {
       setOpenModal(true);
+      setFormData(InitialState);
     }
   }
 
@@ -66,77 +61,60 @@ const ContactForm = () => {
 
   return (
     <Box>
-      <Box sx={{display: 'flex', flexDirection: 'column'}}>
-        
-      <form onSubmit={handleSubmit} className='formContact'>
-        <Box sx={{width: '350px',margin: '5px'}}>
-          <Typography variant="body1"sx={{color: '#0C0C39', fontSize: '16px',fontWeight: '600'}}>Nombre completo</Typography>
+      <Box sx={{display: 'flex', flexDirection: 'column',gap: '1rem', padding: '1rem'}}>
+        <form onSubmit={handleSubmit} className='formContact'>
+          <Box sx={{width: '350px', display:'flex', flexDirection: 'column', marginRight: '5px' }}>
+            <Box sx={{marginBottom: '22px'}}>
+              <Typography variant="body1"sx={styleText}>Nombre completo</Typography>
+              <InputForm inputLabel='Nombre completo'inputName='fullName' inputValue={formData.fullName} inputChange={handleChange} inputError={!!errors.fullName} inputHelper={errors.fullName}/>
+            </Box>
+            <Box sx={{marginBottom: '22px'}}>
+              <Typography variant="body1"sx={styleText}>Teléfono</Typography>
+              <InputForm inputLabel='Teléfono'inputName='phone' inputValue={formData.phone} inputChange={handleChange} inputError={!!errors.phone} inputHelper={errors.phone}/>
+            </Box>
+            <Box sx={{marginBottom: '22px'}}>
+              <Typography variant="body1"sx={styleText}>Correo Electrónico</Typography>
+              <InputForm inputLabel='Correo electrónico'inputName='email' inputValue={formData.email} inputChange={handleChange} inputError={!!errors.email} inputHelper={errors.email}/>
+            </Box>
+          </Box>
+          <Box sx={{width: '350px', height:'100%'}}>
+            <Typography variant="body1"sx={styleText}>Mensaje</Typography>
             <TextField
-            label="Nombre completo"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleChange}
-              error={!!errors.fullName}
-              helperText={errors.fullName}
-              fullWidth
-              required
-            />
-
-          <Typography variant="body1"sx={{color: '#0C0C39', fontSize: '16px',fontWeight: '600'}}>Teléfono</Typography>
-            <TextField
-              label="Teléfono"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              error={!!errors.phone}
-              helperText={errors.phone}
-              fullWidth
-              required
-              />
-          
-          <Typography variant="body1"sx={{color: '#0C0C39', fontSize: '16px',fontWeight: '600'}}>Correo Electrónico</Typography>
-            <TextField
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              error={!!errors.email}
-              helperText={errors.email}
-              fullWidth
-              required
-            />
-        </Box>
-        <Box sx={{width: '350px', height:'100%', margin: '5px'}}>
-          <Typography variant="body1"sx={{color: '#0C0C39', fontSize: '16px',fontWeight: '600'}}>Mensaje</Typography>
-            <TextField
-              name="message"
+            label='Escribe un mensaje'
+              name='message'
               value={formData.message}
               onChange={handleChange}
               error={!!errors.message}
               helperText={errors.message}
               fullWidth
               multiline
-              rows={8}
+              rows={10}
               required
               sx={{width:'100%', height:'100%'}}
-            />
-            
+            />         
         </Box>
       </form>
-      <Button type="submit" variant="contained" color="primary" sx={{ }}onClick={handleSubmit}>Enviar</Button>
+      <Box sx={styleButton}>
+        <PrimaryButton text='Enviar consulta'onClick={handleSubmit} sx={{width:{xs: '350px'}}}/>
       </Box>
-      <Dialog open={openModal} onClose={handleCloseModal}>
-        <DialogTitle>¡Formulario enviado con éxito!</DialogTitle>
-        <DialogContent>
-          <p>Gracias por contactarnos. Pronto nos pondremos en contacto contigo.</p>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCloseModal} color="primary">
-            Cerrar
-          </Button>
-        </DialogActions>
-      </Dialog>
+    </Box>
+    <Dialog open={openModal} onClose={handleCloseModal}>
+      <DialogTitle>¡Formulario enviado con éxito!</DialogTitle>
+      <DialogContent>
+        <p>Gracias por contactarnos. Pronto nos pondremos en contacto contigo.</p>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={handleCloseModal} color="primary">Cerrar</Button>
+      </DialogActions>
+    </Dialog>
     </Box>
   );
 };
 
 export default ContactForm;
+
+const styleText = {color: '#0C0C39', fontSize: '16px',fontWeight: '600', textAlign: 'left', padding: '0px 2px'}
+
+const styleButton = {display: 'flex', justifyContent: {xs: 'center', md:'flex-end'}, paddingRight: {xs: '0', md: '1.1rem'}, '@media (max-width: 1010px)': {
+  justifyContent: 'flex-end', left: '50%'},'@media (max-width: 914px)': {
+    justifyContent: 'center',}}

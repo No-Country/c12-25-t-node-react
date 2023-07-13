@@ -26,15 +26,14 @@ const Contact: React.FC<ContactProps> = () => {
       }>
         <TitleText
         textToShow={CONTACT_TEXT}
-        paddingText="1rem 1.5rem"/>
+        paddingText="1rem 2rem"/>
         <ContactForm/>
         <Subtitle
         title='Al enviar este formulario estás aceptás los '
         titleBold='términos y condiciones de uso y la política de privacidad.'
         padding='1rem 1.1rem 1.5rem'
         textColor= '#000'/>
-      </TextBox>
-      
+      </TextBox>  
     </BannerAndBackgroundPage>
   )
 }
