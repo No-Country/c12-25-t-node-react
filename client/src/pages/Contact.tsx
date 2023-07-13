@@ -12,13 +12,16 @@ type ContactProps = {
 const Contact: React.FC<ContactProps> = () => {
   return (
     <BannerAndBackgroundPage imgSrc={ contactUsBanner } >
-      <TextBox subTitle={
-        <Subtitle
-          title='Comunicate con'
-          titleBold='nosotros'
-          padding='1rem 1.1rem 1.5rem'
-          textAlign='center' />
-      }>
+      <TextBox
+        subTitle={
+          <Subtitle
+            title='Comunicate con'
+            titleBold='nosotros'
+            padding='1rem 1.1rem 1.5rem'
+            textAlign='center'
+          />
+        }
+      >
         <TitleText
           textToShow={ CONTACT_TEXT }
           paddingText="1rem 2rem" />
