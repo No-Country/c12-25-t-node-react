@@ -6,6 +6,7 @@ import FeaturedAcordion from '../components/template/featuredAcordion/FeaturedAc
 import heroImageBanner from '../assets/heroImage.png'
 import ImageCtaLeft from '../assets/imageCtaRight.png'
 import ImageCtaRight from '../assets/imageCtaLeft.png'
+import Searcher from '../components/Searcher.tsx'
 
 type HomeProps = {}
 export interface Estates {
@@ -36,11 +37,15 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <main>
-      <HeroImage imgSrc={ heroImageBanner } />
-      <FeaturedAcordion textTitle="venta" estates={ estatesForSale } />
-      <FeaturedAcordion textTitle="alquiler" estates={ estatesForRent } />
-      <CallToActionContactForm imageUrl={ ImageCtaLeft } textPosition={ 'left' } />
-      <CallToActionContactForm imageUrl={ ImageCtaRight } textPosition={ 'right' } />
+      <HeroImage imgSrc={heroImageBanner} />
+      <Searcher />
+      <FeaturedAcordion textTitle="venta" estates={estatesForSale} />
+      <FeaturedAcordion textTitle="alquiler" estates={estatesForRent} />
+      <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
+      <CallToActionContactForm
+        imageUrl={ImageCtaRight}
+        textPosition={'right'}
+      />
     </main>
   )
 }
