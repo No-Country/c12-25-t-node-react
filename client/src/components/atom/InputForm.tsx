@@ -1,13 +1,17 @@
-import { TextField } from "@mui/material"
+import {
+  Box,
+  TextField,
+  Typography
+} from '@mui/material'
 
 interface InputProps {
-  inputLabel: string,
-  inputName: string,
-  inputValue: any,
-  inputChange: any,
-  inputError: any,
-  inputHelper: any,
-
+  inputLabel: string
+  inputName: string
+  inputValue: any
+  inputChange: any
+  inputError: any
+  inputHelper: any
+  labelText: string
 }
 
 const InputForm: React.FC<InputProps> = ({
@@ -16,20 +20,34 @@ const InputForm: React.FC<InputProps> = ({
   inputValue,
   inputChange,
   inputError,
-  inputHelper
+  inputHelper,
+  labelText
 }) => {
   return (
-    <TextField
-    label={inputLabel}
-    name={inputName}
-    value={inputValue}
-    onChange={inputChange}
-    error={inputError}
-    helperText={inputHelper}
-    fullWidth
-    required
-  />
+    <Box sx={ { marginBottom: '23px' } }>
+      <Typography variant="body1" sx={ styleText }>
+        { labelText }
+      </Typography>
+      <TextField
+        label={ inputLabel }
+        name={ inputName }
+        value={ inputValue }
+        onChange={ inputChange }
+        error={ inputError }
+        helperText={ inputHelper }
+        fullWidth
+        required
+      />
+    </Box>
   )
 }
 
 export default InputForm
+
+const styleText = {
+  color: '#0C0C39',
+  fontSize: '16px',
+  fontWeight: '600',
+  textAlign: 'left',
+  padding: '0px 2px 6px'
+}
