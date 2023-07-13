@@ -7,7 +7,8 @@ import { Estates } from '../model/estates.ts'
 import heroImageBanner from '../assets/heroImage.png'
 import ImageCtaLeft from '../assets/imageCtaRight.png'
 import ImageCtaRight from '../assets/imageCtaLeft.png'
-import { useSpinner} from '../context/SpinnerProvider.tsx' // para Loader
+import Searcher from '../components/Searcher.tsx'
+import { useSpinner } from '../context/SpinnerProvider.tsx' // para Loader
 
 type HomeProps = {}
 
@@ -18,7 +19,7 @@ const Home: React.FC<HomeProps> = () => {
   //  const hagoFetch = async () => {
   //     addLoading()
   //     try {
-  //     } catch(err) { 
+  //     } catch(err) {
   //        //aca hay que mostrar error
   //     } finally {
   //      removeLoading()
@@ -41,11 +42,15 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <main>
-      <HeroImage imgSrc={ heroImageBanner } />
-      <FeaturedAcordion textTitle="venta" estates={ estatesForSale } />
-      <FeaturedAcordion textTitle="alquiler" estates={ estatesForRent } />
-      <CallToActionContactForm imageUrl={ ImageCtaLeft } textPosition={ 'left' } />
-      <CallToActionContactForm imageUrl={ ImageCtaRight } textPosition={ 'right' } />
+      <HeroImage imgSrc={heroImageBanner} />
+      <Searcher />
+      <FeaturedAcordion textTitle="venta" estates={estatesForSale} />
+      <FeaturedAcordion textTitle="alquiler" estates={estatesForRent} />
+      <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
+      <CallToActionContactForm
+        imageUrl={ImageCtaRight}
+        textPosition={'right'}
+      />
     </main>
   )
 }
