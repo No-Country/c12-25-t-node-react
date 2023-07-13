@@ -17,7 +17,7 @@ const BannerAndBackgroundPage: React.FC<BannerAndBackgroundPageProps> = ({
     <Box sx={ { background: '#F1F1F9' } }>
       <HeroImage
         imgSrc={ imgSrc }
-        imgHeight={ `${ imgHeight ? imgHeight : '400px' }` }
+        imgHeight={ `${ imgHeight ? imgHeight : '460px' }` }
       />
       { children }
     </Box>

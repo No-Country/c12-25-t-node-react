@@ -4,13 +4,15 @@ import TitleText from '../components/molecule/text/Text'
 import aboutBanner from '../assets/about-us-banner.png'
 import { ABOUT_US_TEXT } from '../utils/about-us-text'
 import Subtitle from '../components/atom/Subtitle'
+import CardsGrid from '../components/template/cardsAbout/CardsGrid'
+
 
 type AboutProps = {
 }
 
 const About: React.FC<AboutProps> = () => {
   return (
-    <BannerAndBackgroundPage imgSrc={ aboutBanner }>
+    <BannerAndBackgroundPage imgSrc={aboutBanner}>
       <TextBox subTitle={
         <Subtitle
           title="Conocé nuestra "
@@ -20,11 +22,11 @@ const About: React.FC<AboutProps> = () => {
       }
       >
         <TitleText
-          textToShow={ ABOUT_US_TEXT }
+          textToShow={ABOUT_US_TEXT}
           paddingText="0.25rem 2rem"
         />
       </TextBox>
-      {/* TODO: section team goes here*/ }
+      <CardsGrid />
     </BannerAndBackgroundPage>
   )
 }
