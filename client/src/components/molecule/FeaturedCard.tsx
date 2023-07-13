@@ -11,7 +11,7 @@ import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled'
 import IconButton from '@mui/material/IconButton'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import PrimaryButton from '../atom/PrimaryButton'
-import { Estates } from '../../pages/Home'
+import { Estates } from '../../model/estates.ts'
 
 interface FeaturedCardProps {
   estate: Estates
@@ -21,16 +21,8 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const navigate = useNavigate()
   const handleClick = () => navigate(`/detail/${id}/?home=true`)
 
-  const {
-    id,
-    description,
-    adress,
-    area,
-    bedrooms,
-    bathrooms,
-    cars,
-    image,
-  } = estate
+  const { id, description, adress, area, bedrooms, bathrooms, cars, image } =
+    estate
 
   return (
     <Card
@@ -96,16 +88,20 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex' }}>
-              <SquareFootIcon className="primary-light" /><Typography>{area} m</Typography>
+              <SquareFootIcon className="primary-light" />
+              <Typography>{area} m</Typography>
             </Box>
             <Box sx={{ display: 'flex' }}>
-              <BedIcon className="primary-light" /><Typography>{bedrooms}</Typography>
+              <BedIcon className="primary-light" />
+              <Typography>{bedrooms}</Typography>
             </Box>
             <Box sx={{ display: 'flex' }}>
-              <BathtubIcon className="primary-light" /><Typography>{bathrooms}</Typography>
+              <BathtubIcon className="primary-light" />
+              <Typography>{bathrooms}</Typography>
             </Box>
             <Box sx={{ display: 'flex' }}>
-              <DirectionsCarFilledIcon className="primary-light" /><Typography>{cars}</Typography>
+              <DirectionsCarFilledIcon className="primary-light" />
+              <Typography>{cars}</Typography>
             </Box>
           </Box>
         </Box>

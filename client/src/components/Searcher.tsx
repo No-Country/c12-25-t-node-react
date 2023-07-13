@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { IconButton, Box, Tab, Tabs } from '@mui/material'
 import Selector from './molecule/Selector'
 import SearchIcon from '@mui/icons-material/Search'
+import { useTheme, useMediaQuery } from '@mui/material'
+import Divider from '@mui/material/Divider'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -12,7 +14,9 @@ interface TabPanelProps {
 
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props
-
+  const theme = useTheme()
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
+  console.log(isMd)
   return (
     <div
       role="tabpanel"
@@ -25,9 +29,9 @@ function TabPanel(props: TabPanelProps) {
         <Box
           sx={{
             p: 1,
-            width: '800px',
+            width: isMd ? '460px' : '800px',
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: isMd ? 'column' : 'row',
             alignItems: 'center',
             backgroundColor: '#f5f5f5',
             borderBottomLeftRadius: '15px',
@@ -56,6 +60,8 @@ function a11yProps(index: number) {
 }
 
 export default function BasicTabs() {
+  const theme = useTheme()
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
   const [value, setValue] = useState(0)
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -103,10 +109,10 @@ export default function BasicTabs() {
     <Box
       sx={{
         position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '80vw',
+        top: '48%',
+        left: isMd ? '50%' : '50%',
+        transform: isMd ? 'translate(-30%,-50%)' : 'translate(-50%, -50%)',
+        width: '90vw',
         maxWidth: '800px',
         zIndex: 999,
       }}
@@ -123,10 +129,6 @@ export default function BasicTabs() {
           sx={{
             '& button': { color: 'white' },
             '& button:focus': {
-              backgroundColor: '#f1f1f9',
-              color: '#1daeff',
-            },
-            '& button:active': {
               backgroundColor: '#f1f1f9',
               color: '#1daeff',
             },
@@ -157,6 +159,7 @@ export default function BasicTabs() {
             label="Ubicación"
             selectOptions={locationArray}
           />
+          <Divider />
           <Selector
             placeholder="Selecciona tus viviendas de preferencia"
             label="Tipo de propiedad"
@@ -168,9 +171,10 @@ export default function BasicTabs() {
               color: 'white',
               borderRadius: 3,
               height: '50px',
+              width: isMd ? '80%' : '50px',
             }}
           >
-            <SearchIcon />
+            {isMd ? 'Buscar' : <SearchIcon />}
           </IconButton>
         </TabPanel>
       ))}

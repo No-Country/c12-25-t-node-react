@@ -8,7 +8,8 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './featuredAcordion.styles.css'
-import { Estates } from '../../../pages/Home'
+import { Estates } from '../../../model/estates.ts'
+import { useTheme, useMediaQuery } from '@mui/material'
 
 interface FeaturedAcordionProps {
   textTitle: string
@@ -19,13 +20,15 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   textTitle,
   estates,
 }) => {
+  const theme = useTheme()
+  const isMd = useMediaQuery(theme.breakpoints.down('md'))
   const navigate = useNavigate()
   const handleClick = () => navigate('/search')
   let maxSlides
   textTitle === 'alquiler' ? (maxSlides = 4) : (maxSlides = 3)
 
   return (
-    <Container maxWidth="lg" sx={{ marginTop: '5rem' }}>
+    <Container maxWidth="lg" sx={{ marginTop: isMd ? '10rem' : '6rem' }}>
       <Box
         sx={{
           display: 'flex',
