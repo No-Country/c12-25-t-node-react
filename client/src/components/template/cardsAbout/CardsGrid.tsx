@@ -2,7 +2,7 @@ import { Container, Grid } from '@mui/material'
 import CardsAbout from './CardsAbout'
 import persons from '../../../api/personal.json'
 import Subtitle from '../../atom/Subtitle'
-import { Personal } from './CardsGrid.utils'
+import { Personal } from '../../../model/personal'
 import './CardsGrid.styles.css'
 
 const CardsGrid = () => {
