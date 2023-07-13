@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { Container, Grid, Typography } from '@mui/material'
 import cajas from '../assets/not-found.png'
 import Subtitle from '../components/atom/Subtitle'
@@ -8,21 +9,11 @@ type NotFoundProps = {
 }
 
 const NotFound: React.FC<NotFoundProps> = () => {
+  const navigate = useNavigate()
+  const handleClick = () => navigate('/')
   return (
     <main>
-      <Container
-        maxWidth="lg"
-        sx={ {
-          marginTop: '5rem',
-          minHeight: { sm: '60vh', lg: '70vh' },
-          display: 'flex',
-          flexDirection: 'column',
-          flexWrap: 'wrap',
-          alignContent: 'center',
-          justifyContent: 'center',
-          alignItems: 'center',
-        } }
-      >
+      <Container maxWidth="lg" sx={ styles.mainContainer } >
         <Grid container>
           <Grid
             item
@@ -50,7 +41,7 @@ const NotFound: React.FC<NotFoundProps> = () => {
             >
               La buena noticia es que aún contamos con miles de propiedades que sí están disponibles para vos.
             </Typography>
-            <PrimaryButton text="Volver al inicio" />
+            <PrimaryButton text="Volver al inicio" onClick={ handleClick } />
           </Grid>
           <Grid
             item
@@ -67,3 +58,16 @@ const NotFound: React.FC<NotFoundProps> = () => {
 }
 
 export default NotFound
+
+const styles = {
+  mainContainer: {
+    marginTop: '6rem',
+    minHeight: { sm: '60vh', lg: '70vh' },
+    display: 'flex',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    alignContent: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+}
