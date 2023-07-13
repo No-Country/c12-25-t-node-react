@@ -7,10 +7,25 @@ import { Estates } from '../model/estates.ts'
 import heroImageBanner from '../assets/heroImage.png'
 import ImageCtaLeft from '../assets/imageCtaRight.png'
 import ImageCtaRight from '../assets/imageCtaLeft.png'
+import { useSpinner} from '../context/SpinnerProvider.tsx' // para Loader
 
 type HomeProps = {}
 
 const Home: React.FC<HomeProps> = () => {
+  // Ejemplo de como usar el loader cuando hacemos un fetch
+  // const { addLoading, removeLoading} = useSpinner()
+  // useEffect(() => {
+  //  const hagoFetch = async () => {
+  //     addLoading()
+  //     try {
+  //     } catch(err) { 
+  //        //aca hay que mostrar error
+  //     } finally {
+  //      removeLoading()
+  //     }
+  //   }
+  //   hagoFetch()
+  // }, [])
   const [estatesForSale, setStatesForSale] = useState<Estates[]>([])
   const [estatesForRent, setStatesForRent] = useState<Estates[]>([])
   useEffect(() => {
