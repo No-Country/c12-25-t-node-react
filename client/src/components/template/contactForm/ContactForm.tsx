@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Box, TextField, Button, Dialog, DialogTitle, DialogContent, DialogActions, InputLabel, Typography } from '@mui/material'
+import { Box, TextField, Button, Dialog, DialogTitle, DialogContent, DialogActions, Typography } from '@mui/material'
 import './ContactForm.styles.css'
 import { FormDetail, FormError, InitialState } from '../../../model/form';
 import InputForm from '../../atom/InputForm';
@@ -64,23 +64,23 @@ const ContactForm = () => {
       <Box sx={{display: 'flex', flexDirection: 'column',gap: '1rem', padding: '1rem'}}>
         <form onSubmit={handleSubmit} className='formContact'>
           <Box sx={{width: '350px', display:'flex', flexDirection: 'column', marginRight: '5px' }}>
-            <Box sx={{marginBottom: '22px'}}>
+            <Box sx={{marginBottom: '23px'}}>
               <Typography variant="body1"sx={styleText}>Nombre completo</Typography>
-              <InputForm inputLabel='Nombre completo'inputName='fullName' inputValue={formData.fullName} inputChange={handleChange} inputError={!!errors.fullName} inputHelper={errors.fullName}/>
+              <InputForm inputLabel='Ingresá tu Nombre y Apellido'inputName='fullName' inputValue={formData.fullName} inputChange={handleChange} inputError={!!errors.fullName} inputHelper={errors.fullName}/>
             </Box>
-            <Box sx={{marginBottom: '22px'}}>
+            <Box sx={{marginBottom: '23px'}}>
               <Typography variant="body1"sx={styleText}>Teléfono</Typography>
-              <InputForm inputLabel='Teléfono'inputName='phone' inputValue={formData.phone} inputChange={handleChange} inputError={!!errors.phone} inputHelper={errors.phone}/>
+              <InputForm inputLabel='Ingresá tu número telefónico'inputName='phone' inputValue={formData.phone} inputChange={handleChange} inputError={!!errors.phone} inputHelper={errors.phone}/>
             </Box>
-            <Box sx={{marginBottom: '22px'}}>
+            <Box sx={{marginBottom: '23px'}}>
               <Typography variant="body1"sx={styleText}>Correo Electrónico</Typography>
-              <InputForm inputLabel='Correo electrónico'inputName='email' inputValue={formData.email} inputChange={handleChange} inputError={!!errors.email} inputHelper={errors.email}/>
+              <InputForm inputLabel='Ingresá tu correo electrónico'inputName='email' inputValue={formData.email} inputChange={handleChange} inputError={!!errors.email} inputHelper={errors.email}/>
             </Box>
           </Box>
           <Box sx={{width: '350px', height:'100%'}}>
             <Typography variant="body1"sx={styleText}>Mensaje</Typography>
             <TextField
-            label='Escribe un mensaje'
+            label='Ingresá tu consulta o comentario'
               name='message'
               value={formData.message}
               onChange={handleChange}
