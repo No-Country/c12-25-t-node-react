@@ -42,7 +42,7 @@ module.exports = {
                 },
                 is_active: {
                     allowNull: false,
-                    type: Sequelize.STRING,
+                    type: Sequelize.BOOLEAN,
                 },
                 created_at: {
                     allowNull: false,

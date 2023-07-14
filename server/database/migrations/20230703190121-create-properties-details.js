@@ -13,7 +13,11 @@ module.exports = {
                 },
                 total_area: {
                     allowNull: false,
-                    type: Sequelize.STRING,
+                    type: Sequelize.INTEGER,
+                },
+                covered_area: {
+                    allowNull: false,
+                    type: Sequelize.INTEGER,
                 },
                 bedrooms: {
                     allowNull: false,

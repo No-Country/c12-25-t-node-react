@@ -1,4 +1,4 @@
 node_modules
-.env.example
+.env
 package-lock.json
 server\docs\database\models

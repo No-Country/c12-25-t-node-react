@@ -26,6 +26,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.TEXT,
         },
+        images: {
+            allowNull: false,
+            type: DataTypes.STRING,
+        },
         address: {
             allowNull: false,
             type: DataTypes.STRING,
@@ -44,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         available: {
             allowNull: false,
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
         },
         created_at: {
             allowNull: false,
