@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { IconButton, Box, Tab, Tabs } from '@mui/material'
+import { IconButton, Box, Tab, Tabs, Typography } from '@mui/material'
 import Selector from './molecule/Selector'
 import SearchIcon from '@mui/icons-material/Search'
 import { useTheme, useMediaQuery } from '@mui/material'
@@ -16,7 +16,7 @@ function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
-  console.log(isMd)
+  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   return (
     <div
       role="tabpanel"
@@ -29,14 +29,14 @@ function TabPanel(props: TabPanelProps) {
         <Box
           sx={{
             p: 1,
-            width: isMd ? '460px' : '800px',
+            width: isMd ? 'auto' : '800px',
             display: 'flex',
             flexDirection: isMd ? 'column' : 'row',
             alignItems: 'center',
             backgroundColor: '#f5f5f5',
             borderBottomLeftRadius: '15px',
             borderBottomRightRadius: '15px',
-            borderTopRightRadius: '15px',
+            borderTopRightRadius: isSm ? 0 : '15px',
           }}
         >
           <>{children}</>
@@ -62,6 +62,7 @@ function a11yProps(index: number) {
 export default function BasicTabs() {
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
+  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const [value, setValue] = useState(0)
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
@@ -87,7 +88,7 @@ export default function BasicTabs() {
       borderTopRightRadius: '0px',
     },
     {
-      label: 'ALQUILAR TEMPORALMENTE',
+      label: 'ALQ. TEMPORAL',
       index: 2,
       borderTopLeftRadius: '0px',
       borderTopRightRadius: '15px',
@@ -109,59 +110,62 @@ export default function BasicTabs() {
     <Box
       sx={{
         position: 'absolute',
-        top: '48%',
-        left: isMd ? '50%' : '50%',
-        transform: isMd ? 'translate(-30%,-50%)' : 'translate(-50%, -50%)',
-        width: '90vw',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '80vw',
         maxWidth: '800px',
-        zIndex: 999,
       }}
     >
-      <Box>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="indicator example"
-          TabIndicatorProps={{
-            title: 'indicator',
-            hidden: true,
-          }}
-          sx={{
-            '& button': { color: 'white' },
-            '& button:focus': {
-              backgroundColor: '#f1f1f9',
-              color: '#1daeff',
-            },
-            '& button.Mui-selected': {
-              backgroundColor: '#f1f1f9',
-              color: '#1daeff',
-            },
-          }}
-        >
-          {tabArray.map((tab) => (
-            <Tab
-              key={tab.index}
-              //onClick={handleClick}
-              label={tab.label}
-              sx={{
-                borderTopLeftRadius: tab.borderTopLeftRadius,
-                borderTopRightRadius: tab.borderTopRightRadius,
-              }}
-              {...a11yProps(tab.index)}
-            />
-          ))}
-        </Tabs>
-      </Box>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        aria-label="indicator example"
+        TabIndicatorProps={{
+          title: 'indicator',
+          hidden: true,
+        }}
+        sx={{
+          paddingX: 0,
+          '& button': { color: 'white' },
+          '& button:focus': {
+            backgroundColor: '#f1f1f9',
+            color: '#1daeff',
+          },
+          '& button.Mui-selected': {
+            backgroundColor: '#f1f1f9',
+            color: '#1daeff',
+          },
+        }}
+      >
+        {tabArray.map((tab) => (
+          <Tab
+            key={tab.index}
+            label={tab.label}
+            wrapped
+            sx={{
+              fontSize: isSm ? '0.8rem' : '1rem',
+              padding: 0,
+              borderTopLeftRadius: tab.borderTopLeftRadius,
+              borderTopRightRadius: tab.borderTopRightRadius,
+            }}
+            {...a11yProps(tab.index)}
+          />
+        ))}
+      </Tabs>
+
       {tabArray.map((tab) => (
         <TabPanel key={tab.index} value={value} index={tab.index}>
           <Selector
-            placeholder="Selecciona tus zonas de preferencia"
+            longPlaceholder="Selecciona tus zonas de preferencia"
+            shortPlaceholder="Zonas de preferencia"
             label="Ubicación"
             selectOptions={locationArray}
           />
           <Divider />
           <Selector
-            placeholder="Selecciona tus viviendas de preferencia"
+            longPlaceholder="Selecciona tus viviendas de preferencia"
+            shortPlaceholder="Viviendas de preferencia"
             label="Tipo de propiedad"
             selectOptions={estatesArray}
           />
@@ -171,10 +175,14 @@ export default function BasicTabs() {
               color: 'white',
               borderRadius: 3,
               height: '50px',
-              width: isMd ? '80%' : '50px',
+              width: isMd ? '70%' : '50px',
             }}
           >
-            {isMd ? 'Buscar' : <SearchIcon />}
+            {isMd ? (
+              <Typography variant="h6">Buscar</Typography>
+            ) : (
+              <SearchIcon />
+            )}
           </IconButton>
         </TabPanel>
       ))}

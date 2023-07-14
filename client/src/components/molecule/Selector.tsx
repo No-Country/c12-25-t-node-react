@@ -7,6 +7,7 @@ import ListItemText from '@mui/material/ListItemText'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
 import Checkbox from '@mui/material/Checkbox'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import { useTheme, useMediaQuery } from '@mui/material'
 
 const ITEM_HEIGHT = 48
 const ITEM_PADDING_TOP = 8
@@ -20,35 +21,37 @@ const MenuProps = {
 }
 
 interface SelectorProps {
-  placeholder: string
+  longPlaceholder: string
+  shortPlaceholder: string
   label: string
   selectOptions: string[]
 }
 
 const Selector: React.FC<SelectorProps> = ({
-  placeholder,
+  longPlaceholder,
+  shortPlaceholder,
   label,
   selectOptions,
 }) => {
+  const theme = useTheme()
+  const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const [select, setSelect] = useState<string[]>([])
   const handleChange = (event: SelectChangeEvent<typeof select>) => {
     const {
       target: { value },
     } = event
-    setSelect(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value
-    )
+    setSelect(typeof value === 'string' ? value.split(',') : value)
   }
 
   const handleSelected = (selected: string[]) => {
-    if (selected.length === 0) return <p>{placeholder}</p>
+    if (selected.length === 0)
+      return <p>{isSm ? shortPlaceholder : longPlaceholder}</p>
     else return selected.join(', ')
   }
 
   return (
     <div style={{ display: 'flex' }}>
-      <FormControl sx={{ m: 1, width: 350 }}>
+      <FormControl sx={{ m: 1, width: isSm ? 240 : 350 }}>
         <InputLabel
           id="demo-multiple-checkbox-label"
           sx={{ color: 'blue', fontWeight: '600', fontSize: '1.25rem' }}
