@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Grid,
   Paper,
@@ -19,7 +20,6 @@ import PrimaryButton from '../../atom/PrimaryButton'
 import './MainInfoProperty.style.css'
 import { EstatePhoto } from '../../../model/estate-detail'
 import ConfirmationModal from '../confirmation-modal/ConfirmationModal'
-import BackButton from '../../atom/BackButton'
 
 type MainInfoPropertyProps = {
   address: string
@@ -49,6 +49,12 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   const [openDialog, setOpenDialog] = useState(false)
   const handleConfirm = () => setOpenDialog(true)
   const handleCloseDialog = () => setOpenDialog(false)
+  const handleClick = () => {
+    const contactSection = document.getElementById('contact-form')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
@@ -78,9 +84,9 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                   spaceBetween={ 10 }
                   centeredSlides={ true }
                 >
-                  { estatePhotos && estatePhotos.map(estatePhoto => (
+                  { estatePhotos && estatePhotos.map((estatePhoto, index) => (
                     <SwiperSlide
-                      key={ `estate-photo-${ estatePhoto.estate_photo_id }` }
+                      key={ `estate-photo-a-${ index }` }
                     >
                       <img src={ estatePhoto.url } width="100%" height={ 320 } className="imgSlider" />
                     </SwiperSlide>
@@ -95,8 +101,8 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                 sx={ styles.imgList }
                 className="container-photos"
               >
-                { estatePhotos.map(photo => <img
-                  key={ `photo-${ photo.estate_photo_id }` }
+                { estatePhotos.map((photo, index) => <img
+                  key={ `photo-${ index }` }
                   src={ photo.url }
                   style={ { width: '250px', height: 'auto' } } />)
                 }
@@ -117,6 +123,7 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                 <PrimaryButton
                   text="Consultar"
                   sx={ styles.btnCta }
+                  onClick={ handleClick }
                 />
                 <LocalizationProvider dateAdapter={ AdapterDayjs }>
                   <DemoContainer components={ ['MobileDatePicker'] }>
@@ -155,7 +162,7 @@ const styles = {
   titles: {
     background: '#0C0C39',
     color: '#F5F5F5',
-    padding: '0.5rem',
+    padding: '0.75rem 0.75rem 0.75rem 1.25rem',
     borderRadius: '0.5rem 0.5rem 0rem 0rem'
   },
   containerBtnCta: {

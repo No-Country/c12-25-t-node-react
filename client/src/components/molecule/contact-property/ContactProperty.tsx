@@ -1,6 +1,4 @@
-import {
-  Grid,
-} from '@mui/material'
+import { Grid } from '@mui/material'
 import backgroundPotho from '../../../assets/contact-property-by-id.png'
 import TextBox from '../text-box/TextBox'
 import Subtitle from '../../atom/Subtitle'
@@ -14,12 +12,12 @@ type ContactPropertyProps = {
 
 const ContactProperty: React.FC<ContactPropertyProps> = () => {
   return (
-    <section>
+    <section id="contact-form">
       <Grid container sx={ { paddingTop: '6rem' } }>
-        <Grid item xs={ 12 } md={ 4 } sx={ stylePhotoUp }>
+        <Grid item xs={ 12 } md={ 4 } lg={ 3 } sx={ stylePhotoUp }>
           <img src={ backgroundPotho } className="home-small" />
         </Grid>
-        <Grid item xs={ 12 } md={ 8 } sx={{zIndex: '1'}}>
+        <Grid item xs={ 12 } md={ 8 } lg={ 9 } sx={ { zIndex: '1' } }>
           <TextBox
             boxTop='-70px'
             paperMargin='1rem auto'
@@ -45,8 +43,8 @@ const ContactProperty: React.FC<ContactPropertyProps> = () => {
             />
           </TextBox>
         </Grid>
-        <Grid item xs={ 12 } md={ 4 } sx={ stylePhotoDown }>
-          <img src={ backgroundPotho } width=' 100%' className="home-large"/>
+        <Grid item xs={ 12 } md={ 4 } lg={ 3 } className="photo-down" sx={ { display: { xs: 'none', md: 'flex' } } }>
+          <img src={ backgroundPotho } width=' 100%' className="home-large" />
         </Grid>
       </Grid>
     </section>
@@ -61,13 +59,4 @@ const stylePhotoUp = {
   alignContent: 'center',
   justifyContent: 'center',
   alignItems: 'center'
-}
-const stylePhotoDown = {
-  display: { xs: 'none', md: 'flex' },
-  flexWrap: 'wrap',
-  alignContent: 'center',
-  justifyContent: 'center',
-  alignItems: 'center',
-  position: 'absolute',
-  right: '50px'
 }
