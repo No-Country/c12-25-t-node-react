@@ -1,11 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  Box,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Grid,
   Paper,
   Typography
@@ -24,11 +19,9 @@ import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './MainInfoProperty.style.css'
 import { EstatePhoto } from '../../../model/estate-detail'
-import Subtitle from '../../atom/Subtitle'
 import ConfirmationModal from '../confirmation-modal/ConfirmationModal'
 
 type MainInfoPropertyProps = {
-  redirectFromHome: string | null
   address: string
   name: string
   price: number
@@ -41,7 +34,6 @@ type MainInfoPropertyProps = {
 }
 
 const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
-  redirectFromHome,
   address,
   name,
   price,
@@ -52,22 +44,20 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   garden,
   estatePhotos
 }) => {
-  const navigate = useNavigate()
-  const handleClick = () => navigate(`${ redirectFromHome === 'true' ? '/' : 'search' }`)
   const formatedPrice = price.toLocaleString("es-AR", { useGrouping: true })
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2022-04-17'))
   const [openDialog, setOpenDialog] = useState(false)
   const handleConfirm = () => setOpenDialog(true)
   const handleCloseDialog = () => setOpenDialog(false)
+  const handleClick = () => {
+    const contactSection = document.getElementById('contact-form')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
-      <PrimaryButton
-        text="<- Volver"
-        variant="text"
-        colorBtn="secondary"
-        onClick={ handleClick }
-      />
       <Grid container className="container-hero-detail">
         <Grid item xs={ 10 } sm={ 6 } md={ 5 } sx={ styles.titles }>
           <Typography variant="h3">{ address }</Typography>
@@ -94,9 +84,9 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                   spaceBetween={ 10 }
                   centeredSlides={ true }
                 >
-                  { estatePhotos && estatePhotos.map(estatePhoto => (
+                  { estatePhotos && estatePhotos.map((estatePhoto, index) => (
                     <SwiperSlide
-                      key={ `estate-photo-${ estatePhoto.estate_photo_id }` }
+                      key={ `estate-photo-a-${ index }` }
                     >
                       <img src={ estatePhoto.url } width="100%" height={ 320 } className="imgSlider" />
                     </SwiperSlide>
@@ -111,8 +101,8 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                 sx={ styles.imgList }
                 className="container-photos"
               >
-                { estatePhotos.map(photo => <img
-                  key={ `photo-${ photo.estate_photo_id }` }
+                { estatePhotos.map((photo, index) => <img
+                  key={ `photo-${ index }` }
                   src={ photo.url }
                   style={ { width: '250px', height: 'auto' } } />)
                 }
@@ -133,6 +123,7 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                 <PrimaryButton
                   text="Consultar"
                   sx={ styles.btnCta }
+                  onClick={ handleClick }
                 />
                 <LocalizationProvider dateAdapter={ AdapterDayjs }>
                   <DemoContainer components={ ['MobileDatePicker'] }>
@@ -171,7 +162,7 @@ const styles = {
   titles: {
     background: '#0C0C39',
     color: '#F5F5F5',
-    padding: '0.5rem',
+    padding: '0.75rem 0.75rem 0.75rem 1.25rem',
     borderRadius: '0.5rem 0.5rem 0rem 0rem'
   },
   containerBtnCta: {

@@ -1,5 +1,6 @@
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import searchBanner from '../assets/search-banner.png'
+import BackButton from '../components/atom/BackButton'
 
 type SearchProps = {
   /* aca van las props, ej:
@@ -11,7 +12,11 @@ type SearchProps = {
 
 const Search: React.FC<SearchProps> = () => {
   return (
-    <BannerAndBackgroundPage imgSrc={searchBanner} imgHeight="280px"/>
+    <>
+      <BackButton />
+      <BannerAndBackgroundPage imgSrc={ searchBanner } imgHeight="280px" />
+    </>
+
   )
 }
 

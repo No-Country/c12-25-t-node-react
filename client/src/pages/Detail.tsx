@@ -5,6 +5,7 @@ import DetailProperty from '../components/molecule/detail-property/DetailPropert
 import jsonData from '../api/state-detail-mock.json'
 import MainInfoProperty from '../components/molecule/main-info-property/MainInfoProperty'
 import ContactProperty from '../components/molecule/contact-property/ContactProperty'
+import BackButton from '../components/atom/BackButton'
 
 type DetailProps = {
 }
@@ -134,45 +135,47 @@ const Detail: React.FC<DetailProps> = () => {
   const totalArea = covered_area + uncoverd_area
 
   return (
-    <Box sx={ { padding: '5rem 0rem 5rem', background: '#F5F5F5' } }>
-      <Container maxWidth="lg">
-        <MainInfoProperty
-          redirectFromHome={ redirectFromHome }
-          address={ address }
-          name={ name }
-          price={ price }
-          totalArea={ totalArea }
-          bedrooms={ bedrooms }
-          bathrooms={ bathrooms }
-          garage={ garage }
-          garden={ garden }
-          estatePhotos={ estate_photos }
-        />
-        <DetailProperty
-          totalArea={ totalArea }
-          coveredArea={ covered_area }
-          description={ descriptionText }
-          zone={ zoneText }
-          services={ filteredServices }
-          bedrooms={ bedrooms }
-          bathrooms={ bathrooms }
-          toilette={ toilette }
-          balcony={ balcony }
-          garage={ garage }
-          swimmingPool={ swimming_pool }
-          sum={ reception_hall }
-          gym={ gym }
-          years={ antiquity }
-          garden={ garden }
-          terrance={ terrance }
-          grill={ grill }
-          creditWorthy={ credit_worthy }
-          professionalUse={ professional_use }
-          rooms={ rooms }
-        />
-        <ContactProperty />
-      </Container>
-    </Box>
+    <>
+      <BackButton />
+      <Box sx={ { padding: '8.5rem 0rem 5rem', background: '#F5F5F5' } }>
+        <Container maxWidth="lg">
+          <MainInfoProperty
+            address={ address }
+            name={ name }
+            price={ price }
+            totalArea={ totalArea }
+            bedrooms={ bedrooms }
+            bathrooms={ bathrooms }
+            garage={ garage }
+            garden={ garden }
+            estatePhotos={ estate_photos }
+          />
+          <DetailProperty
+            totalArea={ totalArea }
+            coveredArea={ covered_area }
+            description={ descriptionText }
+            zone={ zoneText }
+            services={ filteredServices }
+            bedrooms={ bedrooms }
+            bathrooms={ bathrooms }
+            toilette={ toilette }
+            balcony={ balcony }
+            garage={ garage }
+            swimmingPool={ swimming_pool }
+            sum={ reception_hall }
+            gym={ gym }
+            years={ antiquity }
+            garden={ garden }
+            terrance={ terrance }
+            grill={ grill }
+            creditWorthy={ credit_worthy }
+            professionalUse={ professional_use }
+            rooms={ rooms }
+          />
+          <ContactProperty />
+        </Container>
+      </Box>
+    </>
   )
 }
 
