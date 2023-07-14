@@ -1,0 +1,69 @@
+.back-link {
+  text-decoration: none;
+  color: var(--primary-light);
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+.container-hero-detail {
+  margin-top: 1rem;
+}
+
+.container-photos {
+  max-height: 320px;
+  overflow-y: scroll;
+}
+
+/* Estilos de la barra de desplazamiento */
+/* Ajusta el ancho de la barra de desplazamiento */
+.container-photos::-webkit-scrollbar {
+  width: 12px; 
+}
+ /* Color de fondo de la barra de desplazamiento */
+.container-photos::-webkit-scrollbar-track {
+  background: var(--primary-darker);
+}
+
+/* Color del pulgar de la barra de desplazamiento */
+.container-photos::-webkit-scrollbar-thumb {
+  background: var(--primary-light); 
+}
+
+/* Imagenes del slider */
+.imgSlider {
+  object-fit: cover;
+}
+
+/* Botones del slider */
+.swiper-button-prev, 
+.swiper-button-next {
+  color: var(--primary-light);
+}
+
+.swiper-button-prev:after, 
+.swiper-button-next:after {
+  font-weight: 900;
+}
+
+.MuiPickersToolbar-root.MuiPickersLayout-toolbar {
+  display: none;
+}
+
+.css-1pduc5x-MuiStack-root {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.css-1pduc5x-MuiStack-root>.MuiTextField-root {
+  min-width: 100% !important;
+}
