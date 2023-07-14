@@ -1,5 +1,6 @@
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import favoriteBanner from '../assets/favorite-banner.png'
+import BackButton from '../components/atom/BackButton'
 
 type FavoritesProps = {
   /* aca van las props, ej:
@@ -11,7 +12,10 @@ type FavoritesProps = {
 
 const Favorites: React.FC<FavoritesProps> = () => {
   return (
-    <BannerAndBackgroundPage imgSrc={favoriteBanner} imgHeight="200px"/>
+    <>
+      <BackButton />
+      <BannerAndBackgroundPage imgSrc={favoriteBanner} imgHeight="350px"/>
+    </>
   )
 }
 

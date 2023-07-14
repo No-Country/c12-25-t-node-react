@@ -1,8 +1,5 @@
 import { Button, ButtonProps } from '@mui/material'
-
-type variantBtn = 'contained' | 'outlined' | 'text'
-type sizeBtn = 'small' | 'medium' | 'large'
-type colorBtn = 'inherit' | 'primary' | 'secondary' | 'success' | 'error' | 'info' | 'warning'
+import { colorBtn, sizeBtn, variantBtn } from '../../utils/types'
 
 interface PrimaryButtonProps extends ButtonProps {
   text: string

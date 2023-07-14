@@ -1,11 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import {
-  Box,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   Grid,
   Paper,
   Typography
@@ -24,11 +18,10 @@ import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './MainInfoProperty.style.css'
 import { EstatePhoto } from '../../../model/estate-detail'
-import Subtitle from '../../atom/Subtitle'
 import ConfirmationModal from '../confirmation-modal/ConfirmationModal'
+import BackButton from '../../atom/BackButton'
 
 type MainInfoPropertyProps = {
-  redirectFromHome: string | null
   address: string
   name: string
   price: number
@@ -41,7 +34,6 @@ type MainInfoPropertyProps = {
 }
 
 const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
-  redirectFromHome,
   address,
   name,
   price,
@@ -52,8 +44,6 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   garden,
   estatePhotos
 }) => {
-  const navigate = useNavigate()
-  const handleClick = () => navigate(`${ redirectFromHome === 'true' ? '/' : 'search' }`)
   const formatedPrice = price.toLocaleString("es-AR", { useGrouping: true })
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2022-04-17'))
   const [openDialog, setOpenDialog] = useState(false)
@@ -62,12 +52,6 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
 
   return (
     <>
-      <PrimaryButton
-        text="<- Volver"
-        variant="text"
-        colorBtn="secondary"
-        onClick={ handleClick }
-      />
       <Grid container className="container-hero-detail">
         <Grid item xs={ 10 } sm={ 6 } md={ 5 } sx={ styles.titles }>
           <Typography variant="h3">{ address }</Typography>

@@ -5,6 +5,7 @@ import aboutBanner from '../assets/about-us-banner.png'
 import { ABOUT_US_TEXT } from '../utils/about-us-text'
 import Subtitle from '../components/atom/Subtitle'
 import CardsGrid from '../components/template/cardsAbout/CardsGrid'
+import BackButton from '../components/atom/BackButton'
 
 
 type AboutProps = {
@@ -12,22 +13,25 @@ type AboutProps = {
 
 const About: React.FC<AboutProps> = () => {
   return (
-    <BannerAndBackgroundPage imgSrc={aboutBanner}>
-      <TextBox subTitle={
-        <Subtitle
-          title="Conocé nuestra "
-          titleBold="Empresa"
-          padding="2rem 2rem 1rem"
-        />
-      }
-      >
-        <TitleText
-          textToShow={ABOUT_US_TEXT}
-          paddingText="0.25rem 2rem"
-        />
-      </TextBox>
-      <CardsGrid />
-    </BannerAndBackgroundPage>
+    <>
+      <BackButton />
+      <BannerAndBackgroundPage imgSrc={ aboutBanner }>
+        <TextBox subTitle={
+          <Subtitle
+            title="Conocé nuestra "
+            titleBold="Empresa"
+            padding="2rem 2rem 1rem"
+          />
+        }
+        >
+          <TitleText
+            textToShow={ ABOUT_US_TEXT }
+            paddingText="0.25rem 2rem"
+          />
+        </TextBox>
+        <CardsGrid />
+      </BannerAndBackgroundPage>
+    </>
   )
 }
 
