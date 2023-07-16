@@ -11,15 +11,23 @@ module.exports = {
                     primaryKey: true,
                     type: Sequelize.INTEGER,
                 },
-                total_area: {
+                covered_area: {
                     allowNull: false,
-                    type: Sequelize.STRING,
+                    type: Sequelize.FLOAT,
+                },
+                uncovered_area: {
+                    allowNull: false,
+                    type: Sequelize.FLOAT,
                 },
                 bedrooms: {
                     allowNull: false,
                     type: Sequelize.INTEGER,
                 },
                 bathrooms: {
+                    allowNull: false,
+                    type: Sequelize.INTEGER,
+                },
+                toilette: {
                     allowNull: false,
                     type: Sequelize.INTEGER,
                 },
@@ -31,11 +39,19 @@ module.exports = {
                     allowNull: false,
                     type: Sequelize.INTEGER,
                 },
+                reception_hall: {
+                    allowNull: false,
+                    type: Sequelize.INTEGER,
+                },
                 balcony: {
                     allowNull: false,
                     type: Sequelize.INTEGER
                 },
                 elevator: {
+                    allowNull: false,
+                    type: Sequelize.INTEGER,
+                },
+                gym: {
                     allowNull: false,
                     type: Sequelize.INTEGER,
                 },
@@ -52,6 +68,26 @@ module.exports = {
                     },
                     onDelete: 'CASCADE',
                     onUpdate: 'CASCADE',
+                },
+                garden: {
+                    allowNull: false,
+                    type: Sequelize.BOOLEAN,
+                },
+                terrance: {
+                    allowNull: false,
+                    type: Sequelize.BOOLEAN,
+                },
+                grill: {
+                    allowNull: false,
+                    type: Sequelize.INTEGER,
+                },
+                credit_worthy: {
+                    allowNull: false,
+                    type: Sequelize.BOOLEAN,
+                },
+                professional_use: {
+                    allowNull: false,
+                    type: Sequelize.BOOLEAN,
                 },
                 created_at: {
                     allowNull: false,

@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         username: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
         },
         first_name: {
             type: DataTypes.STRING,
@@ -33,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         email: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
             validate: {
                 isEmail: true,
             },
@@ -40,13 +42,17 @@ module.exports = (sequelize, DataTypes) => {
         password: {
             allowNull: false,
             type: DataTypes.STRING,
+            validate: {
+                min: 8,
+            }
         },
         phone: {
-            allowNull: false,
+            validate: {
+                min: 9,
+            },
             type: DataTypes.STRING,
         },
         avatar: {
-            allowNull: false,
             type: DataTypes.TEXT,
         },
         is_active: {
@@ -78,6 +84,10 @@ module.exports = (sequelize, DataTypes) => {
                 if (user.email) {
                     let emailLowercase = String(user.email).toLowerCase();
                     user.email = emailLowercase;
+                }
+                if (user.username) {
+                    let usernameLowercase = String(user.username).toLowerCase();
+                    user.username = usernameLowercase;
                 }
             },
         },

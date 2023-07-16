@@ -1,7 +1,7 @@
 const property = require('../database/models').Properties;
 module.exports = {
     getProperties: (req, res) => {
-        return property.findAll({}).then(data => {
+        return property.findAll({ attributes: { exclude: ["updated_at", "created_at"] } }).then(data => {
                 res.status(200).send(data)
             })
             .catch(err => {

@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.STRING,
         },
+        city: {
+            allowNull: false,
+            type: DataTypes.STRING,
+        },
         province: {
             allowNull: false,
             type: DataTypes.STRING,
@@ -44,7 +48,23 @@ module.exports = (sequelize, DataTypes) => {
         },
         available: {
             allowNull: false,
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
+        },
+        is_featured: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+        for_sale: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+        for_rent: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         },
         created_at: {
             allowNull: false,

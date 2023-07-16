@@ -3,7 +3,7 @@ const user = require('../database/models').Users;
 
 module.exports = {
     async getUsers(req, res) {
-        return user.findAll({}).then(data => {
+        return user.findAll({ attributes: { exclude: ["is_active", "password", "created_at", "updated_at"] } }).then(data => {
                 res.status(200).send(data)
             })
             .catch(err => {

@@ -13,8 +13,6 @@ module.exports = {
                     last_name: req.body.last_name,
                     email: req.body.email,
                     password: await bcrypt.hash(req.body.password, 10),
-                    phone: req.body.phone,
-                    avatar: req.body.avatar,
                     is_active: true,
                 },
             })
@@ -47,6 +45,7 @@ module.exports = {
     async me(req, res) {
         try {
             let token = req.headers['authorization'];
+            console.log(token)
             let decoded = jwt.verify(token, process.env.JWT_SECRET_WORD);
             let reqUser = decoded;
             if (reqUser) {

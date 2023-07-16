@@ -21,15 +21,23 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             type: DataTypes.INTEGER,
         },
-        total_area: {
+        covered_area: {
             allowNull: false,
-            type: DataTypes.STRING,
+            type: DataTypes.FLOAT,
+        },
+        uncovered_area: {
+            allowNull: false,
+            type: DataTypes.FLOAT,
         },
         bedrooms: {
             allowNull: false,
             type: DataTypes.INTEGER,
         },
         bathrooms: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+        },
+        toilette: {
             allowNull: false,
             type: DataTypes.INTEGER,
         },
@@ -41,6 +49,10 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.INTEGER,
         },
+        reception_hall: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+        },
         balcony: {
             allowNull: false,
             type: DataTypes.INTEGER
@@ -49,13 +61,40 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.INTEGER,
         },
+        gym: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+        },
         antiquity: {
             allowNull: false,
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
         },
         property_id: {
             allowNull: false,
             type: DataTypes.INTEGER,
+        },
+        garden: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        terrance: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+        },
+        grill: {
+            allowNull: false,
+            type: DataTypes.INTEGER,
+        },
+        credit_worthy: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
+        },
+        professional_use: {
+            allowNull: false,
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         },
         created_at: {
             allowNull: false,

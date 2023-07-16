@@ -2,6 +2,7 @@
 const userController = require('../controllers/users');
 const authController = require('../controllers/auth');
 const propertyController = require('../controllers/properties');
+const checkAuth = require('../middleware/checkAuth').checkAuth;
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
         message: 'No tienes acceso a la API',
@@ -13,14 +14,14 @@ module.exports = (app) => {
 
 
     //User routes
-    app.get('/api/users/list', userController.getUsers);
-    app.post('/api/users/update/:id', userController.updateUser);
-    app.delete('/api/users/:id', userController.deleteUser);
+    app.get('/api/users/list', checkAuth, userController.getUsers);
+    app.post('/api/users/update/:id', checkAuth, userController.updateUser);
+    app.delete('/api/users/:id', checkAuth, userController.deleteUser);
     //Property routes
-    app.get('/api/properties/list', propertyController.getProperties);
-    app.get('/api/properties/list-available', propertyController.getAvailableProperties);
-    app.get('/api/properties/find/:id', propertyController.getPropertyById);
-    app.post('/api/properties/create', propertyController.createProperty);
-    app.post('/api/properties/update/:id', propertyController.updateProperty);
-    app.delete('/api/properties/', propertyController.deleteProperty);
+    app.get('/api/properties/list', checkAuth, propertyController.getProperties);
+    app.get('/api/properties/list-available', checkAuth, propertyController.getAvailableProperties);
+    app.get('/api/properties/find/:id', checkAuth, propertyController.getPropertyById);
+    app.post('/api/properties/create', checkAuth, propertyController.createProperty);
+    app.post('/api/properties/update/:id', checkAuth, propertyController.updateProperty);
+    app.delete('/api/properties/', checkAuth, propertyController.deleteProperty);
 };

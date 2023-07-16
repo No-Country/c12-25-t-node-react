@@ -13,6 +13,7 @@ module.exports = {
                 },
                 username: {
                     allowNull: false,
+                    unique: true,
                     type: Sequelize.STRING,
                 },
                 first_name: {
@@ -30,14 +31,20 @@ module.exports = {
                 },
                 password: {
                     allowNull: false,
+                    validate: {
+                        min: 8,
+                    },
                     type: Sequelize.STRING
                 },
                 phone: {
-                    allowNull: false,
+                    allowNull: true,
+                    validate: {
+                        min: 9,
+                    },
                     type: Sequelize.STRING,
                 },
                 avatar: {
-                    allowNull: false,
+                    allowNull: true,
                     type: Sequelize.TEXT,
                 },
                 is_active: {
