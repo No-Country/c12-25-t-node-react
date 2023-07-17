@@ -423,9 +423,7 @@ Get the list of properties to home card.
 
 **Metodo** : `GET`
 
-**Requiere Autenticación** : YES
-
-**Header** : Authorization
+**Requiere Autenticación** : NO
 
 **Permissions required** : None
 
@@ -478,6 +476,47 @@ Get the list of properties to home card.
 				"updated_at": "2023-07-17T04:04:35.000Z"
 			}
 		]
+	},
+	{
+		"id": 2,
+		"name": "Amplio Dpto. de 2 Dorms. en Lira en Alquiler",
+		"description": "Se Alquila Amplio departamento en pleno centro de Lira, Av. Las Flores esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+		"address": "Saint Dennis 656",
+		"city": "Lira",
+		"province": "Lima",
+		"country": "Peru",
+		"price": 800,
+		"available": true,
+		"is_featured": true,
+		"for_sale": false,
+		"for_rent": true,
+		"created_at": "2023-07-17T09:04:33.000Z",
+		"updated_at": "2023-07-17T09:04:33.000Z",
+		"p_details": [
+			{
+				"id": 2,
+				"covered_area": 350,
+				"uncovered_area": 50,
+				"bedrooms": 2,
+				"bathrooms": 2,
+				"toilette": 1,
+				"garage": 1,
+				"swimming_pool": 1,
+				"reception_hall": 0,
+				"balcony": 0,
+				"elevator": 0,
+				"gym": 0,
+				"antiquity": "2",
+				"property_id": 2,
+				"garden": true,
+				"terrance": false,
+				"grill": 1,
+				"credit_worthy": false,
+				"professional_use": false,
+				"created_at": "2023-07-17T09:40:33.000Z",
+				"updated_at": "2023-07-17T09:40:33.000Z"
+			}
+		]
 	}
 ]
 ``` 
@@ -488,13 +527,11 @@ Get the list of properties to home card.
 
 Get the list of properties to property page.
 
-**URL** : `/api/properties/list-detail`
+**URL** : `/api/properties/full-detail`
 
 **Metodo** : `GET`
 
-**Requiere Autenticación** : YES
-
-**Header** : Authorization
+**Requiere Autenticación** : NO
 
 **Permissions required** : None
 
@@ -547,8 +584,51 @@ Get the list of properties to property page.
 		}
 	],
 	"PropertiesPhotos": [],
-	"properties_services": [],
-	"properties_rooms": []
+	"properties_services": [
+		{
+			"id": 1,
+			"property_id": 1,
+			"electricidad": true,
+			"telefono": true,
+			"gas": true,
+			"internet": true,
+			"alarma": false,
+			"ascensor": false,
+			"created_at": "2023-07-17T09:40:35.000Z",
+			"updated_at": "2023-07-17T09:40:35.000Z"
+		},
+		{
+			"id": 2,
+			"property_id": 1,
+			"electricidad": true,
+			"telefono": true,
+			"gas": true,
+			"internet": false,
+			"alarma": true,
+			"ascensor": true,
+			"created_at": "2023-07-17T08:04:35.000Z",
+			"updated_at": "2023-07-17T08:04:35.000Z"
+		}
+	],
+	"properties_rooms": [
+		{
+			"id": 1,
+			"property_id": 1,
+			"cocina": 1,
+			"comedor": 1,
+			"living": 1,
+			"baños": 1,
+			"dormitorios": 2,
+			"toilet": 1,
+			"garage": 1,
+			"terraza": 1,
+			"pileta": 2,
+			"jardin": 1,
+			"sum": 1,
+			"created_at": "2023-07-17T08:04:35.000Z",
+			"updated_at": "2023-07-17T08:04:35.000Z"
+		}
+	]
 }
 ``` 
 

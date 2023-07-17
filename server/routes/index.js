@@ -18,11 +18,11 @@ module.exports = (app) => {
     app.put('/api/users/update/:id', checkAuth, userController.updateUser);
     app.delete('/api/users/:id', checkAuth, userController.deleteUser);
     //Property routes
-    app.get('/api/properties/list', checkAuth, propertyController.getProperties);
-    app.get('/api/properties/list-available', checkAuth, propertyController.getAvailableProperties);
-    app.get('/api/properties/find/:id', checkAuth, propertyController.getPropertyById);
-    app.get('/api/properties/list-detail', checkAuth, propertyController.getPropertiesDetail);
-    app.get('/api/properties/:id/full-detail', checkAuth, propertyController.getPropertyFullDetail);
+    app.get('/api/properties/list', propertyController.getProperties);
+    app.get('/api/properties/list-available', propertyController.getAvailableProperties);
+    app.get('/api/properties/find/:id', propertyController.getPropertyById);
+    app.get('/api/properties/list-detail', propertyController.getPropertiesDetail);
+    app.get('/api/properties/:id/full-detail', propertyController.getPropertyFullDetail);
     app.post('/api/properties/create', checkAuth, propertyController.createProperty);
     app.post('/api/properties/create-detail', checkAuth, propertyController.createPropertyDetail);
     app.put('/api/properties/update/:id', checkAuth, propertyController.updateProperty);

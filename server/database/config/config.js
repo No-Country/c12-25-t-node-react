@@ -12,7 +12,7 @@ module.exports = {
             deletedAt: 'deleted_at',
         },
         dialectOptions: {
-            useUTC: true,
+            //useUTC: true,
         },
         timezone: '+00:00'
     },
@@ -28,7 +28,7 @@ module.exports = {
             deletedAt: 'deleted_at',
         },
         dialectOptions: {
-            useUTC: true,
+            //useUTC: true,
         },
         timezone: '+00:00'
     },
