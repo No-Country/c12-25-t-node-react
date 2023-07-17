@@ -1,5 +1,11 @@
 const user = require('../database/models').Users;
+const cloudinary = require('cloudinary');
 
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
+});
 
 module.exports = {
     async getUsers(req, res) {
@@ -12,27 +18,56 @@ module.exports = {
                 });
             });
     },
-    updateUser(req, res) {
+    async updateUser(req, res) {
         const id = req.params.id;
-        return user.update(req.body, {
-                where: { id: id }
-            })
-            .then(num => {
-                if (num == 1) {
-                    res.status(200).send({
-                        message: "Actualizado con éxito."
+        const newUserObj = req.body;
+        if (req.file) {
+            const result = await cloudinary.v2.uploader.upload(req.file.path);
+            newUserObj.avatar = result.url
+            return user.update(
+                    newUserObj, {
+                        where: { id: id }
+                    })
+                .then(num => {
+                    if (num == 1) {
+                        res.status(200).send({
+                            message: "Actualizado con éxito."
+                        });
+                    } else {
+                        res.send({
+                            message: "No se puedo actualizar."
+                        });
+                    }
+                })
+                .catch(err => {
+                    res.status(500).send({
+                        message: err.message || "Error al actualizar los datos del usuario."
                     });
-                } else {
-                    res.send({
-                        message: "No se puedo actualizar."
-                    });
-                }
-            })
-            .catch(err => {
-                res.status(500).send({
-                    message: err.message || "Error al actualizar los datos del usuario."
                 });
-            });
+        } else {
+            return user.update(
+                    req.body, {
+                        where: { id: id }
+
+                    })
+                .then(num => {
+                    if (num == 1) {
+                        res.status(200).send({
+                            message: "Actualizado con éxito."
+                        });
+                    } else {
+                        res.send({
+                            message: "No se puedo actualizar."
+                        });
+                    }
+                })
+                .catch(err => {
+                    res.status(500).send({
+                        message: err.message || "Error al actualizar los datos del usuario."
+                    });
+
+                });
+        }
     },
     deleteUser(req, res) {
         const id = req.params.id;

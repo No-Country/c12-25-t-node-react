@@ -15,7 +15,7 @@ module.exports = (app) => {
 
     //User routes
     app.get('/api/users/list', checkAuth, userController.getUsers);
-    app.post('/api/users/update/:id', checkAuth, userController.updateUser);
+    app.put('/api/users/update/:id', checkAuth, userController.updateUser);
     app.delete('/api/users/:id', checkAuth, userController.deleteUser);
     //Property routes
     app.get('/api/properties/list', checkAuth, propertyController.getProperties);
