@@ -9,8 +9,9 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
-            PropertiesDetails.belongsTo(models.Properties, {
-                foreignKey: 'id',
+            this.belongsTo(models.Properties, {
+                as: 'p_details',
+                foreignKey: 'property_id',
                 onDelete: 'CASCADE'
             })
         }
@@ -19,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         id: {
             allowNull: false,
             primaryKey: true,
+            autoIncrement: true,
             type: DataTypes.INTEGER,
         },
         covered_area: {

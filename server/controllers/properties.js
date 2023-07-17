@@ -1,4 +1,6 @@
+const property_details = require('../database/models').PropertiesDetails;
 const property = require('../database/models').Properties;
+
 module.exports = {
     getProperties: (req, res) => {
         return property.findAll({ attributes: { exclude: ["updated_at", "created_at"] } }).then(data => {
@@ -37,6 +39,36 @@ module.exports = {
                 }
             });
     },
+    getPropertiesDetail: (req, res) => {
+        return property.findAll({
+                include: {
+                    model: property_details,
+                    as: 'p_details'
+                }
+            })
+            .then(data => {
+                if (data) {
+                    res.status(200).send(data);
+                } else {
+                    res.status(404).send({
+                        message: `No se encontraron registros.`
+                    })
+                }
+            });
+    },
+    getPropertiesFullDetail: (req, res) => {
+        const id = req.params.id;
+        return property.findByPk(id)
+            .then(data => {
+                if (data) {
+                    res.status(200).send(data);
+                } else {
+                    res.status(404).send({
+                        message: `No se encontró una propiedad con el id=${id}.`
+                    })
+                }
+            });
+    },
     createProperty: (req, res) => {
         if (!req.body) {
             res.status(400).send({
@@ -46,6 +78,24 @@ module.exports = {
         }
         const newProperty = req.body;
         return property.create(newProperty)
+            .then(data => {
+                res.status(200).send(data);
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: err.message || "Ocurrió un error al crear la nueva propiedad."
+                });
+            });
+    },
+    createPropertyDetail: (req, res) => {
+        if (!req.body) {
+            res.status(400).send({
+                message: "No se pueden registrar los detalles de una propiedad sin datos."
+            });
+            return;
+        }
+        const newPropertyDetail = req.body;
+        return property_details.create(newPropertyDetail)
             .then(data => {
                 res.status(200).send(data);
             })
