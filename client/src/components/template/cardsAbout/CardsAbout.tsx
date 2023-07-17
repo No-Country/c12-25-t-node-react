@@ -65,7 +65,7 @@ const CardsAbout: React.FC<CardsProps> = ({
         alignItems: 'center',
         marginBottom: '20px',
         ...(isSpecialCard && {
-          width: { xs: '90%', sm: '320px' },
+          width:{lg: '100%', sm: '270px', xs:'auto' },
           height: { xs: 'auto', sm: '324px' },
           flexDirection: { xs: 'row', sm: 'column' },
           justifyContent: 'flex-start',
@@ -86,8 +86,8 @@ const CardsAbout: React.FC<CardsProps> = ({
           image={ `./src/assets/personal/${ image }` }
           alt="Card Image"
           sx={ {
-            width: isSpecialCard ? { xs: '80px', sm: '100px' } : { xs: '85px', sm: '100px' },
-            height: isSpecialCard ? { xs: '80px', sm: '100px' } : { xs: '100px', sm: '100px' },
+            width: isSpecialCard ? { xs: '100px', sm: '100px' } : { xs: '85px', sm: '100px' },
+            height: isSpecialCard ? { xs: '100px', sm: '100px' } : { xs: '100px', sm: '100px' },
             margin: isSpecialCard ? { xs: '8px', sm: '19px' } : { xs: '5px', sm: '19px' },
             borderRadius: isSpecialCard ? { xs: '8px', sm: '0px' } : { xs: '8px', sm: '0px' },
             ...(isSpecialCard && {
@@ -128,13 +128,13 @@ const CardsAbout: React.FC<CardsProps> = ({
           justifyContent: isSpecialCard ? 'space-between' : 'space-around',
           paddingTop: '22px',
           height: '100%',
-          width: isSpecialCard ? {xs:'160px', sm: '200px'}: '100%',
+          width: isSpecialCard ? '100%': '100%',
           padding: '0 !important'
         } }
       >
         <Box
           sx={ {
-            textAlign: isSpecialCard ? { xs: 'left', sm: ' left' } : { xs: 'center', sm: 'left' },
+            textAlign: isSpecialCard ? { xs: 'left', sm: ' center' } : { xs: 'center', sm: 'left' },
             padding: isSpecialCard ? { xs: '2px', sm: ' 5px 15px' } : { xs: '5px', sm: '10px 0px' },
             marginBottom: isSpecialCard ? { xs: '20px' } : {},
           } }
@@ -153,10 +153,10 @@ const CardsAbout: React.FC<CardsProps> = ({
             <Box
               sx={ {
                 display: 'flex',
-                justifyContent: isSpecialCard ? 'flex-end' : 'center',
+                justifyContent: 'center',
                 alignItems: 'center',
                 gap: '8px',
-                paddingRight: '14px'
+                paddingRight: isSpecialCard ? '0px' :'14px',
               } }>
               <LocalizationProvider dateAdapter={ AdapterDayjs }>
                 <DemoContainer
