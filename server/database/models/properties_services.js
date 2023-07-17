@@ -57,11 +57,21 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.BOOLEAN,
             defaultValue: false,
+        },
+        created_at: {
+            allowNull: false,
+            type: DataTypes.DATE,
+        },
+        updated_at: {
+            allowNull: false,
+            type: DataTypes.DATE,
         }
     }, {
         sequelize,
         modelName: 'properties_services',
         tableName: "properties_services",
+        underscored: true,
+        timestamps: true,
     });
     return properties_services;
 };

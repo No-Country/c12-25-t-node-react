@@ -57,14 +57,15 @@ module.exports = {
             });
     },
     getPropertiesFullDetail: (req, res) => {
-        const id = req.params.id;
-        return property.findByPk(id)
+        return property.findAll({
+                include: { all: true }
+            })
             .then(data => {
                 if (data) {
                     res.status(200).send(data);
                 } else {
                     res.status(404).send({
-                        message: `No se encontró una propiedad con el id=${id}.`
+                        message: `No se encontraron registros.`
                     })
                 }
             });

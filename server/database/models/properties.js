@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // RAD define association here
+            Properties.hasMany(models.PropertiesDetails, { as: 'p_details', foreignKey: 'property_id' });
+            Properties.hasMany(models.PropertiesPhotos, { foreignKey: 'property_id' });
+            Properties.hasMany(models.properties_services, { foreignKey: 'property_id' });
+            Properties.hasMany(models.properties_rooms, { foreignKey: 'property_id' });
         }
     }
     Properties.init({

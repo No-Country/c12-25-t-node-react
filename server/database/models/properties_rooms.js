@@ -82,11 +82,21 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             type: DataTypes.INTEGER,
             defaultValue: 0,
+        },
+        created_at: {
+            allowNull: false,
+            type: DataTypes.DATE,
+        },
+        updated_at: {
+            allowNull: false,
+            type: DataTypes.DATE,
         }
     }, {
         sequelize,
         modelName: 'properties_rooms',
         tableName: "properties_rooms",
+        underscored: true,
+        timestamps: true,
     });
     return properties_rooms;
 };
