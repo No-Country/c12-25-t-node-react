@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // RAD define association here
+            
         }
     }
     Properties.init({

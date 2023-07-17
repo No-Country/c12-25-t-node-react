@@ -2,6 +2,7 @@
 const userController = require('../controllers/users');
 const authController = require('../controllers/auth');
 const propertyController = require('../controllers/properties');
+// const storage = require('../middleware/index.middleware.js')
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
         message: 'No tienes acceso a la API',
@@ -14,7 +15,7 @@ module.exports = (app) => {
 
     //User routes
     app.get('/api/users/list', userController.getUsers);
-    app.post('/api/users/update/:id', userController.updateUser);
+    app.put('/api/users/update/:id', userController.updateUser);
     app.delete('/api/users/:id', userController.deleteUser);
     //Property routes
     app.get('/api/properties/list', propertyController.getProperties);

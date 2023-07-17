@@ -42,11 +42,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
         },
         phone: {
-            allowNull: false,
+            allowNull: true,
             type: DataTypes.STRING,
         },
         avatar: {
-            allowNull: false,
+            allowNull: true,
             type: DataTypes.TEXT,
         },
         is_active: {

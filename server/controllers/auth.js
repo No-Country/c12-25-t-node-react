@@ -3,24 +3,30 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
+  
 module.exports = {
     async register(req, res) {
-        return users
-            .findOrCreate({
-                where: {
-                    username: req.body.username,
-                    first_name: req.body.first_name,
-                    last_name: req.body.last_name,
-                    email: req.body.email,
-                    password: await bcrypt.hash(req.body.password, 10),
-                    phone: req.body.phone,
-                    avatar: req.body.avatar,
-                    is_active: true,
-                },
-            })
-            .then(users => res.status(200).send(users))
-            .catch(error => res.status(400).send(error))
-
+        try {    
+           return users
+             .findOrCreate({
+                 where: {
+                     
+                         username: req.body.username,
+                         first_name: req.body.first_name,
+                         last_name: req.body.last_name,
+                         email: req.body.email,
+                         password: await bcrypt.hash(req.body.password, 10),
+                         is_active: true,
+                        },
+                        
+                        
+                    }).then(res.status(200).json({
+                        message:'success',
+                    }))
+        } catch (error) {
+            console.log(error)
+        }
+       
     },
     async login(req, res) {
         const user = await users.findOne({

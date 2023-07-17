@@ -33,11 +33,11 @@ module.exports = {
                     type: Sequelize.STRING
                 },
                 phone: {
-                    allowNull: false,
+                    allowNull: true,
                     type: Sequelize.STRING,
                 },
                 avatar: {
-                    allowNull: false,
+                    allowNull: true,
                     type: Sequelize.TEXT,
                 },
                 is_active: {
