@@ -1,26 +1,34 @@
-/* Controllers */
 const userController = require('../controllers/users');
 const authController = require('../controllers/auth');
 const propertyController = require('../controllers/properties');
-module.exports = (app) => {
-    app.get('/api', (req, res) => res.status(200).send({
-        message: 'No tienes acceso a la API',
-    }));
-    // Users login
-    app.post('/api/create', authController.register);
-    app.post('/api/login', authController.login);
-    app.get('/api/me', authController.me);
 
+const express = require('express');
+const router = express.Router();
 
-    //User routes
-    app.get('/api/users/list', userController.getUsers);
-    app.post('/api/users/update/:id', userController.updateUser);
-    app.delete('/api/users/:id', userController.deleteUser);
-    //Property routes
-    app.get('/api/properties/list', propertyController.getProperties);//listo
-    app.get('/api/properties/list-available', propertyController.getAvailableProperties);//listo
-    app.get('/api/properties/find/:id', propertyController.getPropertyById);//listo
-    app.post('/api/properties/create', propertyController.createProperty); //listo
-    app.post('/api/properties/update/:id', propertyController.updateProperty); //listo
-    app.delete('/api/properties/', propertyController.deleteProperty);//listo
-};
+router.get('/api', (req, res) =>
+	res.status(200).send({
+		message: 'No tienes acceso a la API',
+	})
+);
+// Users login
+router.post('/api/create', authController.register);
+router.post('/api/login', authController.login);
+router.get('/api/me', authController.me);
+
+//User routes
+router.get('/api/users/list', userController.getUsers);
+router.post('/api/users/update/:id', userController.updateUser);
+router.delete('/api/users/:id', userController.deleteUser);
+
+//Property routes
+router.get('/api/properties/list', propertyController.getProperties);
+router.get(
+	'/api/properties/list-available',
+	propertyController.getAvailableProperties
+);
+router.get('/api/properties/find/:id', propertyController.getPropertyById);
+router.post('/api/properties/create', propertyController.createProperty);
+router.post('/api/properties/update/:id', propertyController.updateProperty);
+router.delete('/api/properties/', propertyController.deleteProperty);
+
+module.exports = router;

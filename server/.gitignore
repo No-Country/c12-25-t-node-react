@@ -1,4 +1,7 @@
-node_modules
+node_modules/
+dist/
+typedoc/
+*.log
 .env
 package-lock.json
-server\docs\database\models
+package-lock.json.*
