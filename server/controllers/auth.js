@@ -1,5 +1,6 @@
 const users = require('../database/models').Users;
 const bcrypt = require("bcrypt");
+const bcrypt2 = require('../utils/handleBcrypt').compare;
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
@@ -27,7 +28,7 @@ module.exports = {
             }
         })
         if (user) {
-            const password_valid = bcrypt.compare(req.body.password, user.password);
+            const password_valid = bcrypt2(req.body.password, user.password);
             if (password_valid) {
                 const token = jwt.sign({
                     'id': user.id,
@@ -38,8 +39,10 @@ module.exports = {
                     token: token
                 });
             } else {
-                res.status(404).json({ error: "El usuario no existe." })
+                res.status(401).json({ error: "La contraseña no es válida." })
             }
+        } else {
+            res.status(404).json({ error: "Usuario no encontrado." })
         }
     },
     async me(req, res) {

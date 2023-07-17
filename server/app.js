@@ -3,8 +3,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const http = require('http');
 const multer = require('multer');
-// const cors = require('cors')
-// const helmet = require('helmet')
+const cors = require('cors')
+    // const helmet = require('helmet')
 require('dotenv').config()
 
 const storage = multer.diskStorage({
@@ -20,6 +20,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: false }))
 app.use(multer({ storage }).single('image'))
 app.use(express.json())
+app.use(cors({
+    origin: '*'
+}));
 
 require('./routes')(app);
 

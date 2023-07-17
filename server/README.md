@@ -573,7 +573,7 @@ Get the list of properties to home card.
 
 Get the list of properties to property page.
 
-**URL** : `/api/properties/full-detail`
+**URL** : `/api/properties/1/full-detail`
 
 **Metodo** : `GET`
 
@@ -592,7 +592,7 @@ Get the list of properties to property page.
 {
 	"id": 1,
 	"name": "Amplio Dpto. de 2 Dorms. en Miraflores en Alquiler",
-	"description": "Se Alquila Amplio departamento en pleno centro de Miraflores, Av. Larco esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+	"description": "Se Alquila Amplio departamento en pleno centro de Miraflores, Av. Larco esquina con la Av. Benavides, transporte pÃºblico para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
 	"address": "Sur Aot 125",
 	"city": "Lima",
 	"province": "Lima",
@@ -664,18 +664,6 @@ Get the list of properties to property page.
 			"ascensor": false,
 			"created_at": "2023-07-17T09:40:35.000Z",
 			"updated_at": "2023-07-17T09:40:35.000Z"
-		},
-		{
-			"id": 2,
-			"property_id": 1,
-			"electricidad": true,
-			"telefono": true,
-			"gas": true,
-			"internet": false,
-			"alarma": true,
-			"ascensor": true,
-			"created_at": "2023-07-17T08:04:35.000Z",
-			"updated_at": "2023-07-17T08:04:35.000Z"
 		}
 	],
 	"properties_rooms": [
