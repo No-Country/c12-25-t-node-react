@@ -1,4 +1,5 @@
 const property_details = require('../database/models').PropertiesDetails;
+const property_photos = require('../database/models').PropertiesPhotos;
 const property = require('../database/models').Properties;
 
 module.exports = {
@@ -41,10 +42,14 @@ module.exports = {
     },
     getPropertiesDetail: (req, res) => {
         return property.findAll({
-                include: {
-                    model: property_details,
-                    as: 'p_details'
-                }
+                include: [{
+                        model: property_details,
+                        as: 'p_details'
+                    },
+                    {
+                        model: property_photos,
+                    }
+                ]
             })
             .then(data => {
                 if (data) {

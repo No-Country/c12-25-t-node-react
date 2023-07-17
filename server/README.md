@@ -475,6 +475,29 @@ Get the list of properties to home card.
 				"created_at": "2023-07-17T04:04:35.000Z",
 				"updated_at": "2023-07-17T04:04:35.000Z"
 			}
+		],
+		"PropertiesPhotos": [
+			{
+				"id": 1,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971905_ierfug.jpg",
+				"property_id": 1,
+				"created_at": "2023-07-17T09:40:33.000Z",
+				"updated_at": "2023-07-17T09:40:33.000Z"
+			},
+			{
+				"id": 2,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971904_o65g8q.jpg",
+				"property_id": 1,
+				"created_at": "2023-07-17T09:40:33.000Z",
+				"updated_at": "2023-07-17T09:40:33.000Z"
+			},
+			{
+				"id": 3,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971875_efhbp5.jpg",
+				"property_id": 1,
+				"created_at": "2023-07-17T09:41:33.000Z",
+				"updated_at": "2023-07-17T09:41:33.000Z"
+			}
 		]
 	},
 	{
@@ -515,6 +538,29 @@ Get the list of properties to home card.
 				"professional_use": false,
 				"created_at": "2023-07-17T09:40:33.000Z",
 				"updated_at": "2023-07-17T09:40:33.000Z"
+			}
+		],
+		"PropertiesPhotos": [
+			{
+				"id": 4,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/315902922_ywkj7l.jpg",
+				"property_id": 2,
+				"created_at": "2023-07-17T09:42:33.000Z",
+				"updated_at": "2023-07-17T09:42:33.000Z"
+			},
+			{
+				"id": 5,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/315902916_cdakyf.jpg",
+				"property_id": 2,
+				"created_at": "2023-07-17T09:43:33.000Z",
+				"updated_at": "2023-07-17T09:43:33.000Z"
+			},
+			{
+				"id": 6,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/315902914_cudclf.jpg",
+				"property_id": 2,
+				"created_at": "2023-07-17T09:44:33.000Z",
+				"updated_at": "2023-07-17T09:44:33.000Z"
 			}
 		]
 	}
@@ -583,7 +629,29 @@ Get the list of properties to property page.
 			"updated_at": "2023-07-17T04:04:35.000Z"
 		}
 	],
-	"PropertiesPhotos": [],
+	"PropertiesPhotos": [
+		{
+			"id": 1,
+			"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971905_ierfug.jpg",
+			"property_id": 1,
+			"created_at": "2023-07-17T09:40:33.000Z",
+			"updated_at": "2023-07-17T09:40:33.000Z"
+		},
+		{
+			"id": 2,
+			"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971904_o65g8q.jpg",
+			"property_id": 1,
+			"created_at": "2023-07-17T09:40:33.000Z",
+			"updated_at": "2023-07-17T09:40:33.000Z"
+		},
+		{
+			"id": 3,
+			"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971875_efhbp5.jpg",
+			"property_id": 1,
+			"created_at": "2023-07-17T09:41:33.000Z",
+			"updated_at": "2023-07-17T09:41:33.000Z"
+		}
+	],
 	"properties_services": [
 		{
 			"id": 1,
