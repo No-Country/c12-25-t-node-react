@@ -35,7 +35,7 @@ Recopilamos un Token para un usuario registrado.
 
 ```json
 {
-    "username": "mail@example.com",
+    "email": "mail@example.com",
     "password": "Abc*d1234"
 }
 ```
@@ -84,10 +84,11 @@ Used to register a new user.
 
 ```json
 {
-	"name": "[string]",
-	"lastName": "[string]",
+	"username": "[string]",
+	"first_name": "[string]",
+	"last_name": "[string]",
 	"email": "[string]",
-	"password": "[string]"
+	"password":"[string]"
 }
 ```
 
@@ -95,10 +96,11 @@ Used to register a new user.
 
 ```json
 {
-	"name": "Abelardo",
-	"lastName": "Martinez",
-	"email": "mail@example.com",
-	"password": "Abc*d1234"
+	"username": "pablohdz",
+	"first_name": "Pablo",
+	"last_name": "Guzmán La Torre",
+	"email": "pguzmanlt@gmail.com",
+	"password":"123456"
 }
 ```
 
