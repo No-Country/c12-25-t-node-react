@@ -56,8 +56,10 @@ module.exports = {
                 }
             });
     },
-    getPropertiesFullDetail: (req, res) => {
-        return property.findAll({
+    getPropertyFullDetail: (req, res) => {
+        const id = req.params.id;
+        return property.findOne({
+                where: { id: id },
                 include: { all: true }
             })
             .then(data => {

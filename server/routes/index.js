@@ -22,9 +22,9 @@ module.exports = (app) => {
     app.get('/api/properties/list-available', checkAuth, propertyController.getAvailableProperties);
     app.get('/api/properties/find/:id', checkAuth, propertyController.getPropertyById);
     app.get('/api/properties/list-detail', checkAuth, propertyController.getPropertiesDetail);
-    app.get('/api/properties/list-full-detail', checkAuth, propertyController.getPropertiesFullDetail);
+    app.get('/api/properties/:id/full-detail', checkAuth, propertyController.getPropertyFullDetail);
     app.post('/api/properties/create', checkAuth, propertyController.createProperty);
     app.post('/api/properties/create-detail', checkAuth, propertyController.createPropertyDetail);
-    app.post('/api/properties/update/:id', checkAuth, propertyController.updateProperty);
+    app.put('/api/properties/update/:id', checkAuth, propertyController.updateProperty);
     app.delete('/api/properties/', checkAuth, propertyController.deleteProperty);
 };
