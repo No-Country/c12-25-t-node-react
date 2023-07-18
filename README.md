@@ -105,7 +105,7 @@ Plataforma de Alquiler y Venta de inmuebles.
 
 ---
 
-## <img width="40" height="40" src="https://img.icons8.com/doodle/40/crowd.png" alt="crowd"/> ¿Cómo nos organizamos el equipo d eFront End?
+## <img width="40" height="40" src="https://img.icons8.com/doodle/40/crowd.png" alt="crowd"/> ¿Cómo nos organizamos el equipo de Front End?
 
 Utilizamos la metodología **ágile** y **scrum**. Intentamos coordinar con nuestro UX/UI para contar con la información en Figma y con el grupo de BackEnd para tener los servicios a utilizar en las tareas de cada Sprint.
 
@@ -184,3 +184,14 @@ Creamos un Trello, donde creabamos una tarjeta por cada tarea, con:
 - en la tarea se deje el númeor de issue, que utilizamos para nombrar a la rama de trabajo
 
 - establecemos una fecha de vencimiento de la tarea (la semana del Sprint)
+
+### Ejemplo del [tablero](https://trello.com/b/DbZIDBeG/nocountry-c12-25-t-node-react):
+
+![image](https://github.com/No-Country/c12-25-t-node-react/assets/72580574/863b9fb5-0bc0-478a-999f-e4fdbae5f960)
+
+### Ejemplo de tarea:
+
+![image](https://github.com/No-Country/c12-25-t-node-react/assets/72580574/a5c68695-df56-4e8e-a97b-00dadf904982)
+
+
+---
