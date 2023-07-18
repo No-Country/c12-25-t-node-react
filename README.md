@@ -104,3 +104,83 @@ Plataforma de Alquiler y Venta de inmuebles.
 - [Figma](https://www.figma.com/file/o5wwW0lF3JRkvXKR2t7sb6/No-Country-25-Figma?type=design&node-id=22-105&mode=design)
 
 ---
+
+## <img width="40" height="40" src="https://img.icons8.com/doodle/40/crowd.png" alt="crowd"/> ¿Cómo nos organizamos el equipo d eFront End?
+
+Utilizamos la metodología **ágile** y **scrum**. Intentamos coordinar con nuestro UX/UI para contar con la información en Figma y con el grupo de BackEnd para tener los servicios a utilizar en las tareas de cada Sprint.
+
+Creamos un **MVP** y dividimos las tareas en **sprints** (con duración de una semana):
+
+
+- Funcionalidades para el MVP:
+
+### SPRINT 1:
+
+Funcionalidades:
+```
+-Footer 
+-Home - Hero image 
+-Home - Destacados 
+-Home - CTA a contactos 
+-Página Términos y condiciones 
+```
+
+Agregamos porque disposumos de tiempo:
+```
+-Página Quienes Somos - banner y recuadro de texto
+-Páginas search - contact - favorites - que se vea el banner
+```
+
+
+### SPRINT 2:
+
+Funcionalidades: 
+```
+-Header  
+-Home - Buscador  
+-Quienes Somos - cards de los integrantes 
+-Contacto  - el Formulario 
+-Detalle de la propiedad - resumen y carousel 
+-Detalle de la propiedad - propiedad - zona  
+-Detalle de la propiedad - contacto  
+-Página no encontrada 
+```
+
+Agregamos, porque dispusimos de tiempo:
+```
+Componente loader 
+```
+
+Quedo pendiente, porque no contabamos con los endpoint ni la documentación por parte del back:
+```
+-Unir Front con Back
+```
+
+### SPRINT 3:
+
+Funcionalidades:
+```
+-Registro de nuevo usuario 
+-Login 
+-Favoritos
+-Unir Front con Back en el detalle de la propiedad por id 
+-Unir Front con Back en los carousel de la HomePage
+```
+
+
+### SPRINT 4:
+
+Funcionalidades;
+```
+Buscador de propiedades con filtros 
+```
+
+Creamos un Trello, donde creabamos una tarjeta por cada tarea, con:
+
+- la historia de usuario
+
+- la tarea es asignada a un miembro del equipo
+
+- en la tarea se deje el númeor de issue, que utilizamos para nombrar a la rama de trabajo
+
+- establecemos una fecha de vencimiento de la tarea (la semana del Sprint)
