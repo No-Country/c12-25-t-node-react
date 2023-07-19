@@ -15,9 +15,7 @@ Plataforma de Alquiler y Venta de inmuebles.
 
 - [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Maria Eugenia Costa](https://github.com/eugenia1984)
 
-- [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Jesús Roberto Báez Castro](github.com/geek939)
 
-- [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Lautaro Lombardi](https://github.com/lautarolombardi)
 
 ## <img width="30" height="30" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/30/external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry.png" alt="external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry"/> BackEnd
 
