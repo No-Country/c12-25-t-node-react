@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import {
   Grid,
   Paper,
@@ -88,7 +87,13 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                     <SwiperSlide
                       key={ `estate-photo-a-${ index }` }
                     >
-                      <img src={ estatePhoto.url } width="100%" height={ 320 } className="imgSlider" />
+                      <img
+                        src={ estatePhoto.url }
+                        width="100%"
+                        height={ 320 }
+                        className="imgSlider"
+                        alt={ estatePhoto.alt ? estatePhoto.alt : 'inmueble' }
+                      />
                     </SwiperSlide>
                   )) }
                 </Swiper>
@@ -104,7 +109,9 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                 { estatePhotos.map((photo, index) => <img
                   key={ `photo-${ index }` }
                   src={ photo.url }
-                  style={ { width: '250px', height: 'auto' } } />)
+                  style={ { width: '250px', height: 'auto' } }
+                  alt={ photo.alt ? photo.alt : 'inmueble' }
+                />)
                 }
               </Grid>
               <Grid

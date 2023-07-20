@@ -3,8 +3,7 @@
     {
       "estate_datail_id": 1,
       "name": "Casa de 5 ambientes en Villa Urquiza",
-      "description": "Casa de dos pisos con orientación oeste. Cuenta con 9 ambientes, gran living-comedor, cocina con doble mesada, lavadero espacioso , 2 baños completos, 5 dormitorios (dos de ellos con vestidor y balcón). Pisos de madera en combinación con porcelanato, aberturas de aluminio anodizado, cortina de enrollar en dormitorios, placares completos con interiores, calefacción prevista para colocación de estufa y agua caliente por termotanque a gas. Cocina con gran espacio de mesada en granito, bacha de acero inoxidable, cocina a gas instalada, mobiliario completo de bajo mesada más alacena, purificador y espacio técnico para heladera, microondas y lavarropas. Baños con ventilación natural, loza sanitaria y griferías de primeras marcas, vanitory incorporado con espejo y accesorios colocados, bañera y revestimiento en paredes. Jardín arbolado con cítricos y amplio espacio para incorporar pileta y asador."
-      ,
+      "description": "Casa de dos pisos con orientación oeste. Cuenta con 9 ambientes, gran living-comedor, cocina con doble mesada, lavadero espacioso , 2 baños completos, 5 dormitorios (dos de ellos con vestidor y balcón). Pisos de madera en combinación con porcelanato, aberturas de aluminio anodizado, cortina de enrollar en dormitorios, placares completos con interiores, calefacción prevista para colocación de estufa y agua caliente por termotanque a gas. Cocina con gran espacio de mesada en granito, bacha de acero inoxidable, cocina a gas instalada, mobiliario completo de bajo mesada más alacena, purificador y espacio técnico para heladera, microondas y lavarropas. Baños con ventilación natural, loza sanitaria y griferías de primeras marcas, vanitory incorporado con espejo y accesorios colocados, bañera y revestimiento en paredes. Jardín arbolado con cítricos y amplio espacio para incorporar pileta y asador.",
       "zone": "Esta propiedad se encuentra situada en Villa Urquiza, un histórico barrio residencial que complementa su vida familiar, con una amplia oferta comercial, gastronómica y recreativa. Ubicado estrategicamente a una cuadra de plaza Zapiola y a cinco cuadras de la estación Juan Manuel de Rosas de la línea B de subterráneos, el inmueble posee gran conectividad con toda la ciudad.",
       "address": "Av. Monroe 4511",
       "city": "Villa Urquiza",
@@ -29,18 +28,22 @@
       "terrance": true,
       "grill": 0,
       "credit_worthy": true,
+      "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-1.jpg?alt=media&token=384a97af-a1ac-4e2a-bd0b-62ceecc0a1a0",
+          "alt": "Frente de la casa con techo de chapa y detalles en ladrillo"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://lirp.cdn-website.com/18faa34f/dms3rep/multi/opt/home+window+tinting+benefits-1920w.jpg",
+          "alt":""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://static.wixstatic.com/media/dff192_4f952f4f77bc4e418034bf2c58022e3b~mv2.jpg/v1/fill/w_720,h_480,al_c,lg_1,q_80,enc_auto/dff192_4f952f4f77bc4e418034bf2c58022e3b~mv2.jpg",
+          "alt": ""
         }
       ],
       "services": {
@@ -98,15 +101,18 @@
       "estate_photos": [
         {
           "state_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-2-2.jpg?alt=media&token=121cb3b9-cf40-4cae-88ad-7c3c8e833728",
+          "alt": "Frente de la casa con la piscina"
         },
         {
           "state_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-2-3.jpg?alt=media&token=3a68ca39-f0ba-4165-ac32-a1af6c96785f",
+          "alt": "luminoso living con pisos de ceramica"
         },
         {
           "state_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-2.jpg?alt=media&token=d759a486-178c-40a6-9875-640aae22e9c2",
+          "alt": "lateral de la casa con piscina"
         }
       ],
       "services": {
@@ -164,15 +170,27 @@
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://static1.sosiva451.com/81421031/aa17550f-062d-45bf-872f-fc57a5fbc2b2_u_large.jpg"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://static1.sosiva451.com/81421031/cd8ed024-70b2-4722-b7bf-65aef571375c_u_large.jpg"
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://static1.sosiva451.com/81421031/e1b9e5cd-a449-4961-9af8-fd52c2bc1f08_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://static1.sosiva451.com/81421031/6cde86b4-89fd-4a85-84a2-90b590c85ac4_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://static1.sosiva451.com/81421031/93b755c5-e5f3-4e0e-9cb0-1c4810ae9aa8_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://static1.sosiva451.com/81421031/34d57efe-e27a-4015-a489-82f1907bc562_u_large.jpg"
         }
       ],
       "services": {
@@ -230,81 +248,51 @@
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0366/BTE0366_013.jpg?6078960"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862398.jpg"
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
-        }
-      ],
-      "services": {
-        "agua": true,
-        "eletricidad": true,
-        "telefono": true,
-        "gas": true,
-        "internet": true,
-        "alarma": true,
-        "ascensor": false
-      },
-      "rooms": {
-        "cocina": 1,
-        "comedor": 1,
-        "living": 1,
-        "baños": 3,
-        "dormitorios": 6,
-        "toilet": 0,
-        "garage:": 2,
-        "terraza": 1,
-        "pileta": 1,
-        "jardin": 1,
-        "SUM": 1
-      }
-    },
-    {
-      "estate_datail_id": 4,
-      "name": "Casa 6 dormitorios en Caballito",
-      "description": "Casa de 6 domitorios en Caballito, en Tucumán al 2020. DE 800mts2 totales. Cuenta con 6 habitaciones, 3 baños y garage para 2 autos.",
-      "zone": "Esta propiedad se encuentra situada en Caballito.",
-      "address": "Acoyte 123",
-      "city": "Caballito",
-      "province": "Capital Federal",
-      "country": "Argentina",
-      "price": 340000,
-      "available": true,
-      "covered_area": 600,
-      "uncoverd_area": 200,
-      "bedrooms": 6,
-      "bathrooms": 3,
-      "toilette": 0,
-      "garage": 2,
-      "swimming_pool": 1,
-      "reception_hall": 1,
-      "balcony": 3,
-      "elevator": 0,
-      "gym": 1,
-      "antiquity": 10,
-      "estate_id": 4,
-      "garden": true,
-      "terrance": true,
-      "grill": 0,
-      "credit_worthy": true,
-      "professional_use": false,
-      "estate_photos": [
-        {
-          "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862405.jpg"
         },
         {
-          "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "estate_photo_id": 4,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862395.jpg"
         },
         {
-          "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "estate_photo_id": 5,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862410.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862406.jpg"
+        },
+        {
+          "estate_photo_id": 7,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862411.jpg"
+        },
+        {
+          "estate_photo_id": 8,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862401.jpg"
+        },
+        {
+          "estate_photo_id": 9,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862396.jpg"
+        },
+        {
+          "estate_photo_id": 10,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862412.jpg"
+        },
+        {
+          "estate_photo_id": 11,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862404.jpg"
+        },
+        {
+          "estate_photo_id": 11,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862402.jpg"
         }
       ],
       "services": {
@@ -335,7 +323,7 @@
       "name": "Casa 5 dormitorios en Palermo",
       "description": "Casa de 5 domitorios en Palermo, en Av. Colón al 4511. De 680mts2 totales. Cuenta con 5 habitaciones, 2 baños y garage para 2 autos.",
       "zone": "Esta propiedad se encuentra situada en Palermo.",
-      "address": "Calle Falsa 123",
+      "address": "Av. Colon 4511",
       "city": "Palermo",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -362,15 +350,31 @@
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0262/BTE0262_040.jpg?4367729"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://static1.sosiva451.com/6137348/c19cdae4-4a65-4c22-a769-e4524a2901e6_u_large.jpg"
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://static1.sosiva451.com/6137348/11033fdb-dab7-4667-9495-0e3189d71e29_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://static1.sosiva451.com/6137348/287b90d0-ba4a-482c-9c25-2e49ede667e0_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://static1.sosiva451.com/6137348/d0f70b6e-283f-4e3b-a9bd-2c44cad3d771_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://static1.sosiva451.com/6137348/2bc4f0cf-74a5-4f7b-be5a-960fa5c7eb72_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 7,
+          "url": "https://static1.sosiva451.com/6137348/a79f605f-eb6d-4e43-abf0-2f6e9fe7d524_u_large.jpg"
         }
       ],
       "services": {
@@ -401,7 +405,7 @@
       "name": "Casa 5 dormitorios en Belgrano",
       "description": "Casa de 5 domitorios en Belgrano, en Av. Monroew al 4522. De 680mts2 totales. Cuenta con 5 habitaciones, 2 baños y garage para 2 autos.",
       "zone": "Esta propiedad se encuentra situada en Caballito.",
-      "address": "Tucumán 2020",
+      "address": "Av. Monroe 4511",
       "city": "Belgrano",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -428,15 +432,31 @@
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_002.jpg?6730841"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_003.jpg?6730842"
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_004.jpg?6730843"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_008.jpg?6730844"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_009.jpg?6730845"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_010.jpg?6730846"
+        },
+        {
+          "estate_photo_id": 7,
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_011.jpg?6730847"
         }
       ],
       "services": {
@@ -467,7 +487,7 @@
       "name": "Casa 2 dormitorios en Caballito",
       "description": "Casa de 2 domitorios en Caballito, en Tucumán al 2020. De 450mts2 totales. Cuenta con 2 habitaciones, 1 baño y garage para 1 auto.",
       "zone": "Esta propiedad se encuentra situada en Caballito.",
-      "address": "Av. Colón 4511",
+      "address": "Tucuman 2020",
       "city": "Caballito",
       "province": "Capital Federal",
       "country": "Argentina",
@@ -494,15 +514,27 @@
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://static.tokkobroker.com/pictures/11055892942182246447020128903573715270373791300168206487275312176201108507058.jpg"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_59851432055260395694213380401533947197503252977421_IPbMXPx-thumbnail-1920x1080-70.jpg"
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_58734598550582817062264418562991327655000512558105_8RulqYB-thumbnail-1920x1080-70.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_67451962859248334340388480055865551394266634512213_EeE0YAJ-thumbnail-1920x1080-70.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_19882713704792196761251688047963437400717140444426_JhwpaC4-thumbnail-1920x1080-70.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_56014833488798810848516730478480200878140445812645_KvHNTQG-thumbnail-1920x1080-70.jpg"
         }
       ],
       "services": {
@@ -560,15 +592,23 @@
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://static1.sosiva451.com/09546821/47336314-89fc-417a-bb01-326144929445_u_large.jpg"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://static1.sosiva451.com/09546821/6eabd958-f158-441e-a1d8-7661ca34e7bb_u_large.jpg"
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://static1.sosiva451.com/09546821/9aff61c0-4340-4669-ba5b-1c81172d7e98_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://static1.sosiva451.com/09546821/e68bf086-33ef-4ba3-8b8e-677930ad5e81_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://static1.sosiva451.com/09546821/4196e080-78f3-49ca-bae7-5d1a0309f7d6_u_large.jpg"
         }
       ],
       "services": {
@@ -626,15 +666,27 @@
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://picsum.photos/id/208/367/267"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-01.jpg"
         },
         {
           "estate_photo_id": 2,
-          "url": "https://picsum.photos/id/193/3578/2451"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-02.jpg"
         },
         {
           "estate_photo_id": 3,
-          "url": "https://picsum.photos/id/217/367/267"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-09.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-11.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-12.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-13.jpg"
         }
       ],
       "services": {
@@ -658,6 +710,492 @@
         "pileta": 1,
         "jardin": 0,
         "SUM": 1
+      }
+    },
+    {
+      "estate_datail_id": 10,
+      "name": "Casa de 6 ambientes en Caballito",
+      "description": "Casa de estilo clásico ubicada en el barrio de Caballito. La propiedad cuenta con 6 ambientes, incluyendo un espacioso living-comedor, cocina completa, 4 dormitorios con placares empotrados y 2 baños completos. Además, tiene un patio trasero con jardín y parrilla, perfecto para reuniones familiares. La propiedad cuenta con una cochera cubierta y acceso a una terraza común.",
+      "zone": "Caballito es un barrio tradicional de Buenos Aires, con amplias áreas verdes y una excelente oferta comercial y gastronómica. La casa se encuentra cerca del Parque Centenario y cuenta con fácil acceso a medios de transporte y colegios.",
+      "address": "Av. Rivadavia 2500",
+      "city": "Caballito",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "price": 420000,
+      "available": true,
+      "covered_area": 180,
+      "uncovered_area": 40,
+      "bedrooms": 4,
+      "bathrooms": 2,
+      "toilette": 0,
+      "garage": 1,
+      "swimming_pool": 0,
+      "reception_hall": 0,
+      "balcony": 0,
+      "elevator": 0,
+      "gym": 0,
+      "antiquity": 8,
+      "estate_id": 10,
+      "garden": true,
+      "terrace": true,
+      "grill": 1,
+      "credit_worthy": true,
+      "estate_photos": [
+        {
+          "estate_photo_id": 1,
+          "url": "https://static1.sosiva451.com/82281911/0949cfed-c2f2-471f-a241-3eb04dc5db66_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 2,
+          "url": "https://static1.sosiva451.com/82281911/6b4e68d1-2c23-4230-87e3-be978272748e_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 3,
+          "url": "https://static1.sosiva451.com/82281911/aa3a0ba8-900b-4d5a-b41a-fc4a32fbaeb0_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://static1.sosiva451.com/82281911/a85c27eb-fd2b-400e-931f-8c4b0192f06e_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://static1.sosiva451.com/82281911/e7160afa-f144-4db2-8ece-cbfab697a997_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://static1.sosiva451.com/82281911/3851edb7-309e-4876-9ea5-657419280b5f_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 7,
+          "url": "https://static1.sosiva451.com/82281911/4df3e585-3c0b-4912-97e2-2eaf71aafc7a_u_large.jpg"
+        }
+      ],
+      "services": {
+        "agua": true,
+        "electricidad": true,
+        "telefono": true,
+        "gas": true,
+        "internet": true,
+        "alarma": true,
+        "ascensor": false
+      },
+      "rooms": {
+        "cocina": 1,
+        "comedor": 1,
+        "living": 1,
+        "baños": 2,
+        "dormitorios": 4,
+        "toilet": 0,
+        "garage": 1,
+        "terraza": 1,
+        "pileta": 0,
+        "jardin": 1,
+        "SUM": 0
+      }
+    },
+    {
+      "estate_datail_id": 11,
+      "name": "Departamento de 3 ambientes en Boedo",
+      "description": "Moderno departamento ubicado en el barrio de Boedo. Cuenta con un cómodo living-comedor, cocina integrada con barra desayunadora, dos dormitorios con armarios empotrados y un baño completo. El departamento tiene un pequeño balcón con vista a la calle. El edificio cuenta con seguridad y acceso mediante tarjeta magnética.",
+      "zone": "Boedo es un barrio con una rica tradición cultural, conocido por su vida nocturna, teatros y bares históricos. El departamento se encuentra cerca de la Av. San Juan, con fácil acceso a transporte público y variada oferta comercial.",
+      "address": "Av. Boedo 1200",
+      "city": "Boedo",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "price": 220000,
+      "available": true,
+      "covered_area": 70,
+      "uncovered_area": 5,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "toilette": 0,
+      "garage": 0,
+      "swimming_pool": 0,
+      "reception_hall": 0,
+      "balcony": 1,
+      "elevator": 1,
+      "gym": 0,
+      "antiquity": 4,
+      "estate_id": 11,
+      "garden": false,
+      "terrace": false,
+      "grill": 0,
+      "credit_worthy": true,
+      "estate_photos": [
+        {
+          "estate_photo_id": 1,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838457477.jpg"
+        },
+        {
+          "estate_photo_id": 2,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456297.jpg"
+        },
+        {
+          "estate_photo_id": 3,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456296.jpg"
+        },
+        {
+          "estate_photo_id": 3,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456291.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456288.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456293.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456289.jpg"
+        }
+      ],
+      "services": {
+        "agua": true,
+        "electricidad": true,
+        "telefono": true,
+        "gas": true,
+        "internet": true,
+        "alarma": true,
+        "ascensor": true
+      },
+      "rooms": {
+        "cocina": 1,
+        "comedor": 1,
+        "living": 1,
+        "baños": 2,
+        "dormitorios": 2,
+        "toilet": 0,
+        "garage": 0,
+        "terraza": 0,
+        "pileta": 0,
+        "jardin": 0,
+        "SUM": 0
+      }
+    },
+    {
+      "estate_datail_id": 12,
+      "name": "Departamento de 2 ambientes en Almagro",
+      "description": "Acogedor departamento ubicado en el barrio de Almagro. Cuenta con un luminoso living-comedor, cocina independiente, un dormitorio con placard y un baño completo. El departamento se encuentra en un edificio tranquilo y seguro, con acceso mediante portero eléctrico.",
+      "zone": "Almagro es un barrio con una rica oferta cultural y gastronómica, conocido por sus bares y teatros. El departamento está cerca de la Av. Corrientes, lo que permite acceder fácilmente a diferentes medios de transporte y centros comerciales.",
+      "address": "Av. Rivadavia 3100",
+      "city": "Almagro",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "price": 160000,
+      "available": true,
+      "covered_area": 50,
+      "uncovered_area": 0,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "toilette": 0,
+      "garage": 0,
+      "swimming_pool": 0,
+      "reception_hall": 0,
+      "balcony": 1,
+      "elevator": 1,
+      "gym": 0,
+      "antiquity": 6,
+      "estate_id": 12,
+      "garden": false,
+      "terrace": false,
+      "grill": 0,
+      "credit_worthy": true,
+      "estate_photos": [
+        {
+          "estate_photo_id": 1,
+          "url": "https://static1.sosiva451.com/51439621/f1a8dc52-2f83-4560-8873-6b8aaba13cf5_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 2,
+          "url": "https://static1.sosiva451.com/51439621/61d5712c-3b50-4e63-aa33-80c4851af837_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 3,
+          "url": "https://static1.sosiva451.com/51439621/4f132b5b-fe69-4693-a5cb-db2dca3bdc92_u_large.jpg"
+        }
+      ],
+      "services": {
+        "agua": true,
+        "electricidad": true,
+        "telefono": true,
+        "gas": true,
+        "internet": true,
+        "alarma": true,
+        "ascensor": true
+      },
+      "rooms": {
+        "cocina": 1,
+        "comedor": 1,
+        "living": 1,
+        "baños": 1,
+        "dormitorios": 1,
+        "toilet": 0,
+        "garage": 0,
+        "terraza": 0,
+        "pileta": 0,
+        "jardin": 0,
+        "SUM": 0
+      }
+    },
+    {
+      "estate_datail_id": 13,
+      "name": "Casa de 8 ambientes en Barracas",
+      "description": "Amplia casa de dos pisos ubicada en el barrio de Barracas. Cuenta con un gran living-comedor, cocina completa, 5 dormitorios con placares empotrados, 3 baños completos y 1 toilette. Además, tiene un amplio jardín con espacio para pileta y parrilla, ideal para disfrutar al aire libre. La propiedad cuenta con una cochera cubierta y una terraza con vista panorámica.",
+      "zone": "Barracas es un barrio en constante crecimiento, con una gran oferta de espacios culturales y restaurantes. La casa se encuentra cerca de la Av. Montes de Oca, con acceso a transporte público y diversas opciones comerciales.",
+      "address": "Av. Suarez 1400",
+      "city": "Barracas",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "price": 590000,
+      "available": true,
+      "covered_area": 280,
+      "uncovered_area": 150,
+      "bedrooms": 5,
+      "bathrooms": 3,
+      "toilette": 1,
+      "garage": 1,
+      "swimming_pool": 0,
+      "reception_hall": 0,
+      "balcony": 1,
+      "elevator": 0,
+      "gym": 0,
+      "antiquity": 12,
+      "estate_id": 13,
+      "garden": true,
+      "terrace": true,
+      "grill": 1,
+      "credit_worthy": true,
+      "estate_photos": [
+        {
+          "estate_photo_id": 1,
+          "url": "https://static1.sosiva451.com/72197621/2d7f3db3-cfb4-4805-b656-f91569236b54_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 2,
+          "url": "https://static1.sosiva451.com/72197621/400ced91-411b-4528-b759-708d2b6f8e09_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 3,
+          "url": "https://static1.sosiva451.com/72197621/75219dd5-1eb6-475d-8779-d43bba895e44_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://static1.sosiva451.com/72197621/1692ca07-9e06-43df-9999-23309db4af46_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://static1.sosiva451.com/72197621/0d024de3-4b7a-45fc-9303-539dd21ad12c_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://static1.sosiva451.com/72197621/86b2ad80-77d7-45e3-aa27-0a6796a3dc22_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 7,
+          "url": "https://static1.sosiva451.com/72197621/fb36938f-c951-42e0-aee7-cc60eca9b5f5_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 8,
+          "url": "https://static1.sosiva451.com/72197621/2b1289b9-545b-4e6a-b669-b0356a7e2d5c_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 9,
+          "url": "https://static1.sosiva451.com/72197621/8c9b6b88-e8fa-42f8-8d59-a37986f945f1_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 10,
+          "url": "https://static1.sosiva451.com/72197621/d6c9ce71-8849-4529-92b5-4654575cedbe_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 11,
+          "url": "https://static1.sosiva451.com/72197621/d2a39077-e758-4132-a575-e649b76cec70_u_large.jpg"
+        }
+      ],
+      "services": {
+        "agua": true,
+        "electricidad": true,
+        "telefono": true,
+        "gas": true,
+        "internet": true,
+        "alarma": true,
+        "ascensor": false
+      },
+      "rooms": {
+        "cocina": 1,
+        "comedor": 1,
+        "living": 1,
+        "baños": 4,
+        "dormitorios": 5,
+        "toilet": 1,
+        "garage": 1,
+        "terraza": 1,
+        "pileta": 0,
+        "jardin": 1,
+        "SUM": 0
+      }
+    },
+    {
+      "estate_datail_id": 14,
+      "name": "Casa de 4 ambientes en Agronomía",
+      "description": "Encantadora casa en el barrio de Agronomía. Cuenta con un luminoso living-comedor, cocina completa, 3 dormitorios con placares empotrados y 2 baños completos. La propiedad tiene un hermoso jardín con árboles frutales y un espacio para parrilla. Además, cuenta con una cochera cubierta y un pequeño taller. Ideal para quienes buscan tranquilidad y espacios verdes.",
+      "zone": "Agronomía es un barrio residencial con parques y áreas verdes. La casa se encuentra cerca de la Av. San Martín, con fácil acceso a transporte público y comercios.",
+      "address": "Av. San Martín 2900",
+      "city": "Agronomía",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "price": 320000,
+      "available": true,
+      "covered_area": 120,
+      "uncovered_area": 100,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "toilette": 0,
+      "garage": 1,
+      "swimming_pool": 0,
+      "reception_hall": 0,
+      "balcony": 0,
+      "elevator": 0,
+      "gym": 0,
+      "antiquity": 15,
+      "estate_id": 14,
+      "garden": true,
+      "terrace": false,
+      "grill": 1,
+      "credit_worthy": true,
+      "estate_photos": [
+        {
+          "estate_photo_id": 1,
+          "url": "https://static1.sosiva451.com/2873589/82e24038-0dd2-4711-982a-a303ad97d62b_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 2,
+          "url": "https://static1.sosiva451.com/2873589/2522fde4-0438-4500-a41a-b2f4377177ca_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 3,
+          "url": "https://static1.sosiva451.com/2873589/7cbeaa7b-031e-42c2-b48a-782ed5f2684f_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://static1.sosiva451.com/2873589/5e9ad74b-81e1-49d7-8fa4-56250fc762ba_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://static1.sosiva451.com/2873589/b16ed4c3-3248-4b07-a7eb-400594bd8b2a_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://static1.sosiva451.com/2873589/b2af78ad-d768-4335-8a1a-5892ee4badf6_u_large.jpg"
+        },
+        {
+          "estate_photo_id": 7,
+          "url": "https://static1.sosiva451.com/2873589/6646d395-65f5-4862-9aa7-ac0dd72a0a7d_u_large.jpg"
+        }
+      ],
+      "services": {
+        "agua": true,
+        "electricidad": true,
+        "telefono": true,
+        "gas": true,
+        "internet": true,
+        "alarma": true,
+        "ascensor": false
+      },
+      "rooms": {
+        "cocina": 1,
+        "comedor": 1,
+        "living": 1,
+        "baños": 2,
+        "dormitorios": 3,
+        "toilet": 0,
+        "garage": 1,
+        "terraza": 0,
+        "pileta": 0,
+        "jardin": 1,
+        "SUM": 0
+      }
+    },
+    {
+      "estate_datail_id": 9,
+      "name": "Departamento de 3 ambientes en Balvanera",
+      "description": "Moderno departamento ubicado en el barrio de Balvanera. Cuenta con un amplio living-comedor, cocina integrada con barra desayunadora, dos dormitorios con placares empotrados y un baño completo. El departamento tiene un balcón con vista panorámica de la ciudad. El edificio cuenta con seguridad 24/7 y una terraza común con parrilla.",
+      "zone": "Balvanera es un barrio céntrico con una gran oferta de servicios y transporte público. El departamento se encuentra cerca de la Av. Corrientes, con fácil acceso a teatros, cines y centros culturales.",
+      "address": "Av. Corrientes 2800",
+      "city": "Balvanera",
+      "province": "Buenos Aires",
+      "country": "Argentina",
+      "price": 240000,
+      "available": true,
+      "covered_area": 75,
+      "uncovered_area": 5,
+      "bedrooms": 2,
+      "bathrooms": 1,
+      "toilette": 0,
+      "garage": 0,
+      "swimming_pool": 0,
+      "reception_hall": 0,
+      "balcony": 1,
+      "elevator": 1,
+      "gym": 0,
+      "antiquity": 7,
+      "estate_id": 9,
+      "garden": false,
+      "terrace": true,
+      "grill": 1,
+      "credit_worthy": true,
+      "estate_photos": [
+        {
+          "estate_photo_id": 1,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903995.jpg"
+        },
+        {
+          "estate_photo_id": 2,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903994.jpg"
+        },
+        {
+          "estate_photo_id": 3,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903973.jpg"
+        },
+        {
+          "estate_photo_id": 4,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903968.jpg"
+        },
+        {
+          "estate_photo_id": 5,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903974.jpg"
+        },
+        {
+          "estate_photo_id": 6,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860904000.jpg"
+        },
+        {
+          "estate_photo_id": 7,
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903982.jpg"
+        }
+      ],
+      "services": {
+        "agua": true,
+        "electricidad": true,
+        "telefono": true,
+        "gas": true,
+        "internet": true,
+        "alarma": true,
+        "ascensor": true
+      },
+      "rooms": {
+        "cocina": 1,
+        "comedor": 1,
+        "living": 1,
+        "baños": 2,
+        "dormitorios": 2,
+        "toilet": 0,
+        "garage": 0,
+        "terraza": 0,
+        "pileta": 0,
+        "jardin": 0,
+        "SUM": 0
       }
     }
   ]
