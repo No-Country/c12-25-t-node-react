@@ -2,31 +2,37 @@ export const YEAR = new Date().getFullYear()
 
 export type textLink = {
   text: string,
-  to: string
+  to: string,
+  ariaLabel: string
 }
 
 export const SERVICES: textLink[] = [
   {
     text: 'Compra',
-    to: '/search'
+    to: '/search',
+    ariaLabel:'página de busqueda de propiedades en venta'
   },
   {
     text: 'Alquiler',
-    to: '/search'
+    to: '/search',
+    ariaLabel:'página de busqueda de propiedades en alquiler'
   },
   {
     text: 'Alquiler temporario',
-    to: '/search'
+    to: '/search',
+    ariaLabel:'página de busqueda de propiedades en alquiler temporario'
   }
 ]
 
 export const COMPANY:  textLink[] = [
   {
     text: 'Quienes somos',
-    to: '/about'
+    to: '/about',
+    ariaLabel:'página de quienes somos'
   },
   {
     text: 'Contacto',
-    to: '/contact'
+    to: '/contact',
+    ariaLabel:'página de contacto'
   }
 ]

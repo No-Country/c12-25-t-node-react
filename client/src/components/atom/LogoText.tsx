@@ -14,7 +14,7 @@ const LogoText: React.FC<LogoTextProps> = ({ variant }) => {
         fontSize: '1.5rem',
       }}
     >
-      <Link to="/" className="link-logo">
+      <Link to="/" className="link-logo" aria-label="Página principal de Appartamentos">
         <span className="primary-light">App</span>
         <span className="primary">artamentos</span>
       </Link>

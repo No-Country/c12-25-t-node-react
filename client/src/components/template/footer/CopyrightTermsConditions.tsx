@@ -18,7 +18,11 @@ const CopyrightTermsConditions: React.FC<CopyrightTermsConditionsProps> = () => 
       </Grid>
       <Grid item xs={ 12 } sm={ 4 }>
         <Typography>
-          <Link to="/terms-conditions" className="links-footer">
+          <Link
+            to="/terms-conditions"
+            className="links-footer"
+            aria-label="página de término y condiciones"
+          >
             Términos y condiciones de uso
           </Link>
         </Typography>
