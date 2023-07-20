@@ -28,7 +28,7 @@ module.exports = {
             }
         })
         if (user) {
-            const password_valid = bcrypt2(req.body.password, user.password);
+            const password_valid = await bcrypt2(req.body.password, user.password);
             if (password_valid) {
                 const token = jwt.sign({
                     'id': user.id,
