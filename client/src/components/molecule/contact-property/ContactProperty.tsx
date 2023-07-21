@@ -1,4 +1,7 @@
-import { Grid } from '@mui/material'
+import { 
+  Container,
+  Grid 
+} from '@mui/material'
 import backgroundPotho from '../../../assets/contact-property-by-id.png'
 import TextBox from '../text-box/TextBox'
 import Subtitle from '../../atom/Subtitle'
@@ -12,7 +15,7 @@ type ContactPropertyProps = {
 
 const ContactProperty: React.FC<ContactPropertyProps> = () => {
   return (
-    <section id="contact-form">
+    <Container maxWidth='xl' id="contact-form">
       <Grid container sx={ { paddingTop: '6rem' } }>
         <Grid item xs={ 12 } md={ 4 } lg={ 3 } sx={ stylePhotoUp }>
           <img src={ backgroundPotho } className="home-small" />
@@ -52,7 +55,7 @@ const ContactProperty: React.FC<ContactPropertyProps> = () => {
           />
         </Grid>
       </Grid>
-    </section>
+    </Container>
   )
 }
 

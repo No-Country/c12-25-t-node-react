@@ -28,7 +28,6 @@ const Detail: React.FC<DetailProps> = () => {
     setEstateById(filteredState);
   }, [id]);
 
-
   const {
     covered_area,
     uncoverd_area,
@@ -86,8 +85,8 @@ const Detail: React.FC<DetailProps> = () => {
           <DetailProperty
             totalArea={ totalArea }
             coveredArea={ covered_area }
-            description={ descriptionText }
-            zone={ zoneText }
+            description={ description }
+            zone={ zone }
             services={ filteredServices }
             bedrooms={ bedrooms }
             bathrooms={ bathrooms }

@@ -7,6 +7,7 @@ export type EstateDetail = {
   name: string
   description: string
   zone: string
+  address: string
   city: City
   province: Province
   country: Country
@@ -53,7 +54,7 @@ export enum City {
   boedo = "Boedo",
   caballito = "Caballito",
   palermo = "Palermo",
-  villaUrquiza = "Villa Urquiza" 
+  villaUrquiza = "Villa Urquiza"
 }
 
 export type Services = {
