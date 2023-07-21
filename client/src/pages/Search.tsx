@@ -14,7 +14,10 @@ const Search: React.FC<SearchProps> = () => {
   return (
     <>
       <BackButton />
-      <BannerAndBackgroundPage imgSrc={ searchBanner } imgHeight="280px" />
+      <BannerAndBackgroundPage
+        imgSrc={ searchBanner }
+        imgHeight="280px"
+      />
     </>
 
   )
