@@ -26,8 +26,8 @@ type DetailPropertyProps = {
   creditWorthy: boolean
   professionalUse: boolean
   rooms: object
-  description: string[]
-  zone: string[]
+  description: string
+  zone: string
   services: string[]
 }
 
@@ -58,11 +58,15 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
   return (
     <>
       <Subtitle title="La propiedad" fontWeight="600" />
-      <Text textToShow={ description } paddingText="16px 16px 0px" />
+      <Typography sx={ { padding: '16px' } }>
+        { description }
+      </Typography>
       <Grid container spacing={ 2 }>
         <Grid item xs={ 12 } md={ 4 }>
           <Subtitle title="La zona" fontWeight="600" />
-          <Text textToShow={ zone } paddingText="16px 16px 0px" />
+          <Typography sx={ { padding: '16px' } }>
+            { zone }
+          </Typography>
         </Grid>
         <Grid item xs={ 12 } md={ 8 }>
           <Paper
