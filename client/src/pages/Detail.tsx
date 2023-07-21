@@ -30,7 +30,7 @@ const Detail: React.FC<DetailProps> = () => {
 
   const {
     covered_area,
-    uncoverd_area,
+    uncovered_area,
     description,
     bedrooms,
     bathrooms,
@@ -42,7 +42,7 @@ const Detail: React.FC<DetailProps> = () => {
     gym,
     antiquity,
     garden,
-    terrance,
+    terrace,
     grill,
     credit_worthy,
     professional_use,
@@ -61,10 +61,8 @@ const Detail: React.FC<DetailProps> = () => {
     })
     return arrayText
   }
-  const descriptionText = textToArrayText(description)
-  const zoneText = textToArrayText(zone)
   const filteredServices = Object.keys(services).filter(key => services[key])
-  const totalArea = covered_area + uncoverd_area
+  const totalArea = covered_area + uncovered_area
 
   return (
     <>
@@ -98,7 +96,7 @@ const Detail: React.FC<DetailProps> = () => {
             gym={ gym }
             years={ antiquity }
             garden={ garden }
-            terrance={ terrance }
+            terrace={ terrace }
             grill={ grill }
             creditWorthy={ credit_worthy }
             professionalUse={ professional_use }

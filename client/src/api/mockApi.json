@@ -8,6 +8,7 @@
     "bathrooms": 2,
     "cars": 2,
     "image": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-1.jpg?alt=media&token=384a97af-a1ac-4e2a-bd0b-62ceecc0a1a0",
+    "alt": "inmueble",
     "forRent": false,
     "forSale": true
   },
@@ -33,6 +34,7 @@
     "bathrooms": 1,
     "cars": 1,
     "image": "https://static1.sosiva451.com/81421031/aa17550f-062d-45bf-872f-fc57a5fbc2b2_u_large.jpg",
+    "alt": "inmueble",
     "forRent": false,
     "forSale": true
   },
@@ -45,6 +47,7 @@
     "bathrooms": 3,
     "cars": 2,
     "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0366/BTE0366_013.jpg?6078960",
+    "alt": "inmueble",
     "forRent": false,
     "forSale": true
   },
@@ -57,6 +60,7 @@
     "bathrooms": 2,
     "cars": 2,
     "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0262/BTE0262_040.jpg?4367729",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   },
@@ -69,6 +73,7 @@
     "bathrooms": 2,
     "cars": 2,
     "image": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_002.jpg?6730841",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   },
@@ -81,6 +86,7 @@
     "bathrooms": 1,
     "cars": 1,
     "image": "https://static.tokkobroker.com/pictures/11055892942182246447020128903573715270373791300168206487275312176201108507058.jpg",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   },
@@ -93,6 +99,7 @@
     "bathrooms": 1,
     "cars": 0,
     "image": "https://static1.sosiva451.com/09546821/47336314-89fc-417a-bb01-326144929445_u_large.jpg",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   },
@@ -105,6 +112,7 @@
     "bathrooms": 1,
     "cars": 1,
     "image": "https://staticbp.com/img/prop_new_b/541/00541584-01.jpg",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   },
@@ -117,8 +125,9 @@
     "bathrooms": 2,
     "cars": 1,
     "image": "https://static1.sosiva451.com/82281911/0949cfed-c2f2-471f-a241-3eb04dc5db66_u_large.jpg",
-    "forRent": true,
-    "forSale": false
+    "alt": "inmueble",
+    "forRent": false,
+    "forSale": true
   },
   {
     "id": "11",
@@ -129,6 +138,7 @@
     "bathrooms": 1,
     "cars": 0,
     "image": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838457477.jpg",
+    "alt": "inmueble",
     "forRent": false,
     "forSale": true
   },
@@ -141,6 +151,7 @@
     "bathrooms": 1,
     "cars": 0,
     "image": "https://static1.sosiva451.com/51439621/f1a8dc52-2f83-4560-8873-6b8aaba13cf5_u_large.jpg",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   },
@@ -153,6 +164,7 @@
     "bathrooms": 3,
     "cars": 1,
     "image": "https://static1.sosiva451.com/72197621/2d7f3db3-cfb4-4805-b656-f91569236b54_u_large.jpg",
+    "alt": "inmueble",
     "forRent": false,
     "forSale": true
   },
@@ -165,6 +177,7 @@
     "bathrooms": 2,
     "cars": 1,
     "image": "https://static1.sosiva451.com/2873589/82e24038-0dd2-4711-982a-a303ad97d62b_u_large.jpg",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   },
@@ -177,6 +190,7 @@
     "bathrooms": 1,
     "cars": 0,
     "image": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903995.jpg",
+    "alt": "inmueble",
     "forRent": true,
     "forSale": false
   }

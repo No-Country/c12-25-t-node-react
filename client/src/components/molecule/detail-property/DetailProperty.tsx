@@ -5,7 +5,6 @@ import {
   Typography
 } from '@mui/material'
 import Subtitle from '../../atom/Subtitle'
-import Text from '../text/Text'
 import { AreaIcon, BalconyWindowIcon, BathRoomIcon, BedRoomIcon, BriefcaseIcon, CreditWorthyIcon, GarageIcon, GardenIcon, GrillIcon, GymIcon, RoomSofaIcon, SUMIcon, ServicesIcon, SwimmingPoolIcon, TerranceIcon, ToileteIcon, YearsIcon } from '../../atom/Icons'
 
 type DetailPropertyProps = {
@@ -22,7 +21,7 @@ type DetailPropertyProps = {
   gym: number
   grill: number
   garden: boolean
-  terrance: boolean
+  terrace: boolean
   creditWorthy: boolean
   professionalUse: boolean
   rooms: object
@@ -44,7 +43,7 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
   gym,
   years,
   garden,
-  terrance,
+  terrace,
   grill,
   creditWorthy,
   professionalUse,
@@ -106,7 +105,7 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
                 <Typography fontSize={ 12 }><SwimmingPoolIcon /> pileta: { swimmingPool === 0 ? 'no' : `${ swimmingPool }` } </Typography>
               </Grid>
               <Grid item xs={ 6 } sm={ 4 } md={ 3 }>
-                <Typography fontSize={ 12 }><TerranceIcon /> terraza: { terrance ? 'si' : 'no' }</Typography>
+                <Typography fontSize={ 12 }><TerranceIcon /> terraza: { terrace ? 'si' : 'no' }</Typography>
               </Grid>
               <Grid item xs={ 6 } sm={ 4 } md={ 3 }>
                 <Typography fontSize={ 12 }><SUMIcon /> SUM: { sum === 0 ? 'no' : 'si' }</Typography>

@@ -5,7 +5,7 @@ import {
   CircularProgress,
   Typography
 } from '@mui/material'
-import useLoading from '../components/hooks/useLoading'
+import useLoading from '../hooks/useLoading'
 
 const defaultContext = {
   addLoading: () => { },
