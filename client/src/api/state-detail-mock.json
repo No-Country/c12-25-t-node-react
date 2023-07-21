@@ -67,7 +67,8 @@
         "pileta": 1,
         "jardin": 1,
         "SUM": 0
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 2,
@@ -136,7 +137,8 @@
         "pileta": 0,
         "jardin": 1,
         "SUM": 0
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 3,
@@ -214,7 +216,8 @@
         "pileta": 0,
         "jardin": 0,
         "SUM": 0
-      }
+      },
+      "property_type": "Departamento"
     },
     {
       "estate_datail_id": 4,
@@ -316,7 +319,8 @@
         "pileta": 1,
         "jardin": 1,
         "SUM": 1
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 5,
@@ -398,7 +402,8 @@
         "pileta": 1,
         "jardin": 1,
         "SUM": 1
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 6,
@@ -480,7 +485,8 @@
         "pileta": 1,
         "jardin": 1,
         "SUM": 1
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 7,
@@ -558,7 +564,8 @@
         "pileta": 0,
         "jardin": 0,
         "SUM": 0
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 8,
@@ -632,7 +639,8 @@
         "pileta": 1,
         "jardin": 0,
         "SUM": 1
-      }
+      },
+      "property_type": "Departamento"
     },
     {
       "estate_datail_id": 9,
@@ -710,7 +718,8 @@
         "pileta": 1,
         "jardin": 0,
         "SUM": 1
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 10,
@@ -791,7 +800,8 @@
         "pileta": 0,
         "jardin": 1,
         "SUM": 0
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 11,
@@ -872,7 +882,8 @@
         "pileta": 0,
         "jardin": 0,
         "SUM": 0
-      }
+      },
+      "property_type": "Departamento"
     },
     {
       "estate_datail_id": 12,
@@ -937,7 +948,8 @@
         "pileta": 0,
         "jardin": 0,
         "SUM": 0
-      }
+      },
+      "property_type": "Departamento"
     },
     {
       "estate_datail_id": 13,
@@ -1034,7 +1046,8 @@
         "pileta": 0,
         "jardin": 1,
         "SUM": 0
-      }
+      },
+      "property_type": "Casa"
     },
     {
       "estate_datail_id": 14,
@@ -1115,10 +1128,11 @@
         "pileta": 0,
         "jardin": 1,
         "SUM": 0
-      }
+      },
+      "property_type": "Casa"
     },
     {
-      "estate_datail_id": 9,
+      "estate_datail_id": 15,
       "name": "Departamento de 3 ambientes en Balvanera",
       "description": "Moderno departamento ubicado en el barrio de Balvanera. Cuenta con un amplio living-comedor, cocina integrada con barra desayunadora, dos dormitorios con placares empotrados y un baño completo. El departamento tiene un balcón con vista panorámica de la ciudad. El edificio cuenta con seguridad 24/7 y una terraza común con parrilla.",
       "zone": "Balvanera es un barrio céntrico con una gran oferta de servicios y transporte público. El departamento se encuentra cerca de la Av. Corrientes, con fácil acceso a teatros, cines y centros culturales.",
@@ -1196,7 +1210,8 @@
         "pileta": 0,
         "jardin": 0,
         "SUM": 0
-      }
+      },
+      "property_type": "Departamento"
     }
   ]
 }

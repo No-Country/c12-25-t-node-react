@@ -33,6 +33,7 @@ export type EstateDetail = {
   estate_photos: EstatePhoto[]
   services: Services
   rooms: { [key: string]: number }
+  property_type: Type
 }
 
 export enum Country {
@@ -44,10 +45,15 @@ export enum Province {
 }
 
 export enum City {
-  VillaUrquiza = "Villa Urquiza",
-  Caballito = "Caballito",
-  Palermo = "Palermo",
-  Belgrano = "Belgrano"
+  agromonia = "Agronomía",
+  almagro = "Almagro",
+  balvanera = "Balvanera",
+  barracas = "Barracas",
+  belgrano = "Belgrano",
+  boedo = "Boedo",
+  caballito = "Caballito",
+  palermo = "Palermo",
+  villaUrquiza = "Villa Urquiza" 
 }
 
 export type Services = {
@@ -64,4 +70,10 @@ export type EstatePhoto = {
   estate_photo_id: number
   url: string
   alt: string
+}
+
+export enum Type {
+  casa = "Casa",
+  departamento = "Departamento",
+  ph = "PH"
 }

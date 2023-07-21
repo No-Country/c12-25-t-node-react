@@ -1,4 +1,4 @@
-import { City } from "../model/estate-detail";
+import { City, Type } from "../model/estate-detail";
 
 export const estateDetail = {
   estate_datail_id: 1,
@@ -6,7 +6,7 @@ export const estateDetail = {
   description: "Casa de dos pisos con orientación oeste. Cuenta con 9 ambientes, gran living-comedor, cocina con doble mesada, lavadero espacioso , 2 baños completos, 5 dormitorios (dos de ellos con vestidor y balcón). Pisos de madera en combinación con porcelanato, aberturas de aluminio anodizado, cortina de enrollar en dormitorios, placares completos con interiores, calefacción prevista para colocación de estufa y agua caliente por termotanque a gas. Cocina con gran espacio de mesada en granito, bacha de acero inoxidable, cocina a gas instalada, mobiliario completo de bajo mesada más alacena, purificador y espacio técnico para heladera, microondas y lavarropas. Baños con ventilación natural, loza sanitaria y griferías de primeras marcas, vanitory incorporado con espejo y accesorios colocados, bañera y revestimiento en paredes. Jardín arbolado con cítricos y amplio espacio para incorporar pileta y asador.",
   zone: "Esta propiedad se encuentra situada en Villa Urquiza, un histórico barrio residencial que complementa su vida familiar, con una amplia oferta comercial, gastronómica y recreativa. Ubicado estrategicamente a una cuadra de plaza Zapiola y a cinco cuadras de la estación Juan Manuel de Rosas de la línea B de subterráneos, el inmueble posee gran conectividad con toda la ciudad.",
   address: "Av. Monroe 4511",
-  city: City.VillaUrquiza,
+  city: City.villaUrquiza,
   province: "Capital Federal",
   country: "Argentina",
   price: 360000,
@@ -67,5 +67,6 @@ export const estateDetail = {
     pileta: 1,
     jardin: 1,
     SUM: 0
-  }
+  },
+  property_type: Type.casa
 }
