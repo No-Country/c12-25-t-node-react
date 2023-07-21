@@ -12,7 +12,7 @@
       "price": 360000,
       "available": true,
       "covered_area": 600,
-      "uncoverd_area": 80,
+      "uncovered_area": 80,
       "bedrooms": 5,
       "bathrooms": 2,
       "toilette": 1,
@@ -25,7 +25,7 @@
       "antiquity": 3,
       "estate_id": 1,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
@@ -38,7 +38,7 @@
         {
           "estate_photo_id": 2,
           "url": "https://lirp.cdn-website.com/18faa34f/dms3rep/multi/opt/home+window+tinting+benefits-1920w.jpg",
-          "alt":""
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
@@ -48,7 +48,7 @@
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -62,13 +62,15 @@
         "baños": 2,
         "dormitorios": 5,
         "toilet": 1,
-        "garage:": 2,
+        "garage": 2,
         "terraza": 1,
         "pileta": 1,
         "jardin": 1,
         "SUM": 0
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": false,
+      "for_sale": true
     },
     {
       "estate_datail_id": 2,
@@ -82,7 +84,7 @@
       "price": 300000,
       "available": true,
       "covered_area": 460,
-      "uncoverd_area": 40,
+      "uncovered_area": 40,
       "bedrooms": 3,
       "bathrooms": 1,
       "toilette": 1,
@@ -95,30 +97,30 @@
       "antiquity": 15,
       "estate_id": 2,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
-          "state_photo_id": 1,
+          "estate_photo_id": 1,
           "url": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-2-2.jpg?alt=media&token=121cb3b9-cf40-4cae-88ad-7c3c8e833728",
           "alt": "Frente de la casa con la piscina"
         },
         {
-          "state_photo_id": 2,
+          "estate_photo_id": 2,
           "url": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-2-3.jpg?alt=media&token=3a68ca39-f0ba-4165-ac32-a1af6c96785f",
           "alt": "luminoso living con pisos de ceramica"
         },
         {
-          "state_photo_id": 3,
+          "estate_photo_id": 3,
           "url": "https://firebasestorage.googleapis.com/v0/b/appartamentos-b4240.appspot.com/o/casa-2.jpg?alt=media&token=d759a486-178c-40a6-9875-640aae22e9c2",
           "alt": "lateral de la casa con piscina"
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -132,13 +134,15 @@
         "baños": 1,
         "dormitorios": 3,
         "toilet": 1,
-        "garage:": 2,
+        "garage": 2,
         "terraza": 1,
         "pileta": 0,
         "jardin": 1,
         "SUM": 0
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": false,
+      "for_sale": true
     },
     {
       "estate_datail_id": 3,
@@ -152,7 +156,7 @@
       "price": 130000,
       "available": true,
       "covered_area": 300,
-      "uncoverd_area": 100,
+      "uncovered_area": 100,
       "bedrooms": 2,
       "bathrooms": 1,
       "toilette": 0,
@@ -165,39 +169,45 @@
       "antiquity": 12,
       "estate_id": 3,
       "garden": false,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://static1.sosiva451.com/81421031/aa17550f-062d-45bf-872f-fc57a5fbc2b2_u_large.jpg"
+          "url": "https://static1.sosiva451.com/81421031/aa17550f-062d-45bf-872f-fc57a5fbc2b2_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://static1.sosiva451.com/81421031/cd8ed024-70b2-4722-b7bf-65aef571375c_u_large.jpg"
+          "url": "https://static1.sosiva451.com/81421031/cd8ed024-70b2-4722-b7bf-65aef571375c_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://static1.sosiva451.com/81421031/e1b9e5cd-a449-4961-9af8-fd52c2bc1f08_u_large.jpg"
+          "url": "https://static1.sosiva451.com/81421031/e1b9e5cd-a449-4961-9af8-fd52c2bc1f08_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://static1.sosiva451.com/81421031/6cde86b4-89fd-4a85-84a2-90b590c85ac4_u_large.jpg"
+          "url": "https://static1.sosiva451.com/81421031/6cde86b4-89fd-4a85-84a2-90b590c85ac4_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://static1.sosiva451.com/81421031/93b755c5-e5f3-4e0e-9cb0-1c4810ae9aa8_u_large.jpg"
+          "url": "https://static1.sosiva451.com/81421031/93b755c5-e5f3-4e0e-9cb0-1c4810ae9aa8_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://static1.sosiva451.com/81421031/34d57efe-e27a-4015-a489-82f1907bc562_u_large.jpg"
+          "url": "https://static1.sosiva451.com/81421031/34d57efe-e27a-4015-a489-82f1907bc562_u_large.jpg",
+          "alt": ""
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -211,13 +221,15 @@
         "baños": 1,
         "dormitorios": 2,
         "toilet": 0,
-        "garage:": 1,
+        "garage": 1,
         "terraza": 0,
         "pileta": 0,
         "jardin": 0,
         "SUM": 0
       },
-      "property_type": "Departamento"
+      "property_type": "Departamento",
+      "for_rent": false,
+      "for_sale": true
     },
     {
       "estate_datail_id": 4,
@@ -231,7 +243,7 @@
       "price": 340000,
       "available": true,
       "covered_area": 600,
-      "uncoverd_area": 200,
+      "uncovered_area": 200,
       "bedrooms": 6,
       "bathrooms": 3,
       "toilette": 0,
@@ -244,63 +256,75 @@
       "antiquity": 10,
       "estate_id": 4,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0366/BTE0366_013.jpg?6078960"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0366/BTE0366_013.jpg?6078960",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862398.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862398.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862405.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862405.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862395.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862395.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862410.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862410.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862406.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862406.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 7,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862411.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862411.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 8,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862401.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862401.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 9,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862396.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862396.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 10,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862412.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862412.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 11,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862404.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862404.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 11,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862402.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/91/95/66/1200x1200/1871862402.jpg",
+          "alt": ""
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -314,13 +338,15 @@
         "baños": 3,
         "dormitorios": 6,
         "toilet": 0,
-        "garage:": 2,
+        "garage": 2,
         "terraza": 1,
         "pileta": 1,
         "jardin": 1,
         "SUM": 1
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": false,
+      "for_sale": true
     },
     {
       "estate_datail_id": 5,
@@ -334,7 +360,7 @@
       "price": 260000,
       "available": true,
       "covered_area": 600,
-      "uncoverd_area": 80,
+      "uncovered_area": 80,
       "bedrooms": 5,
       "bathrooms": 2,
       "toilette": 0,
@@ -347,43 +373,50 @@
       "antiquity": 3,
       "estate_id": 5,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0262/BTE0262_040.jpg?4367729"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0262/BTE0262_040.jpg?4367729",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://static1.sosiva451.com/6137348/c19cdae4-4a65-4c22-a769-e4524a2901e6_u_large.jpg"
+          "url": "https://static1.sosiva451.com/6137348/c19cdae4-4a65-4c22-a769-e4524a2901e6_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://static1.sosiva451.com/6137348/11033fdb-dab7-4667-9495-0e3189d71e29_u_large.jpg"
+          "url": "https://static1.sosiva451.com/6137348/11033fdb-dab7-4667-9495-0e3189d71e29_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://static1.sosiva451.com/6137348/287b90d0-ba4a-482c-9c25-2e49ede667e0_u_large.jpg"
+          "url": "https://static1.sosiva451.com/6137348/287b90d0-ba4a-482c-9c25-2e49ede667e0_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://static1.sosiva451.com/6137348/d0f70b6e-283f-4e3b-a9bd-2c44cad3d771_u_large.jpg"
+          "url": "https://static1.sosiva451.com/6137348/d0f70b6e-283f-4e3b-a9bd-2c44cad3d771_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://static1.sosiva451.com/6137348/2bc4f0cf-74a5-4f7b-be5a-960fa5c7eb72_u_large.jpg"
+          "url": "https://static1.sosiva451.com/6137348/2bc4f0cf-74a5-4f7b-be5a-960fa5c7eb72_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 7,
-          "url": "https://static1.sosiva451.com/6137348/a79f605f-eb6d-4e43-abf0-2f6e9fe7d524_u_large.jpg"
+          "url": "https://static1.sosiva451.com/6137348/a79f605f-eb6d-4e43-abf0-2f6e9fe7d524_u_large.jpg",
+          "alt": ""
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -397,13 +430,15 @@
         "baños": 3,
         "dormitorios": 5,
         "toilet": 0,
-        "garage:": 2,
+        "garage": 2,
         "terraza": 1,
         "pileta": 1,
         "jardin": 1,
         "SUM": 1
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": true,
+      "for_sale": false
     },
     {
       "estate_datail_id": 6,
@@ -417,7 +452,7 @@
       "price": 300000,
       "available": true,
       "covered_area": 600,
-      "uncoverd_area": 80,
+      "uncovered_area": 80,
       "bedrooms": 5,
       "bathrooms": 3,
       "toilette": 0,
@@ -430,43 +465,50 @@
       "antiquity": 10,
       "estate_id": 6,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_002.jpg?6730841"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_002.jpg?6730841",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_003.jpg?6730842"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_003.jpg?6730842",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_004.jpg?6730843"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_004.jpg?6730843",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_008.jpg?6730844"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_008.jpg?6730844",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_009.jpg?6730845"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_009.jpg?6730845",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_010.jpg?6730846"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_010.jpg?6730846",
+          "alt": ""
         },
         {
           "estate_photo_id": 7,
-          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_011.jpg?6730847"
+          "url": "https://cdn.tecnogestion.com.ar/multimedia/MON/BTE/BTE0417/BTE0417_011.jpg?6730847",
+          "alt": ""
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -480,13 +522,15 @@
         "baños": 2,
         "dormitorios": 5,
         "toilet": 0,
-        "garage:": 2,
+        "garage": 2,
         "terraza": 1,
         "pileta": 1,
         "jardin": 1,
         "SUM": 1
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": true,
+      "for_sale": false
     },
     {
       "estate_datail_id": 7,
@@ -500,7 +544,7 @@
       "price": 280000,
       "available": true,
       "covered_area": 400,
-      "uncoverd_area": 50,
+      "uncovered_area": 50,
       "bedrooms": 2,
       "bathrooms": 1,
       "toilette": 0,
@@ -513,39 +557,45 @@
       "antiquity": 10,
       "estate_id": 7,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://static.tokkobroker.com/pictures/11055892942182246447020128903573715270373791300168206487275312176201108507058.jpg"
+          "url": "https://static.tokkobroker.com/pictures/11055892942182246447020128903573715270373791300168206487275312176201108507058.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_59851432055260395694213380401533947197503252977421_IPbMXPx-thumbnail-1920x1080-70.jpg"
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_59851432055260395694213380401533947197503252977421_IPbMXPx-thumbnail-1920x1080-70.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_58734598550582817062264418562991327655000512558105_8RulqYB-thumbnail-1920x1080-70.jpg"
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_58734598550582817062264418562991327655000512558105_8RulqYB-thumbnail-1920x1080-70.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_67451962859248334340388480055865551394266634512213_EeE0YAJ-thumbnail-1920x1080-70.jpg"
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_67451962859248334340388480055865551394266634512213_EeE0YAJ-thumbnail-1920x1080-70.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_19882713704792196761251688047963437400717140444426_JhwpaC4-thumbnail-1920x1080-70.jpg"
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_19882713704792196761251688047963437400717140444426_JhwpaC4-thumbnail-1920x1080-70.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_56014833488798810848516730478480200878140445812645_KvHNTQG-thumbnail-1920x1080-70.jpg"
+          "url": "https://cdn.mudafy.com/__sized__/properties/property_801807/2022-08-20_56014833488798810848516730478480200878140445812645_KvHNTQG-thumbnail-1920x1080-70.jpg",
+          "alt": ""
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -559,13 +609,15 @@
         "baños": 1,
         "dormitorios": 2,
         "toilet": 0,
-        "garage:": 1,
+        "garage": 1,
         "terraza": 0,
         "pileta": 0,
         "jardin": 0,
         "SUM": 0
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": true,
+      "for_sale": false
     },
     {
       "estate_datail_id": 8,
@@ -579,7 +631,7 @@
       "price": 120000,
       "available": true,
       "covered_area": 600,
-      "uncoverd_area": 200,
+      "uncovered_area": 200,
       "bedrooms": 1,
       "bathrooms": 1,
       "toilette": 0,
@@ -592,35 +644,40 @@
       "antiquity": 10,
       "estate_id": 8,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://static1.sosiva451.com/09546821/47336314-89fc-417a-bb01-326144929445_u_large.jpg"
+          "url": "https://static1.sosiva451.com/09546821/47336314-89fc-417a-bb01-326144929445_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://static1.sosiva451.com/09546821/6eabd958-f158-441e-a1d8-7661ca34e7bb_u_large.jpg"
+          "url": "https://static1.sosiva451.com/09546821/6eabd958-f158-441e-a1d8-7661ca34e7bb_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://static1.sosiva451.com/09546821/9aff61c0-4340-4669-ba5b-1c81172d7e98_u_large.jpg"
+          "url": "https://static1.sosiva451.com/09546821/9aff61c0-4340-4669-ba5b-1c81172d7e98_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://static1.sosiva451.com/09546821/e68bf086-33ef-4ba3-8b8e-677930ad5e81_u_large.jpg"
+          "url": "https://static1.sosiva451.com/09546821/e68bf086-33ef-4ba3-8b8e-677930ad5e81_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://static1.sosiva451.com/09546821/4196e080-78f3-49ca-bae7-5d1a0309f7d6_u_large.jpg"
+          "url": "https://static1.sosiva451.com/09546821/4196e080-78f3-49ca-bae7-5d1a0309f7d6_u_large.jpg",
+          "alt": ""
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -634,13 +691,15 @@
         "baños": 1,
         "dormitorios": 1,
         "toilet": 0,
-        "garage:": 0,
+        "garage": 0,
         "terraza": 1,
         "pileta": 1,
         "jardin": 0,
         "SUM": 1
       },
-      "property_type": "Departamento"
+      "property_type": "Departamento",
+      "for_rent": true,
+      "for_sale": false
     },
     {
       "estate_datail_id": 9,
@@ -654,7 +713,7 @@
       "price": 120000,
       "available": true,
       "covered_area": 400,
-      "uncoverd_area": 50,
+      "uncovered_area": 50,
       "bedrooms": 2,
       "bathrooms": 1,
       "toilette": 0,
@@ -667,39 +726,45 @@
       "antiquity": 10,
       "estate_id": 9,
       "garden": true,
-      "terrance": true,
+      "terrace": true,
       "grill": 0,
       "credit_worthy": true,
       "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://staticbp.com/img/prop_new_b/541/00541584-01.jpg"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-01.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://staticbp.com/img/prop_new_b/541/00541584-02.jpg"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-02.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://staticbp.com/img/prop_new_b/541/00541584-09.jpg"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-09.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://staticbp.com/img/prop_new_b/541/00541584-11.jpg"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-11.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://staticbp.com/img/prop_new_b/541/00541584-12.jpg"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-12.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://staticbp.com/img/prop_new_b/541/00541584-13.jpg"
+          "url": "https://staticbp.com/img/prop_new_b/541/00541584-13.jpg",
+          "alt": ""
         }
       ],
       "services": {
         "agua": true,
-        "eletricidad": true,
+        "electricidad": true,
         "telefono": true,
         "gas": true,
         "internet": true,
@@ -713,13 +778,15 @@
         "baños": 1,
         "dormitorios": 2,
         "toilet": 0,
-        "garage:": 1,
+        "garage": 1,
         "terraza": 1,
         "pileta": 1,
         "jardin": 0,
         "SUM": 1
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": true,
+      "for_sale": false
     },
     {
       "estate_datail_id": 10,
@@ -749,34 +816,42 @@
       "terrace": true,
       "grill": 1,
       "credit_worthy": true,
+      "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://static1.sosiva451.com/82281911/0949cfed-c2f2-471f-a241-3eb04dc5db66_u_large.jpg"
+          "url": "https://static1.sosiva451.com/82281911/0949cfed-c2f2-471f-a241-3eb04dc5db66_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://static1.sosiva451.com/82281911/6b4e68d1-2c23-4230-87e3-be978272748e_u_large.jpg"
+          "url": "https://static1.sosiva451.com/82281911/6b4e68d1-2c23-4230-87e3-be978272748e_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://static1.sosiva451.com/82281911/aa3a0ba8-900b-4d5a-b41a-fc4a32fbaeb0_u_large.jpg"
+          "url": "https://static1.sosiva451.com/82281911/aa3a0ba8-900b-4d5a-b41a-fc4a32fbaeb0_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://static1.sosiva451.com/82281911/a85c27eb-fd2b-400e-931f-8c4b0192f06e_u_large.jpg"
+          "url": "https://static1.sosiva451.com/82281911/a85c27eb-fd2b-400e-931f-8c4b0192f06e_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://static1.sosiva451.com/82281911/e7160afa-f144-4db2-8ece-cbfab697a997_u_large.jpg"
+          "url": "https://static1.sosiva451.com/82281911/e7160afa-f144-4db2-8ece-cbfab697a997_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://static1.sosiva451.com/82281911/3851edb7-309e-4876-9ea5-657419280b5f_u_large.jpg"
+          "url": "https://static1.sosiva451.com/82281911/3851edb7-309e-4876-9ea5-657419280b5f_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 7,
-          "url": "https://static1.sosiva451.com/82281911/4df3e585-3c0b-4912-97e2-2eaf71aafc7a_u_large.jpg"
+          "url": "https://static1.sosiva451.com/82281911/4df3e585-3c0b-4912-97e2-2eaf71aafc7a_u_large.jpg",
+          "alt": ""
         }
       ],
       "services": {
@@ -801,7 +876,9 @@
         "jardin": 1,
         "SUM": 0
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": false,
+      "for_sale": true
     },
     {
       "estate_datail_id": 11,
@@ -831,34 +908,42 @@
       "terrace": false,
       "grill": 0,
       "credit_worthy": true,
+      "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838457477.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838457477.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456297.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456297.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456296.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456296.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456291.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456291.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456288.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456288.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456293.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456293.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456289.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/50/49/61/69/1200x1200/1838456289.jpg",
+          "alt": ""
         }
       ],
       "services": {
@@ -883,7 +968,9 @@
         "jardin": 0,
         "SUM": 0
       },
-      "property_type": "Departamento"
+      "property_type": "Departamento",
+      "for_rent": false,
+      "for_sale": true
     },
     {
       "estate_datail_id": 12,
@@ -913,18 +1000,22 @@
       "terrace": false,
       "grill": 0,
       "credit_worthy": true,
+      "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://static1.sosiva451.com/51439621/f1a8dc52-2f83-4560-8873-6b8aaba13cf5_u_large.jpg"
+          "url": "https://static1.sosiva451.com/51439621/f1a8dc52-2f83-4560-8873-6b8aaba13cf5_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://static1.sosiva451.com/51439621/61d5712c-3b50-4e63-aa33-80c4851af837_u_large.jpg"
+          "url": "https://static1.sosiva451.com/51439621/61d5712c-3b50-4e63-aa33-80c4851af837_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://static1.sosiva451.com/51439621/4f132b5b-fe69-4693-a5cb-db2dca3bdc92_u_large.jpg"
+          "url": "https://static1.sosiva451.com/51439621/4f132b5b-fe69-4693-a5cb-db2dca3bdc92_u_large.jpg",
+          "alt": ""
         }
       ],
       "services": {
@@ -949,7 +1040,9 @@
         "jardin": 0,
         "SUM": 0
       },
-      "property_type": "Departamento"
+      "property_type": "Departamento",
+      "for_rent": true,
+      "for_sale": false
     },
     {
       "estate_datail_id": 13,
@@ -979,50 +1072,62 @@
       "terrace": true,
       "grill": 1,
       "credit_worthy": true,
+      "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://static1.sosiva451.com/72197621/2d7f3db3-cfb4-4805-b656-f91569236b54_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/2d7f3db3-cfb4-4805-b656-f91569236b54_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://static1.sosiva451.com/72197621/400ced91-411b-4528-b759-708d2b6f8e09_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/400ced91-411b-4528-b759-708d2b6f8e09_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://static1.sosiva451.com/72197621/75219dd5-1eb6-475d-8779-d43bba895e44_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/75219dd5-1eb6-475d-8779-d43bba895e44_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://static1.sosiva451.com/72197621/1692ca07-9e06-43df-9999-23309db4af46_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/1692ca07-9e06-43df-9999-23309db4af46_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://static1.sosiva451.com/72197621/0d024de3-4b7a-45fc-9303-539dd21ad12c_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/0d024de3-4b7a-45fc-9303-539dd21ad12c_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://static1.sosiva451.com/72197621/86b2ad80-77d7-45e3-aa27-0a6796a3dc22_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/86b2ad80-77d7-45e3-aa27-0a6796a3dc22_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 7,
-          "url": "https://static1.sosiva451.com/72197621/fb36938f-c951-42e0-aee7-cc60eca9b5f5_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/fb36938f-c951-42e0-aee7-cc60eca9b5f5_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 8,
-          "url": "https://static1.sosiva451.com/72197621/2b1289b9-545b-4e6a-b669-b0356a7e2d5c_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/2b1289b9-545b-4e6a-b669-b0356a7e2d5c_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 9,
-          "url": "https://static1.sosiva451.com/72197621/8c9b6b88-e8fa-42f8-8d59-a37986f945f1_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/8c9b6b88-e8fa-42f8-8d59-a37986f945f1_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 10,
-          "url": "https://static1.sosiva451.com/72197621/d6c9ce71-8849-4529-92b5-4654575cedbe_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/d6c9ce71-8849-4529-92b5-4654575cedbe_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 11,
-          "url": "https://static1.sosiva451.com/72197621/d2a39077-e758-4132-a575-e649b76cec70_u_large.jpg"
+          "url": "https://static1.sosiva451.com/72197621/d2a39077-e758-4132-a575-e649b76cec70_u_large.jpg",
+          "alt": ""
         }
       ],
       "services": {
@@ -1047,7 +1152,9 @@
         "jardin": 1,
         "SUM": 0
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": false,
+      "for_sale": true
     },
     {
       "estate_datail_id": 14,
@@ -1077,34 +1184,42 @@
       "terrace": false,
       "grill": 1,
       "credit_worthy": true,
+      "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://static1.sosiva451.com/2873589/82e24038-0dd2-4711-982a-a303ad97d62b_u_large.jpg"
+          "url": "https://static1.sosiva451.com/2873589/82e24038-0dd2-4711-982a-a303ad97d62b_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://static1.sosiva451.com/2873589/2522fde4-0438-4500-a41a-b2f4377177ca_u_large.jpg"
+          "url": "https://static1.sosiva451.com/2873589/2522fde4-0438-4500-a41a-b2f4377177ca_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://static1.sosiva451.com/2873589/7cbeaa7b-031e-42c2-b48a-782ed5f2684f_u_large.jpg"
+          "url": "https://static1.sosiva451.com/2873589/7cbeaa7b-031e-42c2-b48a-782ed5f2684f_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://static1.sosiva451.com/2873589/5e9ad74b-81e1-49d7-8fa4-56250fc762ba_u_large.jpg"
+          "url": "https://static1.sosiva451.com/2873589/5e9ad74b-81e1-49d7-8fa4-56250fc762ba_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://static1.sosiva451.com/2873589/b16ed4c3-3248-4b07-a7eb-400594bd8b2a_u_large.jpg"
+          "url": "https://static1.sosiva451.com/2873589/b16ed4c3-3248-4b07-a7eb-400594bd8b2a_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://static1.sosiva451.com/2873589/b2af78ad-d768-4335-8a1a-5892ee4badf6_u_large.jpg"
+          "url": "https://static1.sosiva451.com/2873589/b2af78ad-d768-4335-8a1a-5892ee4badf6_u_large.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 7,
-          "url": "https://static1.sosiva451.com/2873589/6646d395-65f5-4862-9aa7-ac0dd72a0a7d_u_large.jpg"
+          "url": "https://static1.sosiva451.com/2873589/6646d395-65f5-4862-9aa7-ac0dd72a0a7d_u_large.jpg",
+          "alt": ""
         }
       ],
       "services": {
@@ -1129,7 +1244,9 @@
         "jardin": 1,
         "SUM": 0
       },
-      "property_type": "Casa"
+      "property_type": "Casa",
+      "for_rent": true,
+      "for_sale": false
     },
     {
       "estate_datail_id": 15,
@@ -1159,34 +1276,42 @@
       "terrace": true,
       "grill": 1,
       "credit_worthy": true,
+      "professional_use": false,
       "estate_photos": [
         {
           "estate_photo_id": 1,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903995.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903995.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 2,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903994.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903994.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 3,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903973.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903973.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 4,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903968.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903968.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 5,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903974.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903974.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 6,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860904000.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860904000.jpg",
+          "alt": ""
         },
         {
           "estate_photo_id": 7,
-          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903982.jpg"
+          "url": "https://imgar.zonapropcdn.com/avisos/resize/1/00/51/38/54/70/1200x1200/1860903982.jpg",
+          "alt": ""
         }
       ],
       "services": {
@@ -1211,7 +1336,9 @@
         "jardin": 0,
         "SUM": 0
       },
-      "property_type": "Departamento"
+      "property_type": "Departamento",
+      "for_rent": true,
+      "for_sale": false
     }
   ]
 }

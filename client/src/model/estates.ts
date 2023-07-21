@@ -7,6 +7,7 @@ export interface Estates {
   bathrooms: number
   cars: number
   image: string
+  alt: string
   forRent: boolean
   forSale: boolean
 }

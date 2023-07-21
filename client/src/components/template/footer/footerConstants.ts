@@ -16,11 +16,6 @@ export const SERVICES: textLink[] = [
     text: 'Alquiler',
     to: '/search',
     ariaLabel:'página de busqueda de propiedades en alquiler'
-  },
-  {
-    text: 'Alquiler temporario',
-    to: '/search',
-    ariaLabel:'página de busqueda de propiedades en alquiler temporario'
   }
 ]
 

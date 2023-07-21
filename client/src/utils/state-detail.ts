@@ -12,7 +12,7 @@ export const estateDetail = {
   price: 360000,
   available: true,
   covered_area: 600,
-  uncoverd_area: 80,
+  uncovered_area: 80,
   bedrooms: 5,
   bathrooms: 2,
   toilette: 1,
@@ -25,7 +25,7 @@ export const estateDetail = {
   antiquity: 3,
   estate_id: 1,
   garden: true,
-  terrance: true,
+  terrace: true,
   grill: 0,
   credit_worthy: true,
   professional_use: false,
@@ -48,7 +48,7 @@ export const estateDetail = {
   ],
   services: {
     agua: true,
-    eletricidad: true,
+    electricidad: true,
     telefono: true,
     gas: true,
     internet: true,
@@ -68,5 +68,7 @@ export const estateDetail = {
     jardin: 1,
     SUM: 0
   },
-  property_type: Type.casa
+  property_type: Type.casa,
+  for_rent: true,
+  for_sale: false
 }

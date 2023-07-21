@@ -8,13 +8,13 @@ export type EstateDetail = {
   description: string
   zone: string
   address: string
-  city: City
-  province: Province
-  country: Country
+  city: string | City
+  province: string | Province
+  country: string | Country
   price: number
   available: boolean
   covered_area: number
-  uncoverd_area: number
+  uncovered_area: number
   bedrooms: number
   bathrooms: number
   toilette: number
@@ -25,16 +25,18 @@ export type EstateDetail = {
   elevator: number
   gym: number
   antiquity: number
-  state_id: number
+  estate_id: number
   garden: boolean
-  terrance: boolean
+  terrace: boolean
   grill: number
   credit_worthy: boolean
   professional_use: boolean
-  estate_photos: EstatePhoto[]
+  estate_photos: EstatePhoto[] 
   services: Services
   rooms: { [key: string]: number }
-  property_type: Type
+  property_type: string | Type
+  for_rent: boolean
+  for_sale: boolean
 }
 
 export enum Country {
@@ -59,7 +61,7 @@ export enum City {
 
 export type Services = {
   agua: boolean
-  eletricidad: boolean
+  electricidad: boolean
   telefono: boolean
   gas: boolean
   internet: boolean
