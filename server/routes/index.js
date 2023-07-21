@@ -27,6 +27,7 @@ module.exports = (app) => {
     app.get('/api/properties/list-detail', propertyController.getPropertiesDetail);
     app.get('/api/properties/:id/full-detail', propertyController.getPropertyFullDetail);
     app.post('/api/properties/create', checkAuth, propertyController.createProperty);
+    app.post('/api/properties/:id/detail/create', checkAuth, propertyController.createPropertyDetail);
     app.put('/api/properties/update/:id', checkAuth, propertyController.updateProperty);
     app.delete('/api/properties/:id', checkAuth, propertyController.deleteProperty);
     //Property detail routes

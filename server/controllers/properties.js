@@ -96,6 +96,7 @@ module.exports = {
             });
     },
     createPropertyDetail: (req, res) => {
+        const id = req.params.id;
         if (!req.body) {
             res.status(400).send({
                 message: "No se pueden registrar los detalles de una propiedad sin datos."
@@ -103,6 +104,7 @@ module.exports = {
             return;
         }
         const newPropertyDetail = req.body;
+        newPropertyDetail.property_id = id
         return property_details.create(newPropertyDetail)
             .then(data => {
                 res.status(200).send(data);
