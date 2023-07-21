@@ -65,7 +65,7 @@ const CardsAbout: React.FC<CardsProps> = ({
         alignItems: 'center',
         marginBottom: '20px',
         ...(isSpecialCard && {
-          width:{lg: '100%', sm: '270px', xs:'auto' },
+          width: { lg: '100%', sm: '270px', xs: 'auto' },
           height: { xs: 'auto', sm: '324px' },
           flexDirection: { xs: 'row', sm: 'column' },
           justifyContent: 'flex-start',
@@ -109,14 +109,22 @@ const CardsAbout: React.FC<CardsProps> = ({
         >
           <IconButton color="secondary"
             size="small"
-            onClick={ () => handleEmailClick(mail) } sx={ buttonStyleAbout }>
+            onClick={ () => handleEmailClick(mail) }
+            sx={ buttonStyleAbout }
+            aria-label="Enviar un correo electrónico"
+          >
             <Email fontSize="small" />
           </IconButton>
-          <IconButton color="secondary"
+          <IconButton
+            color="secondary"
             size="small"
-            component="a" href={ `https://api.whatsapp.com/send?phone=${ whatsapp }` }
+            component="a"
+            href={ `https://api.whatsapp.com/send?phone=${ whatsapp }` }
             target="_blank"
-            rel="noopener noreferrer" sx={ buttonStyleAbout }>
+            rel="noopener noreferrer"
+            aria-label="Enviar un mensjae de Whatsapp"
+            sx={ buttonStyleAbout }
+          >
             <WhatsApp fontSize="small" />
           </IconButton>
         </Box>
@@ -128,7 +136,7 @@ const CardsAbout: React.FC<CardsProps> = ({
           justifyContent: isSpecialCard ? 'space-between' : 'space-around',
           paddingTop: '22px',
           height: '100%',
-          width: isSpecialCard ? '100%': '100%',
+          width: isSpecialCard ? '100%' : '100%',
           padding: '0 !important'
         } }
       >
@@ -140,11 +148,18 @@ const CardsAbout: React.FC<CardsProps> = ({
           } }
         >
           <Typography
-            sx={ { color: '#1B17E7', fontSize: '14px', fontWeight: 'bold' } }
+            sx={ {
+              color: '#1B17E7',
+              fontSize: '14px',
+              fontWeight: 'bold'
+            } }
           >
             { name } { lastName }
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+          >
             { position }
           </Typography>
         </Box>
@@ -156,7 +171,7 @@ const CardsAbout: React.FC<CardsProps> = ({
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: '8px',
-                paddingRight: isSpecialCard ? '0px' :'14px',
+                paddingRight: isSpecialCard ? '0px' : '14px',
               } }>
               <LocalizationProvider dateAdapter={ AdapterDayjs }>
                 <DemoContainer
@@ -193,6 +208,7 @@ const CardsAbout: React.FC<CardsProps> = ({
                 color="secondary"
                 size="small"
                 onClick={ () => handleEmailClick(mail) } sx={ buttonStyleAbout }
+                aria-label="Enviar un correo electrónico"
               >
                 <Email fontSize="small" />
               </IconButton>
@@ -203,6 +219,7 @@ const CardsAbout: React.FC<CardsProps> = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={ buttonStyleAbout }
+                aria-label="Enviar un mensjae de Whatsap"
               >
                 <WhatsApp fontSize="small" />
               </IconButton>

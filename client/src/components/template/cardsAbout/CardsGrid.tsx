@@ -20,7 +20,11 @@ const CardsGrid = () => {
         textAlign="center"
         textColor="rgba(0, 0, 0, 0.87)"
       />
-      <Grid container spacing={ 1 } sx={{ marginTop: '2rem'}}>
+      <Grid
+        container
+        spacing={ 1 }
+        sx={ { marginTop: '2rem' } }
+      >
         <Grid item xs={ 12 } md={ 9 } className="container-card-normal">
           { persons
             .filter((item: Personal) => item.id <= 6)
@@ -37,7 +41,12 @@ const CardsGrid = () => {
               />
             )) }
         </Grid>
-        <Grid item xs={ 12 } md={ 3 } sx={ styles.cardContainer } className="container-card-special">
+        <Grid
+          item
+          xs={ 12 }
+          md={ 3 }
+          sx={ styles.cardContainer } className="container-card-special"
+        >
           { lastPerson &&
             <CardsAbout
               key={ lastPerson.id }
