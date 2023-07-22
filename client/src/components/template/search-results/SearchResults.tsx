@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Box,
   Container,
@@ -30,16 +30,42 @@ type SearchResultsProps = {
 const SearchResults: React.FC<SearchResultsProps> = ({
   results
 }) => {
-  console.log(results) // TODO: borrar!!!
-  const [selectedOperation, setSelectedOperation] = useState<Operation>(Operation.compra)
-  const [selectedCity, setSelectedCity] = useState<City>(City.agromonia)
-  const [selectedType, setSelectedType] = useState<Type>(Type.casa)
-  const [selectedRoom, setSelectedRoom] = useState<Room>(Room.uno)
+  const [searchResults, setSearchResults] = useState<EstateDetail[]>(results)
+  const [page, setPage] = useState(1)
+
+  const [selectedOperation, setSelectedOperation] = useState<Operation | null>(null)
+  const [selectedCity, setSelectedCity] = useState<City | null>(null)
+  const [selectedType, setSelectedType] = useState<Type | null>(null)
+  const [selectedRoom, setSelectedRoom] = useState<Room | null>(null)
 
   const handleOperationChange = (operation: Operation) => setSelectedOperation(operation)
   const handleCityChange = (city: City) => setSelectedCity(city)
   const handleTypeChange = (type: Type) => setSelectedType(type)
   const handleRoomChange = (room: Room) => setSelectedRoom(room)
+
+  const selectedOperationText = selectedOperation === null ? '' : `: ${ selectedOperation }`
+  const selectedCityText = selectedCity === null ? '' : `: ${ selectedCity }`
+  const selectedTypeText = selectedType === null ? '' : `: ${ selectedType }`
+  const selectedRoomText = selectedRoom === null ? '' : `: ${ selectedRoom }`
+
+  const handleClick = () => {
+    console.log('handleClick: ', selectedOperation, selectedCity, selectedType, selectedRoom)
+    if (selectedOperation !== null) {
+      if (selectedOperation === 'Compra') {
+        const compra = results.filter(result => result.for_sale === true)
+        setSearchResults(compra)
+        console.log('COMPRA: ', searchResults)
+      } else {
+        const venta = results.filter(result => result.for_rent === true)
+        setSearchResults(venta)
+        console.log('VENTA ', searchResults)
+      }
+    }
+  }
+
+  useEffect(() => {
+    console.log('DESDE  USEEFFECT: ', selectedOperation)
+  }, [selectedOperation])
 
   return (
     <>
@@ -59,36 +85,37 @@ const SearchResults: React.FC<SearchResultsProps> = ({
           component="nav"
           aria-labelledby="Menu de filtro para búsqueda de propiedad"
         >
-          <ListItemButtonOptions textToDisplay={ `Operación: ${ selectedOperation }` } >
+          <ListItemButtonOptions textToDisplay={ `Operación ${ selectedOperationText }` } >
             <OperationButtonGroup selectedOperation={ selectedOperation } onOperationChange={ handleOperationChange } />
           </ListItemButtonOptions>
-          <ListItemButtonOptions textToDisplay={ `Ubicación: ${ selectedCity }` } >
+          <ListItemButtonOptions textToDisplay={ `Ubicación ${ selectedCityText }` } >
             <CityButtonGroup selectedCity={ selectedCity } onCityChange={ handleCityChange } />
           </ListItemButtonOptions>
-          <ListItemButtonOptions textToDisplay={ `Tipo de inmueble: ${ selectedType }` } >
+          <ListItemButtonOptions textToDisplay={ `Inmueble ${ selectedTypeText }` } >
             <TypeButtonGroup selectedType={ selectedType } onTypeChange={ handleTypeChange } />
           </ListItemButtonOptions>
-          <ListItemButtonOptions textToDisplay={ `Dormitorios: ${ selectedRoom }` } >
+          <ListItemButtonOptions textToDisplay={ `Dormitorios ${ selectedRoomText }` } >
             <RoomButtonGroup selectedRoom={ selectedRoom } onRoomChange={ handleRoomChange } />
           </ListItemButtonOptions>
           <PrimaryButton
             text='Buscar'
             aria-label='Buscar propiedad'
             sx={ { margin: '1rem', padding: '6px 12px' } }
+            onClick={ handleClick }
           />
         </List>
         {/* Mostrar total */ }
         <Grid container>
           <Grid item xs={ 12 }>
             <Typography sx={ styles.totalList } >
-              <Box component='span' sx={ styles.totalListSpan } >{ results.length }</Box>
+              <Box component='span' sx={ styles.totalListSpan } >{ searchResults.length }</Box>
               inmuebles
             </Typography>
           </Grid>
         </Grid>
         {/* Cards */ }
         <Grid container sx={ styles.cardContainer } className="featured-card-container" >
-          { results && results.map((result, index) => {
+          { searchResults && searchResults.slice((page - 1) * 12, page * 12).map((result, index) => {
             const estateCard = {
               id: result.estate_datail_id.toString(),
               description: result.name,
@@ -125,10 +152,13 @@ const SearchResults: React.FC<SearchResultsProps> = ({
         >
           <Stack spacing={ 2 } sx={ styles.stack } >
             <Pagination
-              count={ 6 }
+              count={ Math.ceil(searchResults.length / 12) }
+              page={ page }
+              onChange={ (event, value) => setPage(value) }
               variant="outlined"
               shape="rounded"
               size="large"
+              color="secondary"
             />
           </Stack>
         </Grid>
