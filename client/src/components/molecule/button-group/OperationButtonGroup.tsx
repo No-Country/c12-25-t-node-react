@@ -21,14 +21,14 @@ const OperationButtonGroup: React.FC<OperationButtonGroupProps> = ({
       orientation="vertical"
       variant="contained"
       color="primary"
+      fullWidth
     >
       { operations.map((operation) => (
         <Button
           key={ operation }
           onClick={ () => onOperationChange(operation) }
-          variant={
-            selectedOperation === operation ? 'contained' : 'outlined'
-          }
+          variant={ selectedOperation === operation ? 'contained' : 'outlined' }
+          sx={{padding: '6px'}}
         >
           { operation }
         </Button>

@@ -87,10 +87,10 @@ export enum Operation {
 }
 
 export enum Room {
-  uno,
-  dos,
-  tres,
-  cuatro,
-  cinco,
-  seis 
+  uno = '1',
+  dos = '2',
+  tres = '3',
+  cuatro = '4',
+  cinco = '5',
+  seis = '6'
 }

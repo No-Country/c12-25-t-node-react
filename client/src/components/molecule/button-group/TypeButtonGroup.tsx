@@ -21,14 +21,14 @@ const TypeButtonGroup: React.FC<TypeButtonGroupProps> = ({
       orientation="vertical"
       variant="contained"
       color="primary"
+      fullWidth
     >
       { types.map((type) => (
         <Button
           key={ type }
           onClick={ () => onTypeChange(type) }
-          variant={
-            selectedType === type ? 'contained' : 'outlined'
-          }
+          variant={ selectedType === type ? 'contained' : 'outlined' }
+          sx={ { padding: '6px' } }
         >
           { type }
         </Button>

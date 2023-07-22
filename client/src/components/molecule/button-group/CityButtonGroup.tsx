@@ -21,12 +21,14 @@ const CityButtonGroup: React.FC<CityButtonGroupProps> = ({
       orientation="vertical"
       variant="contained"
       color="primary"
+      fullWidth
     >
       { cities.map((city) => (
         <Button
           key={ city }
           onClick={ () => onCityChange(city) }
           variant={ selectedCity === city ? 'contained' : 'outlined' }
+          sx={{padding: '6px'}}
         >
           { city }
         </Button>

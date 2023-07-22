@@ -21,14 +21,14 @@ const RoomButtonGroup: React.FC<RoomButtonGroupProps> = ({
       orientation="vertical"
       variant="contained"
       color="primary"
+      fullWidth
     >
       { rooms.map((room) => (
         <Button
           key={ room }
           onClick={ () => onRoomChange(room) }
-          variant={
-            selectedRoom === room ? 'contained' : 'outlined'
-          }
+          variant={ selectedRoom === room ? 'contained' : 'outlined' }
+          sx={{padding: '6px'}}
         >
           { room }
         </Button>
