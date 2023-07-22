@@ -42,14 +42,17 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <main>
-      <HeroImage imgSrc={heroImageBanner} />
+      <HeroImage imgSrc={ heroImageBanner } />
       <Searcher />
-      <FeaturedAcordion textTitle="venta" estates={estatesForSale} />
-      <FeaturedAcordion textTitle="alquiler" estates={estatesForRent} />
-      <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
+      <FeaturedAcordion textTitle="venta" estates={ estatesForSale } />
+      <FeaturedAcordion textTitle="alquiler" estates={ estatesForRent } />
       <CallToActionContactForm
-        imageUrl={ImageCtaRight}
-        textPosition={'right'}
+        imageUrl={ ImageCtaLeft }
+        textPosition={ 'left' }
+      />
+      <CallToActionContactForm
+        imageUrl={ ImageCtaRight }
+        textPosition={ 'right' }
       />
     </main>
   )

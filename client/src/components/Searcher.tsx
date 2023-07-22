@@ -5,6 +5,8 @@ import Selector from './molecule/Selector'
 import SearchIcon from '@mui/icons-material/Search'
 import { useTheme, useMediaQuery } from '@mui/material'
 import Divider from '@mui/material/Divider'
+import { City, Type } from '../model/estate-detail'
+import PrimaryButton from './atom/PrimaryButton'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -20,14 +22,14 @@ function TabPanel(props: TabPanelProps) {
   return (
     <div
       role="tabpanel"
-      hidden={value !== index}
-      id={`tabpanel-${index}`}
-      aria-labelledby={`tab-${index}`}
-      {...other}
+      hidden={ value !== index }
+      id={ `tabpanel-${ index }` }
+      aria-labelledby={ `tab-${ index }` }
+      { ...other }
     >
-      {value === index && (
+      { value === index && (
         <Box
-          sx={{
+          sx={ {
             p: 1,
             width: isMd ? 'auto' : '800px',
             display: 'flex',
@@ -37,11 +39,11 @@ function TabPanel(props: TabPanelProps) {
             borderBottomLeftRadius: '15px',
             borderBottomRightRadius: '15px',
             borderTopRightRadius: isSm ? 0 : '15px',
-          }}
+          } }
         >
-          <>{children}</>
+          <>{ children }</>
         </Box>
-      )}
+      ) }
     </div>
   )
 }
@@ -54,8 +56,8 @@ TabPanel.propTypes = {
 
 function a11yProps(index: number) {
   return {
-    id: `indicator-${index}`,
-    'aria-controls': `indicator-${index}`,
+    id: `indicator-${ index }`,
+    'aria-controls': `indicator-${ index }`,
   }
 }
 
@@ -67,7 +69,7 @@ export default function BasicTabs() {
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue)
-    console.log(`value: ${newValue}`)
+    console.log(`value: ${ newValue }`)
   }
 
   useEffect(() => {
@@ -85,47 +87,48 @@ export default function BasicTabs() {
       label: 'ALQUILAR',
       index: 1,
       borderTopLeftRadius: '0px',
-      borderTopRightRadius: '0px',
-    },
-    {
-      label: 'ALQ. TEMPORAL',
-      index: 2,
-      borderTopLeftRadius: '0px',
       borderTopRightRadius: '15px',
-    },
+    }
   ]
 
-  const locationArray = [
-    'Agronomia',
-    'Almagro',
-    'Balvanera',
-    'Barracas',
-    'Boedo',
-    'Caballito',
+  const locationArray: City[] = [
+    City.agromonia,
+    City.almagro,
+    City.balvanera,
+    City.barracas,
+    City.belgrano,
+    City.boedo,
+    City.caballito,
+    City.palermo,
+    City.villaUrquiza,
   ]
 
-  const estatesArray = ['Departamentos', 'Casas', 'P.H', 'Locales', 'Oficinas']
+  const estatesArray: Type[] = [
+    Type.casa,
+    Type.departamento,
+    Type.ph
+  ]
 
   return (
     <Box
-      sx={{
+      sx={ {
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: '80vw',
         maxWidth: '800px',
-      }}
+      } }
     >
       <Tabs
-        value={value}
-        onChange={handleChange}
+        value={ value }
+        onChange={ handleChange }
         aria-label="indicator example"
-        TabIndicatorProps={{
+        TabIndicatorProps={ {
           title: 'indicator',
           hidden: true,
-        }}
-        sx={{
+        } }
+        sx={ {
           paddingX: 0,
           '& button': { color: 'white' },
           '& button:focus': {
@@ -136,56 +139,63 @@ export default function BasicTabs() {
             backgroundColor: '#f1f1f9',
             color: '#1daeff',
           },
-        }}
+        } }
       >
-        {tabArray.map((tab) => (
+        { tabArray.map((tab) => (
           <Tab
-            key={tab.index}
-            label={tab.label}
+            key={ tab.index }
+            label={ tab.label }
             wrapped
-            sx={{
+            sx={ {
               fontSize: isSm ? '0.8rem' : '1rem',
-              padding: 0,
+              padding: '0.50rem 0.75rem',
               borderTopLeftRadius: tab.borderTopLeftRadius,
               borderTopRightRadius: tab.borderTopRightRadius,
-            }}
-            {...a11yProps(tab.index)}
+              background: '#b5aeae'
+            } }
+            { ...a11yProps(tab.index) }
           />
-        ))}
+        )) }
       </Tabs>
-
-      {tabArray.map((tab) => (
-        <TabPanel key={tab.index} value={value} index={tab.index}>
+      { tabArray.map((tab) => (
+        <TabPanel key={ tab.index } value={ value } index={ tab.index }>
           <Selector
             longPlaceholder="Selecciona tus zonas de preferencia"
             shortPlaceholder="Zonas de preferencia"
             label="Ubicación"
-            selectOptions={locationArray}
+            selectOptions={ locationArray }
           />
           <Divider />
           <Selector
             longPlaceholder="Selecciona tus viviendas de preferencia"
             shortPlaceholder="Viviendas de preferencia"
             label="Tipo de propiedad"
-            selectOptions={estatesArray}
+            selectOptions={ estatesArray }
           />
           <IconButton
-            sx={{
-              backgroundColor: 'blue',
+            sx={ {
+              backgroundColor: { xs: 'transparent', md: 'blue' },
               color: 'white',
               borderRadius: 3,
               height: '50px',
               width: isMd ? '70%' : '50px',
-            }}
+              margin: '1rem 0rem'
+            } }
           >
-            {isMd ? (
-              <Typography variant="h6">Buscar</Typography>
+            { isMd ? (
+              <PrimaryButton
+                text='Buscar'
+                sx={ {
+                  display: 'inline-block',
+                  width: '100%',
+                } }
+              />
             ) : (
               <SearchIcon />
-            )}
+            ) }
           </IconButton>
         </TabPanel>
-      ))}
+      )) }
     </Box>
   )
 }

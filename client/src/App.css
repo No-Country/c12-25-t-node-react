@@ -7,6 +7,10 @@
   color: var(--primary);
 }
 
+.white {
+  color: var(--bg-lighter);
+}
+
 /* Links */
 .link-logo {
   text-decoration: none;

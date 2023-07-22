@@ -15,7 +15,9 @@ const LinkList: React.FC<LinkListProps> = ({ list }) => {
     <List>
       { list && list.map(
         item => <ListItem key={ item.text }>
-          <Link to={ item.to } className="links-footer">{ item.text }</Link>
+          <Link to={ item.to } className="links-footer" aria-label={ item.ariaLabel }>
+            { item.text }
+          </Link>
         </ListItem>)
       }
     </List>

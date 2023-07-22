@@ -33,6 +33,7 @@ const BackButton: React.FC<BackButtonProps> = ({
             margin: '5rem 0rem 1rem'
           } }
           onClick={ handleClick }
+          aria-label='Volver a la página anterior'
           { ...props }
         >
           Volver
