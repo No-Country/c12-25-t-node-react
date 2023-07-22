@@ -34,16 +34,21 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
 
   return (
     <Card
-      style={ { boxShadow: '0px 4px 10px grey' } }
-      sx={ { maxWidth: 350, height: 378, borderRadius: 5, boxShadow: 3 } }
+      sx={ {
+        maxWidth: 350,
+        height: 378,
+        borderRadius: 5,
+        boxShadow: '0px 4px 10px grey',
+        margin: '0px auto'
+      } }
     >
       <CardMedia
-        sx={ { height: 200, objectFit: 'fill' } }
+        sx={ { height: 200, objectFit: 'cover' } }
         component="img"
         src={ image }
-        title={alt}
+        title={ alt }
       />
-      <CardContent sx={ { position: 'relative', pb: 0} }>
+      <CardContent sx={ { position: 'relative', pb: 0 } }>
         <IconButton
           size="small"
           sx={ {
