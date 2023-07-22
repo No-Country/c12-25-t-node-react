@@ -33,6 +33,8 @@ type MainInfoPropertyProps = {
   garage: number
   garden: boolean
   estatePhotos: EstatePhoto[]
+  forRent: boolean
+  forSale: boolean
 }
 
 const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
@@ -44,7 +46,9 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   bathrooms,
   garage,
   garden,
-  estatePhotos
+  estatePhotos,
+  forRent,
+  forSale
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
   const formatedPrice = price.toLocaleString("es-AR", { useGrouping: true })
@@ -155,7 +159,7 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                       marginBottom: '10px'
                     } }
                   >
-                    Precio de venta
+                    Precio de {forRent === true? 'alquiler': 'venta'}
                   </Typography>
                   <Typography
                     variant='h4'
@@ -163,7 +167,7 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                     align='left'
                     sx={{fontWeight: '800'}}
                   >
-                    USD { formatedPrice }
+                    {forRent === true? 'ARS': 'USD'} { formatedPrice }
                   </Typography>
                   <Typography
                     variant='h4'

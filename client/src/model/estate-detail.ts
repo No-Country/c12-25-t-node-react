@@ -83,7 +83,7 @@ export enum Type {
 
 export enum Operation {
   compra = 'Compra',
-  venta = 'Venta'
+  alquiler = 'Alquiler'
 }
 
 export enum Room {

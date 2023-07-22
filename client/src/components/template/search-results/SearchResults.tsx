@@ -56,9 +56,9 @@ const SearchResults: React.FC<SearchResultsProps> = ({
         setSearchResults(compra)
         console.log('COMPRA: ', searchResults)
       } else {
-        const venta = results.filter(result => result.for_rent === true)
-        setSearchResults(venta)
-        console.log('VENTA ', searchResults)
+        const alquiler = results.filter(result => result.for_rent === true)
+        setSearchResults(alquiler)
+        console.log('ALQUILER ', searchResults)
       }
     }
   }

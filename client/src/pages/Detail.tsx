@@ -52,15 +52,10 @@ const Detail: React.FC<DetailProps> = () => {
     name,
     address,
     price,
-    estate_photos
+    estate_photos,
+    for_rent,
+    for_sale
   } = estateById
-  const textToArrayText = (text: string) => {
-    const arrayText = text.split('.').map((item, index, array) => {
-      if (index === array.length - 1) return item.trim()
-      return item.trim() + '.'
-    })
-    return arrayText
-  }
   const filteredServices = Object.keys(services).filter(key => services[key])
   const totalArea = covered_area + uncovered_area
 
@@ -79,6 +74,8 @@ const Detail: React.FC<DetailProps> = () => {
             garage={ garage }
             garden={ garden }
             estatePhotos={ estate_photos }
+            forRent={for_rent}
+            forSale={for_sale}
           />
           <DetailProperty
             totalArea={ totalArea }
