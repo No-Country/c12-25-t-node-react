@@ -17,17 +17,17 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
 }) => {
   return (
     <Button
-      variant={ variant ? variant : 'contained' }
-      size={ size ? size : 'medium' }
-      color={ colorBtn ? colorBtn : 'primary' }
-      sx={ {
+      variant={variant ? variant : 'contained'}
+      size={size ? size : 'medium'}
+      color={colorBtn ? colorBtn : 'primary'}
+      sx={{
         borderRadius: 2,
         paddingY: 1,
         paddingX: 1.5,
-      } }
-      { ...props }
+      }}
+      {...props}
     >
-      { text }
+      {text}
     </Button>
   )
 }
