@@ -1,11 +1,22 @@
-import { useTheme, useMediaQuery } from '@mui/material'
 import { useState, useEffect } from 'react'
 
-export const useIsMd = () => {
-  const theme = useTheme()
+const useIsMd = () => {
   const [isMd, setIsMd] = useState(false)
+
   useEffect(() => {
-    setIsMd(useMediaQuery(theme.breakpoints.down('md')))
+    const handleResize = () => {
+      setIsMd(window.innerWidth < 1005)
+    }
+
+    handleResize() // Set initial value
+
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
-  return { isMd }
+
+  return isMd
 }
+
+export default useIsMd
