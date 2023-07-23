@@ -8,17 +8,18 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './featuredAcordion.styles.css'
-import { Estates } from '../../../model/estates.ts'
+import { EstateDetail, EstatesDetail } from '../../../model/estate-detail'
+import { getAllEstateDetails } from '../../firebase/database';
 import { useTheme, useMediaQuery } from '@mui/material'
+import { useEffect, useState } from 'react'
 
 interface FeaturedAcordionProps {
   textTitle: string
-  estates?: Estates[]
+  estates?: EstateDetail[]
 }
 
 const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   textTitle,
-  estates,
 }) => {
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
@@ -26,6 +27,27 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   const handleClick = () => navigate('/search')
   let maxSlides
   textTitle === 'alquiler' ? (maxSlides = 4) : (maxSlides = 3)
+
+  const [estateDetails, setEstateDetails] = useState<EstateDetail[]>([]);
+
+  useEffect(() => {
+    async function fetchEstateDetails() {
+      try {
+        const details = await getAllEstateDetails();
+        setEstateDetails(details);
+      } catch (error) {
+        console.error('Error al obtener los detalles de las propiedades:', error);
+      }
+    }
+
+    fetchEstateDetails();
+  }, []);
+
+  const filteredEstates = estateDetails.filter(
+    (estate) =>
+      (textTitle === 'venta' && estate.for_sale && estate.is_featured) ||
+      (textTitle === 'alquiler' && estate.for_rent && estate.is_featured)
+  );
 
   return (
     <Container maxWidth="lg" sx={{ marginTop: isMd ? '10rem' : '6rem' }}>
@@ -75,12 +97,11 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
         }}
         className="mySwiper"
       >
-        {estates &&
-          estates.map((estate) => (
-            <SwiperSlide key={estate.id} style={{ paddingBottom: '20px' }}>
-              <FeaturedCard estate={estate} />
-            </SwiperSlide>
-          ))}
+        {filteredEstates.map((estate) => (
+          <SwiperSlide key={estate.estate_datail_id} style={{ paddingBottom: '20px' }}>
+            <FeaturedCard estate={estate} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Container>
   )

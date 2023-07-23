@@ -9,6 +9,8 @@ import ImageCtaLeft from '../assets/imageCtaRight.png'
 import ImageCtaRight from '../assets/imageCtaLeft.png'
 import Searcher from '../components/Searcher.tsx'
 import { useSpinner } from '../context/SpinnerProvider.tsx' // para Loader
+import { EstateDetail } from '../model/estate-detail.ts'
+import { getAllEstateDetails } from '../components/firebase/database.ts'
 
 type HomeProps = {}
 
@@ -27,35 +29,38 @@ const Home: React.FC<HomeProps> = () => {
   //   }
   //   hagoFetch()
   // }, [])
-  const [estatesForSale, setStatesForSale] = useState<Estates[]>([])
-  const [estatesForRent, setStatesForRent] = useState<Estates[]>([])
-  useEffect(() => {
-    const estatesOnlyForSale = mockApiData.filter(
-      (state) => state.forSale === true
-    )
-    const estatesOnlyForRent = mockApiData.filter(
-      (state) => state.forRent === true
-    )
-    setStatesForSale(estatesOnlyForSale)
-    setStatesForRent(estatesOnlyForRent)
-  }, [])
+  
+  // const [estateDetails, setEstateDetails] = useState<EstateDetail[]>([]);
+  // const { addLoading, removeLoading } = useSpinner();
+
+  // useEffect(() => {
+  //   const fetchEstates = async () => {
+  //     addLoading();
+  //     try {
+  //       const allEstates = await getAllEstateDetails();
+  //       setEstateDetails(allEstates);
+  //     } catch (error) {
+  //       console.error('Error al obtener las propiedades:', error);
+  //     } finally {
+  //       removeLoading();
+  //     }
+  //   };
+
+  //   fetchEstates();
+  // }, [addLoading, removeLoading]);
 
   return (
     <main>
-      <HeroImage imgSrc={ heroImageBanner } />
+      <HeroImage imgSrc={heroImageBanner} />
       <Searcher />
-      <FeaturedAcordion textTitle="venta" estates={ estatesForSale } />
-      <FeaturedAcordion textTitle="alquiler" estates={ estatesForRent } />
-      <CallToActionContactForm
-        imageUrl={ ImageCtaLeft }
-        textPosition={ 'left' }
-      />
-      <CallToActionContactForm
-        imageUrl={ ImageCtaRight }
-        textPosition={ 'right' }
-      />
+      {/* Aquí pasamos el estateDetails completo, ya que el filtrado se hace en el componente FeaturedAcordion */}
+      <FeaturedAcordion textTitle="venta" />
+      <FeaturedAcordion textTitle="alquiler" />
+      <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
+      <CallToActionContactForm imageUrl={ImageCtaRight} textPosition={'right'} />
     </main>
-  )
-}
+  );
+};
+
 
 export default Home

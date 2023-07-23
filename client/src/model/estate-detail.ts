@@ -37,6 +37,7 @@ export type EstateDetail = {
   property_type: string | Type
   for_rent: boolean
   for_sale: boolean
+  is_featured: boolean
 }
 
 export enum Country {
