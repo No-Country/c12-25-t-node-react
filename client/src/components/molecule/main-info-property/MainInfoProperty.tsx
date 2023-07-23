@@ -33,6 +33,7 @@ type MainInfoPropertyProps = {
   garage: number
   garden: boolean
   estatePhotos: EstatePhoto[]
+  forSale: boolean
 }
 
 const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
@@ -44,11 +45,12 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   bathrooms,
   garage,
   garden,
-  estatePhotos
+  estatePhotos,
+  forSale
 }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
   const formatedPrice = price.toLocaleString("es-AR", { useGrouping: true })
-  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2022-04-17'))
+  const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2023-08-17'))
   const [openDialog, setOpenDialog] = useState(false)
   const handleConfirm = () => setOpenDialog(true)
   const handleCloseDialog = () => setOpenDialog(false)
@@ -63,30 +65,13 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
     <>
       <Grid container className="container-hero-detail">
         <Grid item xs={ 10 } sm={ 6 } md={ 5 } sx={ styles.titles }>
-          <Typography variant="h2" sx={ { paddingBottom: '0.5rem' } }>
-            { address }
-          </Typography>
-          <Typography variant="h3" sx={ { fontWeight: '500' } }>
-            { name }
-          </Typography>
+          <Typography variant="h2" sx={ { paddingBottom: '0.5rem' } }>{ address }</Typography>
+          <Typography variant="h3" sx={ { fontWeight: '500' } }>{ name }</Typography>
         </Grid>
         <Grid item xs={ 12 } >
-          <Paper
-            elevation={ 8 }
-            sx={ styles.boxContainer }
-          >
+          <Paper elevation={ 8 } sx={ styles.boxContainer } >
             <Grid container className="paper-container">
-              <Grid
-                item
-                xs={ 12 }
-                sm={ 8 }
-                md={ 9 }
-                sx={ {
-                  marginBottom: '1rem',
-                  maxHeight: '560px'
-                } }
-                className="container-sliders"
-              >
+              <Grid item xs={ 12 } sm={ 8 } md={ 9 } sx={ styles.containerSliders } className="container-sliders" >
                 <Swiper
                   spaceBetween={ 10 }
                   navigation={ true }
@@ -132,49 +117,13 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                   )) }
                 </Swiper>
               </Grid>
-              <Grid
-                item
-                xs={ 12 }
-                sm={ 4 }
-                md={ 3 }
-                sx={ styles.propertySummary }
-                className="container-photos"
-              >
+              <Grid item xs={ 12 } sm={ 4 } md={ 3 } sx={ styles.propertySummary } className="container-photos" >
                 <Box>
-                  <Typography
-                    variant='h4'
-                    sx={ {
-                      textTransform: 'uppercase',
-                      fontSize: '14px',
-                      fontWeight: '700',
-                      display: { 
-                        xs: 'none', 
-                        sm: 'none', 
-                        md: 'block' 
-                      },
-                      marginBottom: '10px'
-                    } }
-                  >
-                    Precio de venta
+                  <Typography variant='h4' sx={ styles.containerPhotos } > Precio de {forSale? 'venta': 'alquiler'} </Typography>
+                  <Typography variant='h4' color='primary' align='left' sx={{fontWeight: '800'}} >
+                    {forSale? 'USD': 'ARS'} { formatedPrice }
                   </Typography>
-                  <Typography
-                    variant='h4'
-                    color='primary'
-                    align='left'
-                    sx={{fontWeight: '800'}}
-                  >
-                    USD { formatedPrice }
-                  </Typography>
-                  <Typography
-                    variant='h4'
-                    sx={ {
-                      fontSize: '14px',
-                      display: { xs: 'none', sm: 'none', md: 'block' },
-                      marginTop: '2.75rem'
-                    } }
-                  >
-                    Esta propiedad ofrece
-                  </Typography>
+                  <Typography variant='h4' sx={ styles.subtitle } > Esta propiedad ofrece </Typography>
                   <Typography sx={ { margin: '1rem 1rem 1rem 0rem' } }>
                     <span className="detail"><AreaIcon /> { totalArea } m2 totales </span><span className="detail"><BedRoomIcon /> { bedrooms } dormitorios </span><span className="detail"><BathRoomIcon /> { bathrooms } baños </span><span className="detail"><GarageIcon /> { garage } cocheras </span> { garden && <span className="detail"><GardenIcon /> jardín</span> }
                   </Typography>
@@ -245,5 +194,25 @@ const styles = {
     alignItems: 'flex-start',
     flexWwrap: 'wrap',
     padding: '1rem'
+  },
+  containerSliders: {
+    marginBottom: '1rem',
+    maxHeight: '560px'
+  },
+  containerPhotos: {
+    textTransform: 'uppercase',
+    fontSize: '14px',
+    fontWeight: '700',
+    display: { 
+      xs: 'none', 
+      sm: 'none', 
+      md: 'block' 
+    },
+    marginBottom: '10px'
+  },
+  subtitle: {
+    fontSize: '14px',
+    display: { xs: 'none', sm: 'none', md: 'block' },
+    marginTop: '2.75rem'
   }
 }

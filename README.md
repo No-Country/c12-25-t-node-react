@@ -1,6 +1,34 @@
 # <img width="40" height="40" src="https://img.icons8.com/dusk/40/department.png" alt="department"/> Grupo: c12-25-t-node-react - Appartamentos
 
-Plataforma de Alquiler y Venta de inmuebles.
+Plataforma de Alquiler y Venta de inmuebles, cuenta con:
+
+- Registro
+
+- Login
+
+- Páginas...
+
+... **Home**, con un buscador de inmuebles, sliders con destacados en vetna y alquiler y la sección de callto action para realizar consultas.
+
+... **Propiedades**, para realizar una búsqueda de inmuebles con más filtros.
+
+...**Detalle** con información más extensa de la propiedad, cuenta con : slider, datos del inmueble, posibilidad de solicitar una visitar y realizar una consulta completando el formulario de contacto.
+
+... **Contacto**, con formulario para contacto.
+
+... **Quienes somos**, con un poco de la historia y tarjetas con los miembros de Appartamentos.
+
+... **Términos y condiciones**, con el detalle legal al utilizar el sitio web. 
+
+... **Favoritos**, entando registrado se pueden guardar los inmuebles de interés.
+
+---
+
+## <img width="40" height="40" src="https://img.icons8.com/cotton/40/movie-beginning--v1.png" alt="movie-beginning--v1"/> LINKS DE DEPLOY
+
+- Front
+
+- Back
 
 ---
 
@@ -18,18 +46,10 @@ Plataforma de Alquiler y Venta de inmuebles.
 
 ## <img width="30" height="30" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/30/external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry.png" alt="external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry"/> BackEnd
 
-- [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Radhames Capellan](https://github.com/radhamesc-capellan)
-
 - [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Andres Morales](https://github.com/andres101010)
 
 - [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Sonny Pimentel](https://github.com/spimentel1201)
 
--  [<img width="20" height="20" src="https://img.icons8.com/ios-filled/20/github.png" alt="github"/> Domingo Mariano Gentilini](https://github.com/domingo-gentilini/)
-
-
-## <img width="30" height="30" src="https://img.icons8.com/dusk/30/web.png" alt="web"/> + <img width="30" height="30" src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/30/external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry.png" alt="external-server-miscellaneous-kiranshastry-lineal-color-kiranshastry"/> FullStack
-
-- Daniel Ramírez
 
 
 ## <img width="30" height="30" src="https://img.icons8.com/dotty/30/web.png" alt="web"/> UX/UI
@@ -65,6 +85,8 @@ Plataforma de Alquiler y Venta de inmuebles.
 - [SwiperJS](https://swiperjs.com/) 
 
 - [dayjs](https://www.npmjs.com/package/dayjs)
+
+- <img width="20" height="20" src="https://img.icons8.com/color/20/firebase.png" alt="firebase"/> [Firebase](https://firebase.google.com/)
 
 ### BackEnd
 
@@ -162,17 +184,19 @@ Funcionalidades:
 ```
 -Registro de nuevo usuario 
 -Login 
--Favoritos
 -Unir Front con Back en el detalle de la propiedad por id 
 -Unir Front con Back en los carousel de la HomePage
 ```
 
+-> Decidimos utilizar **Firebase**, comenzamos a implementarlo.
 
 ### SPRINT 4:
 
-Funcionalidades;
+Funcionalidades:
 ```
-Buscador de propiedades con filtros 
+-Modificar todos los mock JSON que teníamos haciendo el fetch con Firebase
+-Buscador de propiedades con filtros 
+-Favoritos
 ```
 
 Creamos un Trello, donde creabamos una tarjeta por cada tarea, con:

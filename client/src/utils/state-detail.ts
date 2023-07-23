@@ -70,5 +70,6 @@ export const estateDetail = {
   },
   property_type: Type.casa,
   for_rent: true,
-  for_sale: false
+  for_sale: false,
+  is_feature: true
 }

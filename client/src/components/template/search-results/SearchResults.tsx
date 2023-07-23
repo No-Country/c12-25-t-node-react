@@ -66,7 +66,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({
                 } }
               >
                 <FeaturedCard
-                  estate={ estateCard }
+                  estate={ result }
                 />
               </Grid>
             )
