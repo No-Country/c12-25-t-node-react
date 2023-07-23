@@ -70,7 +70,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": true
     },    
     {
       "estate_datail_id": 2,
@@ -142,7 +143,8 @@
       },
       "property_type": "PH",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": true
     },    
     {
       "estate_datail_id": 3,
@@ -214,7 +216,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": true
     },    
     {
       "estate_datail_id": 4,
@@ -286,7 +289,8 @@
       },
       "property_type": "PH",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": true
     },
     {
       "estate_datail_id": 5,
@@ -358,7 +362,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": true
     },        
     {
       "estate_datail_id": 6,
@@ -430,7 +435,8 @@
       },
       "property_type": "PH",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": true
     },
     {
       "estate_datail_id": 7,
@@ -502,7 +508,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": true
     },       
     {
       "estate_datail_id": 8,
@@ -574,7 +581,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": true
     },    
     {
       "estate_datail_id": 9,
@@ -646,7 +654,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": true
     },
     {
       "estate_datail_id": 10,
@@ -718,7 +727,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": true
     },    
     {
       "estate_datail_id": 11,
@@ -790,7 +800,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": true
     },
     {
       "estate_datail_id": 12,
@@ -862,7 +873,8 @@
       },
       "property_type": "PH",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": true
     },
     {
       "estate_datail_id": 13,
@@ -934,7 +946,8 @@
       },
       "property_type": "PH",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": true
     },            
     {
       "estate_datail_id": 14,
@@ -1006,7 +1019,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 15,
@@ -1078,7 +1092,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 16,
@@ -1150,7 +1165,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },        
     {
       "estate_datail_id": 17,
@@ -1222,7 +1238,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 18,
@@ -1294,7 +1311,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 19,
@@ -1366,7 +1384,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 20,
@@ -1438,7 +1457,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 21,
@@ -1510,7 +1530,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 22,
@@ -1582,7 +1603,8 @@
       },
       "property_type": "PH",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 23,
@@ -1654,7 +1676,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 24,
@@ -1726,7 +1749,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 25,
@@ -1798,7 +1822,8 @@
       },
       "property_type": "PH",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 26,
@@ -1870,7 +1895,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },        
     {
       "estate_datail_id": 27,
@@ -1942,7 +1968,8 @@
       },
       "property_type": "PH",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 28,
@@ -2014,7 +2041,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 29,
@@ -2086,7 +2114,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 30,
@@ -2158,7 +2187,8 @@
       },
       "property_type": "PH",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 31,
@@ -2230,7 +2260,8 @@
       },
       "property_type": "ph",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 32,
@@ -2302,7 +2333,8 @@
       },
       "property_type": "PH",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 33,
@@ -2374,7 +2406,8 @@
       },
       "property_type": "PH",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },        
     {
       "estate_datail_id": 34,
@@ -2518,7 +2551,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 36,
@@ -2590,7 +2624,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 37,
@@ -2662,7 +2697,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 38,
@@ -2734,7 +2770,8 @@
       },
       "property_type": "ph",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 39,
@@ -2806,7 +2843,8 @@
       },
       "property_type": "PH",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 40,
@@ -2878,7 +2916,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 41,
@@ -2950,7 +2989,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 42,
@@ -3022,7 +3062,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },            
     {
       "estate_datail_id": 43,
@@ -3094,7 +3135,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 44,
@@ -3166,7 +3208,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 45,
@@ -3238,7 +3281,8 @@
       },
       "property_type": "ph",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 46,
@@ -3310,7 +3354,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 47,
@@ -3382,7 +3427,8 @@
       },
       "property_type": "Casa",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },    
     {
       "estate_datail_id": 48,
@@ -3454,7 +3500,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 49,
@@ -3526,7 +3573,8 @@
       },
       "property_type": "Departamento",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 50,
@@ -3598,7 +3646,8 @@
       },
       "property_type": "ph",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 51,
@@ -3670,7 +3719,8 @@
       },
       "property_type": "Departamento",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     },
     {
       "estate_datail_id": 52,
@@ -3742,7 +3792,8 @@
       },
       "property_type": "PH",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 53,
@@ -3814,7 +3865,8 @@
       },
       "property_type": "Casa",
       "for_rent": true,
-      "for_sale": false
+      "for_sale": false,
+      "is_featured": false
     },
     {
       "estate_datail_id": 54,
@@ -3886,7 +3938,8 @@
       },
       "property_type": "PH",
       "for_rent": false,
-      "for_sale": true
+      "for_sale": true,
+      "is_featured": false
     }
   ]
 }

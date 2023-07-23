@@ -119,9 +119,16 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
               </Grid>
               <Grid item xs={ 12 } sm={ 4 } md={ 3 } sx={ styles.propertySummary } className="container-photos" >
                 <Box>
-                  <Typography variant='h4' sx={ styles.containerPhotos } > Precio de {forSale? 'venta': 'alquiler'} </Typography>
-                  <Typography variant='h4' color='primary' align='left' sx={{fontWeight: '800'}} >
-                    {forSale? 'USD': 'ARS'} { formatedPrice }
+                  <Typography variant='h4' sx={ styles.containerPhotos }>
+                    Precio de {forSale === true? 'venta': 'alquiler'}
+                  </Typography>
+                  <Typography
+                    variant='h4'
+                    color='primary'
+                    align='left'
+                    sx={{fontWeight: '800'}}
+                  >
+                    {forSale === true? 'USD':'ARS'} { formatedPrice }
                   </Typography>
                   <Typography variant='h4' sx={ styles.subtitle } > Esta propiedad ofrece </Typography>
                   <Typography sx={ { margin: '1rem 1rem 1rem 0rem' } }>

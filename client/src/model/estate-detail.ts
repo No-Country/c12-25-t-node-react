@@ -31,7 +31,7 @@ export type EstateDetail = {
   grill: number
   credit_worthy: boolean
   professional_use: boolean
-  estate_photos: EstatePhoto[] 
+  estate_photos: EstatePhoto[]
   services: Services
   rooms: { [key: string]: number }
   property_type: string | Type
@@ -80,4 +80,18 @@ export enum Type {
   casa = "Casa",
   departamento = "Departamento",
   ph = "PH"
+}
+
+export enum Operation {
+  compra = 'Compra',
+  alquiler = 'Alquiler'
+}
+
+export enum Room {
+  uno = '1',
+  dos = '2',
+  tres = '3',
+  cuatro = '4',
+  cinco = '5',
+  seis = '6'
 }

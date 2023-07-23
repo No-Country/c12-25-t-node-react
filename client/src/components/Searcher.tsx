@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { IconButton, Box, Tab, Tabs, Typography } from '@mui/material'
+import {
+  IconButton,
+  Box,
+  Divider,
+  Tab,
+  Tabs,
+  useTheme, 
+  useMediaQuery
+} from '@mui/material'
 import Selector from './molecule/Selector'
 import SearchIcon from '@mui/icons-material/Search'
-import { useTheme, useMediaQuery } from '@mui/material'
-import Divider from '@mui/material/Divider'
 import { City, Type } from '../model/estate-detail'
 import PrimaryButton from './atom/PrimaryButton'
 

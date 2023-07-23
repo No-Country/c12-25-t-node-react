@@ -52,10 +52,8 @@ const Detail: React.FC<DetailProps> = () => {
     address,
     price,
     estate_photos,
-    for_rent,
     for_sale
   } = estateById
-
   const filteredServices = Object.keys(services).filter(key => services[key])
   const totalArea = covered_area + uncovered_area
 
