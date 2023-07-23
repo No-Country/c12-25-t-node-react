@@ -70,18 +70,8 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   return (
     <>
       <Container maxWidth='lg'>
-        {/* Buscador*/ }
-        <List
-          sx={ {
-            width: '100%',
-            display: 'flex',
-            flexDirection: { xs: 'column', md: 'row' },
-            bgcolor: 'background.paper',
-            position: 'relative',
-            top: '-50px',
-            borderRadius: '7px',
-            boxShadow: '0px 4px 10px grey'
-          } }
+        <List 
+          sx={ styles.list }
           component="nav"
           aria-labelledby="Menu de filtro para búsqueda de propiedad"
         >
@@ -108,27 +98,13 @@ const SearchResults: React.FC<SearchResultsProps> = ({
         <Grid container>
           <Grid item xs={ 12 }>
             <Typography sx={ styles.totalList } >
-              <Box component='span' sx={ styles.totalListSpan } >{ searchResults.length }</Box>
-              inmuebles
+              <Box component='span' sx={ styles.totalListSpan } >{ searchResults.length }</Box>  inmuebles
             </Typography>
           </Grid>
         </Grid>
         {/* Cards */ }
         <Grid container sx={ styles.cardContainer } className="featured-card-container" >
           { searchResults && searchResults.slice((page - 1) * 12, page * 12).map((result, index) => {
-            const estateCard = {
-              id: result.estate_datail_id.toString(),
-              description: result.name,
-              adress: result.address,
-              area: result.uncovered_area,
-              bedrooms: result.bedrooms,
-              bathrooms: result.bathrooms,
-              cars: result.garage,
-              image: result.estate_photos[0].url,
-              alt: result.estate_photos[0].alt,
-              forRent: result.for_rent,
-              forSale: result.for_sale
-            }
             return (
               <Grid
                 item
@@ -139,17 +115,13 @@ const SearchResults: React.FC<SearchResultsProps> = ({
                 sx={ { margin: '8px 6px' } }
                 className="featured-card-item"
               >
-                <FeaturedCard estate={ estateCard } />
+                <FeaturedCard estate={ result } />
               </Grid>
             )
           }
           ) }
         </Grid>
-        <Grid
-          item
-          xs={ 12 }
-          sx={ { padding: '2rem 0.5rem 4rem' } }
-        >
+        <Grid item xs={ 12 } sx={ { padding: '2rem 0.5rem 4rem' } } >
           <Stack spacing={ 2 } sx={ styles.stack } >
             <Pagination
               count={ Math.ceil(searchResults.length / 12) }
@@ -170,6 +142,16 @@ const SearchResults: React.FC<SearchResultsProps> = ({
 export default SearchResults
 
 const styles = {
+  list: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: { xs: 'column', md: 'row' },
+    bgcolor: 'background.paper',
+    position: 'relative',
+    top: '-50px',
+    borderRadius: '7px',
+    boxShadow: '0px 4px 10px grey'
+  }, 
   totalList: {
     color: 'var(--primary-darker)',
     fontWeight: '500'

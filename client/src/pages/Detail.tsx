@@ -13,7 +13,6 @@ type DetailProps = {
 }
 
 const Detail: React.FC<DetailProps> = () => {
-  // TODO: cuando este la parte del back hay que buscar la propiedad por el id y ahi setear el estado
   const [estateById, setEstateById] = useState<EstateDetail>(estateDetail)
   const routeParams = useParams<{ id: string }>()
   const id: number = parseInt(routeParams.id, 10)
@@ -53,7 +52,6 @@ const Detail: React.FC<DetailProps> = () => {
     address,
     price,
     estate_photos,
-    for_rent,
     for_sale
   } = estateById
   const filteredServices = Object.keys(services).filter(key => services[key])
@@ -74,7 +72,6 @@ const Detail: React.FC<DetailProps> = () => {
             garage={ garage }
             garden={ garden }
             estatePhotos={ estate_photos }
-            forRent={for_rent}
             forSale={for_sale}
           />
           <DetailProperty

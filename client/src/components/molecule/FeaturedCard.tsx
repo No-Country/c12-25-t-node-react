@@ -11,44 +11,44 @@ import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled'
 import IconButton from '@mui/material/IconButton'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import PrimaryButton from '../atom/PrimaryButton'
-import { Estates } from '../../model/estates.ts'
+import { EstateDetail } from '../../model/estate-detail';
 
 interface FeaturedCardProps {
-  estate: Estates
+  estate: EstateDetail
 }
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const navigate = useNavigate()
-  const handleClick = () => navigate(`/detail/${ id }`)
+  const handleClick = () => navigate(`/detail/${ estate.estate_datail_id }`)
   const {
-    id,
-    description,
-    adress,
-    area,
+    estate_datail_id,
+    name,
+    address, 
+    covered_area,
+    uncovered_area,
     bedrooms,
     bathrooms,
-    cars,
-    image,
-    alt
-  } = estate
+    garage, 
+    estate_photos,
+  } = estate;
+
+  const image = estate_photos[0]?.url;
+  const alt = estate_photos[0]?.alt; 
+
+  const totalArea = covered_area + uncovered_area;
 
   return (
     <Card
-      sx={ {
-        maxWidth: 350,
-        height: 378,
-        borderRadius: 5,
-        boxShadow: '0px 4px 10px grey',
-        margin: '0px auto'
-      } }
+      style={ { boxShadow: '0px 4px 10px grey' } }
+      sx={ { maxWidth: 350, height: 378, borderRadius: 5, boxShadow: 3 } }
     >
       <CardMedia
-        sx={ { height: 200, objectFit: 'cover' } }
+        sx={ { height: 200, objectFit: 'fill' } }
         component="img"
         src={ image }
-        title={ alt }
+        title={alt}
       />
-      <CardContent sx={ { position: 'relative', pb: 0 } }>
+      <CardContent sx={ { position: 'relative', pb: 0} }>
         <IconButton
           size="small"
           sx={ {
@@ -87,7 +87,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
             color="text.primary"
             sx={ { marginTop: '1rem', minHeight: '52px' } }
           >
-            { description }
+            { name }
           </Typography>
           <Typography
             variant="body2"
@@ -97,12 +97,12 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
             marginTop={ 2 }
             marginBottom={ 2 }
           >
-            { adress }
+            { address }
           </Typography>
           <Box sx={ { display: 'flex', justifyContent: 'space-between' } }>
             <Box sx={ { display: 'flex' } }>
               <SquareFootIcon className="primary-light" />
-              <Typography>{ area } m</Typography>
+              <Typography>{ totalArea } m</Typography>
             </Box>
             <Box sx={ { display: 'flex' } }>
               <BedIcon className="primary-light" />
@@ -114,7 +114,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
             </Box>
             <Box sx={ { display: 'flex' } }>
               <DirectionsCarFilledIcon className="primary-light" />
-              <Typography>{ cars }</Typography>
+              <Typography>{ garage }</Typography>
             </Box>
           </Box>
         </Box>

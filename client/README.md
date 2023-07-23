@@ -58,17 +58,19 @@ Funcionalidades:
 ```
 -Registro de nuevo usuario 
 -Login 
--Favoritos
 -Unir Front con Back en el detalle de la propiedad por id 
 -Unir Front con Back en los carousel de la HomePage
 ```
 
+-> Decidimos utilizar **Firebase**, comenzamos a implementarlo.
 
 ### SPRINT 4:
 
-Funcionalidades;
+Funcionalidades:
 ```
-Buscador de propiedades con filtros 
+-Modificar todos los mock JSON que teníamos haciendo el fetch con Firebase
+-Buscador de propiedades con filtros 
+-Favoritos
 ```
 
 Creamos un Trello, donde creabamos una tarjeta por cada tarea, con:
