@@ -1,14 +1,20 @@
+import { useState } from "react"
+import LoginModal from "../components/template/loginModal/LoginModal"
+
 type LoginProps = {
-  /* aca van las props, ej:
-  title: string
-  Y luego se desestructuran en:
-  const Login: React.FC<LoginProps> = ({title}) => {
-  */
 }
 
 const Login: React.FC<LoginProps> = () => {
+  const [openLoginModal, setOpenLoginModal] = useState(true)
+  const handleCloseLoginModal = () => setOpenLoginModal(false)
+  
   return (
-    <main>Login</main>
+    <main>
+      <LoginModal
+        openLoginModal={openLoginModal}
+        handleCloseLoginModal={handleCloseLoginModal}
+      />
+    </main>
   )
 }
 
