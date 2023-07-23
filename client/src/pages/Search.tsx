@@ -18,7 +18,6 @@ const Search: React.FC<SearchProps> = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Aquí llamamos a la función para obtener todos los detalles de las propiedades
     async function fetchEstateDetails() {
       try {
         const details = await getAllEstateDetails();

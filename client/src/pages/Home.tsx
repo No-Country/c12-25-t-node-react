@@ -29,7 +29,7 @@ const Home: React.FC<HomeProps> = () => {
   //   }
   //   hagoFetch()
   // }, [])
-  
+
   // const [estateDetails, setEstateDetails] = useState<EstateDetail[]>([]);
   // const { addLoading, removeLoading } = useSpinner();
 
@@ -53,7 +53,6 @@ const Home: React.FC<HomeProps> = () => {
     <main>
       <HeroImage imgSrc={heroImageBanner} />
       <Searcher />
-      {/* Aquí pasamos el estateDetails completo, ya que el filtrado se hace en el componente FeaturedAcordion */}
       <FeaturedAcordion textTitle="venta" />
       <FeaturedAcordion textTitle="alquiler" />
       <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
