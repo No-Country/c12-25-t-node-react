@@ -54,7 +54,7 @@ declare module '@mui/material/Typography' {
 
 export const appArtamentosTheme = createTheme({
   breakpoints: {
-    values: { xs: 0, sm: 600, md: 1006, lg: 1200, xl: 1536 },
+    values: { xs: 0, sm: 600, md: 900, lg: 1200, xl: 1536 },
   },
   palette: {
     primaryBlackish: '#010108',
@@ -84,12 +84,12 @@ export const appArtamentosTheme = createTheme({
   typography: {
     fontFamily: 'Nunito, Nunito Sans, sans-serif',
     h1: {
-      fontSize: '30px',
-      lineHeight: '42px',
+      fontSize: '28px',
+      lineHeight: '40px',
       fontWeight: 700,
     },
     h2: {
-      fontSize: '28px',
+      fontSize: '26px',
       lineHeight: '30px',
       fontWeight: 600,
     },
