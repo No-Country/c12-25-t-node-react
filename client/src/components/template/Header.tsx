@@ -82,7 +82,7 @@ const Header: React.FC<HeaderProps> = () => {
                 marginLeft: 2,
               } }
             >
-              <LogoText variant="h1"  />
+              <LogoText variant="h1" aria-label='Logo de Appartamentos' />
             </Box>
             <Tabs
               sx={ { display: { xs: 'none', md: 'flex', lg: 'flex' } } }
@@ -108,6 +108,7 @@ const Header: React.FC<HeaderProps> = () => {
                   sx={ { margin: '4px' } }
                   size="small"
                   onClick={ () => navigate('/login') }
+                  aria-label='Iniciar sesión'
                 />
             }
           </Toolbar>
