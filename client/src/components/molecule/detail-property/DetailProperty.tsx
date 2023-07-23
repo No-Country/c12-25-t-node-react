@@ -5,7 +5,25 @@ import {
   Typography
 } from '@mui/material'
 import Subtitle from '../../atom/Subtitle'
-import { AreaIcon, BalconyWindowIcon, BathRoomIcon, BedRoomIcon, BriefcaseIcon, CreditWorthyIcon, GarageIcon, GardenIcon, GrillIcon, GymIcon, RoomSofaIcon, SUMIcon, ServicesIcon, SwimmingPoolIcon, TerranceIcon, ToileteIcon, YearsIcon } from '../../atom/Icons'
+import {
+  AreaIcon,
+  BalconyWindowIcon,
+  BathRoomIcon,
+  BedRoomIcon,
+  BriefcaseIcon,
+  CreditWorthyIcon,
+  GarageIcon,
+  GardenIcon,
+  GrillIcon,
+  GymIcon,
+  RoomSofaIcon,
+  SUMIcon,
+  ServicesIcon,
+  SwimmingPoolIcon,
+  TerranceIcon,
+  ToileteIcon,
+  YearsIcon
+} from '../../atom/Icons'
 
 type DetailPropertyProps = {
   totalArea: number
@@ -57,25 +75,14 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
   return (
     <>
       <Subtitle title="La propiedad" fontWeight="600" />
-      <Typography sx={ { padding: '16px' } }>
-        { description }
-      </Typography>
+      <Typography sx={ { padding: '16px' } }> { description } </Typography>
       <Grid container spacing={ 2 }>
         <Grid item xs={ 12 } md={ 4 }>
           <Subtitle title="La zona" fontWeight="600" />
-          <Typography sx={ { padding: '16px' } }>
-            { zone }
-          </Typography>
+          <Typography sx={ { padding: '16px' } }> { zone } </Typography>
         </Grid>
         <Grid item xs={ 12 } md={ 8 }>
-          <Paper
-            elevation={ 8 }
-            sx={ {
-              borderRadius: '1rem',
-              padding: '1rem 1rem 1.75rem',
-              marginTop: '1rem'
-            } }
-          >
+          <Paper elevation={ 8 } sx={ styles.paper } >
             <Grid container spacing={ 1 }>
               <Grid item xs={ 6 } sm={ 4 } md={ 3 }>
                 <Typography fontSize={ 12 }><AreaIcon /> { totalArea } m2 totales</Typography>
@@ -156,5 +163,10 @@ const styles = {
     justifyContent: 'flex-start',
     alignItems: 'center',
     fontSize: '12px'
+  },
+  paper: {
+    borderRadius: '1rem',
+    padding: '1rem 1rem 1.75rem',
+    marginTop: '1rem'
   }
 }

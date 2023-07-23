@@ -1,72 +1,7 @@
-import fs from "fs";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, setDoc, getDocs, getDoc } from "firebase/firestore";
-import { EstateDetail } from "../../model/estate-detail";
-
-// interface EstateDetail {
-//   estate_datail_id: number;
-//   name: string;
-//   description: string;
-//   zone: string;
-//   address: string;
-//   city: string;
-//   province: string;
-//   country: string;
-//   price: number;
-//   available: boolean;
-//   covered_area: number;
-//   uncovered_area: number;
-//   bedrooms: number;
-//   bathrooms: number;
-//   toilette: number;
-//   garage: number;
-//   swimming_pool: number;
-//   reception_hall: number;
-//   balcony: number;
-//   elevator: number;
-//   gym: number;
-//   antiquity: number;
-//   estate_id: number;
-//   garden: boolean;
-//   terrace: boolean;
-//   grill: number;
-//   credit_worthy: boolean;
-//   professional_use: boolean;
-//   estate_photos: EstatePhoto[];
-//   services: {
-//     agua: boolean;
-//     electricidad: boolean;
-//     telefono: boolean;
-//     gas: boolean;
-//     internet: boolean;
-//     alarma: boolean;
-//     ascensor: boolean;
-//   };
-//   rooms: {
-//     cocina: number;
-//     comedor: number;
-//     living: number;
-//     baños: number;
-//     dormitorios: number;
-//     toilet: number;
-//     garage: number;
-//     terraza: number;
-//     pileta: number;
-//     jardin: number;
-//     SUM: number;
-//   };
-//   property_type: string;
-//   for_rent: boolean;
-//   for_sale: boolean;
-// }
-
-// interface EstatePhoto {
-//   estate_photo_id: number;
-//   url: string;
-//   alt: string;
-// }
-
-
+import fs from 'fs'
+import { initializeApp } from 'firebase/app'
+import { getFirestore, collection, doc, setDoc, getDocs, getDoc } from 'firebase/firestore'
+import { EstateDetail } from '../../model/estate-detail'
 
 const firebaseConfig = {
   apiKey: "AIzaSyCLLOIX4MaV_d-b7PKsaNqI3l5FJERk5HU",
@@ -77,51 +12,50 @@ const firebaseConfig = {
   appId: "1:11991668985:web:3784120d874379d8292a28"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const estatesDetailCollection = collection(db, "estates_detail");
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
+const estatesDetailCollection = collection(db, "estates_detail")
 
 async function getAllEstateDetails(): Promise<EstateDetail[]> {
   try {
-    const querySnapshot = await getDocs(estatesDetailCollection);
-    const estateDetails: EstateDetail[] = [];
+    const querySnapshot = await getDocs(estatesDetailCollection)
+    const estateDetails: EstateDetail[] = []
 
     querySnapshot.forEach((doc) => {
-      const estateDetail = doc.data() as EstateDetail;
-      estateDetails.push(estateDetail);
-    });
+      const estateDetail = doc.data() as EstateDetail
+      estateDetails.push(estateDetail)
+    })
 
-    return estateDetails;
+    return estateDetails
   } catch (error) {
-    console.error("Error al obtener los datos:", error);
-    return [];
+    console.error("Error al obtener los datos:", error)
+    return []
   }
 }
 
 async function getEstateDetailById(estateId: number): Promise<EstateDetail | null> {
   try {
-    const estateRef = doc(estatesDetailCollection, estateId.toString());
+    const estateRef = doc(estatesDetailCollection, estateId.toString())
 
-    const documentSnapshot = await getDoc(estateRef);
+    const documentSnapshot = await getDoc(estateRef)
 
     if (documentSnapshot.exists()) {
-      const estateDetail = documentSnapshot.data() as EstateDetail;
-      return estateDetail;
+      const estateDetail = documentSnapshot.data() as EstateDetail
+      return estateDetail
     } else {
-      console.log("El documento no existe.");
-      return null;
+      console.log("El documento no existe.")
+      return null
     }
   } catch (error) {
-    console.error("Error al obtener el documento:", error);
+    console.error("Error al obtener el documento:", error)
     return null;
   }
 }
 
-
 // fs.readFile("C:/Users/romer/OneDrive/Escritorio/No-country/c12-25-t-node-react/client/src/api/state-detail-mock.json", "utf8", async (err, data) => {
 //   if (err) {
-//     console.error("Error al leer el archivo JSON:", err);
-//     return;
+//     console.error("Error al leer el archivo JSON:", err)
+//     return
 //   }
 
 //   try {
@@ -130,7 +64,7 @@ async function getEstateDetailById(estateId: number): Promise<EstateDetail | nul
 //     async function uploadDataToFirestore() {
 //       try {
 //         for (const estateDetail of jsonData.estates_detail) {
-//           const estateId = estateDetail.estate_datail_id;
+//           const estateId = estateDetail.estate_datail_id
 //           // Utilizar el método "setDoc" para agregar un nuevo documento a la colección "estates_detail"
 //           await setDoc(doc(estatesDetailCollection, estateId.toString()), estateDetail);
 //           console.log("Documento subido con el ID:", estateId);
@@ -147,4 +81,4 @@ async function getEstateDetailById(estateId: number): Promise<EstateDetail | nul
 //   }
 // });
 
-export { getAllEstateDetails, getEstateDetailById };
+export { getAllEstateDetails, getEstateDetailById }
