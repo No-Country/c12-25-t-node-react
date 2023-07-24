@@ -38,7 +38,7 @@ module.exports = {
     
     updatePropertyImages: async (req, res) => {
       const id = req.params.id;
-      const files = req.files;
+  const files = req.files;
 
   if (!files) {
     return res.status(401).json({ error: "Por favor, sube archivos" });
@@ -51,18 +51,20 @@ module.exports = {
       urls.push(result.secure_url);
     }
 
-    // Obténgo el registro actual de la propiedad desde la base de datos
-    const existingPropertyPhoto = await propertyPhotos.findOne({ where: { property_id: id } });
+    // Obtén todos los registros existentes relacionados con la propiedad desde la base de datos
+    const existingPropertyPhotos = await propertyPhotos.findAll({ where: { property_id: id } });
 
-    // Si no existe el registro, crea uno nuevo
-    if (!existingPropertyPhoto) {
-      await propertyPhotos.create({ url: urls[0], property_id: id });
-    } else {
-      // Si ya existe el registro, actualiza la URL con la más reciente
-      await existingPropertyPhoto.update({ url: urls[0] });
+    // Elimina los registros existentes uno por uno
+    for (const photo of existingPropertyPhotos) {
+      await photo.destroy();
     }
 
-    return res.status(200).json({ message: "Se actualizó correctamente la imagen" });
+    // Crea nuevos registros para cada URL en el array 'urls'
+    for (const url of urls) {
+      await propertyPhotos.create({ url, property_id: id });
+    }
+
+    return res.status(200).json({ message: "Se actualizaron correctamente las imágenes" });
   } catch (error) {
     console.error('Error al cargar las imágenes a Cloudinary o actualizar en la base de datos:', error);
     return res.status(500).json({ message: 'Hubo un problema', error });
