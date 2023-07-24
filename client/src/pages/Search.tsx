@@ -8,6 +8,7 @@ type SearchProps = {
 }
 
 const Search: React.FC<SearchProps> = () => {
+
   return (
     <>
       <BackButton />

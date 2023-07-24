@@ -20,6 +20,7 @@ import RoomButtonGroup from '../../molecule/button-group/RoomButtonGroup'
 import PrimaryButton from '../../atom/PrimaryButton'
 import ListItemButtonOptions from '../../molecule/ListItemButtonOptions'
 import CardsWithPagination from '../CardsWithPagination'
+import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
 
 type SearchResultsProps = {
   results: EstateDetail[]
@@ -29,7 +30,9 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   results
 }) => {
   const [searchResults, setSearchResults] = useState<EstateDetail[]>(results)
-
+  // uso el hook para tener los datos para el select
+  const cityOptions = useOptionsToSearch('city',searchResults) 
+  //console.log('cityOptions: ', cityOptions)
   const [selectedOperation, setSelectedOperation] = useState<Operation | null>(null)
   const [selectedCity, setSelectedCity] = useState<City | null>(null)
   const [selectedType, setSelectedType] = useState<Type | null>(null)

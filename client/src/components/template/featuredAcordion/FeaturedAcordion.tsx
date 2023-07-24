@@ -19,8 +19,6 @@ import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './featuredAcordion.styles.css'
 import { EstateDetail } from '../../../model/estate-detail'
-import { getAllEstateDetails } from '../../firebase/database'
-import { useSpinner } from '../../../context/SpinnerProvider'
 import SkeletonMessage from '../../atom/SkeletonMessage'
 import { useEstateDetails } from '../../../store/database'
 
@@ -39,13 +37,11 @@ interface FeaturedAcordionProps {
 const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   textTitle,
 }) => {
-  const { estateDetails, open, setOpen } = useEstateDetails();
-
+  const { estateDetails, open, setOpen } = useEstateDetails()
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
   let maxSlides
   textTitle === 'alquiler' ? (maxSlides = 4) : (maxSlides = 3)
-
 
   const filteredEstates = estateDetails.filter(
     (estate) =>
