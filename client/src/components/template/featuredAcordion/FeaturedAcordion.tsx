@@ -22,6 +22,7 @@ import { EstateDetail } from '../../../model/estate-detail'
 import { getAllEstateDetails } from '../../firebase/database'
 import { useSpinner } from '../../../context/SpinnerProvider'
 import SkeletonMessage from '../../atom/SkeletonMessage'
+import { useEstateDetails } from '../../../store/database'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -38,30 +39,13 @@ interface FeaturedAcordionProps {
 const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   textTitle,
 }) => {
-  const [estateDetails, setEstateDetails] = useState<EstateDetail[]>([])
-  const { addLoading, removeLoading } = useSpinner()
-  const [open, setOpen] = useState(false)
+  const { estateDetails, open, setOpen } = useEstateDetails();
 
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
   let maxSlides
   textTitle === 'alquiler' ? (maxSlides = 4) : (maxSlides = 3)
 
-  useEffect(() => {
-    const fetchEstateDetails = async () => {
-      addLoading()
-      try {
-        const details = await getAllEstateDetails()
-        setEstateDetails(details)
-      } catch (error) {
-        handleClickAlert()
-      } finally {
-        removeLoading()
-      }
-    }
-
-    fetchEstateDetails()
-  }, [])
 
   const filteredEstates = estateDetails.filter(
     (estate) =>
@@ -72,7 +56,6 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   const navigate = useNavigate()
   const handleClick = () => navigate('/search')
 
-  const handleClickAlert = () => setOpen(true)
 
   const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') return
