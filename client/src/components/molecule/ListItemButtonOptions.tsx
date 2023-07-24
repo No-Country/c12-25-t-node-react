@@ -1,20 +1,14 @@
 import { ReactNode, useState } from 'react'
 import {
   Box,
-  Collapse,
   ListItemButton,
-  ListItemText
 } from '@mui/material'
-import ExpandLess from '@mui/icons-material/ExpandLess'
-import ExpandMore from '@mui/icons-material/ExpandMore'
 
 interface ListItemButtonOptionsProps {
-  textToDisplay: ReactNode
   children?: ReactNode
 }
 
 const ListItemButtonOptions: React.FC<ListItemButtonOptionsProps> = ({
-  textToDisplay,
   children
 }) => {
   const [open, setOpen] = useState(false)
@@ -30,19 +24,7 @@ const ListItemButtonOptions: React.FC<ListItemButtonOptionsProps> = ({
       } }
     >
       <Box sx={ styles.boxContainer }>
-        <ListItemText primary={ textToDisplay} />
-        { open ? <ExpandLess /> : <ExpandMore /> }
-      </Box>
-      <Box sx={ styles.boxOptions } >
-        <Collapse
-          in={ open }
-          timeout="auto"
-          unmountOnExit
-          collapsedSize='100%'
-          sx={{ width: '100%'}}
-        >
-          { children }
-        </Collapse>
+        { children }
       </Box>
     </ListItemButton>
   )
@@ -52,15 +34,6 @@ export default ListItemButtonOptions
 
 const styles = {
   boxContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%'
-  },
-  boxOptions: {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
