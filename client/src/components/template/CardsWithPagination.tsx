@@ -1,4 +1,5 @@
 import { 
+  Container,
   Grid,
   Stack,
   Pagination
@@ -14,9 +15,9 @@ type CardsWithPaginationProps = {
 const CardsWithPagination: React.FC<CardsWithPaginationProps> = ({list}) => {
   const [page, setPage] = useState(1)
   const [cardsList, setCardsList] = useState<EstateDetail[]>(list)
-  
+
   return (
-    <>
+    <Container maxWidth='lg'>
       <Grid container sx={ styles.cardContainer } className="featured-card-container" >
           { cardsList && cardsList.slice((page - 1) * 12, page * 12).map((result, index) => {
             return (
@@ -48,7 +49,7 @@ const CardsWithPagination: React.FC<CardsWithPaginationProps> = ({list}) => {
             />
           </Stack>
         </Grid>
-    </>
+    </Container>
   )
 }
 
