@@ -1,13 +1,10 @@
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import favoriteBanner from '../assets/favorite-banner.png'
 import BackButton from '../components/atom/BackButton'
+import jsonData from './../api/state-detail-mock.json'
+import CardsWithPagination from '../components/template/CardsWithPagination'
 
 type FavoritesProps = {
-  /* aca van las props, ej:
-  title: string
-  Y luego se desestructuran en:
-  const Favorites: React.FC<FavoritesProps> = ({title}) => {
-  */
 }
 
 const Favorites: React.FC<FavoritesProps> = () => {
@@ -15,6 +12,7 @@ const Favorites: React.FC<FavoritesProps> = () => {
     <>
       <BackButton />
       <BannerAndBackgroundPage imgSrc={favoriteBanner} imgHeight="350px"/>
+      <CardsWithPagination list={jsonData.estates_detail}/>
     </>
   )
 }

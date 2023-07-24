@@ -5,8 +5,6 @@ import {
   Grid,
   List,
   Typography,
-  Pagination,
-  Stack
 } from '@mui/material'
 import {
   City,
@@ -15,13 +13,13 @@ import {
   Room,
   Type
 } from '../../../model/estate-detail'
-import FeaturedCard from '../../molecule/FeaturedCard'
 import CityButtonGroup from '../../molecule/button-group/CityButtonGroup'
 import OperationButtonGroup from '../../molecule/button-group/OperationButtonGroup'
 import TypeButtonGroup from '../../molecule/button-group/TypeButtonGroup'
 import RoomButtonGroup from '../../molecule/button-group/RoomButtonGroup'
 import PrimaryButton from '../../atom/PrimaryButton'
 import ListItemButtonOptions from '../../molecule/ListItemButtonOptions'
+import CardsWithPagination from '../CardsWithPagination'
 
 type SearchResultsProps = {
   results: EstateDetail[]
@@ -31,7 +29,6 @@ const SearchResults: React.FC<SearchResultsProps> = ({
   results
 }) => {
   const [searchResults, setSearchResults] = useState<EstateDetail[]>(results)
-  const [page, setPage] = useState(1)
 
   const [selectedOperation, setSelectedOperation] = useState<Operation | null>(null)
   const [selectedCity, setSelectedCity] = useState<City | null>(null)
@@ -102,38 +99,8 @@ const SearchResults: React.FC<SearchResultsProps> = ({
             </Typography>
           </Grid>
         </Grid>
-        {/* Cards */ }
-        <Grid container sx={ styles.cardContainer } className="featured-card-container" >
-          { searchResults && searchResults.slice((page - 1) * 12, page * 12).map((result, index) => {
-            return (
-              <Grid
-                item
-                xs={ 12 }
-                sm={ 4 }
-                md={ 3 }
-                key={ `result-${ index }` }
-                sx={ { margin: '8px 6px' } }
-                className="featured-card-item"
-              >
-                <FeaturedCard estate={ result } />
-              </Grid>
-            )
-          }
-          ) }
-        </Grid>
-        <Grid item xs={ 12 } sx={ { padding: '2rem 0.5rem 4rem' } } >
-          <Stack spacing={ 2 } sx={ styles.stack } >
-            <Pagination
-              count={ Math.ceil(searchResults.length / 12) }
-              page={ page }
-              onChange={ (event, value) => setPage(value) }
-              variant="outlined"
-              shape="rounded"
-              size="large"
-              color="secondary"
-            />
-          </Stack>
-        </Grid>
+        {/* Cards with pagination*/ }
+        <CardsWithPagination list={searchResults}/>
       </Container >
     </>
   )
@@ -160,17 +127,5 @@ const styles = {
     color: 'var(--primary-light)',
     fontWeight: '800',
     letterSpacing: '1px'
-  },
-  cardContainer: {
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  stack: {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    justifyContent: 'center',
   }
 }

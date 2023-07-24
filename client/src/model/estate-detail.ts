@@ -34,7 +34,7 @@ export type EstateDetail = {
   estate_photos: EstatePhoto[]
   services: Services
   rooms: { [key: string]: number }
-  property_type: Type
+  property_type: string | Type
   for_rent: boolean
   for_sale: boolean
   is_featured: boolean
