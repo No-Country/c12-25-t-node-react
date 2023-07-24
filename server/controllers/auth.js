@@ -54,7 +54,7 @@ module.exports = {
             if (reqUser) {
                 let user = await users.findOne({ where: { id: reqUser.id }, attributes: { exclude: ["password"] } });
                 if (user === null) {
-                    res.status(404).json({ 'msg': "Usuario no encontrado" });
+                    res.status(404).json({ 'error': "Usuario no encontrado" });
                 } else {
                     res.status(200).json(user);
                 }

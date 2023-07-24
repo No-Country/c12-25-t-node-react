@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // RAD define association here
+            Users.belongsToMany(models.Properties, { through: models.bookmarks });
         }
     }
     Users.init({
@@ -17,11 +18,6 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             type: DataTypes.UUID,
             primaryKey: true,
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
         },
         first_name: {
             type: DataTypes.STRING,

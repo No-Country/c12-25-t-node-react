@@ -12,7 +12,7 @@ Todos los endpoints a excepción del registro requieren de envío de token a tra
 
 * [Login]: `POST /api/login`
 
-# Login
+## Login
 
 Recopilamos un Token para un usuario registrado.
 
@@ -40,7 +40,7 @@ Recopilamos un Token para un usuario registrado.
 }
 ```
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -52,7 +52,7 @@ Recopilamos un Token para un usuario registrado.
 }
 ```
 
-## Error Response
+### Error Response
 
 **Condition** : If 'username' and 'password' combination is wrong.
 
@@ -62,15 +62,13 @@ Recopilamos un Token para un usuario registrado.
 
 ```json
 {
-    "non_field_errors": [
-        "Unable to login with provided credentials."
-    ]
+    "error": "La contraseña no es válida."
 }
 ```
 
 * [Register]: `POST api/create`
 
-# Register
+## Register
 
 Used to register a new user.
 
@@ -96,7 +94,6 @@ Used to register a new user.
 
 ```json
 {
-	"username": "pablohdz",
 	"first_name": "Pablo",
 	"last_name": "Guzmán La Torre",
 	"email": "pguzmanlt@gmail.com",
@@ -104,7 +101,7 @@ Used to register a new user.
 }
 ```
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -114,10 +111,9 @@ Used to register a new user.
 [
 	{
 		"id": 1,
-		"username": "jramirez",
-		"first_name": "Joaquin",
-		"last_name": "Ramirez",
-		"email": "jramirez15@gmail.com",
+		"first_name": "Pablo",
+		"last_name": "Guzmán La Torre",
+		"email": "pguzmanlt@gmail.com",
 		"password": "$2b$10$l0PLiIAIGC0lSghuCv6OKePtZirh9U2cdsTmy9Lh1TIsf8sGiPHKG",
 		"is_active": true,
 		"updated_at": "2023-07-17T04:31:27.835Z",
@@ -127,7 +123,7 @@ Used to register a new user.
 ]
 ```
 
-## Error Response
+### Error Response
 
 **Condition** : If 'username' and 'password' combination is wrong.
 
@@ -137,13 +133,13 @@ Used to register a new user.
 
 ```json
 {
-    "non_field_errors": [
-        "Unable to login with provided credentials."
+    "error": [
+        "Error details."
     ]
 }
 ```
 
-## Endpoints that require Authentication
+# Endpoints that require Authentication
 
 Closed endpoints require a valid Token to be included in the header of the
 request. A Token can be acquired from the Login view above.
@@ -158,7 +154,7 @@ Token is provided with the request:
 
 * [Me]: `GET /api/me`
 
-# Show Current User Info
+## Show Current User Info
 
 Get the details of the currently Authenticated User along with basic
 subscription information.
@@ -173,7 +169,7 @@ subscription information.
 
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -212,7 +208,7 @@ Get the list of users .
 
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -244,7 +240,7 @@ Get the list of users .
 
 * [Update an User]: `PUT /api/users/update/:id`
 
-# Update Current User info
+## Update Current User info
 
 Allow the Authenticated User to update their details.
 
@@ -269,7 +265,7 @@ Allow the Authenticated User to update their details.
 ```
 
 
-**Ejemplos de datos**
+**Data Example**
 
 Partial data is allowed.
 
@@ -279,7 +275,7 @@ Partial data is allowed.
 }
 ```
 
-## Response Exitosa
+### Success Response
 
 **Condition** : Data provided is valid and User is Authenticated.
 
@@ -293,30 +289,7 @@ Partial data is allowed.
 }
 ```
 
-## Error Response
-
-**Condition** : If provided data is invalid, e.g. a name field is too long.
-
-**Code** : `400 BAD REQUEST`
-
-**Content example** :
-
-```json
-{
-    "first_name": [
-        "Please provide maximum 30 character or empty string",
-    ]
-}
-```
-
-## Notes
-
-* Endpoint will ignore irrelevant and read-only data such as parameters that
-  don't exist, or fields that are not editable like `id` or `email`.
-* Similar to the `GET` endpoint for the User, if the User does not have a
-  UserInfo instance, then one will be created for them.
-
-# Delete Current User info
+## Delete Account
 
 Allow the Authenticated User to delete their details and information.
 
@@ -330,7 +303,7 @@ Allow the Authenticated User to delete their details and information.
 
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -342,7 +315,7 @@ Allow the Authenticated User to delete their details and information.
 }
 ```
 
-## Error Response
+### Error Response
 
 **Code** : `400 BAD REQUEST`
 
@@ -354,28 +327,154 @@ Allow the Authenticated User to delete their details and information.
 }
 ``` 
 
-### Properties
+# Bookmarks
+
+## Save a property in bookmarks
+
+Allow to save a property in bookmarks
+
+**URL** : `/api/users/properties/:property_id/bookmarks`
+
+**Metodo** : `POST`
+
+**Requiere Autenticación** : YES
+
+**Header**: Authorization
+
+**Permissions required** : None
+
+### Response Exitosa
+
+**Code** : `200 OK`
+
+**Content example** :
+
+```json
+[
+	{
+		"UserId": 1,
+		"PropertyId": 2,
+		"created_at": "2023-07-24T05:29:24.211Z",
+		"updated_at": "2023-07-24T05:29:24.211Z"
+	}
+]
+```
+
+### Error Response
+
+**Code** : `400 BAD REQUEST`
+
+**Content example** :
+
+```json
+{
+    "message": "No se enviaron los parámetros necesarios."
+}
+```
+
+## Get a list of bookmarks from a user
+
+Allow to save a property in bookmarks
+
+**URL** : `/api/users/bookmarks`
+
+**Metodo** : `GET`
+
+**Requiere Autenticación** : YES
+
+**Header**: Authorization
+
+**Permissions required** : None
+
+### Response Exitosa
+
+**Code** : `200 OK`
+
+**Content example** :
+
+```json
+{
+	"count": 2,
+	"rows": [
+		{
+			"id": 6,
+			"Property": {
+				"id": 2,
+				"name": "Amplio Dpto. de 2 Dorms. en Lira en Alquiler",
+				"description": "Se Alquila Amplio departamento en pleno centro de Lira, Av. Las Flores esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+				"zone": "Lira",
+				"address": "Saint Dennis 656",
+				"city": "Lira",
+				"province": "Lima",
+				"country": "Peru",
+				"price": 800,
+				"available": true,
+				"is_featured": true,
+				"for_sale": false,
+				"for_rent": true,
+				"created_at": "2023-07-17T09:04:33.000Z",
+				"updated_at": "2023-07-17T09:04:33.000Z"
+			}
+		},
+		{
+			"id": 4,
+			"Property": {
+				"id": 1,
+				"name": "Amplio Dpto. de 2 Dorms. en Miraflores en Alquiler",
+				"description": "Se Alquila Amplio departamento en pleno centro de Miraflores, Av. Larco esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+				"zone": "Miraflores",
+				"address": "Sur Aot 125",
+				"city": "Lima",
+				"province": "Lima",
+				"country": "Peru",
+				"price": 500,
+				"available": true,
+				"is_featured": false,
+				"for_sale": true,
+				"for_rent": false,
+				"created_at": "2023-07-17T04:04:33.000Z",
+				"updated_at": "2023-07-17T04:04:33.000Z"
+			}
+		}
+	]
+}
+```
+
+## Delete Bookmark
+
+Allow to authenticated user delete a bookmark.
+
+**URL** : `/api/users/bookmarks/:id`
+
+**Metodo** : `DELETE`
+
+**Requiere Autenticación** : YES
+
+**Header**: Authorization
+
+**Permissions required** : None
+
+
+# Properties
 
 Endpoints for viewing and manipulating properties that the Authenticated User
 has permissions to access.
 
 * [List Properties] : `GET /api/properties/list`
 
-# List properties
+## List properties
 
-Get the list of properties .
+Get the list of all properties saved.
 
 **URL** : `/api/properties/list`
 
 **Metodo** : `GET`
 
-**Requiere Autenticación** : YES
-
-**Header** : Authorization
+**Requiere Autenticación** : NO
 
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -388,6 +487,7 @@ Get the list of properties .
 		"id": 1,
 		"name": "Amplio Dpto. de 2 Dorms. en Miraflores en Alquiler",
 		"description": "Se Alquila Amplio departamento en pleno centro de Miraflores, Av. Larco esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+		"zone": "Miraflores",
 		"address": "Sur Aot 125",
 		"city": "Lima",
 		"province": "Lima",
@@ -402,6 +502,7 @@ Get the list of properties .
 		"id": 2,
 		"name": "Amplio Dpto. de 2 Dorms. en URB LA PERLA en Alquiler",
 		"description": "Se Alquila Amplio departamento en pleno centro de STOCK, Av. ESPON esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+		"zone": "La Perla",
 		"address": "Sur Aot 125",
 		"city": "Lima",
 		"province": "Lima",
@@ -417,7 +518,7 @@ Get the list of properties .
 
 * [List Properties Detail] : `GET /api/properties/list-detail`
 
-# List properties Detail
+## List properties Detail
 
 Get the list of properties to home card.
 
@@ -429,7 +530,7 @@ Get the list of properties to home card.
 
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -442,6 +543,7 @@ Get the list of properties to home card.
 		"id": 1,
 		"name": "Amplio Dpto. de 2 Dorms. en Miraflores en Alquiler",
 		"description": "Se Alquila Amplio departamento en pleno centro de Miraflores, Av. Larco esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+		"zone": "Miraflores",
 		"address": "Sur Aot 125",
 		"city": "Lima",
 		"province": "Lima",
@@ -506,6 +608,7 @@ Get the list of properties to home card.
 		"id": 2,
 		"name": "Amplio Dpto. de 2 Dorms. en Lira en Alquiler",
 		"description": "Se Alquila Amplio departamento en pleno centro de Lira, Av. Las Flores esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+		"zone": "Lira",
 		"address": "Saint Dennis 656",
 		"city": "Lira",
 		"province": "Lima",
@@ -571,9 +674,9 @@ Get the list of properties to home card.
 
 * [Get Property Full Detail] : `GET /api/properties/1/full-detail`
 
-# Get a property with Full Detail
+## Get a property information with Full Detail
 
-Get the list of properties to property page.
+Get information to property page detail.
 
 **URL** : `/api/properties/1/full-detail`
 
@@ -583,7 +686,7 @@ Get the list of properties to property page.
 
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -604,8 +707,6 @@ Get the list of properties to property page.
 	"is_featured": false,
 	"for_sale": false,
 	"for_rent": false,
-	"created_at": "2023-07-17T04:04:33.000Z",
-	"updated_at": "2023-07-17T04:04:33.000Z",
 	"p_details": [
 		{
 			"id": 1,
@@ -692,6 +793,8 @@ Get the list of properties to property page.
 
 * [Create a Property]: `POST /api/properties/create`
 
+## Create a Property
+
 Used to register a new property to offer.
 
 **URL** : `/api/properties/create`
@@ -700,62 +803,47 @@ Used to register a new property to offer.
 
 **Requiere Autenticación** : YES
 
+**Header** : Authorization
+
 **Restricciones de Datos**
 
 ```json
 {	
-	"id": "[integer]",
 	"name": "[string]",
 	"description": "[text]",
-	"images":"[string url]",
+	"zone": "[text]",
 	"address": "[string, valid text plain address of the property]",
+	"city": "[string, valid text plain city of the property]",
 	"province": "[string, valid text plain province of the property]",
 	"country": "[string, valid text plain country of the property]",
 	"price": "[float, valid price amount that includes decimals]",
 	"available": "[boolean]",
-	"total_area":"`[integer]",
-	"covered_area":"`[INTEGER]",
-	"bedrooms":"`[integer]",
-	"bathrooms":"`[integer]",
-	"garage":"`[integer]",
-	"swimming_pool":"`[integer]",
-	"balocny":"`[integer]",
-	"elevator":"`[integer]",
-	"antiquity":"`[STRING]",
-	"property_id":"`[integer]",
-	"created_at": "`[date]",
-	"updated_at": "`[date]",
+	"is_featured": "[boolean]",
+	"for_sale": "[boolean]",
+	"for_rent": "[boolean]"
 	}
 ```
 
 **Ejemplos de datos**
 
 ```json
-"result": {
-		"id": "03034567899",
-		"property_id":"20221218",
-		"name": "Monoambiente alq Palermo pesos",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel ex tincidunt nunc molestie auctor.",
-		"address": "123 fake street",
-		"province": "MOntana",
-		"country": "Argentina",
-		"price": 125000,
-		"available": "[true]",
-		"createdAt": "2023-04-09T08:12:48.496Z",
-		"updatedAt": "2023-04-09T16:56:01.426Z",
-		"total_area":"500",
-		"covered_area":"250",
-		"bedrooms":"4",
-		"bathroom":"2",
-		"garaje":"2",
-		"swimming_pool":"1",
-		"balcony":"0",
-		"elevator":"1",
-		"antiquity":"5"				
-	}
+{
+	"name": "Monoambiente alq Palermo pesos",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel ex tincidunt nunc molestie auctor.",
+	"zone": "Federal",
+	"address": "123 fake street",
+	"city": "Ferro",
+	"province": "MOntana",
+	"country": "Argentina",
+	"price": 125000,
+	"available": true,
+	"is_featured": true,
+	"for_sale": true,
+	"for_rent": false
+}
 ```
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -763,14 +851,24 @@ Used to register a new property to offer.
 
 ```json
 {
-	"name": "[Monoambiente alq Pehuajó]",
-	"address": "[123 Fake street]",
-	"province": "[Montana]",
-	"price": "[150000]",
+	"name": "Monoambiente alq Palermo pesos",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel ex tincidunt nunc molestie auctor.",
+	"zone": "Federal",
+	"address": "123 fake street",
+	"city": "Ferro",
+	"province": "MOntana",
+	"country": "Argentina",
+	"price": 125000,
+	"available": true,
+	"is_featured": true,
+	"for_sale": true,
+	"for_rent": false,
+	"updated_at": "2023-07-17T04:04:33.378Z",
+	"created_at": "2023-07-17T04:04:33.378Z"
 }
 ```
 
-## Error Response
+### Error Response
 
 **Condition** : Si un campo de las detalles no cumple con los requisitos.
 
@@ -780,16 +878,16 @@ Used to register a new property to offer.
 
 ```json
 {
-    "non_field_errors": [
+    "message": [
         "Verificar que todos los campos esten cargados correctamente."
     ]
 }
 ```
 * [Get a Property] : `GET /api/properties/find/:id`
 
-# Show a Property
+## Show a Property
 
-Trae la ficha de la propiedad seleccionada
+Get short information from a property using id
 
 **URL** : `/api/properties/find/:id`
 
@@ -797,79 +895,151 @@ Trae la ficha de la propiedad seleccionada
 
 **Requiere Autenticación** : YES
 
+**Header** : Authorization
+
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
-**Restricciones de Datos**
 
 ```json
-{	
-	"id": "[integer]",
-	"name": "[string]",
-	"description": "[text]",
-	"images":"string url",
-	"address": "[string, valid text plain address of the property]",
-	"province": "[string, valid text plain province of the property]",
-	"country": "[string, valid text plain country of the property]",
-	"price": "[float, valid price amount that includes decimals]",
-	"available": "[boolean]",
-	"total_area":"string",
-	"bedrooms":"integer",
-	"bathrooms":"integer",
-	"garage":"integer",
-	"swimming_pool":"integer",
-	"balocny":"integer",
-	"elevator":"integer",
-	"antiquity":"STRING",
-	"property_id":"integer",
-	"created_at": "date",
-	"updated_at": "date",
+[
+	{
+		"id": 1,
+		"name": "Amplio Dpto. de 2 Dorms. en Miraflores en Alquiler",
+		"description": "Se Alquila Amplio departamento en pleno centro de Miraflores, Av. Larco esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+		"zone": null,
+		"address": "Sur Aot 125",
+		"city": "Lima",
+		"province": "Lima",
+		"country": "Peru",
+		"price": 500,
+		"available": true,
+		"is_featured": false,
+		"for_sale": true,
+		"for_rent": false,
+		"p_details": [
+			{
+				"id": 1,
+				"covered_area": 785.5,
+				"uncovered_area": 125,
+				"bedrooms": 2,
+				"bathrooms": 2,
+				"toilette": 2,
+				"garage": 1,
+				"swimming_pool": 1,
+				"reception_hall": 1,
+				"balcony": 1,
+				"elevator": 1,
+				"gym": 1,
+				"antiquity": "6",
+				"property_id": 1,
+				"garden": true,
+				"terrance": true,
+				"grill": 1,
+				"credit_worthy": true,
+				"professional_use": true,
+				"created_at": "2023-07-17T04:04:35.000Z",
+				"updated_at": "2023-07-17T04:04:35.000Z"
+			}
+		],
+		"PropertiesPhotos": [
+			{
+				"id": 3,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971875_efhbp5.jpg",
+				"property_id": 1,
+				"created_at": "2023-07-17T09:41:33.000Z",
+				"updated_at": "2023-07-17T09:41:33.000Z"
+			},
+			{
+				"id": 2,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971904_o65g8q.jpg",
+				"property_id": 1,
+				"created_at": "2023-07-17T09:40:33.000Z",
+				"updated_at": "2023-07-17T09:40:33.000Z"
+			},
+			{
+				"id": 1,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/1096971905_ierfug.jpg",
+				"property_id": 1,
+				"created_at": "2023-07-17T09:40:33.000Z",
+				"updated_at": "2023-07-17T09:40:33.000Z"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "Amplio Dpto. de 2 Dorms. en Lira en Alquiler",
+		"description": "Se Alquila Amplio departamento en pleno centro de Lira, Av. Las Flores esquina con la Av. Benavides, transporte público para todo Lima, comercios, bancos, instituciones de todo tipo, centros de estudios, todo a la mano.",
+		"zone": null,
+		"address": "Saint Dennis 656",
+		"city": "Lira",
+		"province": "Lima",
+		"country": "Peru",
+		"price": 800,
+		"available": true,
+		"is_featured": true,
+		"for_sale": false,
+		"for_rent": true,
+		"p_details": [
+			{
+				"id": 2,
+				"covered_area": 350,
+				"uncovered_area": 50,
+				"bedrooms": 2,
+				"bathrooms": 2,
+				"toilette": 1,
+				"garage": 1,
+				"swimming_pool": 1,
+				"reception_hall": 0,
+				"balcony": 0,
+				"elevator": 0,
+				"gym": 0,
+				"antiquity": "2",
+				"property_id": 2,
+				"garden": true,
+				"terrance": false,
+				"grill": 1,
+				"credit_worthy": false,
+				"professional_use": false,
+				"created_at": "2023-07-17T09:40:33.000Z",
+				"updated_at": "2023-07-17T09:40:33.000Z"
+			}
+		],
+		"PropertiesPhotos": [
+			{
+				"id": 6,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/315902914_cudclf.jpg",
+				"property_id": 2,
+				"created_at": "2023-07-17T09:44:33.000Z",
+				"updated_at": "2023-07-17T09:44:33.000Z"
+			},
+			{
+				"id": 5,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/315902916_cdakyf.jpg",
+				"property_id": 2,
+				"created_at": "2023-07-17T09:43:33.000Z",
+				"updated_at": "2023-07-17T09:43:33.000Z"
+			},
+			{
+				"id": 4,
+				"url": "https://res.cloudinary.com/dmp6ghtzb/image/upload/v1689612214/315902922_ywkj7l.jpg",
+				"property_id": 2,
+				"created_at": "2023-07-17T09:42:33.000Z",
+				"updated_at": "2023-07-17T09:42:33.000Z"
+			}
+		]
 	}
+]
 ```
 
-**Ejemplos de contenido**
+[Update a Property] : `PUT /api/properties/update/:id`
 
-```json
-{
-	"result": {
-		"id": "03034567899",
-		"property_id":"123123456",
-		"name": "Monoambiente alq Palermo pesos",
-		"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel ex tincidunt nunc molestie auctor.",
-		"address": "123 fake street",
-		"province": "MOntana",
-		"country": "Argentina",
-		"price": 125000,
-		"available": "[true]",
-		"createdAt": "2023-04-09T08:12:48.496Z",
-		"updatedAt": "2023-04-09T16:56:01.426Z",
-		"total_area":"500",
-		"bedrooms":"4",
-		"bathroom":"2",
-		"garaje":"2",
-		"swimming_pool":"1",
-		"balcony":"0",
-		"elevator":"1",
-		"antiquity":"5"				
-	}
-}
-```
+## Update Property
 
-## Notes
-
-* Endpoint will ignore irrelevant and read-only data such as parameters that
-  don't exist, or fields that are not editable like `id` or `email`.
-* Similar to the `GET` endpoint for the User, if the User does not have a
-  UserInfo instance, then one will be created for them.
-
-* [Update a Property] : `PUT /api/properties/update/:id`
-
-# Update Property
-
-Allow the Authenticated User as admin to update property info.
+Allow the Authenticated User update property basic info.
 
 **URL** : `/api/properties/update/:id`
 
@@ -881,9 +1051,9 @@ Allow the Authenticated User as admin to update property info.
 
 **Permissions required** : None
 
-**Ejemplos de datos**
+**Data example**
 
-Puede modificar un solo valor
+Partial data is allowed
 
 ```json
 {
@@ -891,9 +1061,7 @@ Puede modificar un solo valor
 }
 ```
 
-## Response Exitosa
-
-**Condition** : Data provided is valid and User is Authenticated.
+### Success Response
 
 **Code** : `200 OK`
 
@@ -901,14 +1069,13 @@ Puede modificar un solo valor
 
 ```json
 {
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel ex tincidunt nunc molestie auctor.",
-	"address": "123 fake street",
+	"message": "Actualizado con éxito."
 }
 ```
 
-## Error Response
+### Error Response
 
-**Condition** : If provided data is invalid, or a name field is too long.
+**Condition** : If provided data is invalid.
 
 **Code** : `400 BAD REQUEST`
 
@@ -916,13 +1083,15 @@ Puede modificar un solo valor
 
 ```json
 {
-    "first_name": [
-        "Verifique los datos ingresados.",
-    ]
+    "message": "Ocurrió un error al actualizar la información de la propiedad",
 }
 ```
 
 * [Delete a Property]: `DELETE /api/properties/`
+
+## Delete Property
+
+Allow to authenticated user delete a property.
 
 **URL** : `/api/properties/:id`
 
@@ -934,7 +1103,7 @@ Puede modificar un solo valor
 
 **Permissions required** : None
 
-## Response Exitosa
+### Response Exitosa
 
 **Code** : `200 OK`
 
@@ -942,11 +1111,11 @@ Puede modificar un solo valor
 
 ```json
 {
-"La propiedad ha sido eliminada."
+	"message": "La propiedad ha sido eliminada."
 }
 ```
 
-## Error Response
+### Error Response
 
 **Code** : `400 BAD REQUEST`
 
@@ -954,6 +1123,6 @@ Puede modificar un solo valor
 
 ```json
 {
-    "Ocurrió un error al eliminar la propiedad."
+    "message": "Ocurrió un error al eliminar la propiedad."
 }
 ``` 

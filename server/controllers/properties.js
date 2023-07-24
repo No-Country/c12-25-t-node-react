@@ -42,6 +42,7 @@ module.exports = {
     },
     getPropertiesDetail: (req, res) => {
         return property.findAll({
+                attributes: { exclude: ['created_at', 'updated_at'] },
                 include: [{
                         model: property_details,
                         as: 'p_details'
@@ -65,6 +66,7 @@ module.exports = {
         const id = req.params.id;
         return property.findOne({
                 where: { id: id },
+                attributes: { exclude: ['created_at', 'updated_at'] },
                 include: { all: true }
             })
             .then(data => {
@@ -145,17 +147,17 @@ module.exports = {
             .then(num => {
                 if (num == 1) {
                     res.status(200).send({
-                        message: "Actualizado con éxito."
+                        message: "Propiedad eliminada."
                     });
                 } else {
                     res.send({
-                        message: "No se puedo actualizar."
+                        message: "No se puedo eliminar la propiedad."
                     });
                 }
             })
             .catch(err => {
                 res.status(500).send({
-                    message: err.message || "Error al actualizar los datos del usuario."
+                    message: err.message || "Error al eliminar la propiedad."
                 });
             });
     }

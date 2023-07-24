@@ -1,24 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const path = require('path');
 const http = require('http');
-const multer = require('multer');
-const cors = require('cors')
-    // const helmet = require('helmet')
+const cors = require('cors');
 require('dotenv').config()
+const fs = require('fs');
 
-const storage = multer.diskStorage({
-    destination: path.join(__dirname, 'public/uploads'),
-    filename: (req, file, cb) => {
-        cb(null, new Date().getTime() + file.originalname)
-    }
-})
+const uploadDirectory = './public/uploads';
+if (!fs.existsSync(uploadDirectory)) {
+    fs.mkdirSync(uploadDirectory, { recursive: true });
+}
+
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({ extended: false }))
-app.use(multer({ storage }).single('image'))
 app.use(express.json())
 app.use(cors({
     origin: '*'

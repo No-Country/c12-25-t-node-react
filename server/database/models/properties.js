@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             Properties.hasMany(models.PropertiesPhotos, { foreignKey: 'property_id' });
             Properties.hasMany(models.properties_services, { foreignKey: 'property_id' });
             Properties.hasMany(models.properties_rooms, { foreignKey: 'property_id' });
+            Properties.belongsToMany(models.Users, { through: models.bookmarks });
         }
     }
     Properties.init({
@@ -27,6 +28,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
         },
         description: {
+            allowNull: false,
+            type: DataTypes.TEXT,
+        },
+        zone: {
             allowNull: false,
             type: DataTypes.TEXT,
         },
