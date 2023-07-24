@@ -9,7 +9,6 @@ import Searcher from '../components/Searcher.tsx'
 type HomeProps = {}
 
 const Home: React.FC<HomeProps> = () => {
-
   return (
     <main>
       <HeroImage imgSrc={heroImageBanner} />
@@ -17,7 +16,10 @@ const Home: React.FC<HomeProps> = () => {
       <FeaturedAcordion textTitle="venta" />
       <FeaturedAcordion textTitle="alquiler" />
       <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
-      <CallToActionContactForm imageUrl={ImageCtaRight} textPosition={'right'} />
+      <CallToActionContactForm
+        imageUrl={ImageCtaRight}
+        textPosition={'right'}
+      />
     </main>
   )
 }

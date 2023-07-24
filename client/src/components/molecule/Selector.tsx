@@ -25,6 +25,7 @@ interface SelectorProps {
   shortPlaceholder: string
   label: string
   selectOptions: string[]
+  setSearchParams: (selected: string[]) => void
 }
 
 const Selector: React.FC<SelectorProps> = ({
@@ -32,6 +33,7 @@ const Selector: React.FC<SelectorProps> = ({
   shortPlaceholder,
   label,
   selectOptions,
+  setSearchParams,
 }) => {
   const theme = useTheme()
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
@@ -41,12 +43,15 @@ const Selector: React.FC<SelectorProps> = ({
       target: { value },
     } = event
     setSelect(typeof value === 'string' ? value.split(',') : value)
+    setSearchParams(typeof value === 'string' ? value.split(',') : value)
   }
 
   const handleSelected = (selected: string[]) => {
-    if (selected.length === 0)
+    if (selected.length === 0) {
       return <p>{isSm ? shortPlaceholder : longPlaceholder}</p>
-    else return selected.join(', ')
+    } else {
+      return selected.join(', ')
+    }
   }
 
   return (
