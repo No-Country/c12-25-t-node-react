@@ -1,4 +1,5 @@
-import { Button, ButtonProps } from '@mui/material'
+import { ReactNode } from 'react'
+import { Box, Button, ButtonProps } from '@mui/material'
 import { colorBtn, sizeBtn, variantBtn } from '../../utils/types'
 
 interface PrimaryButtonProps extends ButtonProps {
@@ -6,13 +7,27 @@ interface PrimaryButtonProps extends ButtonProps {
   variant?: variantBtn
   size?: sizeBtn
   colorBtn?: colorBtn
+  icon?: ReactNode
+  textDisplay?: object
 }
 
+/**
+ * PrimaryButton is a custom button
+ * @param text: Text to be display in the button
+ * @param variant: by default it's countained, with a background color
+ * @param size: by default it's medium
+ * @param colorBtn: by default it's primary
+ * @param icon: a component that displays an icon
+ * @param textDisplay: by default the button has a text, but with an object and 
+ * display:none we can hide the text
+ */
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   text,
   variant,
   size,
   colorBtn,
+  icon,
+  textDisplay,
   ...props
 }) => {
   return (
@@ -27,7 +42,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       }}
       {...props}
     >
-      {text}
+      {icon} <Box component='span' sx={{display: textDisplay? textDisplay : 'flex'}}>{text}</Box>
     </Button>
   )
 }
