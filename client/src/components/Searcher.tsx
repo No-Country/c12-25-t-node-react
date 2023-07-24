@@ -14,6 +14,7 @@ import SearchIcon from '@mui/icons-material/Search'
 import { City, Type } from '../model/estate-detail'
 import PrimaryButton from './atom/PrimaryButton'
 
+
 interface TabPanelProps {
   children?: React.ReactNode
   index: number
@@ -72,6 +73,7 @@ export default function BasicTabs() {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const [value, setValue] = useState(0)
+  
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue)
@@ -114,7 +116,7 @@ export default function BasicTabs() {
     Type.departamento,
     Type.ph
   ]
-
+  
   return (
     <Box
       sx={ {
