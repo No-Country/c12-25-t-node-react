@@ -6,7 +6,7 @@ import {
   List,
   Typography,
 } from '@mui/material'
-import {  EstateDetail } from '../../../model/estate-detail'
+import { EstateDetail } from '../../../model/estate-detail'
 import PrimaryButton from '../../atom/PrimaryButton'
 import ListItemButtonOptions from '../../molecule/ListItemButtonOptions'
 import CardsWithPagination from '../CardsWithPagination'
@@ -16,44 +16,37 @@ import SearchIcon from '@mui/icons-material/Search'
 
 type SearchResultsProps = {
   results: EstateDetail[]
+  setSearchResults: React.Dispatch<React.SetStateAction<EstateDetail[]>>
 }
 
 const SearchResults: React.FC<SearchResultsProps> = ({
-  results
+  results,
+  setSearchResults
 }) => {
-  const [searchResults, setSearchResults] = useState<EstateDetail[]>(results)
-
   const [selectedOperation, setSelectedOperation] = useState<string[]>([])
   const [selectedCity, setSelectedCity] = useState<string[]>([])
   const [selectedType, setSelectedType] = useState<string[]>([])
   const [selectedRoom, setSelectedRoom] = useState<string[]>([])
 
   const handleClick = () => {
-    console.log('handleClick: ', selectedOperation, selectedCity, selectedType, selectedRoom)
-    if (selectedOperation !== null) {
-      if (selectedOperation === 'Compra') {
-        const compra = results.filter(result => result.for_sale === true)
-        setSearchResults(compra)
-        console.log('COMPRA: ', searchResults)
-      } else {
-        const alquiler = results.filter(result => result.for_rent === true)
-        setSearchResults(alquiler)
-        console.log('ALQUILER ', searchResults)
-      }
-    }
+    if (selectedOperation.length > 0) console.log('selectedOperation', selectedOperation)
   }
 
   useEffect(() => {
-    console.log('DESDE  USEEFFECT: ', selectedOperation)
+    const resultsBySelectedOperationSale = results.filter(result => result.for_sale === true && selectedOperation.includes('Venta'))
+    const resultsBySelectedOperationRent = results.filter(result => result.for_rent === true && selectedOperation.includes('Alquler'))
+    console.log('resultsBySelectedOperation VENTA: ', resultsBySelectedOperationSale)
+    console.log('resultsBySelectedOperation ALQUILER: ', resultsBySelectedOperationRent)
+    setSearchResults(resultsBySelectedOperationSale)
   }, [selectedOperation])
 
   /**
    *  Using the custom hook useOptionsToSearch to obtain an array of options
    *  to be display in the select
    */
-  const cityOptions: string[] = useOptionsToSearch('city', searchResults).sort()
-  const typeOptions: string[] = useOptionsToSearch('property_type', searchResults).sort()
-  const bedroomsOptions: string[] = useOptionsToSearch('bedrooms', searchResults).sort()
+  const cityOptions: string[] = useOptionsToSearch('city', results).sort()
+  const typeOptions: string[] = useOptionsToSearch('property_type', results).sort()
+  const bedroomsOptions: string[] = useOptionsToSearch('bedrooms', results).sort()
 
   return (
     <>
@@ -64,26 +57,26 @@ const SearchResults: React.FC<SearchResultsProps> = ({
           aria-labelledby="Menu de filtro para búsqueda de propiedad"
         >
           <ListItemButtonOptions >
-            <MultipleSelect textToDisplay='Operación' listOptions={['Compra', 'Venta']}  options={selectedOperation} setOptions={setSelectedOperation}/>
+            <MultipleSelect textToDisplay='Operación' listOptions={ ['Venta', 'Alquiler'] } options={ selectedOperation } setOptions={ setSelectedOperation } />
           </ListItemButtonOptions>
           <ListItemButtonOptions  >
-            <MultipleSelect textToDisplay='Ubicación' listOptions={cityOptions} options={selectedCity} setOptions={setSelectedCity}/>
+            <MultipleSelect textToDisplay='Ubicación' listOptions={ cityOptions } options={ selectedCity } setOptions={ setSelectedCity } />
           </ListItemButtonOptions>
           <ListItemButtonOptions >
-            <MultipleSelect textToDisplay='Inmueble' listOptions={typeOptions } options={selectedType} setOptions={setSelectedType}/>
+            <MultipleSelect textToDisplay='Tipo de propiedad' listOptions={ typeOptions } options={ selectedType } setOptions={ setSelectedType } />
           </ListItemButtonOptions>
           <ListItemButtonOptions >
-            <MultipleSelect textToDisplay='Dormitorios' listOptions={bedroomsOptions} options={selectedRoom} setOptions={setSelectedRoom}/>
+            <MultipleSelect textToDisplay='Dormitorios' listOptions={ bedroomsOptions } options={ selectedRoom } setOptions={ setSelectedRoom } />
           </ListItemButtonOptions>
           <PrimaryButton
             text='Buscar'
             aria-label='Buscar propiedad'
-            icon={<SearchIcon />}
-            textDisplay={ {xs:'flex', md:'none'} }
-            sx={ { 
-              margin: '1rem auto', 
-              padding: {xs: '0.5rem 1rem', md:'6px 12px'},
-              width: {xs: '260px', sm: '350px', md:'20px'}
+            icon={ <SearchIcon /> }
+            textDisplay={ { xs: 'flex', md: 'none' } }
+            sx={ {
+              margin: '1rem auto',
+              padding: { xs: '0.5rem 1rem', md: '6px 12px' },
+              width: { xs: '260px', sm: '350px', md: '20px' }
             } }
             onClick={ handleClick }
           />
@@ -92,12 +85,12 @@ const SearchResults: React.FC<SearchResultsProps> = ({
         <Grid container>
           <Grid item xs={ 12 }>
             <Typography sx={ styles.totalList } >
-              <Box component='span' sx={ styles.totalListSpan } >{ searchResults.length }</Box>  inmuebles
+              <Box component='span' sx={ styles.totalListSpan } >{ results.length }</Box>  inmuebles
             </Typography>
           </Grid>
         </Grid>
         {/* Cards with pagination*/ }
-        <CardsWithPagination list={ searchResults } />
+        <CardsWithPagination list={ results } />
       </Container >
     </>
   )
