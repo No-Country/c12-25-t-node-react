@@ -40,7 +40,7 @@ module.exports = (app) => {
     app.delete('/api/properties/:id/services', checkAuth, propertyServicesController.deletePropertyServices);
     //Property images routes
     app.post('/api/properties/:id/images', checkAuth, photosUpload, propertyPhotosController.createPropertyImages);
-    app.put('/api/properties/:id/images', checkAuth, propertyPhotosController.updatePropertyImages);
+    app.put('/api/properties/:id/images', checkAuth,  photosUpload, propertyPhotosController.updatePropertyImages);
     app.delete('/api/properties/:id/images', checkAuth, propertyPhotosController.deletePropertyImages);
     //Property rooms routes
     app.post('/api/properties/:id/rooms', checkAuth, propertyRoomsController.createPropertyRooms);
