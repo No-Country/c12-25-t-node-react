@@ -6,7 +6,7 @@ const propertyServicesController = require('../controllers/properties_services')
 const propertyPhotosController = require('../controllers/properties_photos');
 const propertyDetailController = require('../controllers/properties_details');
 const propertyRoomsController = require('../controllers/properties_rooms');
-
+const { avatarUpload, photosUpload } = require('../middleware/multer')
 const checkAuth = require('../middleware/checkAuth').checkAuth;
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
@@ -18,7 +18,7 @@ module.exports = (app) => {
     app.get('/api/me', authController.me);
     //User routes
     app.get('/api/users/list', checkAuth, userController.getUsers);
-    app.put('/api/users/update/:id', checkAuth, userController.updateUser);
+    app.put('/api/users/update/:id', checkAuth, avatarUpload, userController.updateUser);
     app.delete('/api/users/:id', checkAuth, userController.deleteUser);
     //Property routes
     app.get('/api/properties/list', propertyController.getProperties);
@@ -39,7 +39,7 @@ module.exports = (app) => {
     app.put('/api/properties/:id/services', checkAuth, propertyServicesController.updatePropertyServices);
     app.delete('/api/properties/:id/services', checkAuth, propertyServicesController.deletePropertyServices);
     //Property images routes
-    app.post('/api/properties/:id/images', checkAuth, propertyPhotosController.createPropertyImages);
+    app.post('/api/properties/:id/images', checkAuth, photosUpload, propertyPhotosController.createPropertyImages);
     app.put('/api/properties/:id/images', checkAuth, propertyPhotosController.updatePropertyImages);
     app.delete('/api/properties/:id/images', checkAuth, propertyPhotosController.deletePropertyImages);
     //Property rooms routes
