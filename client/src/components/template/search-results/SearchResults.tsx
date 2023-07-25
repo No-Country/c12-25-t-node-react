@@ -51,12 +51,22 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
     if (operationParam && operationParam === 'for_rent') setSelectedOperation(['Alquiler'])
     if (typeParam) setSelectedType(typeParam.split(','))
     if (cityParam) setSelectedCity(cityParam.split(','))
-    // TODO: actualizar al lista de propiedades acorde a los paramas
+    // TODO: actualizar al lista de propiedades acorde a los params
   }, [])
 
+  // TODO: Modificae el listado de propiedades acorde a lo seleccionado
   useEffect(() => {
-    //TODO: completar
-  }, [selectedOperation])
+    const filteredResults = estateDetails.filter((estate) => {
+      const matchesOperation = selectedOperation.length === 0 || selectedOperation.includes('Compra') || selectedOperation.includes('Venta')
+      const matchesCity = selectedCity.length === 0 || selectedCity.includes(estate.city);
+      const matchesType = selectedType.length === 0 || selectedType.includes(estate.property_type);
+      const matchesRoom = selectedRoom.length === 0 || selectedRoom.includes(estate.rooms.toString());
+      
+      return matchesOperation && matchesCity && matchesType && matchesRoom
+    })
+    console.log('filteredResults: ', filteredResults)
+    setSearchResults(filteredResults)
+  }, [selectedOperation, selectedCity, selectedType, selectedRoom])
 
   const handleClick = () => {
     // TODO: aca solo valido que si hace click en buscar al emnos elija los 3 primeros
@@ -127,6 +137,8 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
                 { estateDetails.length }
               </Box><Box component="span" > inmuebles</Box>
             </Typography>
+            {/* MUESTRO LOS ID PARA VER QUE SI SE ESTAN FILTRANDO POR QUERY PARAM O AL CAMBIAR LAS SELECCIONES */}
+            {searchResults.map(el=> <span key={el.estate_datail_id}>{el.estate_datail_id} / </span>)}
           </Grid>
         </Grid>
         {/* Cards with pagination*/ }
