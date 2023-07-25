@@ -10,9 +10,10 @@ import {
   SelectChangeEvent
 } from '@mui/material'
 import { stylesMultipleSelect } from './MultipleSelect.styles'
+import './MultipleSelect.css'
 
 const ITEM_HEIGHT = 40
-const ITEM_PADDING_TOP = 6
+const ITEM_PADDING_TOP = 4
 const MenuProps = {
   PaperProps: {
     style: {
@@ -53,6 +54,7 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({
         <InputLabel
           id={ `${ textToDisplay.toLowerCase() }-multiple-checkbox-label` }
           sx={ stylesMultipleSelect.inputLabel }
+          variant="outlined"
         >
           { textToDisplay }
         </InputLabel>

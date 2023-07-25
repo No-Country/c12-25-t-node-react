@@ -10,17 +10,16 @@ const useOptionsToSearch = (
   const [uniqueValues, setUniqueValues] = useState<any[]>([])
 
   useEffect(() => {
-    // Creamos un Set para almacenar los valores únicos de la clave
+    // A Set to store the unique values of the object keys 
     const uniqueValuesSet = new Set()
-    // Iteramos sobre el array de objetos EstateDetail
     estateDetails.forEach((estate) => {
-      // Obtenemos el valor de la clave específica y lo agregamos al Set
+      // Get the value of an specific key and add to Set
       uniqueValuesSet.add(estate[key])
     })
 
-    // Convertimos el Set a un array
+    // Transformt the Set into an array
     const uniqueValuesArray = Array.from(uniqueValuesSet)
-    // Actualizamos el estado con los valores únicos de la clave
+    // Update state
     setUniqueValues(uniqueValuesArray)
   }, [key, estateDetails])
 

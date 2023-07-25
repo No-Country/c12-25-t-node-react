@@ -9,48 +9,64 @@ import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
 import MultipleSelect from '../../molecule/multiple-select/MultipleSelect'
 import SearchIcon from '@mui/icons-material/Search'
 import { stylesSearchResults } from './SearchResults.styles'
+import { useSpinner } from '../../../context/SpinnerProvider'
+import { useEstateDetails } from '../../../store/database'
+import SkeletonMessage from '../../atom/SkeletonMessage'
+import { useSnackbar } from 'notistack'
 
 type SearchResultsProps = {
-  results: EstateDetail[]
-  setSearchResults: React.Dispatch<React.SetStateAction<EstateDetail[]>>
 }
 
-const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
-  const [searchResults, setSearchResults] = useState<EstateDetail[]>(results)
-  const [selectedOperation, setSelectedOperation] = useState<string[]>([])
-  const [selectedCity, setSelectedCity] = useState<string[]>([])
-  const [selectedType, setSelectedType] = useState<string[]>([])
-  const [selectedRoom, setSelectedRoom] = useState<string[]>([])
-  /**
-   *  Using the custom hook useOptionsToSearch to obtain an array of options
-   *  to be display in the select
-   */
-  const cityOptions: string[] = useOptionsToSearch('city', searchResults)
-  const typeOptions: string[] = useOptionsToSearch('property_type', searchResults)
-  const bedroomsOptions: string[] = useOptionsToSearch('bedrooms', searchResults)
-  /* 
-  * Set the default values if the user come from the Home Page Search
-  *using the query params
-  */
+const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
   const [params] = useSearchParams()
   const operationParam = params.get('operation')
   const typeParam = params.get('type')
   const cityParam = params.get('city')
 
+  const { enqueueSnackbar } = useSnackbar()
+  const { addLoading, removeLoading } = useSpinner()
+  const { estateDetails, getEstateDetails } = useEstateDetails() 
+
+  const [searchResults, setSearchResults] = useState<EstateDetail[]>([])
+
+  const [selectedOperation, setSelectedOperation] = useState<string[]>([])
+  const [selectedCity, setSelectedCity] = useState<string[]>([])
+  const [selectedType, setSelectedType] = useState<string[]>([])
+  const [selectedRoom, setSelectedRoom] = useState<string[]>([])
+  /**
+   * Using the custom hook useOptionsToSearch to obtain 
+   * an array of options to be display in the select
+   */
+  const cityOptions: string[] = useOptionsToSearch('city', estateDetails)
+  const typeOptions: string[] = useOptionsToSearch('property_type', estateDetails)
+  const bedroomsOptions: string[] = useOptionsToSearch('bedrooms', estateDetails)
+
   useEffect(() => {
+    // Set the list of states from Firebase and Zustand store
+    addLoading()
+    getEstateDetails()
+    removeLoading()
+    // Set the default values if the user comes from the HomePage, using the query params
     if (operationParam && operationParam === 'for_sale') setSelectedOperation(['Venta'])
     if (operationParam && operationParam === 'for_rent') setSelectedOperation(['Alquiler'])
     if (typeParam) setSelectedType(typeParam.split(','))
     if (cityParam) setSelectedCity(cityParam.split(','))
+    // TODO: actualizar al lista de propiedades acorde a los paramas
   }, [])
 
   useEffect(() => {
-    const resultsBySelectedOperationSale = results.filter(result => result.for_sale === true && selectedOperation.includes('Venta'))
-    const resultsBySelectedOperationRent = results.filter(result => result.for_rent === true && selectedOperation.includes('Alquler'))
-    console.log(resultsBySelectedOperationRent, resultsBySelectedOperationSale)
+    //TODO: completar
   }, [selectedOperation])
 
-  const handleClick = () => { console.log('handleClick: ', selectedOperation, selectedCity, selectedType, selectedRoom) }
+  const handleClick = () => {
+    if (selectedOperation.length === 0 ||
+      selectedCity.length === 0 ||
+      selectedType.length === 0) {
+      enqueueSnackbar('¡Debes elegir: operación, zona y tipo de propiedad!', {
+        variant: 'error',
+      })
+    }
+  }
 
   return (
     <>
@@ -78,7 +94,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
-              textToDisplay="Inmueble"
+              textToDisplay="Tipo de propiedad"
               listOptions={ typeOptions }
               options={ selectedType }
               setOptions={ setSelectedType }
@@ -106,14 +122,18 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
           <Grid item xs={ 12 }>
             <Typography sx={ stylesSearchResults.totalList }>
               <Box component="span" sx={ stylesSearchResults.totalListSpan }>
-                { searchResults.length }
-              </Box>{ ' ' }
-              inmuebles
+                { estateDetails.length }
+              </Box><Box component="span" > inmuebles</Box>
             </Typography>
           </Grid>
         </Grid>
         {/* Cards with pagination*/ }
-        <CardsWithPagination list={ searchResults } />
+        { estateDetails.length === 0 ?
+          <SkeletonMessage messageText="Sin propiedades para mostrar" />
+          :
+          <CardsWithPagination list={ estateDetails } />
+        }
+
       </Container>
     </>
   )
