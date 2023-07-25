@@ -26,8 +26,8 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
   const { enqueueSnackbar } = useSnackbar()
   const { addLoading, removeLoading } = useSpinner()
   const { estateDetails, getEstateDetails } = useEstateDetails() 
-
-  const [searchResults, setSearchResults] = useState<EstateDetail[]>([])
+  // TODO: estado para ir actualizando las propiedades a mostrar acorde a los filtros
+  const [searchResults, setSearchResults] = useState<EstateDetail[]>([]) 
 
   const [selectedOperation, setSelectedOperation] = useState<string[]>([])
   const [selectedCity, setSelectedCity] = useState<string[]>([])
@@ -59,6 +59,8 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
   }, [selectedOperation])
 
   const handleClick = () => {
+    // TODO: aca solo valido que si hace click en buscar al emnos elija los 3 primeros
+    // falta setear el listado para que filtre
     if (selectedOperation.length === 0 ||
       selectedCity.length === 0 ||
       selectedType.length === 0) {
