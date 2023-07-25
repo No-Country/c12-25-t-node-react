@@ -9,6 +9,7 @@ import {
   Select,
   SelectChangeEvent
 } from '@mui/material'
+import { stylesMultipleSelect } from './MultipleSelect.styles'
 
 const ITEM_HEIGHT = 40
 const ITEM_PADDING_TOP = 6
@@ -30,10 +31,10 @@ interface MultipleSelectProps {
 
 /**
  * A MultipleSelect component to be used in a search
- * @param textToDisplay: the string to display at the top of the select 
- * @param listOptions: the list of options to select
- * @param options: the state to keep the options selected
- * @param setOptions: the SetStateAction to update the options selected
+ * @prop textToDisplay: the string to display at the top of the select 
+ * @prop listOptions: the list of options to select
+ * @prop options: the state to keep the options selected
+ * @prop setOptions: the SetStateAction to update the options selected
  */
 const MultipleSelect: React.FC<MultipleSelectProps> = ({
   textToDisplay,
@@ -48,20 +49,10 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({
 
   return (
     <div>
-      <FormControl
-        sx={ {
-          margin: '20px auto 10px',
-          width: { xs: '270px', sm: '360px', md: '180px' }
-        } }
-      >
+      <FormControl sx={ stylesMultipleSelect.formcontrol }>
         <InputLabel
           id={ `${ textToDisplay.toLowerCase() }-multiple-checkbox-label` }
-          sx={ {
-            top: '-10px',
-            color: 'var(--primary)',
-            fontWeight: '600',
-            fontSize: '16px'
-          } }
+          sx={ stylesMultipleSelect.inputLabel }
         >
           { textToDisplay }
         </InputLabel>

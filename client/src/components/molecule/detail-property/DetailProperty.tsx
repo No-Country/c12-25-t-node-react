@@ -24,6 +24,7 @@ import {
   ToileteIcon,
   YearsIcon
 } from '../../atom/Icons'
+import { stylesDetailProperty  } from './DetailProperty.styles'
 
 type DetailPropertyProps = {
   totalArea: number
@@ -82,7 +83,7 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
           <Typography sx={ { padding: '16px' } }> { zone } </Typography>
         </Grid>
         <Grid item xs={ 12 } md={ 8 }>
-          <Paper elevation={ 8 } sx={ styles.paper } >
+          <Paper elevation={ 8 } sx={ stylesDetailProperty.paper } >
             <Grid container spacing={ 1 }>
               <Grid item xs={ 6 } sm={ 4 } md={ 3 }>
                 <Typography fontSize={ 12 }><AreaIcon /> { totalArea } m2 totales</Typography>
@@ -135,13 +136,13 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
             </Grid>
             <Typography sx={ { padding: '1rem 0rem 0.5rem' } }><ServicesIcon /> Servicios</Typography>
             {
-              services && <Typography sx={ styles.services }>
+              services && <Typography sx={ stylesDetailProperty.services }>
                 { services.map(service => <Box component="span" sx={ { paddingRight: '1rem' } } key={ service }>{ service }</Box>) }
               </Typography>
             }
             <Typography sx={ { paddingTop: '1rem' } }><RoomSofaIcon /> Ambientes</Typography>
             {
-              roomArray && <Typography sx={ styles.services }>
+              roomArray && <Typography sx={ stylesDetailProperty.services }>
                 { roomArray.map(room => <Box component="span" sx={ { paddingRight: '1rem' } } key={ `12-${ room }` }>{ room }</Box>) }
               </Typography>
             }
@@ -153,20 +154,3 @@ const DetailProperty: React.FC<DetailPropertyProps> = ({
 }
 
 export default DetailProperty
-
-const styles = {
-  services: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    fontSize: '12px'
-  },
-  paper: {
-    borderRadius: '1rem',
-    padding: '1rem 1rem 1.75rem',
-    marginTop: '1rem'
-  }
-}

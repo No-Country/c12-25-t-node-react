@@ -15,6 +15,8 @@ import DeckIcon from '@mui/icons-material/Deck'
 import BalconyIcon from '@mui/icons-material/Balcony'
 import SoapIcon from '@mui/icons-material/Soap'
 import WarehouseIcon from '@mui/icons-material/Warehouse'
+import LogoutIcon from '@mui/icons-material/Logout'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 export const AreaIcon = () => {
   return <CropSquareIcon color="secondary" />
@@ -81,4 +83,12 @@ export const ToileteIcon = () => {
 
 export const YearsIcon = () => {
   return <CalendarMonthIcon color="secondary" />
+}
+
+export const LogoutIconMenu = () => {
+  return <LogoutIcon />
+}
+
+export const FavoriteIconMenu = () => {
+  return <FavoriteIcon />
 }

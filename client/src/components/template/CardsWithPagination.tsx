@@ -7,6 +7,7 @@ import {
 import FeaturedCard from "../molecule/FeaturedCard"
 import { useState } from 'react'
 import { EstateDetail } from '../../model/estate-detail'
+import { stylesCardsWithPagination} from './CardsWithPagination.styles'
 
 type CardsWithPaginationProps = {
   list: EstateDetail[]
@@ -18,14 +19,12 @@ const CardsWithPagination: React.FC<CardsWithPaginationProps> = ({list}) => {
 
   return (
     <Container maxWidth='lg'>
-      <Grid container sx={ styles.cardContainer } className="featured-card-container" >
+      <Grid container sx={ stylesCardsWithPagination.cardContainer } className="featured-card-container" >
           { cardsList && cardsList.slice((page - 1) * 12, page * 12).map((result, index) => {
             return (
               <Grid
                 item
-                xs={ 12 }
-                sm={ 4 }
-                md={ 3 }
+                xs={ 12 } sm={ 4 } md={ 3 }
                 key={ `result-${ index }` }
                 sx={ { margin: '8px 6px' } }
                 className="featured-card-item"
@@ -36,8 +35,8 @@ const CardsWithPagination: React.FC<CardsWithPaginationProps> = ({list}) => {
           }
           ) }
         </Grid>
-        <Grid item xs={ 12 } sx={ { padding: '2rem 0.5rem 4rem' } } >
-          <Stack spacing={ 2 } sx={ styles.stack } >
+        <Grid item xs={ 12 } sx={ stylesCardsWithPagination.grid } >
+          <Stack spacing={ 2 } sx={ stylesCardsWithPagination.stack } >
             <Pagination
               count={ Math.ceil(cardsList.length / 12) }
               page={ page }
@@ -54,19 +53,3 @@ const CardsWithPagination: React.FC<CardsWithPaginationProps> = ({list}) => {
 }
 
 export default CardsWithPagination
-
-const styles = {
-  cardContainer: {
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: '2rem'
-  },
-  stack: {
-    display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    justifyContent: 'center',
-  }
-}

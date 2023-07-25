@@ -3,6 +3,7 @@ import {
   TextField,
   Typography
 } from '@mui/material'
+import { stylesInputForm} from './InputForm.styles'
 
 interface InputProps {
   inputLabel: string
@@ -25,9 +26,7 @@ const InputForm: React.FC<InputProps> = ({
 }) => {
   return (
     <Box sx={ { marginBottom: '23px' } }>
-      <Typography variant="body1" sx={ styleText }>
-        { labelText }
-      </Typography>
+      <Typography variant="body1" sx={ stylesInputForm.text }>{ labelText }</Typography>
       <TextField
         label={ inputLabel }
         name={ inputName }
@@ -43,11 +42,3 @@ const InputForm: React.FC<InputProps> = ({
 }
 
 export default InputForm
-
-const styleText = {
-  color: '#0C0C39',
-  fontSize: '16px',
-  fontWeight: '600',
-  textAlign: 'left',
-  padding: '0px 2px 6px'
-}

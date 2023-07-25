@@ -1,17 +1,8 @@
 import { useState } from 'react'
 import { Button, ButtonProps } from '@mui/material'
+import { colorBtn, sizeBtn, variantBtn } from '../../utils/types'
 
 const [isPressed, setIsPressed] = useState(false)
-type variantBtn = 'contained' | 'outlined' | 'text'
-type sizeBtn = 'small' | 'medium' | 'large'
-type colorBtn =
-  | 'inherit'
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'error'
-  | 'info'
-  | 'warning'
 
 interface TabButtonProps extends ButtonProps {
   text: string

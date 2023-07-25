@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
   Box,
@@ -17,11 +17,10 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import PrimaryButton from '../../atom/PrimaryButton'
-import './featuredAcordion.styles.css'
 import { EstateDetail } from '../../../model/estate-detail'
 import SkeletonMessage from '../../atom/SkeletonMessage'
 import { useEstateDetails } from '../../../store/database'
-import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
+import { stylesFeaturedAcordion } from './FeaturedAcordion.styles'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -60,14 +59,14 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
 
   return (
     <Container maxWidth="lg" sx={{ marginTop: isMd ? '10rem' : '6rem' }}>
-      <Box sx={styles.box}>
+      <Box sx={stylesFeaturedAcordion.box}>
         <Typography variant="h2" sx={{ alignSelf: 'center' }}>
           Destacados en<span style={{ fontWeight: '800' }}> {textTitle}</span>
         </Typography>
         <PrimaryButton
           text="Ver todos"
           variant="outlined"
-          sx={styles.button}
+          sx={stylesFeaturedAcordion.button}
           onClick={handleClick}
         />
       </Box>
@@ -119,18 +118,4 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
 
 export default FeaturedAcordion
 
-const styles = {
-  button: {
-    display: 'inline-block',
-    paddingY: 0.5,
-    paddingX: 1,
-    fontSize: '0.8rem',
-    borderRadius: 3,
-    minWidth: '94px',
-  },
-  box: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginBottom: 2,
-  },
-}
+

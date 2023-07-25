@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
 import {
-  Button,
   Divider,
   Menu,
   MenuItem,
@@ -8,9 +8,8 @@ import {
   useTheme
 } from '@mui/material'
 import { useUserStore } from '../../store/auth'
-import { useNavigate } from 'react-router-dom'
-import LogoutIcon from '@mui/icons-material/Logout'
-import FavoriteIcon from '@mui/icons-material/Favorite'
+import { FavoriteIconMenu, LogoutIconMenu } from './Icons'
+import PrimaryButton from './PrimaryButton'
 
 const DropdownButton: React.FC = () => {
   const navigate = useNavigate()
@@ -19,19 +18,25 @@ const DropdownButton: React.FC = () => {
   const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
   }
-  const handleMenuClose = () => setAnchorEl(null)
-  const handleLogOut = () => {
-    logOut()
-    navigate('/')
-  }
+
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
 
+  const handleMenuClose = () => setAnchorEl(null)
+  const handleLogOut = () => { logOut(); navigate('/') }
+  const handleToHome = () => { handleMenuClose(); navigate('/') }
+  const handleToSearch = () => { handleMenuClose(); navigate('/search') }
+  const handleToAbout = () => { handleMenuClose(); navigate('/about') }
+  const handleToContact = () => { handleMenuClose(); navigate('/contact') }
+  const handleToFavorites = () => { handleMenuClose(); navigate('/favorites') }
+
   return (
     <>
-      <Button onClick={ handleButtonClick } variant="contained" color="primary">
-        Mi Cuenta
-      </Button>
+      <PrimaryButton
+        text='Mi cuenta'
+        onClick={ handleButtonClick }
+        sx={ { margin: '6px' } }
+      />
       <Menu
         anchorEl={ anchorEl }
         open={ Boolean(anchorEl) }
@@ -39,38 +44,19 @@ const DropdownButton: React.FC = () => {
       >
         { isMd &&
           <div>
-            <MenuItem onClick={ () => {
-              handleMenuClose()
-              navigate('/')
-            } }>Home</MenuItem>
+            <MenuItem onClick={ handleToHome }>Home</MenuItem>
             <Divider />
-            <MenuItem onClick={ () => {
-              handleMenuClose()
-              navigate('/search')
-            } }>Propiedades</MenuItem>
+            <MenuItem onClick={ handleToSearch }>Propiedades</MenuItem>
             <Divider />
-            <MenuItem onClick={ () => {
-              handleMenuClose()
-              navigate('/about')
-            } }>Quienes somos</MenuItem>
+            <MenuItem onClick={ handleToAbout }>Quienes somos</MenuItem>
             <Divider />
-            <MenuItem onClick={ () => {
-              handleMenuClose()
-              navigate('/contact')
-            } }>Contacto</MenuItem>
+            <MenuItem onClick={ handleToContact }>Contacto</MenuItem>
             <Divider />
           </div>
         }
-        <MenuItem onClick={ () => {
-          handleMenuClose()
-          navigate('/favorites')
-        } }>
-          <FavoriteIcon /> Mis favoritos
-        </MenuItem>
+        <MenuItem onClick={ handleToFavorites }><FavoriteIconMenu />Mis favoritos</MenuItem>
         <Divider />
-        <MenuItem onClick={ handleLogOut }>
-          <LogoutIcon /> Cerrar sesión
-        </MenuItem>
+        <MenuItem onClick={ handleLogOut }><LogoutIconMenu />Cerrar sesión</MenuItem>
       </Menu>
     </>
   )

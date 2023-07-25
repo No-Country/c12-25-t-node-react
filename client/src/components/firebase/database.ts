@@ -40,9 +40,7 @@ async function getAllEstateDetails(): Promise<EstateDetail[]> {
   }
 }
 
-async function getEstateDetailById(
-  estateId: number
-): Promise<EstateDetail | null> {
+async function getEstateDetailById(estateId: number): Promise<EstateDetail | null> {
   try {
     const estateRef = doc(estatesDetailCollection, estateId.toString())
 
@@ -69,7 +67,6 @@ async function getEstateDetailById(
 
 //   try {
 //     const jsonData = JSON.parse(data);
-
 //     async function uploadDataToFirestore() {
 //       try {
 //         for (const estateDetail of jsonData.estates_detail) {
