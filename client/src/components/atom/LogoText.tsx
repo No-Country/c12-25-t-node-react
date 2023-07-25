@@ -1,8 +1,10 @@
-import { Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { Typography } from '@mui/material'
+import { variantText } from '../../utils/types'
+import { stylesLogoText } from './LogoText.styles'
 
 type LogoTextProps = {
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
+  variant?:variantText
   white?: boolean
 }
 
@@ -11,13 +13,7 @@ const LogoText: React.FC<LogoTextProps> = ({
   white
 }) => {
   return (
-    <Typography
-      variant={ variant ? variant : 'h4' }
-      sx={ {
-        fontWeight: '900',
-        fontSize: '1.5rem',
-      } }
-    >
+    <Typography variant={ variant ? variant : 'h4' } sx={ stylesLogoText.text } >
       <Link
         to="/"
         className="link-logo"

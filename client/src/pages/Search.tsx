@@ -4,22 +4,20 @@ import searchBanner from '../assets/search-banner.png'
 import BackButton from '../components/atom/BackButton'
 import SearchResults from '../components/template/search-results/SearchResults'
 import jsonData from '../api/state-detail-mock.json'
-import { EstateDetail } from '../model/estate-detail'
+import { useSearchParams } from 'react-router-dom'
 
-type SearchProps = {
-}
+type SearchProps = {}
 
 const Search: React.FC<SearchProps> = () => {
-  const [searchResults, setSearchResults] = useState<EstateDetail[]>(jsonData.estates_detail)
-
+  const [params] = useSearchParams()
+  console.log(params.get('operation'))
+  console.log(params.get('type'))
+  console.log(params.get('city'))
   return (
     <section>
       <BackButton />
-      <BannerAndBackgroundPage
-        imgSrc={ searchBanner }
-        imgHeight="280px"
-      />
-      <SearchResults results={ searchResults } setSearchResults={setSearchResults}/>
+      <BannerAndBackgroundPage imgSrc={searchBanner} imgHeight="280px" />
+      <SearchResults results={jsonData.estates_detail} />
     </section>
   )
 }

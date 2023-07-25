@@ -1,8 +1,6 @@
 import { ReactNode, useState } from 'react'
-import {
-  Box,
-  ListItemButton,
-} from '@mui/material'
+import { Box, ListItemButton } from '@mui/material'
+import { stylesListItemButtonOptions } from './ListItemButtonOptions.styles'
 
 interface ListItemButtonOptionsProps {
   children?: ReactNode
@@ -15,15 +13,10 @@ const ListItemButtonOptions: React.FC<ListItemButtonOptionsProps> = ({
   const handleClick = () => setOpen(!open)
 
   return (
-    <ListItemButton
+    <ListItemButton sx={ stylesListItemButtonOptions.ListItemBtn }
       onClick={ handleClick }
-      sx={ {
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column'
-      } }
     >
-      <Box sx={ styles.boxContainer }>
+      <Box sx={ stylesListItemButtonOptions.boxContainer }>
         { children }
       </Box>
     </ListItemButton>
@@ -32,14 +25,3 @@ const ListItemButtonOptions: React.FC<ListItemButtonOptionsProps> = ({
 
 export default ListItemButtonOptions
 
-const styles = {
-  boxContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignContent: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%'
-  }
-}

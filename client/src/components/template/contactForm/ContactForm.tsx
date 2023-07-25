@@ -2,7 +2,6 @@ import { useState } from 'react'
 import {
   Box,
   TextField,
-  Button,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -17,6 +16,7 @@ import {
 import InputForm from '../../atom/InputForm'
 import PrimaryButton from '../../atom/PrimaryButton'
 import './ContactForm.styles.css'
+import { stylesContactForm } from './ContactForm.styles'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState<FormDetail>(InitialState)
@@ -44,7 +44,6 @@ const ContactForm = () => {
     if (!formData.fullName) {
       errors.fullName = 'El nombre es obligatorio'
     }
-
 
     if (!formData.phone) {
       errors.phone = 'El teléfono es obligatorio'
@@ -76,22 +75,9 @@ const ContactForm = () => {
 
   return (
     <Box>
-      <Box
-        sx={ {
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1rem',
-          padding: '1rem'
-        } }
-      >
+      <Box sx={ stylesContactForm.boxPrimary } >
         <form onSubmit={ handleSubmit } className='formContact'>
-          <Box
-            sx={ {
-              width: '350px',
-              display: 'flex',
-              flexDirection: 'column',
-              marginRight: '5px'
-            } }>
+          <Box sx={ stylesContactForm.boxContainer }>
             <InputForm
               inputLabel='Ingresá tu Nombre y Apellido'
               inputName='fullName'
@@ -120,8 +106,8 @@ const ContactForm = () => {
               labelText='Correo Electrónico'
             />
           </Box>
-          <Box sx={ { width: '350px', height: '100%' } }>
-            <Typography variant="body1" sx={ styleText }>
+          <Box sx={ stylesContactForm.box }>
+            <Typography variant="body1" sx={ stylesContactForm.text }>
               Mensaje
             </Typography>
             <TextField
@@ -139,7 +125,7 @@ const ContactForm = () => {
             />
           </Box>
         </form>
-        <Box sx={ styleButton }>
+        <Box sx={ stylesContactForm.button }>
           <PrimaryButton
             text='Enviar consulta'
             onClick={ handleSubmit }
@@ -156,29 +142,12 @@ const ContactForm = () => {
         <DialogContent>
           <p>Gracias por contactarnos. Pronto nos pondremos en contacto contigo.</p>
         </DialogContent>
-        <DialogActions sx={ { padding: '0.75rem 1.5rem 1.75rem' } }>
+        <DialogActions sx={ stylesContactForm.dialogActions }>
           <PrimaryButton text='Cerrar' onClick={ handleCloseModal } />
         </DialogActions>
       </Dialog>
     </Box>
   );
-};
-
-export default ContactForm;
-
-const styleText = {
-  color: '#0C0C39',
-  fontSize: '16px',
-  fontWeight: '600',
-  textAlign: 'left',
-  padding: '0px 2px 6px'
 }
 
-const styleButton = {
-  display: 'flex',
-  justifyContent: 'center',
-  paddingRight: { 
-    xs: '0', 
-    md: '1.1rem' 
-  }
-}
+export default ContactForm

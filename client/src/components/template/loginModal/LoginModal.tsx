@@ -23,6 +23,7 @@ import { useSnackbar } from 'notistack'
 import { useUserStore } from '../../../store/auth'
 import loginBanner from '../../../assets/loginBanner.png'
 import RegisterModal from '../registerModal/RegisterModal'
+import { stylesLoginModal } from './LoginModal.styles'
 
 const RootFormControl = styled(FormControl)(() => ({
   '& .MuiOutlinedInput-root': {
@@ -105,96 +106,34 @@ const LoginModal: React.FC<LoginModalProps> = ({
 
   return (
     <Container maxWidth='lg'>
-      <Grid container
-        sx={ {
-          marginTop: '14rem',
-          minHeight: '80vh',
-          maxWidth: '1200px',
-          marginBottom: '4rem'
-        } }
-      >
-        <Grid item
-          xs={ 12 }
-          md={ 6 }
-          sx={ {
-            display: { xs: 'none', md: 'flex' }
-          } }>
+      <Grid container sx={ stylesLoginModal.container } >
+        <Grid item xs={ 12 } md={ 6 } sx={ stylesLoginModal.item }>
           <Box
             component="img"
             src={ loginBanner }
-            sx={ {
-              height: '90%',
-              width: { xs: '300px', md: '800px', lg: '1000px' },
-              borderRadius: 3,
-            } }
+            sx={ stylesLoginModal.gridBox }
             alt="Cocina liminosa con isla"
           />
         </Grid>
-        <Grid item
-          xs={ 12 }
-          md={ 6 }
-        >
-          <Box
-            sx={ {
-              backgroundColor: 'white',
-              minHeight: '460px',
-              width: { xs: '95%', sm: '80%', md: '90%' },
-              margin: '0.25rem auto',
-              padding: '0.75rem 0.75rem 2rem',
-              borderRadius: 3,
-              boxShadow: '2px 6px 12px grey'
-            } }
-          >
-            <Box
-              sx={ {
-                display: { xs: 'none', md: 'flex' },
-                alignItems: 'flex-start'
-              } }>
+        <Grid item xs={ 12 } md={ 6 } >
+          <Box sx={ stylesLoginModal.box1 } >
+            <Box sx={ stylesLoginModal.box2 }>
               <LogoText />
             </Box>
             <Box
               component="form"
               //onSubmit={handleLogIn}
               onSubmit={ formik.handleSubmit }
-              sx={ {
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                mt: 2,
-              } }
+              sx={ stylesLoginModal.boxForm }
             >
-              <Typography
-                component="p"
-                sx={ {
-                  fontSize: '1.5rem',
-                  paddingBottom: '0.75rem'
-                } }
-              >
+              <Typography sx={ stylesLoginModal.text }>
                 Ingresá a <strong>tu cuenta</strong>
               </Typography>
-              <Typography
-                sx={ {
-                  padding: '1rem 0.75rem',
-                  textAlign: 'center',
-                  lineHeight: '1.5',
-                  maxWidth: '600px'
-                } }
-              >
-                Vas a poder agregar tus propiedades favoritas en tu perfil y
-                realizar el seguimiento de todas tus consultas.
+              <Typography sx={ stylesLoginModal.textSmall }>
+                Vas a poder agregar tus propiedades favoritas en tu perfil y realizar el seguimiento de todas tus consultas.
               </Typography>
-              <RootFormControl sx={ { width: '90%', maxWidth: '580px' } }>
-                <FormHelperText
-                  id="emailLoginInput"
-                  sx={ {
-                    mt: 3,
-                    mb: 1,
-                    mx: 0,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    fontSize: '1rem',
-                  } }
-                >
+              <RootFormControl sx={ stylesLoginModal.rootFormControl }>
+                <FormHelperText id="emailLoginInput" sx={ stylesLoginModal.formHelperText } >
                   Correo electrónico
                 </FormHelperText>
                 <TextField
@@ -219,17 +158,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
                       { formik.errors.emailLoginInput }
                     </Typography>
                   ) }
-                <FormHelperText
-                  id="passwordLoginInput"
-                  sx={ {
-                    mt: 2,
-                    mb: 1,
-                    mx: 0,
-                    fontWeight: 'bold',
-                    color: 'black',
-                    fontSize: '1rem',
-                  } }
-                >
+                <FormHelperText id="passwordLoginInput" sx={ stylesLoginModal.formHelperText } >
                   Contraseña
                 </FormHelperText>
                 <TextField
@@ -264,14 +193,9 @@ const LoginModal: React.FC<LoginModalProps> = ({
                   sx={ { minWidth: '238px', margin: '0.5rem auto' } }
                 />
               </RootFormControl>
-              <Button
+              <Button 
                 variant="outlined"
-                sx={ {
-                  m: 2,
-                  padding: '1rem',
-                  borderRadius: '16px',
-                  minWidth: '238px'
-                } }
+                sx={stylesLoginModal.btn }
                 onClick={ handleLoginWithGoogle }
               >
                 <GoogleIcon /> Ingresar con Google
