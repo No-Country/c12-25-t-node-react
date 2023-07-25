@@ -1,45 +1,70 @@
-import create from 'zustand'
+import { create } from 'zustand'
 import { EstateDetail } from '../model/estate-detail'
 import { getAllEstateDetails } from '../components/firebase/database'
-import { useEffect } from 'react'
-import { useSpinner } from '../context/SpinnerProvider'
 
 interface EstateDetailsState {
   estateDetails: EstateDetail[]
   open: boolean
   setOpen: (open: boolean) => void
-  addEstateDetails: (details: EstateDetail[]) => void
+  //addEstateDetails: (details: EstateDetail[]) => void
+  getEstateDetails: () => void
 }
-
-const useEstateDetailsStore = create<EstateDetailsState>((set) => ({
+// export const useEstateDetails = create<EstateDetailsState>((set) => ({
+//   estateDetails: [],
+//   open: false,
+//   setOpen: (open) => set({ open }),
+//   addEstateDetails: async () => {
+//     const { addLoading, removeLoading } = useSpinner()
+//     try {
+//       addLoading()
+//       const estateDetails = await getAllEstateDetails()
+//       set({ estateDetails: estateDetails })
+//       removeLoading()
+//     } catch (error) {
+//       console.log(error)
+//     }
+//   },
+// }))
+export const useEstateDetails = create<EstateDetailsState>((set) => ({
   estateDetails: [],
   open: false,
   setOpen: (open) => set({ open }),
-  addEstateDetails: (details) =>
-    set((state) => ({ estateDetails: [...state.estateDetails, ...details] })),
+  getEstateDetails: async () => {
+    //const { addLoading, removeLoading } = useSpinner()
+    try {
+      //addLoading()
+      const estates = await getAllEstateDetails()
+      set((state) => ({ ...state, estateDetails: estates }))
+      //removeLoading()
+    } catch (error) {
+      console.log(error)
+    }
+  },
+  // addEstateDetails: (details) =>
+  //   set((state) => ({ estateDetails: [...state.estateDetails, ...details] })),
 }))
 
-export function useEstateDetails() {
-  const { estateDetails, open, setOpen, addEstateDetails } =
-    useEstateDetailsStore()
-  const { addLoading, removeLoading } = useSpinner()
+// export function useEstateDetails() {
+//   const { estateDetails, open, setOpen, addEstateDetails } =
+//     useEstateDetailsStore()
+//   const { addLoading, removeLoading } = useSpinner()
 
-  const handleClickAlert = () => setOpen(true)
+//   const handleClickAlert = () => setOpen(true)
 
-  useEffect(() => {
-    const fetchEstateDetails = async () => {
-      addLoading()
-      try {
-        const details = await getAllEstateDetails()
-        addEstateDetails(details)
-      } catch (error) {
-        handleClickAlert()
-      } finally {
-        removeLoading()
-      }
-    }
-    fetchEstateDetails()
-  }, [addEstateDetails])
+//   useEffect(() => {
+//     const fetchEstateDetails = async () => {
+//       addLoading()
+//       try {
+//         const details = await getAllEstateDetails()
+//         addEstateDetails(details)
+//       } catch (error) {
+//         handleClickAlert()
+//       } finally {
+//         removeLoading()
+//       }
+//     }
+//     fetchEstateDetails()
+//   }, [addEstateDetails])
 
-  return { estateDetails, open, setOpen }
-}
+//   return { estateDetails, open, setOpen }
+// }

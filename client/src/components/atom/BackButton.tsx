@@ -5,12 +5,19 @@ import {
   ButtonProps
 } from '@mui/material'
 import { colorBtn, variantBtn } from '../../utils/types'
-
+import{ styleBackButton } from  './BackButton.styles'
 interface BackButtonProps extends ButtonProps {
   variant?: variantBtn
   colorBtn?: colorBtn
 }
 
+/**
+ * ackButton, a component to go to the previous page
+ * @prop variant: by default it's contained, with a backgorund color,
+ *  * it can be customized
+ * @prop colorBtn: by default the background color of the button it's primary(blue),
+ * it can be customized
+ */
 const BackButton: React.FC<BackButtonProps> = ({
   variant,
   colorBtn,
@@ -20,18 +27,12 @@ const BackButton: React.FC<BackButtonProps> = ({
   const handleClick = () => navigate(-1)
 
   return (
-    <Box
-      sx={ { padding: '1rem 1.25rem', position: 'absolute', zIndex: '2'} }
-    >
+    <Box sx={ styleBackButton.box } >
         <Button
           variant={ variant ? variant : 'contained' }
           size='medium'
           color={ colorBtn ? colorBtn : 'primary' }
-          sx={ {
-            padding: '8px 16px',
-            borderRadius: '16px',
-            margin: '5rem 0rem 1rem'
-          } }
+          sx={ styleBackButton.button }
           onClick={ handleClick }
           aria-label='Volver a la página anterior'
           { ...props }

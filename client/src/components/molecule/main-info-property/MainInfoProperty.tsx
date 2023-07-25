@@ -22,6 +22,7 @@ import PrimaryButton from '../../atom/PrimaryButton'
 import './MainInfoProperty.style.css'
 import { EstatePhoto } from '../../../model/estate-detail'
 import ConfirmationModal from '../confirmation-modal/ConfirmationModal'
+import { stylesMainInfoProperty } from './MainInfoProperty.styles'
 
 type MainInfoPropertyProps = {
   address: string
@@ -64,14 +65,14 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
   return (
     <>
       <Grid container className="container-hero-detail">
-        <Grid item xs={ 10 } sm={ 6 } md={ 5 } sx={ styles.titles }>
+        <Grid item xs={ 10 } sm={ 6 } md={ 5 } sx={ stylesMainInfoProperty.titles }>
           <Typography variant="h2" sx={ { paddingBottom: '0.5rem' } }>{ address }</Typography>
           <Typography variant="h3" sx={ { fontWeight: '500' } }>{ name }</Typography>
         </Grid>
         <Grid item xs={ 12 } >
-          <Paper elevation={ 8 } sx={ styles.boxContainer } >
+          <Paper elevation={ 8 } sx={ stylesMainInfoProperty.boxContainer } >
             <Grid container className="paper-container">
-              <Grid item xs={ 12 } sm={ 8 } md={ 9 } sx={ styles.containerSliders } className="container-sliders" >
+              <Grid item xs={ 12 } sm={ 8 } md={ 9 } sx={ stylesMainInfoProperty.containerSliders } className="container-sliders" >
                 <Swiper
                   spaceBetween={ 10 }
                   navigation={ true }
@@ -117,32 +118,23 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                   )) }
                 </Swiper>
               </Grid>
-              <Grid item xs={ 12 } sm={ 4 } md={ 3 } sx={ styles.propertySummary } className="container-photos" >
+              <Grid item xs={ 12 } sm={ 4 } md={ 3 } sx={ stylesMainInfoProperty.propertySummary } className="container-photos" >
                 <Box>
-                  <Typography variant='h4' sx={ styles.containerPhotos }>
+                  <Typography variant='h4' sx={ stylesMainInfoProperty.containerPhotos }>
                     Precio de {forSale === true? 'venta': 'alquiler'}
                   </Typography>
-                  <Typography
-                    variant='h4'
-                    color='primary'
-                    align='left'
-                    sx={{fontWeight: '800'}}
-                  >
+                  <Typography variant='h4' color='primary' align='left' sx={{fontWeight: '800'}} >
                     {forSale === true? 'USD':'ARS'} { formatedPrice }
                   </Typography>
-                  <Typography variant='h4' sx={ styles.subtitle } > Esta propiedad ofrece </Typography>
+                  <Typography variant='h4' sx={ stylesMainInfoProperty.subtitle } > Esta propiedad ofrece </Typography>
                   <Typography sx={ { margin: '1rem 1rem 1rem 0rem' } }>
                     <span className="detail"><AreaIcon /> { totalArea } m2 totales </span><span className="detail"><BedRoomIcon /> { bedrooms } dormitorios </span><span className="detail"><BathRoomIcon /> { bathrooms } baños </span><span className="detail"><GarageIcon /> { garage } cocheras </span> { garden && <span className="detail"><GardenIcon /> jardín</span> }
                   </Typography>
                 </Box>
                 <Box>
-                  <PrimaryButton
+                  <PrimaryButton 
                     text="Realizar consultar"
-                    sx={ {
-                      minWidth: '140px',
-                      display: 'inline-block',
-                      width: '100%'
-                    } }
+                    sx={ stylesMainInfoProperty.primaryButton }
                     onClick={ handleClick }
                   />
                   <LocalizationProvider dateAdapter={ AdapterDayjs }>
@@ -162,64 +154,9 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
           </Paper>
         </Grid>
       </Grid>
-      <ConfirmationModal
-        selectedDate={ selectedDate!! }
-        openDialog={ openDialog }
-        handleCloseDialog={ handleCloseDialog }
-      />
+      <ConfirmationModal selectedDate={ selectedDate!! } openDialog={ openDialog } handleCloseDialog={ handleCloseDialog } />
     </>
   )
 }
 
 export default MainInfoProperty
-
-const styles = {
-  titles: {
-    background: '#0C0C39',
-    color: '#F5F5F5',
-    padding: '0.75rem 0.75rem 0.75rem 1.25rem',
-    borderRadius: '0.5rem 0.5rem 0rem 0rem'
-  },
-  boxContainer: {
-    borderRadius: '0rem 0.5rem 0.5rem 0.5rem',
-    padding: '0rem 0rem 1rem',
-    marginBottom: '3rem'
-  },
-  imgList: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexWwrap: 'wrap'
-  },
-  propertySummary: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'center',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    flexWwrap: 'wrap',
-    padding: '1rem'
-  },
-  containerSliders: {
-    marginBottom: '1rem',
-    maxHeight: '560px'
-  },
-  containerPhotos: {
-    textTransform: 'uppercase',
-    fontSize: '14px',
-    fontWeight: '700',
-    display: { 
-      xs: 'none', 
-      sm: 'none', 
-      md: 'block' 
-    },
-    marginBottom: '10px'
-  },
-  subtitle: {
-    fontSize: '14px',
-    display: { xs: 'none', sm: 'none', md: 'block' },
-    marginTop: '2.75rem'
-  }
-}

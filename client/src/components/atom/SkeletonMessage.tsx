@@ -12,8 +12,18 @@ const SkeletonMessage: React.FC<SkeletonMessageProps> = ({
 }) => {
   return (
     <>
-      <Skeleton variant="rectangular" animation="wave" width='90%' height={ 118 } sx={ { bgcolor: '#D8D8FB' } } />
-      { messageText && <Typography sx={ { textAlign: 'center' } }>{messageText}</Typography>}
+      <Skeleton
+        variant="rectangular"
+        animation="wave" width='90%'
+        height={ 118 }
+        sx={ { bgcolor: '#D8D8FB' } }
+      />
+      {
+        messageText &&
+        <Typography sx={ { textAlign: 'center' } }>
+          { messageText }
+        </Typography>
+      }
     </>
   )
 }

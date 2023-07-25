@@ -13,8 +13,8 @@ const Home: React.FC<HomeProps> = () => {
     <main>
       <HeroImage imgSrc={heroImageBanner} />
       <Searcher />
-      {/* <FeaturedAcordion textTitle="venta" />
-      <FeaturedAcordion textTitle="alquiler" /> */}
+      <FeaturedAcordion textTitle="venta" />
+      <FeaturedAcordion textTitle="alquiler" />
       <CallToActionContactForm imageUrl={ImageCtaLeft} textPosition={'left'} />
       <CallToActionContactForm
         imageUrl={ImageCtaRight}

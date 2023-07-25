@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { Box, Button, ButtonProps } from '@mui/material'
 import { colorBtn, sizeBtn, variantBtn } from '../../utils/types'
+import { stylesPrimaryButton } from './PrimaryButton.styles'
 
 interface PrimaryButtonProps extends ButtonProps {
   text: string
@@ -13,12 +14,12 @@ interface PrimaryButtonProps extends ButtonProps {
 
 /**
  * PrimaryButton is a custom button
- * @param text: Text to be display in the button
- * @param variant: by default it's countained, with a background color
- * @param size: by default it's medium
- * @param colorBtn: by default it's primary
- * @param icon: a component that displays an icon
- * @param textDisplay: by default the button has a text, but with an object and
+ * @prop text: Text to be display in the button
+ * @prop variant: by default it's countained, with a background color
+ * @prop size: by default it's medium
+ * @prop colorBtn: by default it's primary
+ * @prop icon: a component that displays an icon
+ * @prop textDisplay: by default the button has a text, but with an object and
  * display:none we can hide the text
  */
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
@@ -32,22 +33,19 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
 }) => {
   return (
     <Button
-      variant={variant ? variant : 'contained'}
-      size={size ? size : 'medium'}
-      color={colorBtn ? colorBtn : 'primary'}
-      sx={{
-        borderRadius: 2,
-        paddingY: 1,
-        paddingX: 1.5,
-      }}
-      {...props}
+      variant={ variant ? variant : 'contained' }
+      size={ size ? size : 'medium' }
+      color={ colorBtn ? colorBtn : 'primary' }
+      sx={ stylesPrimaryButton.btn }
+      { ...props }
     >
-      {icon}{' '}
-      <Box
-        component="span"
-        sx={{ display: textDisplay ? textDisplay : 'flex' }}
+      { icon }{ ' ' }
+      <Box component="span"
+        sx={ {
+          display: textDisplay ? textDisplay : 'flex'
+        } }
       >
-        {text}
+        { text }
       </Box>
     </Button>
   )
