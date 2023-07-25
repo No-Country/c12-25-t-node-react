@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Box, Container, Grid, List, Typography } from '@mui/material'
 import { EstateDetail } from '../../../model/estate-detail'
 import PrimaryButton from '../../atom/PrimaryButton'
@@ -16,30 +17,10 @@ type SearchResultsProps = {
 
 const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
   const [searchResults, setSearchResults] = useState<EstateDetail[]>(results)
-
   const [selectedOperation, setSelectedOperation] = useState<string[]>([])
   const [selectedCity, setSelectedCity] = useState<string[]>([])
   const [selectedType, setSelectedType] = useState<string[]>([])
   const [selectedRoom, setSelectedRoom] = useState<string[]>([])
-
-  const handleClick = () => {
-    console.log(
-      'handleClick: ',
-      selectedOperation,
-      selectedCity,
-      selectedType,
-      selectedRoom
-    )
-  }
-
-  useEffect(() => {
-    const resultsBySelectedOperationSale = results.filter(result => result.for_sale === true && selectedOperation.includes('Venta'))
-    const resultsBySelectedOperationRent = results.filter(result => result.for_rent === true && selectedOperation.includes('Alquler'))
-    console.log('resultsBySelectedOperation VENTA: ', resultsBySelectedOperationSale)
-    console.log('resultsBySelectedOperation ALQUILER: ', resultsBySelectedOperationRent)
-    setSearchResults(resultsBySelectedOperationSale)
-  }, [selectedOperation])
-
   /**
    *  Using the custom hook useOptionsToSearch to obtain an array of options
    *  to be display in the select
@@ -47,6 +28,29 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
   const cityOptions: string[] = useOptionsToSearch('city', searchResults)
   const typeOptions: string[] = useOptionsToSearch('property_type', searchResults)
   const bedroomsOptions: string[] = useOptionsToSearch('bedrooms', searchResults)
+  /* 
+  * Set the default values if the user come from the Home Page Search
+  *using the query params
+  */
+  const [params] = useSearchParams()
+  const operationParam = params.get('operation')
+  const typeParam = params.get('type')
+  const cityParam = params.get('city')
+
+  useEffect(() => {
+    if (operationParam && operationParam === 'for_sale') setSelectedOperation(['Venta'])
+    if (operationParam && operationParam === 'for_rent') setSelectedOperation(['Alquiler'])
+    if (typeParam) setSelectedType(typeParam.split(','))
+    if (cityParam) setSelectedCity(cityParam.split(','))
+  }, [])
+
+  useEffect(() => {
+    const resultsBySelectedOperationSale = results.filter(result => result.for_sale === true && selectedOperation.includes('Venta'))
+    const resultsBySelectedOperationRent = results.filter(result => result.for_rent === true && selectedOperation.includes('Alquler'))
+    console.log(resultsBySelectedOperationRent, resultsBySelectedOperationSale)
+  }, [selectedOperation])
+
+  const handleClick = () => { console.log('handleClick: ', selectedOperation, selectedCity, selectedType, selectedRoom) }
 
   return (
     <>
@@ -59,7 +63,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Operación"
-              listOptions={ ['Compra', 'Venta'] }
+              listOptions={ ['Alquiler', 'Venta'] }
               options={ selectedOperation }
               setOptions={ setSelectedOperation }
             />
