@@ -21,7 +21,7 @@ import './featuredAcordion.styles.css'
 import { EstateDetail } from '../../../model/estate-detail'
 import SkeletonMessage from '../../atom/SkeletonMessage'
 import { useEstateDetails } from '../../../store/database'
-import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
+import { useSpinner } from '../../../context/SpinnerProvider'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -36,11 +36,18 @@ interface FeaturedAcordionProps {
 }
 
 const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
-  const { estateDetails, open, setOpen } = useEstateDetails()
+  const { addLoading, removeLoading } = useSpinner()
+  const { estateDetails, open, setOpen, getEstateDetails } = useEstateDetails()
+  useEffect(() => {
+    addLoading()
+    getEstateDetails()
+    removeLoading()
+  }, [])
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
   let maxSlides
   textTitle === 'alquiler' ? (maxSlides = 4) : (maxSlides = 3)
+
   const filteredEstates = estateDetails.filter(
     (estate) =>
       (textTitle === 'venta' && estate.for_sale && estate.is_featured) ||

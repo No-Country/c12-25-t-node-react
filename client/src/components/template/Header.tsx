@@ -15,8 +15,6 @@ const Header: React.FC<HeaderProps> = () => {
   const [selectedTab, setSelectedTab] = useState(tab)
 
   useEffect(() => {
-    console.log(pathname)
-
     switch (pathname) {
       case '/':
         tab = 0

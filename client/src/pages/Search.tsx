@@ -9,9 +9,6 @@ type SearchProps = {}
 
 const Search: React.FC<SearchProps> = () => {
   const [params] = useSearchParams()
-  console.log(params.get('operation'))
-  console.log(params.get('type'))
-  console.log(params.get('city'))
   return (
     <>
       <BackButton />
