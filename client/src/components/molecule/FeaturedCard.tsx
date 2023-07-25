@@ -11,7 +11,7 @@ import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled'
 import IconButton from '@mui/material/IconButton'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import PrimaryButton from '../atom/PrimaryButton'
-import { EstateDetail } from '../../model/estate-detail';
+import { EstateDetail } from '../../model/estate-detail'
 
 interface FeaturedCardProps {
   estate: EstateDetail
@@ -19,52 +19,52 @@ interface FeaturedCardProps {
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const navigate = useNavigate()
-  const handleClick = () => navigate(`/detail/${ estate.estate_datail_id }`)
+  const handleClick = () => navigate(`/detail/${estate.estate_datail_id}`)
   const {
     estate_datail_id,
     name,
-    address, 
+    address,
     covered_area,
     uncovered_area,
     bedrooms,
     bathrooms,
-    garage, 
+    garage,
     estate_photos,
-  } = estate;
+  } = estate
 
-  const image = estate_photos[0]?.url;
-  const alt = estate_photos[0]?.alt; 
+  const image = estate_photos[0]?.url
+  const alt = estate_photos[0]?.alt
 
-  const totalArea = covered_area + uncovered_area;
+  const totalArea = covered_area + uncovered_area
 
   return (
     <Card
-      style={ { boxShadow: '0px 4px 10px grey' } }
-      sx={ { maxWidth: 350, height: 378, borderRadius: 5, boxShadow: 3 } }
+      style={{ boxShadow: '0px 4px 10px grey' }}
+      sx={{ maxWidth: 350, height: 378, borderRadius: 5, boxShadow: 3 }}
     >
       <CardMedia
-        sx={ { height: 200, objectFit: 'fill' } }
+        sx={{ height: 200, objectFit: 'fill' }}
         component="img"
-        src={ image }
+        src={image}
         title={alt}
       />
-      <CardContent sx={ { position: 'relative', pb: 0} }>
+      <CardContent sx={{ position: 'relative', pb: 0 }}>
         <IconButton
           size="small"
-          sx={ {
+          sx={{
             position: 'absolute',
             right: -1,
             top: -180,
             marginRight: 1,
             backgroundColor: 'white',
             borderRadius: 3,
-          } }
+          }}
         >
           <FavoriteBorderIcon />
         </IconButton>
         <PrimaryButton
           text="Ver más"
-          sx={ {
+          sx={{
             position: 'absolute',
             top: -20,
             right: -1,
@@ -72,49 +72,49 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
             display: 'inline-block',
             fontSize: '0.8rem',
             letterSpacing: '1px',
-          } }
-          onClick={ handleClick }
+          }}
+          onClick={handleClick}
         />
         <Box
-          sx={ {
+          sx={{
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between'
-          } }
+            justifyContent: 'space-between',
+          }}
         >
           <Typography
             variant="body1"
             color="text.primary"
-            sx={ { marginTop: '1rem', minHeight: '52px' } }
+            sx={{ marginTop: '1rem', minHeight: '52px' }}
           >
-            { name }
+            {name}
           </Typography>
           <Typography
             variant="body2"
             color="text.primary"
-            fontWeight={ 'bold' }
-            fontSize={ '1rem' }
-            marginTop={ 2 }
-            marginBottom={ 2 }
+            fontWeight={'bold'}
+            fontSize={'1rem'}
+            marginTop={2}
+            marginBottom={2}
           >
-            { address }
+            {address}
           </Typography>
-          <Box sx={ { display: 'flex', justifyContent: 'space-between' } }>
-            <Box sx={ { display: 'flex' } }>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: 'flex' }}>
               <SquareFootIcon className="primary-light" />
-              <Typography>{ totalArea } m</Typography>
+              <Typography>{totalArea} m</Typography>
             </Box>
-            <Box sx={ { display: 'flex' } }>
+            <Box sx={{ display: 'flex' }}>
               <BedIcon className="primary-light" />
-              <Typography>{ bedrooms }</Typography>
+              <Typography>{bedrooms}</Typography>
             </Box>
-            <Box sx={ { display: 'flex' } }>
+            <Box sx={{ display: 'flex' }}>
               <BathtubIcon className="primary-light" />
-              <Typography>{ bathrooms }</Typography>
+              <Typography>{bathrooms}</Typography>
             </Box>
-            <Box sx={ { display: 'flex' } }>
+            <Box sx={{ display: 'flex' }}>
               <DirectionsCarFilledIcon className="primary-light" />
-              <Typography>{ garage }</Typography>
+              <Typography>{garage}</Typography>
             </Box>
           </Box>
         </Box>

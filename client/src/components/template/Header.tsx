@@ -1,12 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import {
-  AppBar,
-  Toolbar,
-  Tabs,
-  Tab,
-  Box,
-} from '@mui/material'
+import { AppBar, Toolbar, Tabs, Tab, Box } from '@mui/material'
 import LogoText from '../atom/LogoText'
 import PrimaryButton from '../atom/PrimaryButton'
 import AccountButton from '../atom/AccountButton'
@@ -18,13 +12,19 @@ const Header: React.FC<HeaderProps> = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
   const tabArray = ['Home', 'Propiedades', 'Quienes somos', 'Contacto']
+  const [selectedTab, setSelectedTab] = useState(tab)
 
   useEffect(() => {
+    console.log(pathname)
+
     switch (pathname) {
       case '/':
         tab = 0
         break
       case '/search':
+        tab = 1
+        break
+      case '/search/':
         tab = 1
         break
       case '/about':
@@ -37,9 +37,8 @@ const Header: React.FC<HeaderProps> = () => {
         break
     }
     setSelectedTab(tab)
-  }, [pathname])
+  }, [pathname, selectedTab])
 
-  const [selectedTab, setSelectedTab] = useState(tab)
   const handleTab = (value: number) => {
     switch (value) {
       case 0:
@@ -66,51 +65,50 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <>
       <header>
-        <AppBar position="fixed" sx={ { backgroundColor: '#f5f5f5' } }>
+        <AppBar position="fixed" sx={{ backgroundColor: '#f5f5f5' }}>
           <Toolbar
-            disableGutters={ true }
-            sx={ {
+            disableGutters={true}
+            sx={{
               display: 'flex',
               justifyContent: 'space-between',
-            } }
+            }}
           >
             <Box
-              sx={ {
+              sx={{
                 display: 'flex',
                 alignItems: 'center',
                 marginRight: 1,
                 marginLeft: 2,
-              } }
+              }}
             >
-              <LogoText variant="h1" aria-label='Logo de Appartamentos' />
+              <LogoText variant="h1" aria-label="Logo de Appartamentos" />
             </Box>
             <Tabs
-              sx={ { display: { xs: 'none', md: 'flex', lg: 'flex' } } }
+              sx={{ display: { xs: 'none', md: 'flex', lg: 'flex' } }}
               textColor="primary"
-              value={ selectedTab }
-              onChange={ (e, value) => handleTab(value) }
+              value={selectedTab}
+              onChange={(e, value) => handleTab(value)}
               indicatorColor="primary"
             >
-              { tabArray.map((tab) => (
+              {tabArray.map((tab) => (
                 <Tab
-                  label={ tab }
-                  key={ tab }
-                  sx={ { color: 'black', fontWeight: 10, marginRight: 2 } }
+                  label={tab}
+                  key={tab}
+                  sx={{ color: 'black', fontWeight: 10, marginRight: 2 }}
                 />
-              )) }
+              ))}
             </Tabs>
-            {
-              localStorage.getItem('user') ?
-                <AccountButton />
-                :
-                <PrimaryButton
-                  text="Iniciar sesión"
-                  sx={ { margin: '4px' } }
-                  size="small"
-                  onClick={ () => navigate('/login') }
-                  aria-label='Iniciar sesión'
-                />
-            }
+            {localStorage.getItem('user') ? (
+              <AccountButton />
+            ) : (
+              <PrimaryButton
+                text="Iniciar sesión"
+                sx={{ margin: '4px' }}
+                size="small"
+                onClick={() => navigate('/login')}
+                aria-label="Iniciar sesión"
+              />
+            )}
           </Toolbar>
         </AppBar>
       </header>

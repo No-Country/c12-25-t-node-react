@@ -18,7 +18,7 @@ interface PrimaryButtonProps extends ButtonProps {
  * @param size: by default it's medium
  * @param colorBtn: by default it's primary
  * @param icon: a component that displays an icon
- * @param textDisplay: by default the button has a text, but with an object and 
+ * @param textDisplay: by default the button has a text, but with an object and
  * display:none we can hide the text
  */
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({
@@ -42,7 +42,13 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       }}
       {...props}
     >
-      {icon} <Box component='span' sx={{display: textDisplay? textDisplay : 'flex'}}>{text}</Box>
+      {icon}{' '}
+      <Box
+        component="span"
+        sx={{ display: textDisplay ? textDisplay : 'flex' }}
+      >
+        {text}
+      </Box>
     </Button>
   )
 }

@@ -1,4 +1,4 @@
-import { create } from 'zustand'
+import create from 'zustand'
 import { EstateDetail } from '../model/estate-detail'
 import { getAllEstateDetails } from '../components/firebase/database'
 import { useEffect } from 'react'
@@ -15,12 +15,15 @@ const useEstateDetailsStore = create<EstateDetailsState>((set) => ({
   estateDetails: [],
   open: false,
   setOpen: (open) => set({ open }),
-  addEstateDetails: (details) => set((state) => ({ estateDetails: [...state.estateDetails, ...details] })),
-}));
+  addEstateDetails: (details) =>
+    set((state) => ({ estateDetails: [...state.estateDetails, ...details] })),
+}))
 
 export function useEstateDetails() {
-  const { estateDetails, open, setOpen, addEstateDetails } = useEstateDetailsStore()
+  const { estateDetails, open, setOpen, addEstateDetails } =
+    useEstateDetailsStore()
   const { addLoading, removeLoading } = useSpinner()
+
   const handleClickAlert = () => setOpen(true)
 
   useEffect(() => {
@@ -34,11 +37,9 @@ export function useEstateDetails() {
       } finally {
         removeLoading()
       }
-    };
-
+    }
     fetchEstateDetails()
   }, [addEstateDetails])
 
   return { estateDetails, open, setOpen }
 }
-
