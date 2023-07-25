@@ -20,6 +20,7 @@ import { useFormik } from 'formik'
 import { registerSchema } from '../../../schemas/schemas'
 import { useSnackbar } from 'notistack'
 import { useUserStore } from '../../../store/auth'
+import { stylesRegisterModal } from './RegisterModal.styles'
 
 const RootFormControl = styled(FormControl)(() => ({
   '& .MuiOutlinedInput-root': {
@@ -100,10 +101,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
         onClose={ handleCloseRegisterModal }
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        sx={ {
-          display: 'flex',
-          justifyContent: 'center',
-        } }
+        sx={ stylesRegisterModal.modal }
       >
         <Box sx={ style }>
           <Box
@@ -132,14 +130,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
               borderRadius: 3,
             } }
           >
-            <Box
-              sx={ {
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                pl: 2,
-              } }
-            >
+            <Box sx={ stylesRegisterModal.box } >
               <LogoText />
               <IconButton onClick={ handleCloseRegisterModal }>
                 <CloseIcon sx={ { color: '#1daeff' } } />
@@ -148,41 +139,26 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
             <Box
               component="form"
               onSubmit={ formik.handleSubmit }
-              sx={ {
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                mt: 3,
-              } }
+              sx={ stylesRegisterModal.box2 }
             >
               <Box
-                sx={ {
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  width: '95%',
-                } }
+                sx={ stylesRegisterModal.box3 }
               >
-                <Typography sx={ { fontSize: '1.5rem', padding: '0.5rem 0.25rem' } }>
+                <Typography sx={ stylesRegisterModal.text }>
                   Te damos la<strong> bienvenida</strong>
                 </Typography>
                 <Typography
-                  sx={ {
-                    margin: '0.5rem 0.5rem 0.25rem',
-                    maxWidth: '500px',
-                    textAlign: 'center',
-                    lineHeight: '1.5',
-                  } }
+                  sx={ stylesRegisterModal.text2 }
                 >
                   Completá tus datos y comenzá a navegar, miles de inmuebles te
                   están esperando.
                 </Typography>
               </Box>
               <RootFormControl sx={ { width: '90%' } }>
-                <Box sx={ styles.labelError }>
+                <Box sx={ stylesRegisterModal.labelError }>
                   <FormHelperText
                     id="emailRegisterInput"
-                    sx={ styles.helperText }
+                    sx={ stylesRegisterModal.helperText }
                   >
                     Correo electrónico
                   </FormHelperText>
@@ -210,10 +186,10 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                     },
                   } }
                 />
-                <Box sx={ styles.labelError }>
+                <Box sx={stylesRegisterModal.labelError }>
                   <FormHelperText
                     id="firstNameRegisterInput"
-                    sx={ styles.helperText }
+                    sx={ stylesRegisterModal.helperText }
                   >
                     Nombre
                   </FormHelperText>
@@ -241,10 +217,10 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                     },
                   } }
                 />
-                <Box sx={ styles.labelError }>
+                <Box sx={ stylesRegisterModal.labelError }>
                   <FormHelperText
                     id="lastNameRegisterInput"
-                    sx={ styles.helperText }
+                    sx={ stylesRegisterModal.helperText }
                   >
                     Apellido
                   </FormHelperText>
@@ -272,10 +248,10 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                     },
                   } }
                 />
-                <Box sx={ styles.labelError }>
+                <Box sx={ stylesRegisterModal.labelError }>
                   <FormHelperText
                     id="passwordRegisterInput"
-                    sx={ styles.helperText }
+                    sx={ stylesRegisterModal.helperText }
                   >
                     Contraseña
                   </FormHelperText>
@@ -316,10 +292,10 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                 <FormHelperText id="passwordRegisterInput">
                   Alfanumérica, min. 6 caracteres, max. 15 caracteres.
                 </FormHelperText>
-                <Box sx={ styles.labelError }>
+                <Box sx={ stylesRegisterModal.labelError }>
                   <FormHelperText
                     id="passwordRegisterInput2"
-                    sx={ styles.helperText }
+                    sx={ stylesRegisterModal.helperText }
                   >
                     Repetir Contraseña
                   </FormHelperText>
@@ -390,19 +366,3 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
 
 export default RegisterModal
 
-const styles = {
-  helperText: {
-    marginTop: '0.50rem',
-    marginBottom: '0.50rem',
-    marginLeft: '6px',
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: '1rem',
-  },
-  labelError: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'baseline',
-  }
-}

@@ -7,6 +7,7 @@ import CardsWithPagination from '../CardsWithPagination'
 import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
 import MultipleSelect from '../../molecule/multiple-select/MultipleSelect'
 import SearchIcon from '@mui/icons-material/Search'
+import { stylesSearchResults } from './SearchResults.styles'
 
 type SearchResultsProps = {
   results: EstateDetail[]
@@ -28,17 +29,6 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
       selectedType,
       selectedRoom
     )
-    if (selectedOperation !== null) {
-      if (selectedOperation === 'Compra') {
-        const compra = results.filter((result) => result.for_sale === true)
-        setSearchResults(compra)
-        console.log('COMPRA: ', searchResults)
-      } else {
-        const alquiler = results.filter((result) => result.for_rent === true)
-        setSearchResults(alquiler)
-        console.log('ALQUILER ', searchResults)
-      }
-    }
   }
 
   useEffect(() => {
@@ -63,68 +53,64 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
     <>
       <Container maxWidth="lg">
         <List
-          sx={styles.list}
+          sx={ stylesSearchResults.list }
           component="nav"
           aria-labelledby="Menu de filtro para búsqueda de propiedad"
         >
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Operación"
-              listOptions={['Compra', 'Venta']}
-              options={selectedOperation}
-              setOptions={setSelectedOperation}
+              listOptions={ ['Compra', 'Venta'] }
+              options={ selectedOperation }
+              setOptions={ setSelectedOperation }
             />
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Ubicación"
-              listOptions={cityOptions}
-              options={selectedCity}
-              setOptions={setSelectedCity}
+              listOptions={ cityOptions }
+              options={ selectedCity }
+              setOptions={ setSelectedCity }
             />
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Inmueble"
-              listOptions={typeOptions}
-              options={selectedType}
-              setOptions={setSelectedType}
+              listOptions={ typeOptions }
+              options={ selectedType }
+              setOptions={ setSelectedType }
             />
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Dormitorios"
-              listOptions={bedroomsOptions}
-              options={selectedRoom}
-              setOptions={setSelectedRoom}
+              listOptions={ bedroomsOptions }
+              options={ selectedRoom }
+              setOptions={ setSelectedRoom }
             />
           </ListItemButtonOptions>
           <PrimaryButton
             text="Buscar"
             aria-label="Buscar propiedad"
-            icon={<SearchIcon />}
-            textDisplay={{ xs: 'flex', md: 'none' }}
-            sx={{
-              margin: '1rem auto',
-              padding: { xs: '0.5rem 1rem', md: '6px 12px' },
-              width: { xs: '260px', sm: '350px', md: '20px' },
-            }}
-            onClick={handleClick}
+            icon={ <SearchIcon /> }
+            textDisplay={ { xs: 'flex', md: 'none' } }
+            sx={ stylesSearchResults.btnPrimary }
+            onClick={ handleClick }
           />
         </List>
-        {/* Mostrar total */}
+        {/* Mostrar total */ }
         <Grid container>
-          <Grid item xs={12}>
-            <Typography sx={styles.totalList}>
-              <Box component="span" sx={styles.totalListSpan}>
-                {searchResults.length}
-              </Box>{' '}
+          <Grid item xs={ 12 }>
+            <Typography sx={ stylesSearchResults.totalList }>
+              <Box component="span" sx={ stylesSearchResults.totalListSpan }>
+                { searchResults.length }
+              </Box>{ ' ' }
               inmuebles
             </Typography>
           </Grid>
         </Grid>
-        {/* Cards with pagination*/}
-        <CardsWithPagination list={searchResults} />
+        {/* Cards with pagination*/ }
+        <CardsWithPagination list={ searchResults } />
       </Container>
     </>
   )
@@ -132,25 +118,3 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
 
 export default SearchResults
 
-const styles = {
-  list: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: { xs: 'column', md: 'row' },
-    bgcolor: 'background.paper',
-    position: 'relative',
-    top: '-50px',
-    borderRadius: '7px',
-    boxShadow: '0px 4px 10px grey',
-    padding: '8px',
-  },
-  totalList: {
-    color: 'var(--primary-darker)',
-    fontWeight: '500',
-  },
-  totalListSpan: {
-    color: 'var(--primary-light)',
-    fontWeight: '800',
-    letterSpacing: '1px',
-  },
-}
