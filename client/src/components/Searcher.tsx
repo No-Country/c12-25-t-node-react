@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Box, Divider, Tab, Tabs, useTheme, useMediaQuery } from '@mui/material'
+import { Box, Tab, Tabs, useTheme, useMediaQuery } from '@mui/material'
 import Selector from './molecule/Selector'
 import SearchIcon from '@mui/icons-material/Search'
 import PrimaryButton from './atom/PrimaryButton'
@@ -66,8 +66,11 @@ export default function BasicTabs() {
   const navigate = useNavigate()
   const { enqueueSnackbar } = useSnackbar()
   const { estateDetails } = useEstateDetails()
-  const uniqueCities = useOptionsToSearch('city', estateDetails)
-  const uniqueTypeOfEstate = useOptionsToSearch('property_type', estateDetails)
+  const uniqueCities: string[] = useOptionsToSearch('city', estateDetails)
+  const uniqueTypeOfEstate: string[] = useOptionsToSearch(
+    'property_type',
+    estateDetails
+  )
   const theme = useTheme()
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const [operationTab, setOperationTab] = useState(0) //seteo de valores para definir la pestaña de operaciones (compra o alquiler) en el buscador principal. 0 es compra, 1 es alquiler.
@@ -113,6 +116,7 @@ export default function BasicTabs() {
       )}&city=${searchZoneParams.join(',')}`
     )
   }
+
   return (
     <Box
       sx={{
@@ -170,7 +174,6 @@ export default function BasicTabs() {
             selectOptions={uniqueCities}
             setSearchParams={setSearchZoneParams}
           />
-          <Divider />
           <Selector
             longPlaceholder="Selecciona tus viviendas de preferencia"
             shortPlaceholder="Viviendas de preferencia"

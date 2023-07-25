@@ -3,8 +3,11 @@ import { EstateDetail } from '../model/estate-detail'
 
 type KeyOfEstateDetail = keyof EstateDetail
 
-const useOptionsToSearch = (key: KeyOfEstateDetail, estateDetails: EstateDetail[]): any[] => {
-  const [uniqueValues, setUniqueValues] = useState<any[]>([]);
+const useOptionsToSearch = (
+  key: KeyOfEstateDetail,
+  estateDetails: EstateDetail[]
+): any[] => {
+  const [uniqueValues, setUniqueValues] = useState<any[]>([])
 
   useEffect(() => {
     // Creamos un Set para almacenar los valores únicos de la clave
@@ -19,9 +22,9 @@ const useOptionsToSearch = (key: KeyOfEstateDetail, estateDetails: EstateDetail[
     const uniqueValuesArray = Array.from(uniqueValuesSet)
     // Actualizamos el estado con los valores únicos de la clave
     setUniqueValues(uniqueValuesArray)
-  }, [key])
+  }, [key, estateDetails])
 
-  return uniqueValues
+  return uniqueValues.sort()
 }
 
-export default useOptionsToSearch 
+export default useOptionsToSearch

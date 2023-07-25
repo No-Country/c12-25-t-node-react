@@ -56,7 +56,7 @@ const Selector: React.FC<SelectorProps> = ({
 
   return (
     <div style={{ display: 'flex' }}>
-      <FormControl sx={{ m: 1, width: isSm ? 240 : 350 }}>
+      <FormControl sx={{ width: isSm ? 240 : 350 }}>
         <InputLabel
           id="demo-multiple-checkbox-label"
           sx={{ color: 'blue', fontWeight: '600', fontSize: '1.25rem' }}
@@ -66,9 +66,8 @@ const Selector: React.FC<SelectorProps> = ({
         <Select
           IconComponent={() => <ArrowDropDownIcon style={{ color: 'blue' }} />}
           displayEmpty
-          fullWidth
-          labelId="demo-multiple-checkbox-label"
-          id="demo-multiple-checkbox"
+          labelId={`${label}-multiple-checkbox-label`}
+          id={`${label}-multiple-checkbox`}
           multiple
           value={select}
           onChange={handleChange}

@@ -7,7 +7,7 @@ import {
   Stack,
   Typography,
   useTheme,
-  useMediaQuery
+  useMediaQuery,
 } from '@mui/material'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import FeaturedCard from '../../molecule/FeaturedCard'
@@ -21,12 +21,13 @@ import './featuredAcordion.styles.css'
 import { EstateDetail } from '../../../model/estate-detail'
 import SkeletonMessage from '../../atom/SkeletonMessage'
 import { useEstateDetails } from '../../../store/database'
+import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
-  ref,
+  ref
 ) {
-  return <MuiAlert elevation={ 6 } ref={ ref } variant="filled" { ...props } />
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
 })
 
 interface FeaturedAcordionProps {
@@ -34,15 +35,12 @@ interface FeaturedAcordionProps {
   estates?: EstateDetail[]
 }
 
-const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
-  textTitle,
-}) => {
+const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
   const { estateDetails, open, setOpen } = useEstateDetails()
   const theme = useTheme()
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
   let maxSlides
   textTitle === 'alquiler' ? (maxSlides = 4) : (maxSlides = 3)
-
   const filteredEstates = estateDetails.filter(
     (estate) =>
       (textTitle === 'venta' && estate.for_sale && estate.is_featured) ||
@@ -52,35 +50,37 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   const navigate = useNavigate()
   const handleClick = () => navigate('/search')
 
-
-  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  const handleClose = (
+    event?: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
     if (reason === 'clickaway') return
     setOpen(false)
   }
 
   return (
-    <Container maxWidth="lg" sx={ { marginTop: isMd ? '10rem' : '6rem' } }>
-      <Box sx={ styles.box } >
-        <Typography variant="h2" sx={ { alignSelf: 'center' } }>
-          Destacados en<span style={ { fontWeight: '800' } }> { textTitle }</span>
+    <Container maxWidth="lg" sx={{ marginTop: isMd ? '10rem' : '6rem' }}>
+      <Box sx={styles.box}>
+        <Typography variant="h2" sx={{ alignSelf: 'center' }}>
+          Destacados en<span style={{ fontWeight: '800' }}> {textTitle}</span>
         </Typography>
         <PrimaryButton
           text="Ver todos"
           variant="outlined"
-          sx={ styles.button }
-          onClick={ handleClick }
+          sx={styles.button}
+          onClick={handleClick}
         />
       </Box>
-      { estateDetails.length === 0 ?
-        <SkeletonMessage messageText='Sin propiedades destacadas para mostrar' />
-        :
+      {estateDetails.length === 0 ? (
+        <SkeletonMessage messageText="Sin propiedades destacadas para mostrar" />
+      ) : (
         <Swiper
-          navigation={ true }
-          modules={ [Navigation] }
-          slidesPerView={ 1 }
-          spaceBetween={ 10 }
-          centeredSlides={ false }
-          breakpoints={ {
+          navigation={true}
+          modules={[Navigation]}
+          slidesPerView={1}
+          spaceBetween={10}
+          centeredSlides={false}
+          breakpoints={{
             768: {
               slidesPerView: 2,
               spaceBetween: 40,
@@ -93,19 +93,22 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
               slidesPerView: maxSlides,
               spaceBetween: 30,
             },
-          } }
+          }}
           className="mySwiper"
         >
-          { filteredEstates.map((estate) => (
-            <SwiperSlide key={ estate.estate_datail_id } style={ { paddingBottom: '20px' } }>
-              <FeaturedCard estate={ estate } />
+          {filteredEstates.map((estate) => (
+            <SwiperSlide
+              key={estate.estate_datail_id}
+              style={{ paddingBottom: '20px' }}
+            >
+              <FeaturedCard estate={estate} />
             </SwiperSlide>
-          )) }
+          ))}
         </Swiper>
-      }
-      <Stack spacing={ 2 } sx={ { width: '100%' } }>
-        <Snackbar open={ open } autoHideDuration={ 6000 } onClose={ handleClose }>
-          <Alert onClose={ handleClose } severity="error" sx={ { width: '100%' } }>
+      )}
+      <Stack spacing={2} sx={{ width: '100%' }}>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
             Error al obtener los detalles de las propiedades
           </Alert>
         </Snackbar>
@@ -129,5 +132,5 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     marginBottom: 2,
-  }
+  },
 }
