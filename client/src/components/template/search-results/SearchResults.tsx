@@ -22,6 +22,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
   const operationParam = params.get('operation')
   const typeParam = params.get('type')
   const cityParam = params.get('city')
+  const [hasParams, setHasParams] = useState<boolean>(false)
 
   const { enqueueSnackbar } = useSnackbar()
   const { addLoading, removeLoading } = useSpinner()
@@ -55,6 +56,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
       setSelectedOperation(['Alquiler'])
     if (typeParam) setSelectedType(typeParam.split(','))
     if (cityParam) setSelectedCity(cityParam.split(','))
+    if( operationParam && typeParam && cityParam ) setHasParams(true)
   }, [])
 
   // onClick at the search button, the filter states are updated
@@ -74,7 +76,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
       return matchesOperation && matchesCity && matchesType && matchesRoom
     })
     setSearchResults(filteredResults)
-  }, [isSearching])
+  }, [isSearching, hasParams])
 
   const handleClick = () => {
     enqueueSnackbar('Buscando propiedades...', { variant: 'success' })
