@@ -55,8 +55,6 @@ const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
       setSelectedOperation(['Alquiler'])
     if (typeParam) setSelectedType(typeParam.split(','))
     if (cityParam) setSelectedCity(cityParam.split(','))
-    // TODO: que se setea el resultado acorde a los query paramas
-
   }, [])
 
   // onClick at the search button, the filter states are updated
