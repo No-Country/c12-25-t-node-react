@@ -16,15 +16,13 @@ const Detail: React.FC<DetailProps> = () => {
   const { addLoading, removeLoading } = useSpinner()
   // to get the state detail of Firebase and store
   const { estateDetails, getEstateDetails } = useEstateDetails()
-
   const [estateById, setEstateById] = useState<EstateDetail>(estateDetails[0])
   const routeParams = useParams<{ id: string }>()
-  const id: number = parseInt(routeParams.id, 10)
-  /* De esta manera, id será de tipo number si el parámetro existe y tiene un valor numérico válido. Si el parámetro está ausente o no se puede convertir a number, id será NaN. */
+  
   useEffect(() => {
     addLoading()
     getEstateDetails()
-    const filteredState = estateDetails.find((estate) => estate.estate_datail_id === id)
+    const filteredState = estateDetails.find((estate) => estate.estate_datail_id === +routeParams.id)
     setEstateById(filteredState)
     removeLoading()
   }, []);

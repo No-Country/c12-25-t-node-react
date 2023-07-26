@@ -1,7 +1,7 @@
 export const stylesFeaturedCard = {
   card: { 
     maxWidth: 350, 
-    height: 378, 
+    height: 396, 
     borderRadius: 5, 
     boxShadow: '0px 4px 10px grey' 
   },
