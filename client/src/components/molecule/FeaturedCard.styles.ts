@@ -25,7 +25,7 @@ export const stylesFeaturedCard = {
     position: 'absolute',
     top: -20,
     right: -1,
-    marginRight: 2,
+    marginRight: 4,
     display: 'inline-block',
     fontSize: '0.8rem',
     letterSpacing: '1px',

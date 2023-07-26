@@ -22,6 +22,7 @@ import SkeletonMessage from '../../atom/SkeletonMessage'
 import { useEstateDetails } from '../../../store/database'
 import { stylesFeaturedAcordion } from './FeaturedAcordion.styles'
 import { useSpinner } from '../../../context/SpinnerProvider'
+import './FeaturedAcordion.css'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -101,7 +102,7 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
               spaceBetween: 30,
             },
           }}
-          className="mySwiper"
+          className="mySwiper-appartamentos"
         >
           {filteredEstates.map((estate) => (
             <SwiperSlide

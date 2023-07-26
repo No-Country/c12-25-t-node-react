@@ -39,12 +39,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       sx={ stylesPrimaryButton.btn }
       { ...props }
     >
-      { icon }{ ' ' }
-      <Box component="span"
-        sx={ {
-          display: textDisplay ? textDisplay : 'flex'
-        } }
-      >
+      { icon } <Box component="span" sx={ { display: textDisplay ? textDisplay : 'flex' } } >
         { text }
       </Box>
     </Button>

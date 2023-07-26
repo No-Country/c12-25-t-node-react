@@ -50,6 +50,6 @@ export const stylesMainInfoProperty = {
   primaryButton:  {
     minWidth: '140px',
     display: 'inline-block',
-    width: '100%'
+    width: '100%',
   }
 }

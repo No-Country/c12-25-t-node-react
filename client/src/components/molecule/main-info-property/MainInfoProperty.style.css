@@ -2,11 +2,6 @@
   margin-top: 1rem;
 }
 
-/* Imagenes del slider */
-/* .imgSlider {
-  object-fit: cover;
-} */
-
 /* Botones del slider */
 .swiper-button-prev,
 .swiper-button-next {
@@ -96,6 +91,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Realizar consulta text */
+.consulta span {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Socilitar una visita Btn */

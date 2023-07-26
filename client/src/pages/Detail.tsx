@@ -1,31 +1,33 @@
 import { useState, useEffect } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { Box, Container } from '@mui/material'
 import DetailProperty from '../components/molecule/detail-property/DetailProperty'
-import jsonData from '../api/state-detail-mock.json'
 import MainInfoProperty from '../components/molecule/main-info-property/MainInfoProperty'
 import ContactProperty from '../components/molecule/contact-property/ContactProperty'
 import BackButton from '../components/atom/BackButton'
-import { estateDetail } from '../utils/state-detail'
 import { EstateDetail } from '../model/estate-detail'
+import { useSpinner } from '../context/SpinnerProvider'
+import { useEstateDetails } from '../store/database'
 
 type DetailProps = {
 }
 
 const Detail: React.FC<DetailProps> = () => {
-  const [estateById, setEstateById] = useState<EstateDetail>(estateDetail)
+  const { addLoading, removeLoading } = useSpinner()
+  // to get the state detail of Firebase and store
+  const { estateDetails, getEstateDetails } = useEstateDetails()
+
+  const [estateById, setEstateById] = useState<EstateDetail>(estateDetails[0])
   const routeParams = useParams<{ id: string }>()
   const id: number = parseInt(routeParams.id, 10)
   /* De esta manera, id será de tipo number si el parámetro existe y tiene un valor numérico válido. Si el parámetro está ausente o no se puede convertir a number, id será NaN. */
-  const [params] = useSearchParams()
-
   useEffect(() => {
-    const filteredState = jsonData.estates_detail.find(
-      (estate) => estate.estate_datail_id === id
-    )
-    if (filteredState === null) setEstateById({})
-    setEstateById(filteredState);
-  }, [id]);
+    addLoading()
+    getEstateDetails()
+    const filteredState = estateDetails.find((estate) => estate.estate_datail_id === id)
+    setEstateById(filteredState)
+    removeLoading()
+  }, []);
 
   const {
     covered_area,
@@ -72,7 +74,7 @@ const Detail: React.FC<DetailProps> = () => {
             garage={ garage }
             garden={ garden }
             estatePhotos={ estate_photos }
-            forSale={for_sale}
+            forSale={ for_sale }
           />
           <DetailProperty
             totalArea={ totalArea }
