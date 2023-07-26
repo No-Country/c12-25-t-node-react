@@ -7,6 +7,7 @@ import CardsWithPagination from '../components/template/CardsWithPagination'
 type FavoritesProps = {
 }
 
+
 const Favorites: React.FC<FavoritesProps> = () => {
   return (
     <>
