@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
 } from 'firebase/auth'
 import { auth, googleProvider } from '../components/firebase/firebase'
 
@@ -31,7 +32,6 @@ export const useUserStore = create<UserState>((set) => ({
       )
       set({ user: userCredential, user_id: userCredential.user.uid })
       localStorage.setItem('user', userCredential.user.uid)
-      console.log(userCredential)
     } catch (error: any) {
       console.error(error.code)
       throw Error(error.code)
@@ -60,7 +60,6 @@ export const useUserStore = create<UserState>((set) => ({
         password
       )
       set({ user: userCredential, errorRegister: null })
-      console.log(userCredential)
     } catch (error: any) {
       set({ errorRegister: error.code })
       console.log(error)
@@ -68,6 +67,7 @@ export const useUserStore = create<UserState>((set) => ({
     }
   },
   logout: () => {
+    signOut(auth)
     set(() => ({ user: null, user_id: '', errorRegister: '' })),
       localStorage.clear()
   },
