@@ -1,7 +1,7 @@
 export const stylesFeaturedCard = {
   card: { 
     maxWidth: 350, 
-    height: 378, 
+    height: 396, 
     borderRadius: 5, 
     boxShadow: '0px 4px 10px grey' 
   },
@@ -25,7 +25,7 @@ export const stylesFeaturedCard = {
     position: 'absolute',
     top: -20,
     right: -1,
-    marginRight: 2,
+    marginRight: 4,
     display: 'inline-block',
     fontSize: '0.8rem',
     letterSpacing: '1px',

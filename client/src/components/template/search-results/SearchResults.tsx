@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Box, Container, Grid, List, Typography } from '@mui/material'
 import { EstateDetail } from '../../../model/estate-detail'
 import PrimaryButton from '../../atom/PrimaryButton'
@@ -8,46 +9,77 @@ import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
 import MultipleSelect from '../../molecule/multiple-select/MultipleSelect'
 import SearchIcon from '@mui/icons-material/Search'
 import { stylesSearchResults } from './SearchResults.styles'
+import { useSpinner } from '../../../context/SpinnerProvider'
+import { useEstateDetails } from '../../../store/database'
+import SkeletonMessage from '../../atom/SkeletonMessage'
+import { useSnackbar } from 'notistack'
 
-type SearchResultsProps = {
-  results: EstateDetail[]
-}
+type SearchResultsProps = {}
 
-const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
-  const [searchResults, setSearchResults] = useState<EstateDetail[]>(results)
+const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
+  // get the query paramas, when the user comes from home search
+  const [params] = useSearchParams()
+  const operationParam = params.get('operation')
+  const typeParam = params.get('type')
+  const cityParam = params.get('city')
 
+  const { enqueueSnackbar } = useSnackbar()
+  const { addLoading, removeLoading } = useSpinner()
+  const { estateDetails, getEstateDetails } = useEstateDetails()
+  // State to store de states acording to the selected options 
+  const [searchResults, setSearchResults] = useState<EstateDetail[]>([])
+  // States for the selected options
   const [selectedOperation, setSelectedOperation] = useState<string[]>([])
   const [selectedCity, setSelectedCity] = useState<string[]>([])
   const [selectedType, setSelectedType] = useState<string[]>([])
-  const [selectedRoom, setSelectedRoom] = useState<string[]>([])
-
-  const handleClick = () => {
-    console.log(
-      'handleClick: ',
-      selectedOperation,
-      selectedCity,
-      selectedType,
-      selectedRoom
-    )
-  }
+  const [selectedRoom, setSelectedRoom] = useState<number[]>([])
+  // State for the search button
+  const [isSearching, setIsSearching] = useState<boolean>(false)
+  /**
+   * Using the custom hook useOptionsToSearch to obtain
+   * an array of options to be display in the select
+   */
+  const cityOptions: string[] = useOptionsToSearch('city', estateDetails)
+  const typeOptions: string[] = useOptionsToSearch('property_type', estateDetails)
+  const bedroomsOptions: string[] = useOptionsToSearch('bedrooms', estateDetails)
 
   useEffect(() => {
-    console.log('DESDE  USEEFFECT: ', selectedOperation)
-  }, [selectedOperation])
+    // Set the list of states from Firebase and Zustand store
+    addLoading()
+    getEstateDetails()
+    removeLoading()
+    // Set the default values if the user comes from the HomePage, using the query params
+    if (operationParam && operationParam === 'for_sale')
+      setSelectedOperation(['Venta'])
+    if (operationParam && operationParam === 'for_rent')
+      setSelectedOperation(['Alquiler'])
+    if (typeParam) setSelectedType(typeParam.split(','))
+    if (cityParam) setSelectedCity(cityParam.split(','))
+  }, [])
 
-  /**
-   *  Using the custom hook useOptionsToSearch to obtain an array of options
-   *  to be display in the select
-   */
-  const cityOptions: string[] = useOptionsToSearch('city', searchResults)
-  const typeOptions: string[] = useOptionsToSearch(
-    'property_type',
-    searchResults
-  )
-  const bedroomsOptions: string[] = useOptionsToSearch(
-    'bedrooms',
-    searchResults
-  )
+  // onClick at the search button, the filter states are updated
+  useEffect(() => {
+    const filteredResults = estateDetails.filter((estate) => {
+      const matchesOperation =
+        selectedOperation.length === 0
+        || selectedOperation.includes('Alquiler') && estate.for_rent === true
+        || selectedOperation.includes('Venta') && estate.for_sale === true
+      const matchesCity =
+        selectedCity.length === 0 || selectedCity.includes(estate.city)
+      const matchesType =
+        selectedType.length === 0 || selectedType.includes(estate.property_type)
+      const matchesRoom =
+        selectedRoom.length === 0 || selectedRoom.includes(estate.bedrooms)
+
+      return matchesOperation && matchesCity && matchesType && matchesRoom
+    })
+    setSearchResults(filteredResults)
+  }, [isSearching])
+
+  const handleClick = () => {
+    enqueueSnackbar('Buscando propiedades...', { variant: 'success' })
+    setIsSearching(isSearching => !isSearching)
+  }
 
   return (
     <>
@@ -60,7 +92,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Operación"
-              listOptions={ ['Compra', 'Venta'] }
+              listOptions={ ['Alquiler', 'Venta'] }
               options={ selectedOperation }
               setOptions={ setSelectedOperation }
             />
@@ -75,7 +107,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
-              textToDisplay="Inmueble"
+              textToDisplay="Tipo de propiedad"
               listOptions={ typeOptions }
               options={ selectedType }
               setOptions={ setSelectedType }
@@ -104,17 +136,21 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results }) => {
             <Typography sx={ stylesSearchResults.totalList }>
               <Box component="span" sx={ stylesSearchResults.totalListSpan }>
                 { searchResults.length }
-              </Box>{ ' ' }
-              inmuebles
+              </Box>
+              <Box component="span"> inmuebles</Box>
             </Typography>
           </Grid>
         </Grid>
         {/* Cards with pagination*/ }
-        <CardsWithPagination list={ searchResults } />
+        { searchResults.length === 0 ?
+          (
+            <SkeletonMessage messageText="Sin propiedades para mostrar" />
+          ) : (
+            <CardsWithPagination list={ searchResults } />
+          ) }
       </Container>
     </>
   )
 }
 
 export default SearchResults
-
