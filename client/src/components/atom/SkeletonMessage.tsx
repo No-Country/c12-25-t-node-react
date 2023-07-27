@@ -20,7 +20,7 @@ const SkeletonMessage: React.FC<SkeletonMessageProps> = ({
       />
       {
         messageText &&
-        <Typography sx={ { textAlign: 'center' } }>
+        <Typography sx={ { textAlign: 'center', margin: '1rem auto' } }>
           { messageText }
         </Typography>
       }

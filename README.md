@@ -1,34 +1,34 @@
 # <img width="40" height="40" src="https://img.icons8.com/dusk/40/department.png" alt="department"/> Grupo: c12-25-t-node-react - Appartamentos
 
-Plataforma de Alquiler y Venta de inmuebles, cuenta con:
+Appartamentos, plataforma de Alquiler y Venta de inmuebles, cuenta con:
 
 - Registro
 
 - Login
 
-- Páginas...
+- Páginas:
 
-... **Home**, con un buscador de inmuebles, sliders con destacados en vetna y alquiler y la sección de callto action para realizar consultas.
+-> **Home**, con un buscador de inmuebles, sliders con destacados en venta y alquiler y la sección de call to action para realizar consultas.
 
-... **Propiedades**, para realizar una búsqueda de inmuebles con más filtros.
+-> **Propiedades**, para realizar una búsqueda de inmuebles con más filtros.
 
-...**Detalle** con información más extensa de la propiedad, cuenta con : slider, datos del inmueble, posibilidad de solicitar una visitar y realizar una consulta completando el formulario de contacto.
+-> **Detalle** con información más extensa de la propiedad, cuenta con: slider, datos del inmueble, posibilidad de solicitar una visitar y realizar una consulta completando el formulario de contacto.
 
-... **Contacto**, con formulario para contacto.
+-> **Contacto**, con formulario para contacto.
 
-... **Quienes somos**, con un poco de la historia y tarjetas con los miembros de Appartamentos.
+-> **Quienes somos**, con un poco de la historia y tarjetas con los miembros de Appartamentos.
 
-... **Términos y condiciones**, con el detalle legal al utilizar el sitio web. 
+-> **Términos y condiciones**, con el detalle legal al utilizar el sitio web. 
 
-... **Favoritos**, entando registrado se pueden guardar los inmuebles de interés.
+-> **Favoritos**, entando registrado se pueden guardar los inmuebles de interés.
 
 ---
 
 ## <img width="40" height="40" src="https://img.icons8.com/cotton/40/movie-beginning--v1.png" alt="movie-beginning--v1"/> LINKS DE DEPLOY
 
-- Front
+- Front:
 
-- Back
+- Back:
 
 ---
 
@@ -74,7 +74,7 @@ Plataforma de Alquiler y Venta de inmuebles, cuenta con:
 
 - <img width="20" height="20" src="https://img.icons8.com/color/20/css3.png" alt="css3"/> CSS3
 
-- <img width="20" height="20" src="https://img.icons8.com/office/20/react.png" alt="react"/> [React](https://react.dev/) 
+- <img width="20" height="20" src="https://img.icons8.com/office/20/react.png" alt="react"/> [React](https://react.dev/), react-dom, react-router-dom 
 
 - <img width="20" height="20" src="https://img.icons8.com/fluency/20/typescript--v1.png" alt="typescript--v1"/> [Typescript](https://www.typescriptlang.org/)
 
@@ -82,11 +82,17 @@ Plataforma de Alquiler y Venta de inmuebles, cuenta con:
 
 - [Zustand](https://github.com/pmndrs/zustand)
 
-- [SwiperJS](https://swiperjs.com/) 
+- [SwiperJS](https://swiperjs.com/), para los caruseles 
 
-- [dayjs](https://www.npmjs.com/package/dayjs)
+- [dayjs](https://www.npmjs.com/package/dayjs), para le manejo de las fechas
 
 - <img width="20" height="20" src="https://img.icons8.com/color/20/firebase.png" alt="firebase"/> [Firebase](https://firebase.google.com/)
+
+- [Formik](https://formik.org/) y [YUP](https://www.npmjs.com/package/yup?activeTab=readme), para los formularios
+
+- [Notistack](https://notistack.com/), para las notificaciones
+
+- [Axios](https://axios-http.com/docs/intro)
 
 ### BackEnd
 

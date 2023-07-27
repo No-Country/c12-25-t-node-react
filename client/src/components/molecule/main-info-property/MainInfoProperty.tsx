@@ -133,7 +133,8 @@ const MainInfoProperty: React.FC<MainInfoPropertyProps> = ({
                 </Box>
                 <Box>
                   <PrimaryButton 
-                    text="Realizar consultar"
+                    text="Realizar consulta"
+                    className="consulta"
                     sx={ stylesMainInfoProperty.primaryButton }
                     onClick={ handleClick }
                   />

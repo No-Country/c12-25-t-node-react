@@ -1,0 +1,12 @@
+.mySwiper-appartamentos  {
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.mySwiper-appartamentos  .swiper-button-next {
+  right: 0px;
+}
+
+.mySwiper-appartamentos  .swiper-button-prev {
+  left: 0px;
+}

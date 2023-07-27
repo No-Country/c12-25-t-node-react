@@ -1,6 +1,5 @@
 export const stylesFeaturedAcordion = {
   button: {
-    display: 'inline-block',
     paddingY: 0.5,
     paddingX: 1,
     fontSize: '0.8rem',
@@ -11,5 +10,6 @@ export const stylesFeaturedAcordion = {
     display: 'flex',
     justifyContent: 'space-between',
     marginBottom: 2,
+    gap: '12px'
   }
 }
