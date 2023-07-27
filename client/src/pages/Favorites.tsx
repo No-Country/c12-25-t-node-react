@@ -11,57 +11,71 @@ import { EstateDetail } from '../model/estate-detail';
 type FavoritesProps = {
 }
 
-
+interface UserFavoriteData {
+  favoriteIds: string[];
+}
 
 
 const Favorites = () => {
-  const db = getFirestore()
+  const db = getFirestore();
 
-  const [favoriteObjects, setFavoriteObjects] = useState<EstateDetail[]>([])
-  const [user, setUser] = useState<User | null>(null)
+  const [favoriteObjects, setFavoriteObjects] = useState<EstateDetail[]>([]);
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     if (user) {
       getUserFavorites(user.uid)
         .then((favoriteIds) => getFavoriteObjects(favoriteIds))
         .then((favoriteObjects) => setFavoriteObjects(favoriteObjects))
-        .catch((error) => console.error('Error al obtener objetos favoritos:', error))
+        .catch((error) => console.error('Error al obtener objetos favoritos:', error));
     }
-  }, [user])
+  }, [user]);
 
-  async function getUserFavorites(userId:any) {
+  async function getUserFavorites(userId: string) {
     try {
-      const userFavoritesRef = doc(collection(db, 'usersFavorites'), userId)
-      const userFavoritesDoc = await getDoc(userFavoritesRef)
+      const userFavoritesRef = doc(collection(db, 'usersFavorites'), userId);
+      const userFavoritesDoc = await getDoc(userFavoritesRef);
 
       if (userFavoritesDoc.exists()) {
-        const favoriteIds = userFavoritesDoc.data().favoriteIds || []
-        return favoriteIds;
+        const userFavoriteData = userFavoritesDoc.data() as UserFavoriteData;
+        return userFavoriteData.favoriteIds || [];
       } else {
         return [];
       }
     } catch (error) {
-      throw error
+      throw error;
     }
   }
 
-  async function getFavoriteObjects(favoriteIds:any) {
+  async function getFavoriteObjects(favoriteIds: string[]) {
     try {
-      const favoriteObjects: EstateDetail[] = []
-
+      const favoriteObjects: EstateDetail[] = [];
+  
       for (const id of favoriteIds) {
-        const objectRef = doc(collection(db, 'estates_detail'), id)
+        const objectRef = doc(collection(db, 'estates_detail'), String(id));
         const objectDoc = await getDoc(objectRef);
-
+  
         if (objectDoc.exists()) {
-          const objectData = objectDoc.data() as EstateDetail
-          favoriteObjects.push(objectData)
+          const objectData = objectDoc.data() as EstateDetail;
+          favoriteObjects.push(objectData);
         }
       }
-
-      return favoriteObjects
+  
+      console.log('favoriteObjects:', favoriteObjects); // Agrega esta línea para verificar el contenido
+      return favoriteObjects;
     } catch (error) {
-      throw error
+      throw error;
     }
   }
 
