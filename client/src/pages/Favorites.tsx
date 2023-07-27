@@ -22,7 +22,6 @@ const Favorites = () => {
 
   useEffect(() => {
     if (user) {
-      // Obtén los objetos favoritos del usuario actual
       getUserFavorites(user.uid)
         .then((favoriteIds) => getFavoriteObjects(favoriteIds))
         .then((favoriteObjects) => setFavoriteObjects(favoriteObjects))
