@@ -25,6 +25,7 @@ import {
 import { useEffect, useState } from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { getAuth } from 'firebase/auth'
+import { useSnackbar } from 'notistack'
 
 interface FeaturedCardProps {
   estate: EstateDetail
@@ -32,6 +33,7 @@ interface FeaturedCardProps {
 
 const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const navigate = useNavigate()
+  const { enqueueSnackbar } = useSnackbar()
   const {
     estate_datail_id,
     name,
@@ -55,19 +57,15 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const db = getFirestore()
 
   useEffect(() => {
-    console.log('useEffect')
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        console.log('Usuario autenticado:', user)
         checkFavoriteStatus(user.uid)
       } else {
-        console.log('Usuario no autenticado.')
         setIsFavorite(false)
       }
     })
 
     return () => {
-      console.log('Cierre de sesion.')
       unsubscribe()
     }
   }, [estate_datail_id, auth])
@@ -104,6 +102,9 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
           favoriteIds: arrayRemove(estate_datail_id),
         })
         setIsFavorite(false)
+        enqueueSnackbar('Propiedad quitada de favoritos', {
+          variant: 'info',
+        })
         console.log('Objeto eliminado de favoritos en Firebase')
       } else {
         await setDoc(
@@ -112,7 +113,9 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
           { merge: true }
         )
         setIsFavorite(true)
-        console.log('Objeto agregado a favoritos en Firebase')
+        enqueueSnackbar('Propiedad agregada a favoritos', {
+          variant: 'success',
+        })
       }
     } catch (error) {
       console.error(

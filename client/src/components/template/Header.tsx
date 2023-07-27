@@ -12,8 +12,8 @@ let tab = 0
 const Header: React.FC<HeaderProps> = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
-  const tabArray = ['Home', 'Propiedades', 'Quienes somos', 'Contacto']
-  const [selectedTab, setSelectedTab] = useState(tab)
+  const tabArray = ['Home', 'Propiedades', 'Quienes somos', 'Contacto', '']
+  const [selectedTab, setSelectedTab] = useState<number>(tab)
 
   useEffect(() => {
     switch (pathname) {
@@ -31,6 +31,9 @@ const Header: React.FC<HeaderProps> = () => {
         break
       case '/contact':
         tab = 3
+        break
+      case '/login':
+        tab = 4
         break
       default:
         break
@@ -64,33 +67,33 @@ const Header: React.FC<HeaderProps> = () => {
   return (
     <>
       <header>
-        <AppBar position="fixed" sx={ { backgroundColor: '#f5f5f5' } }>
-          <Toolbar disableGutters={ true } sx={ stylesHeader.toolBar }>
-            <Box sx={ stylesHeader.boxContainer }>
+        <AppBar position="fixed" sx={{ backgroundColor: '#f5f5f5' }}>
+          <Toolbar disableGutters={true} sx={stylesHeader.toolBar}>
+            <Box sx={stylesHeader.boxContainer}>
               <LogoText variant="h1" aria-label="Logo de Appartamentos" />
             </Box>
             <Tabs
-              sx={ stylesHeader.tabs }
+              sx={stylesHeader.tabs}
               textColor="primary"
-              value={ selectedTab }
-              onChange={ (e, value) => handleTab(value) }
-              indicatorColor="primary"
+              value={selectedTab}
+              onChange={(e, value) => handleTab(value)}
+              indicatorColor={selectedTab === 4 ? 'white' : 'primary'}
             >
-              { tabArray.map((tab) => (
-                <Tab label={ tab } key={ tab } sx={ stylesHeader.tab } />
-              )) }
+              {tabArray.map((tab) => (
+                <Tab label={tab} key={tab} sx={stylesHeader.tab} />
+              ))}
             </Tabs>
-            { localStorage.getItem('user') ? (
+            {localStorage.getItem('user') ? (
               <AccountButton />
             ) : (
               <PrimaryButton
                 text="Iniciar sesión"
-                sx={ { margin: '4px' } }
+                sx={{ margin: '4px' }}
                 size="small"
-                onClick={ () => navigate('/login') }
+                onClick={() => navigate('/login')}
                 aria-label="Iniciar sesión"
               />
-            ) }
+            )}
           </Toolbar>
         </AppBar>
       </header>
