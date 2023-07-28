@@ -41,7 +41,7 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   estates
 }) => {
   const { addLoading, removeLoading } = useSpinner()
-  const { estateDetails, open, setOpen, getEstateDetails } = useEstateDetails()
+  const { open, setOpen, getEstateDetails } = useEstateDetails()
   useEffect(() => {
     addLoading()
     getEstateDetails()
@@ -52,17 +52,10 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
   let maxSlides
   textTitle === 'alquiler' ? (maxSlides = 4) : (maxSlides = 3)
 
-  const filteredEstates = estateDetails.filter(
-    (estate) =>
-      (textTitle === 'venta' && estate.for_sale && estate.is_featured) ||
-      (textTitle === 'alquiler' && estate.for_rent && estate.is_featured)
-  )
-
   const navigate = useNavigate()
   const handleClick = () => navigate('/search')
 
   const handleClose = (
-    event?: React.SyntheticEvent | Event,
     reason?: string
   ) => {
     if (reason === 'clickaway') return
@@ -82,47 +75,46 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
           onClick={ handleClick }
         />
       </Box>
-      {/* { estateDetails.length === 0 ? ( */ }
-      { estates?.length === 0 ? (
-        <SkeletonMessage messageText="Sin propiedades destacadas para mostrar" />
-      ) : (
-        <Swiper
-          navigation={ true }
-          modules={ [Navigation] }
-          slidesPerView={ 1 }
-          spaceBetween={ 10 }
-          centeredSlides={ false }
-          breakpoints={ {
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 40,
-            },
-            1000: {
-              slidesPerView: 3,
-              spaceBetween: 30,
-            },
-            1130: {
-              slidesPerView: maxSlides,
-              spaceBetween: 30,
-            },
-          } }
-          className="mySwiper-appartamentos"
-        >
-          {
-            // filteredEstates.map((estate) => (
-            estates?.map((estate) => (
-              <SwiperSlide
-                key={ estate.estate_datail_id }
-                style={ { paddingBottom: '20px' } }
-              >
-                <FeaturedCard estate={ estate } />
-              </SwiperSlide>
-            ))
+      { estates?.length === 0 ?
+        (
+          <SkeletonMessage messageText="Sin propiedades destacadas para mostrar" />
+        ) : (
+          <Swiper
+            navigation={ true }
+            modules={ [Navigation] }
+            slidesPerView={ 1 }
+            spaceBetween={ 10 }
+            centeredSlides={ false }
+            breakpoints={ {
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
+              1000: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1130: {
+                slidesPerView: maxSlides,
+                spaceBetween: 30,
+              },
+            } }
+            className="mySwiper-appartamentos"
+          >
+            {
+              estates?.map((estate) => (
+                <SwiperSlide
+                  key={ estate.estate_datail_id }
+                  style={ { paddingBottom: '20px' } }
+                >
+                  <FeaturedCard estate={ estate } />
+                </SwiperSlide>
+              ))
 
-          }
+            }
 
-        </Swiper>
-      ) }
+          </Swiper>
+        ) }
       <Stack spacing={ 2 } sx={ { width: '100%' } }>
         <Snackbar open={ open } autoHideDuration={ 6000 } onClose={ handleClose }>
           <Alert onClose={ handleClose } severity="error" sx={ { width: '100%' } }>

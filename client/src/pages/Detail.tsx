@@ -19,7 +19,7 @@ const Detail: React.FC<DetailProps> = () => {
 
   useEffect(() => {
     addLoading()
-    const filteredState = estatesDetailList.find((estate) => estate.estate_datail_id === +routeParams.id)
+    const filteredState = estatesDetailList.find((estate) => estate.estate_datail_id === +routeParams?.id)
     setEstateById(filteredState)
     removeLoading()
   }, []);

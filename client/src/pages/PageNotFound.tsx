@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom'
 import { Container, Grid, Typography } from '@mui/material'
-import cajas from '../assets/not-found.png'
 import Subtitle from '../components/atom/Subtitle'
 import PrimaryButton from '../components/atom/PrimaryButton'
 
@@ -49,7 +48,7 @@ const NotFound: React.FC<NotFoundProps> = () => {
             sm={ 6 }
             sx={ { padding: '1rem' } }
           >
-            <img src={ cajas } alt="cajas de mudanza" width="100%" />
+            <img src='../assets/not-found.png' alt="cajas de mudanza" width="100%" />
           </Grid>
         </Grid>
       </Container>

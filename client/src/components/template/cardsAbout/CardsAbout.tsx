@@ -3,10 +3,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
   IconButton,
   Typography
 } from '@mui/material'
@@ -17,8 +13,6 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import dayjs, { Dayjs } from 'dayjs'
 import { useState } from 'react'
-import PrimaryButton from '../../atom/PrimaryButton'
-import Subtitle from '../../atom/Subtitle'
 import ConfirmationModal from '../../molecule/confirmation-modal/ConfirmationModal'
 
 interface CardsProps {

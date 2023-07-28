@@ -1,10 +1,8 @@
-import fs from 'fs'
 import { initializeApp } from 'firebase/app'
 import {
   getFirestore,
   collection,
   doc,
-  setDoc,
   getDocs,
   getDoc,
 } from 'firebase/firestore'
@@ -58,33 +56,5 @@ async function getEstateDetailById(estateId: number): Promise<EstateDetail | nul
     return null
   }
 }
-
-// fs.readFile("C:/Users/romer/OneDrive/Escritorio/No-country/c12-25-t-node-react/client/src/api/state-detail-mock.json", "utf8", async (err, data) => {
-//   if (err) {
-//     console.error("Error al leer el archivo JSON:", err)
-//     return
-//   }
-
-//   try {
-//     const jsonData = JSON.parse(data);
-//     async function uploadDataToFirestore() {
-//       try {
-//         for (const estateDetail of jsonData.estates_detail) {
-//           const estateId = estateDetail.estate_datail_id
-//           // Utilizar el método "setDoc" para agregar un nuevo documento a la colección "estates_detail"
-//           await setDoc(doc(estatesDetailCollection, estateId.toString()), estateDetail);
-//           console.log("Documento subido con el ID:", estateId);
-//         }
-//         console.log("Todos los datos se subieron correctamente a Firestore.");
-//       } catch (error) {
-//         console.error("Error al subir los datos a Firestore:", error);
-//       }
-//     }
-
-//     uploadDataToFirestore();
-//   } catch (error) {
-//     console.error("Error al analizar el archivo JSON:", error);
-//   }
-// });
 
 export { getAllEstateDetails, getEstateDetailById }
