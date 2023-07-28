@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
-import favoriteBanner from '../assets/favorite-banner.png'
+import favoriteBanner from '../assets/favoriteBanner.png'
 import BackButton from '../components/atom/BackButton'
 import { estatesDetailList } from './../utils/EstatesDetailsList'
 import CardsWithPagination from '../components/template/CardsWithPagination'
