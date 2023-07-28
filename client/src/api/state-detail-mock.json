@@ -1685,7 +1685,7 @@
       "description": "Casa de 5 domitorios en Palermo, en Av. Colón al 4511. De 68 0mts2 totales. Cuenta con 5 habitaciones, 2 baños y garage para 2 autos. Un hermoso jardín parquizado con piscina.",
       "zone": "Palermo es un barrio residencial y de esparcimiento. Dentro de sus límites se encuentran los denominados Bosques de Palermo, que incluyen amplios parques y espacios verdes. Es un importante polo gastronómico, cultural y audiovisual y es uno de los destinos preferidos por los turistas que visitan la Ciudad.",
       "address": "Av. Colon 4511",
-      "city": "Palermo es un barrio residencial y de esparcimiento.",
+      "city": "Palermo",
       "province": "Capital Federal",
       "country": "Argentina",
       "price": 260000,
@@ -2258,7 +2258,7 @@
         "jardin": 0,
         "SUM": 0
       },
-      "property_type": "ph",
+      "property_type": "PH",
       "for_rent": true,
       "for_sale": false,
       "is_featured": false
@@ -2768,7 +2768,7 @@
         "jardin": 1,
         "SUM": 0
       },
-      "property_type": "ph",
+      "property_type": "PH",
       "for_rent": false,
       "for_sale": true,
       "is_featured": false
@@ -3279,7 +3279,7 @@
         "jardin": 1,
         "SUM": 0
       },
-      "property_type": "ph",
+      "property_type": "PH",
       "for_rent": false,
       "for_sale": true,
       "is_featured": false
@@ -3644,7 +3644,7 @@
         "jardin": 0,
         "SUM": 0
       },
-      "property_type": "ph",
+      "property_type": "PH",
       "for_rent": true,
       "for_sale": false,
       "is_featured": false

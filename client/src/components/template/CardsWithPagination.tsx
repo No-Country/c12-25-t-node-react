@@ -10,7 +10,6 @@ type CardsWithPaginationProps = {
 
 const CardsWithPagination: React.FC<CardsWithPaginationProps> = ({ list }) => {
   const [page, setPage] = useState(1)
-
   return (
     <Container maxWidth="lg">
       <Grid
