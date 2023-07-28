@@ -1,6 +1,6 @@
-import { 
+import {
   Container,
-  Grid 
+  Grid
 } from '@mui/material'
 import TextBox from '../text-box/TextBox'
 import Subtitle from '../../atom/Subtitle'
@@ -8,7 +8,7 @@ import ContactForm from '../../template/contactForm/ContactForm'
 import { CONTACT_TEXT } from '../../../utils/contact-form-conditions'
 import TitleText from '../../molecule/text/Text'
 import './ContactProperty.styles.css'
-import { stylesContactProperty} from './ContactProperty.styles'
+import { stylesContactProperty } from './ContactProperty.styles'
 
 type ContactPropertyProps = {
 }
@@ -18,7 +18,10 @@ const ContactProperty: React.FC<ContactPropertyProps> = () => {
     <Container maxWidth='xl' id="contact-form">
       <Grid container sx={ { paddingTop: '6rem' } }>
         <Grid item xs={ 12 } md={ 4 } lg={ 3 } sx={ stylesContactProperty.photoUp }>
-          <img src='../../../assets/contact-property-by-id.png' className="home-small" />
+          <img
+            src='https://i.postimg.cc/vTrpwDfv/contact-property-by-id.png'
+            className="home-small"
+          />
         </Grid>
         <Grid item xs={ 12 } md={ 8 } lg={ 9 } sx={ { zIndex: '1' } }>
           <TextBox
@@ -48,7 +51,7 @@ const ContactProperty: React.FC<ContactPropertyProps> = () => {
         </Grid>
         <Grid item xs={ 12 } md={ 4 } lg={ 3 } sx={ stylesContactProperty.photoDown }>
           <img
-            src='../../../assets/contact-property-by-id.png'
+            src='https://i.postimg.cc/vTrpwDfv/contact-property-by-id.png'
             width='100%'
             className="home-large"
             alt='Frente de inmueble con jardín'

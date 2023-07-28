@@ -21,6 +21,7 @@ import { registerSchema } from '../../../schemas/schemas'
 import { useSnackbar } from 'notistack'
 import { useUserStore } from '../../../store/auth'
 import { stylesRegisterModal } from './RegisterModal.styles'
+import './RegisterModalStyles.css'
 
 const RootFormControl = styled(FormControl)(() => ({
   '& .MuiOutlinedInput-root': {
@@ -102,11 +103,12 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         sx={ stylesRegisterModal.modal }
+        className="register-modal-appartamentos"
       >
         <Box sx={ style }>
           <Box
             component="img"
-            src="../../../src/assets/registerBanner.png"
+            src="https://i.postimg.cc/x85tPmLB/register-Banner.png"
             sx={ {
               height: '90%',
               position: 'absolute',
@@ -274,7 +276,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                   InputProps={ {
                     style: {
                       borderRadius: '15px',
-                      height: '35px',
+                      height: '35px'
                     },
                     endAdornment: (
                       <InputAdornment position="end">
