@@ -1,11 +1,12 @@
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import TextBox from '../components/molecule/text-box/TextBox'
 import TitleText from '../components/molecule/text/Text'
-import aboutBanner from '../assets/about-us-banner.png'
 import { ABOUT_US_TEXT } from '../utils/about-us-text'
 import Subtitle from '../components/atom/Subtitle'
 import CardsGrid from '../components/template/cardsAbout/CardsGrid'
 import BackButton from '../components/atom/BackButton'
+import { Box } from '@mui/system'
+import { Grid } from '@mui/material'
 
 
 type AboutProps = {
@@ -15,7 +16,17 @@ const About: React.FC<AboutProps> = () => {
   return (
     <>
       <BackButton />
-      <BannerAndBackgroundPage imgSrc={ aboutBanner }>
+      <Box sx={ { background: '#F1F1F9' } }>
+        <Grid
+          sx={ {
+            height: '350px' ,
+            backgroundImage:'../assets/about-us-banner.png',
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          } }
+        />
+      </Box>
         <TextBox subTitle={
           <Subtitle
             title="Conocé nuestra "
