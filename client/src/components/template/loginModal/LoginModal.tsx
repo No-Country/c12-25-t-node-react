@@ -9,7 +9,7 @@ import {
   InputAdornment,
   IconButton,
   TextField,
-  Typography
+  Typography,
 } from '@mui/material'
 import LogoText from '../../atom/LogoText'
 import { FormHelperText } from '@mui/material'
@@ -44,13 +44,9 @@ interface LoginModalProps {
   handleCloseLoginModal: () => void
 }
 
-const LoginModal: React.FC<LoginModalProps> = ({
-  openLoginModal,
-  handleCloseLoginModal,
-}) => {
+const LoginModal: React.FC<LoginModalProps> = ({}) => {
   const navigate = useNavigate()
   const login = useUserStore((state) => state.login)
-  const user = useUserStore((state) => state.user_id)
   const loginWithGoogle = useUserStore((state) => state.loginWithGoogle)
   const formik = useFormik({
     initialValues: {
@@ -95,8 +91,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
         variant: 'success',
       })
       setTimeout(() => {
-        handleCloseLoginModal()
-      }, 1000)
+        navigate('/')
+      }, 1500)
     } catch (error) {
       enqueueSnackbar('¡Ha ocurrido un error. Intenta nuevamente!', {
         variant: 'error',
@@ -105,35 +101,39 @@ const LoginModal: React.FC<LoginModalProps> = ({
   }
 
   return (
-    <Container maxWidth='lg'>
-      <Grid container sx={ stylesLoginModal.container } >
-        <Grid item xs={ 12 } md={ 6 } sx={ stylesLoginModal.item }>
+    <Container maxWidth="lg">
+      <Grid container sx={stylesLoginModal.container}>
+        <Grid item xs={12} md={6} sx={stylesLoginModal.item}>
           <Box
             component="img"
-            src={ loginBanner }
-            sx={ stylesLoginModal.gridBox }
+            src={loginBanner}
+            sx={stylesLoginModal.gridBox}
             alt="Cocina liminosa con isla"
           />
         </Grid>
-        <Grid item xs={ 12 } md={ 6 } >
-          <Box sx={ stylesLoginModal.box1 } >
-            <Box sx={ stylesLoginModal.box2 }>
+        <Grid item xs={12} md={6}>
+          <Box sx={stylesLoginModal.box1}>
+            <Box sx={stylesLoginModal.box2}>
               <LogoText />
             </Box>
             <Box
               component="form"
               //onSubmit={handleLogIn}
-              onSubmit={ formik.handleSubmit }
-              sx={ stylesLoginModal.boxForm }
+              onSubmit={formik.handleSubmit}
+              sx={stylesLoginModal.boxForm}
             >
-              <Typography sx={ stylesLoginModal.text }>
+              <Typography sx={stylesLoginModal.text}>
                 Ingresá a <strong>tu cuenta</strong>
               </Typography>
-              <Typography sx={ stylesLoginModal.textSmall }>
-                Vas a poder agregar tus propiedades favoritas en tu perfil y realizar el seguimiento de todas tus consultas.
+              <Typography sx={stylesLoginModal.textSmall}>
+                Vas a poder agregar tus propiedades favoritas en tu perfil y
+                realizar el seguimiento de todas tus consultas.
               </Typography>
-              <RootFormControl sx={ stylesLoginModal.rootFormControl }>
-                <FormHelperText id="emailLoginInput" sx={ stylesLoginModal.formHelperText } >
+              <RootFormControl sx={stylesLoginModal.rootFormControl}>
+                <FormHelperText
+                  id="emailLoginInput"
+                  sx={stylesLoginModal.formHelperText}
+                >
                   Correo electrónico
                 </FormHelperText>
                 <TextField
@@ -141,71 +141,75 @@ const LoginModal: React.FC<LoginModalProps> = ({
                   name="emailLoginInput"
                   type="email"
                   variant="outlined"
-                  value={ formik.values.emailLoginInput }
-                  onChange={ formik.handleChange }
-                  onBlur={ formik.handleBlur }
+                  value={formik.values.emailLoginInput}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   placeholder="Ingresá tu correo electrónico"
-                  sx={ { mb: 2 } }
-                  InputProps={ {
+                  sx={{ mb: 2 }}
+                  InputProps={{
                     style: {
                       borderRadius: '15px',
                     },
-                  } }
+                  }}
                 />
-                { formik.errors.emailLoginInput &&
+                {formik.errors.emailLoginInput &&
                   formik.touched.emailLoginInput && (
-                    <Typography sx={ { color: 'red' } }>
-                      { formik.errors.emailLoginInput }
+                    <Typography sx={{ color: 'red' }}>
+                      {formik.errors.emailLoginInput}
                     </Typography>
-                  ) }
-                <FormHelperText id="passwordLoginInput" sx={ stylesLoginModal.formHelperText } >
+                  )}
+                <FormHelperText
+                  id="passwordLoginInput"
+                  sx={stylesLoginModal.formHelperText}
+                >
                   Contraseña
                 </FormHelperText>
                 <TextField
                   required
                   id="passwordLoginInput"
                   placeholder="Ingresá tu contraseña"
-                  type={ showPassword ? 'text' : 'password' }
+                  type={showPassword ? 'text' : 'password'}
                   variant="outlined"
-                  value={ formik.values.passwordLoginInput }
-                  onChange={ formik.handleChange }
-                  sx={ { mb: 3 } }
-                  InputProps={ {
+                  value={formik.values.passwordLoginInput}
+                  onChange={formik.handleChange}
+                  sx={{ mb: 3 }}
+                  InputProps={{
                     style: {
                       borderRadius: '15px',
                     },
                     endAdornment: (
                       <InputAdornment position="end">
                         <IconButton
-                          onClick={ handleTogglePassword }
+                          onClick={handleTogglePassword}
                           edge="end"
-                          sx={ { color: '#1daeff' } }
+                          sx={{ color: '#1daeff' }}
                         >
-                          { showPassword ? <VisibilityOff /> : <Visibility /> }
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
                     ),
-                  } }
+                  }}
                 />
                 <PrimaryButton
                   type="submit"
                   text="Ingresar"
-                  sx={ { minWidth: '238px', margin: '0.5rem auto' } }
+                  sx={{ minWidth: '238px', margin: '0.5rem auto' }}
                 />
               </RootFormControl>
-              <Button 
+              <Button
                 variant="outlined"
-                sx={stylesLoginModal.btn }
-                onClick={ handleLoginWithGoogle }
+                sx={stylesLoginModal.btn}
+                onClick={handleLoginWithGoogle}
               >
                 <GoogleIcon /> Ingresar con Google
               </Button>
-              <Box mt={ 2 }>
+              <Box mt={2}>
                 <Typography component="div">
-                  ¿Aún no tenes cuenta? <Box
+                  ¿Aún no tenes cuenta?{' '}
+                  <Box
                     component="span"
-                    sx={ { color: '#1daeff', ':hover': { cursor: 'pointer' } } }
-                    onClick={ handleChangeToRegister }
+                    sx={{ color: '#1daeff', ':hover': { cursor: 'pointer' } }}
+                    onClick={handleChangeToRegister}
                   >
                     Registrate
                   </Box>
@@ -215,12 +219,12 @@ const LoginModal: React.FC<LoginModalProps> = ({
           </Box>
         </Grid>
       </Grid>
-      { openRegisterModal &&
+      {openRegisterModal && (
         <RegisterModal
-          openRegisterModal={ openRegisterModal }
-          handleCloseRegisterModal={ handleCloseRegisterModal }
+          openRegisterModal={openRegisterModal}
+          handleCloseRegisterModal={handleCloseRegisterModal}
         />
-      }
+      )}
     </Container>
   )
 }
