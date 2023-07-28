@@ -43,11 +43,12 @@ const Favorites: React.FC<FavoritesProps> = () => {
         checkFavoriteStatus(user.uid)
       }
     })
+    removeLoading()
     return () => {
       unsubscribe()
-      removeLoading()
     }
   }, [])
+
   const filteredFav = estateDetails.filter((estate) =>
     favoriteIds.includes(estate.estate_id)
   )
