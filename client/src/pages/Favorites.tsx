@@ -7,16 +7,18 @@ import CardsWithPagination from '../components/template/CardsWithPagination'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
-import { useEstateDetails } from '../store/database'
 import { useSpinner } from '../context/SpinnerProvider'
-import { Typography } from '@mui/material'
+import SkeletonMessage from '../components/atom/SkeletonMessage'
+import { Container } from '@mui/material'
+
 type FavoritesProps = {}
 const db = getFirestore()
 const auth = getAuth()
 
 const Favorites: React.FC<FavoritesProps> = () => {
-  const { estateDetails } = useEstateDetails()
+  //const {  estateDetails } = useEstateDetails()
   const { addLoading, removeLoading } = useSpinner()
+
   const [favoriteIds, setFavoriteIds] = useState<number[]>([])
 
   const checkFavoriteStatus = async (userId: string) => {
@@ -41,28 +43,37 @@ const Favorites: React.FC<FavoritesProps> = () => {
         checkFavoriteStatus(user.uid)
       }
     })
+    removeLoading()
     return () => {
       unsubscribe()
-      removeLoading()
     }
   }, [])
-  const filteredFav = estateDetails.filter((estate) =>
+  const filteredFav = estatesDetailList.filter((estate) =>
     favoriteIds.includes(estate.estate_id)
   )
 
+  // return (
+  //   <>
+  //     <BackButton />
+  //     <BannerAndBackgroundPage imgSrc={favoriteBanner} imgHeight="350px" />
+  //     {filteredFav.length === 0 ? (
+  //       <SkeletonMessage messageText="No tienes favoritos todavia." />
+  //     ) : (
+  //       <CardsWithPagination list={filteredFav} />
+  //     )}
+  //   </>
+  // )
   return (
     <>
       <BackButton />
-      <BannerAndBackgroundPage imgSrc={ favoriteBanner } imgHeight="350px" />
-      <CardsWithPagination list={ estatesDetailList } />
-      <BannerAndBackgroundPage imgSrc={ favoriteBanner } imgHeight="350px" />
-      { filteredFav.length === 0 ?
-        (
-          <Typography>Aun no tienes favoritos agregados</Typography>
-        )
-        :
-        <CardsWithPagination list={ filteredFav } />
-      }
+      <BannerAndBackgroundPage imgSrc={favoriteBanner} imgHeight="350px" />
+      {filteredFav.length === 0 ? (
+        <Container maxWidth="lg" sx={{ marginTop: '3rem' }}>
+          <SkeletonMessage messageText="No tienes favoritos todavía" />
+        </Container>
+      ) : (
+        <CardsWithPagination list={filteredFav} />
+      )}
     </>
   )
 }

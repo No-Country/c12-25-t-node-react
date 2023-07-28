@@ -15,10 +15,12 @@ export const useEstateDetails = create<EstateDetailsState>((set) => ({
   getEstateDetails: async () => {
     try {
       let estateDetails: EstateDetail[] = []
-      estatesDetailList .map(estate => { estateDetails.push(estate) })
+      estatesDetailList.map((estate) => {
+        estateDetails.push(estate)
+      })
       return estateDetails
     } catch (error) {
       console.log(error)
     }
-  }
+  },
 }))

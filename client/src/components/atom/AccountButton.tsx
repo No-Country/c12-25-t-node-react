@@ -1,12 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useState } from 'react'
-import {
-  Divider,
-  Menu,
-  MenuItem,
-  useMediaQuery,
-  useTheme
-} from '@mui/material'
+import { Divider, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material'
 import { useUserStore } from '../../store/auth'
 import { FavoriteIconMenu, LogoutIconMenu } from './Icons'
 import PrimaryButton from './PrimaryButton'
@@ -23,40 +17,69 @@ const DropdownButton: React.FC = () => {
   const isMd = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleMenuClose = () => setAnchorEl(null)
-  const handleLogOut = () => { logOut(); navigate('/') }
-  const handleToHome = () => { handleMenuClose(); navigate('/') }
-  const handleToSearch = () => { handleMenuClose(); navigate('/search') }
-  const handleToAbout = () => { handleMenuClose(); navigate('/about') }
-  const handleToContact = () => { handleMenuClose(); navigate('/contact') }
-  const handleToFavorites = () => { handleMenuClose(); navigate('/favorites') }
+  const handleLogOut = () => {
+    logOut()
+    navigate('/')
+  }
+  const handleToHome = () => {
+    handleMenuClose()
+    navigate('/')
+  }
+  const handleToSearch = () => {
+    handleMenuClose()
+    navigate('/search')
+  }
+  const handleToAbout = () => {
+    handleMenuClose()
+    navigate('/about')
+  }
+  const handleToContact = () => {
+    handleMenuClose()
+    navigate('/contact')
+  }
+  const handleToFavorites = () => {
+    handleMenuClose()
+    navigate('/favorites')
+  }
 
   return (
     <>
       <PrimaryButton
-        text='Mi cuenta'
-        onClick={ handleButtonClick }
-        sx={ { margin: '6px' } }
+        text="Mi cuenta"
+        onClick={handleButtonClick}
+        sx={{ margin: '6px' }}
       />
       <Menu
-        anchorEl={ anchorEl }
-        open={ Boolean(anchorEl) }
-        onClose={ handleMenuClose }
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleMenuClose}
       >
-        { isMd &&
+        {isMd && (
           <div>
-            <MenuItem onClick={ handleToHome }>Home</MenuItem>
+            <MenuItem onClick={handleToHome}>Home</MenuItem>
             <Divider />
-            <MenuItem onClick={ handleToSearch }>Propiedades</MenuItem>
+            <MenuItem onClick={handleToSearch}>Propiedades</MenuItem>
             <Divider />
-            <MenuItem onClick={ handleToAbout }>Quienes somos</MenuItem>
+            <MenuItem onClick={handleToAbout}>Quienes somos</MenuItem>
             <Divider />
-            <MenuItem onClick={ handleToContact }>Contacto</MenuItem>
+            <MenuItem onClick={handleToContact}>Contacto</MenuItem>
             <Divider />
           </div>
-        }
-        <MenuItem onClick={ handleToFavorites }><FavoriteIconMenu />Mis favoritos</MenuItem>
+        )}
+        {isMd ? (
+          <MenuItem onClick={handleToFavorites}>
+            <FavoriteIconMenu />
+            Mis favoritos
+          </MenuItem>
+        ) : (
+          ''
+        )}
+
         <Divider />
-        <MenuItem onClick={ handleLogOut }><LogoutIconMenu />Cerrar sesión</MenuItem>
+        <MenuItem onClick={handleLogOut}>
+          <LogoutIconMenu />
+          Cerrar sesión
+        </MenuItem>
       </Menu>
     </>
   )

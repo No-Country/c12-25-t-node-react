@@ -8,11 +8,10 @@ import { stylesHeader } from './Header.styles'
 
 type HeaderProps = {}
 let tab = 0
-
 const Header: React.FC<HeaderProps> = () => {
   const navigate = useNavigate()
   const { pathname } = useLocation()
-  const tabArray = ['Home', 'Propiedades', 'Quienes somos', 'Contacto', '']
+  const tabArray = ['Home', 'Propiedades', 'Quienes somos', 'Contacto']
   const [selectedTab, setSelectedTab] = useState<number>(tab)
 
   useEffect(() => {
@@ -33,6 +32,9 @@ const Header: React.FC<HeaderProps> = () => {
         tab = 3
         break
       case '/login':
+        tab = 0
+        break
+      case '/favorites':
         tab = 4
         break
       default:
@@ -59,6 +61,10 @@ const Header: React.FC<HeaderProps> = () => {
         setSelectedTab(3)
         navigate('/contact')
         break
+      case 4:
+        setSelectedTab(4)
+        navigate('/favorites')
+        break
       default:
         break
     }
@@ -77,11 +83,20 @@ const Header: React.FC<HeaderProps> = () => {
               textColor="primary"
               value={selectedTab}
               onChange={(e, value) => handleTab(value)}
-              indicatorColor={selectedTab === 4 ? 'white' : 'primary'}
+              indicatorColor={selectedTab > 4 ? 'white' : 'primary'}
             >
               {tabArray.map((tab) => (
                 <Tab label={tab} key={tab} sx={stylesHeader.tab} />
               ))}
+              {localStorage.getItem('user') ? (
+                <Tab
+                  label={'Favoritos'}
+                  key={'Favoritos'}
+                  sx={stylesHeader.tab}
+                />
+              ) : (
+                ''
+              )}
             </Tabs>
             {localStorage.getItem('user') ? (
               <AccountButton />

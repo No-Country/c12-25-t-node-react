@@ -92,7 +92,12 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
   const handleFavoriteClick = async () => {
     const user = auth.currentUser
     if (!user) {
-      console.log('Debe iniciar sesión para agregar o eliminar de favoritos.')
+      enqueueSnackbar(
+        '¡Debes iniciar sesión para agregar o quitar favoritos!',
+        {
+          variant: 'error',
+        }
+      )
       return
     }
     const userFavoriteRef = doc(db, 'usersFavorites', user.uid)
