@@ -26,8 +26,8 @@ interface CardsProps {
 }
 
 const handleEmailClick = (mail: string) => {
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${ mail }`;
-  window.open(gmailUrl, '_blank');
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&to=${ mail }`
+  window.open(gmailUrl, '_blank')
 }
 
 const CardsAbout: React.FC<CardsProps> = ({
@@ -39,7 +39,6 @@ const CardsAbout: React.FC<CardsProps> = ({
   whatsapp,
   mail
 }) => {
-
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs('2023-07-12'))
   const [openDialog, setOpenDialog] = useState(false)
   const handleConfirm = () => setOpenDialog(true)
@@ -67,18 +66,11 @@ const CardsAbout: React.FC<CardsProps> = ({
       } }
       className="card"
     >
-      <Box
-        sx={ {
-          display: 'flex',
-          flexDirection: 'row',
-          gap: '6px',
-          justifyContent: 'space-around',
-          width: '100%'
-        } }>
+      <Box sx={ cardBox }>
         <CardMedia
           component="img"
-          image={ `./src/assets/personal/${ image }` }
-          alt="Card Image"
+          image={ image }
+          alt={ name }
           sx={ {
             width: isSpecialCard ? { xs: '100px', sm: '100px' } : { xs: '85px', sm: '100px' },
             height: isSpecialCard ? { xs: '100px', sm: '100px' } : { xs: '100px', sm: '100px' },
@@ -141,21 +133,8 @@ const CardsAbout: React.FC<CardsProps> = ({
             marginBottom: isSpecialCard ? { xs: '20px' } : {},
           } }
         >
-          <Typography
-            sx={ {
-              color: '#1B17E7',
-              fontSize: '14px',
-              fontWeight: 'bold'
-            } }
-          >
-            { name } { lastName }
-          </Typography>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-          >
-            { position }
-          </Typography>
+          <Typography sx={ fullName }>{ name } { lastName }</Typography>
+          <Typography variant="body2" color="text.secondary" >{ position }</Typography>
         </Box>
         { isSpecialCard ?
           (
@@ -235,4 +214,18 @@ const buttonStyleAbout = {
   borderRadius: '5px',
   border: '1px solid #1DAEFF',
   boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+}
+
+const cardBox = {
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '6px',
+  justifyContent: 'space-around',
+  width: '100%'
+}
+
+const fullName = {
+  color: '#1B17E7',
+  fontSize: '14px',
+  fontWeight: 'bold'
 }
