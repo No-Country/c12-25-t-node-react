@@ -16,7 +16,6 @@ const db = getFirestore()
 const auth = getAuth()
 
 const Favorites: React.FC<FavoritesProps> = () => {
-  //const {  estateDetails } = useEstateDetails()
   const { addLoading, removeLoading } = useSpinner()
 
   const [favoriteIds, setFavoriteIds] = useState<number[]>([])
@@ -52,17 +51,6 @@ const Favorites: React.FC<FavoritesProps> = () => {
     favoriteIds.includes(estate.estate_id)
   )
 
-  // return (
-  //   <>
-  //     <BackButton />
-  //     <BannerAndBackgroundPage imgSrc={favoriteBanner} imgHeight="350px" />
-  //     {filteredFav.length === 0 ? (
-  //       <SkeletonMessage messageText="No tienes favoritos todavia." />
-  //     ) : (
-  //       <CardsWithPagination list={filteredFav} />
-  //     )}
-  //   </>
-  // )
   return (
     <>
       <BackButton />
