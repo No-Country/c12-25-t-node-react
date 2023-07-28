@@ -28,15 +28,18 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
   ref
 ) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
+  return <MuiAlert elevation={ 6 } ref={ ref } variant="filled" { ...props } />
 })
 
 interface FeaturedAcordionProps {
   textTitle: string
-  estates?: EstateDetail[]
+  estates?: EstateDetail[] | any[]
 }
 
-const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
+const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({
+  textTitle,
+  estates
+}) => {
   const { addLoading, removeLoading } = useSpinner()
   const { estateDetails, open, setOpen, getEstateDetails } = useEstateDetails()
   useEffect(() => {
@@ -67,28 +70,29 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
   }
 
   return (
-    <Container maxWidth="lg" sx={{ marginTop: isMd ? '10rem' : '6rem' }}>
-      <Box sx={stylesFeaturedAcordion.box}>
-        <Typography variant="h2" sx={{ alignSelf: 'center' }}>
-          Destacados en<span style={{ fontWeight: '800' }}> {textTitle}</span>
+    <Container maxWidth="lg" sx={ { marginTop: isMd ? '10rem' : '6rem' } }>
+      <Box sx={ stylesFeaturedAcordion.box }>
+        <Typography variant="h2" sx={ { alignSelf: 'center' } }>
+          Destacados en<span style={ { fontWeight: '800' } }> { textTitle }</span>
         </Typography>
         <PrimaryButton
           text="Ver todos"
           variant="outlined"
-          sx={stylesFeaturedAcordion.button}
-          onClick={handleClick}
+          sx={ stylesFeaturedAcordion.button }
+          onClick={ handleClick }
         />
       </Box>
-      {estateDetails.length === 0 ? (
+      {/* { estateDetails.length === 0 ? ( */ }
+      { estates?.length === 0 ? (
         <SkeletonMessage messageText="Sin propiedades destacadas para mostrar" />
       ) : (
         <Swiper
-          navigation={true}
-          modules={[Navigation]}
-          slidesPerView={1}
-          spaceBetween={10}
-          centeredSlides={false}
-          breakpoints={{
+          navigation={ true }
+          modules={ [Navigation] }
+          slidesPerView={ 1 }
+          spaceBetween={ 10 }
+          centeredSlides={ false }
+          breakpoints={ {
             768: {
               slidesPerView: 2,
               spaceBetween: 40,
@@ -101,22 +105,27 @@ const FeaturedAcordion: React.FC<FeaturedAcordionProps> = ({ textTitle }) => {
               slidesPerView: maxSlides,
               spaceBetween: 30,
             },
-          }}
+          } }
           className="mySwiper-appartamentos"
         >
-          {filteredEstates.map((estate) => (
-            <SwiperSlide
-              key={estate.estate_datail_id}
-              style={{ paddingBottom: '20px' }}
-            >
-              <FeaturedCard estate={estate} />
-            </SwiperSlide>
-          ))}
+          {
+            // filteredEstates.map((estate) => (
+            estates?.map((estate) => (
+              <SwiperSlide
+                key={ estate.estate_datail_id }
+                style={ { paddingBottom: '20px' } }
+              >
+                <FeaturedCard estate={ estate } />
+              </SwiperSlide>
+            ))
+
+          }
+
         </Swiper>
-      )}
-      <Stack spacing={2} sx={{ width: '100%' }}>
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+      ) }
+      <Stack spacing={ 2 } sx={ { width: '100%' } }>
+        <Snackbar open={ open } autoHideDuration={ 6000 } onClose={ handleClose }>
+          <Alert onClose={ handleClose } severity="error" sx={ { width: '100%' } }>
             Error al obtener los detalles de las propiedades
           </Alert>
         </Snackbar>

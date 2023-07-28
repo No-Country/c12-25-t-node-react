@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "estate_datail_id": "1",
     "description": "Casa 4 ambientes en Palermo",
     "adress": "Av. Santa Fe 2500",
     "area": 280,
@@ -14,7 +14,7 @@
     "is_featured": false
   },
   {
-    "id": "2",
+    "estate_datail_id": "2",
     "description": "PH 3 ambientes en Caballito",
     "adress": "Av. Rivadavia 4100",
     "area": 110,
@@ -28,7 +28,7 @@
     "is_featured": true
   },
   {
-    "id": "3",
+    "estate_datail_id": "3",
     "description": "Casa 4 ambientes en Boedo",
     "adress": "Av. Boedo 1500",
     "area": 170,
@@ -42,7 +42,7 @@
     "is_featured": false
   },
   {
-    "id": "4",
+    "estate_datail_id": "4",
     "description": "PH 3 ambientes en Belgrano",
     "adress": "Av. Juramento 2400",
     "area": 110,
@@ -56,7 +56,7 @@
     "is_featured": false
   },
   {
-    "id": "5",
+    "estate_datail_id": "5",
     "description": "Departamento 2 ambientes en Palermo",
     "adress": "Av. Scalabrini Ortiz 1500",
     "area": 55,
@@ -70,7 +70,7 @@
     "is_featured": true
   },
   {
-    "id": "6",
+    "estate_datail_id": "6",
     "description": "PH 4 ambientes en Barracas",
     "adress": "Av. Montes de Oca 2900",
     "area": 140,
@@ -84,7 +84,7 @@
     "is_featured": false
   },
   {
-    "id": "7",
+    "estate_datail_id": "7",
     "description": "Departamento 2 ambientes en Boedo",
     "adress": "Av. Boedo 2500",
     "area": 50,
@@ -98,7 +98,7 @@
     "is_featured": false
   },
   {
-    "id": "8",
+    "estate_datail_id": "8",
     "description": "Casa 4 ambientes en Balvanera",
     "adress": "Av. Corrientes 3800",
     "area": 170,
@@ -112,7 +112,7 @@
     "is_featured": true
   },
   {
-    "id": "9",
+    "estate_datail_id": "9",
     "description": "Casa 5 ambientes en Villa Urquiza",
     "adress": "Av. Monroe 4511",
     "area": 680,
@@ -126,7 +126,7 @@
     "is_featured": true
   },
   {
-    "id": "10",
+    "estate_datail_id": "10",
     "description": "Departamento 2 ambientes en Caballito",
     "adress": "Av. Rivadavia 3900",
     "area": 50,
@@ -140,7 +140,7 @@
     "is_featured": false
   },
   {
-    "id": "11",
+    "estate_datail_id": "11",
     "description": "Departamento 2 ambientes en Belgrano",
     "adress": "Av. Cabildo 3200",
     "area": 60,
@@ -154,7 +154,7 @@
     "is_featured": false
   },
   {
-    "id": "12",
+    "estate_datail_id": "12",
     "description": "PH 3 ambientes en Boedo",
     "adress": "Av. Boedo 1800",
     "area": 100,
@@ -168,7 +168,7 @@
     "is_featured": false
   },
   {
-    "id": "13",
+    "estate_datail_id": "13",
     "description": "PH 3 ambientes en Palermo",
     "adress": "Av. Córdoba 3000",
     "area": 160,
@@ -182,7 +182,7 @@
     "is_featured": true
   },
   {
-    "id": "14",
+    "estate_datail_id": "14",
     "description": "Departamento 2 ambientes en Barracas",
     "adress": "Av. Montes de Oca 3400",
     "area": 55,
@@ -196,7 +196,7 @@
     "is_featured": false
   },
   {
-    "id": "15",
+    "estate_datail_id": "15",
     "description": "Casa 6 ambientes en Agronomía",
     "adress": "Av. San Martín 3200",
     "area": 250,
@@ -210,7 +210,7 @@
     "is_featured": true
   },
   {
-    "id": "16",
+    "estate_datail_id": "16",
     "description": "Departamento 2 ambientes en Balvanera",
     "adress": "Av. Rivadavia 2900",
     "area": 50,
@@ -224,7 +224,7 @@
     "is_featured": false
   },
   {
-    "id": "17",
+    "estate_datail_id": "17",
     "description": "Casa 3 ambientes en Belgrano",
     "adress": "Belgrano 1122",
     "area": 500,
@@ -238,7 +238,7 @@
     "is_featured": false
   },
   {
-    "id": "18",
+    "estate_datail_id": "18",
     "description": "Departamento 2 ambientes en Villa Urquiza",
     "adress": "Calle Falsa 123",
     "area": 400,
@@ -252,7 +252,7 @@
     "is_featured": false
   },
   {
-    "id": "19",
+    "estate_datail_id": "19",
     "description": "Departamento 3 ambientes en Palermo",
     "adress": "Av. Scalabrini Ortiz 2800",
     "area": 65,
@@ -266,7 +266,7 @@
     "is_featured": true
   },
   {
-    "id": "20",
+    "estate_datail_id": "20",
     "description": "Casa 5 ambientes en Boedo",
     "adress": "Av. Boedo 3000",
     "area": 280,
@@ -280,7 +280,7 @@
     "is_featured": false
   },
   {
-    "id": "21",
+    "estate_datail_id": "21",
     "description": "Casa 6 ambientes en Belgrano",
     "adress": "Belgrano 1122",
     "area": 800,
@@ -294,7 +294,7 @@
     "is_featured": true
   },
   {
-    "id": "22",
+    "estate_datail_id": "22",
     "description": "PH 3 ambientes en Balvanera",
     "adress": "Av. Belgrano 4200",
     "area": 100,
@@ -308,7 +308,7 @@
     "is_featured": false
   },
   {
-    "id": "23",
+    "estate_datail_id": "23",
     "description": "Departamento 2 ambientes en Agronomía",
     "adress": "Av. San Martín 2300",
     "area": 65,
@@ -322,7 +322,7 @@
     "is_featured": false
   },
   {
-    "id": "24",
+    "estate_datail_id": "24",
     "description": "Casa 5 ambientes en Palermo",
     "adress": "Av. Colon 4511",
     "area": 680,
@@ -336,7 +336,7 @@
     "is_featured": false
   },
   {
-    "id": "25",
+    "estate_datail_id": "25",
     "description": "PH 2 ambientes en Palermo",
     "adress": "Av. Córdoba 3500",
     "area": 110,
@@ -350,7 +350,7 @@
     "is_featured": false
   },
   {
-    "id": "26",
+    "estate_datail_id": "26",
     "description": "Casa 4 ambientes en Villa Urquiza",
     "adress": "Av. Triunvirato 4500",
     "area": 280,
@@ -364,7 +364,7 @@
     "is_featured": true
   },
   {
-    "id": "27",
+    "estate_datail_id": "27",
     "description": "PH 4 ambientes en Belgrano",
     "adress": "Av. Juramento 1800",
     "area": 150,
@@ -378,7 +378,7 @@
     "is_featured": false
   },
   {
-    "id": "28",
+    "estate_datail_id": "28",
     "description": "Casa 2 ambientes en Caballito",
     "adress": "Tucuman 2020",
     "area": 450,
@@ -392,7 +392,7 @@
     "is_featured": false
   },
   {
-    "id": "29",
+    "estate_datail_id": "29",
     "description": "Departamento 2 ambientes en Villa Urquiza",
     "adress": "Av. Monroe 3800",
     "area": 55,
@@ -406,7 +406,7 @@
     "is_featured": false
   },
   {
-    "id": "30",
+    "estate_datail_id": "30",
     "description": "PH 3 ambientes en Boedo",
     "adress": "Av. Boedo 2200",
     "area": 100,
@@ -420,7 +420,7 @@
     "is_featured": true
   },
   {
-    "id": "31",
+    "estate_datail_id": "31",
     "description": "PH 2 ambientes en Almagro",
     "adress": "Av. Rivadavia 3000",
     "area": 80,
@@ -434,7 +434,7 @@
     "is_featured": false
   },
   {
-    "id": "32",
+    "estate_datail_id": "32",
     "description": "PH 4 ambientes en Caballito",
     "adress": "Av. Rivadavia 4200",
     "area": 170,
@@ -448,7 +448,7 @@
     "is_featured": false
   },
   {
-    "id": "33",
+    "estate_datail_id": "33",
     "description": "PH 3 ambientes en Barracas",
     "adress": "Av. Montes de Oca 2500",
     "area": 100,
@@ -462,7 +462,7 @@
     "is_featured": true
   },
   {
-    "id": "34",
+    "estate_datail_id": "34",
     "description": "Casa 2 ambientes en Palermo",
     "adress": "Av. Monroe 4511",
     "area": 450,
@@ -476,7 +476,7 @@
     "is_featured": false
   },
   {
-    "id": "35",
+    "estate_datail_id": "35",
     "description": "Departamento 3 ambientes en Agronomía",
     "adress": "Av. San Pedro 200",
     "area": 65,
@@ -490,7 +490,7 @@
     "is_featured": true
   },
   {
-    "id": "36",
+    "estate_datail_id": "36",
     "description": "Casa 6 ambientes en Almagro",
     "adress": "Av. Rivadavia 2500",
     "area": 220,
@@ -504,7 +504,7 @@
     "is_featured": false
   },
   {
-    "id": "37",
+    "estate_datail_id": "37",
     "description": "Departamento 3 ambientes en Boedo",
     "adress": "Av. Boedo 1200",
     "area": 75,
@@ -518,7 +518,7 @@
     "is_featured": false
   },
   {
-    "id": "38",
+    "estate_datail_id": "38",
     "description": "PH 3 ambientes en Agronomía",
     "adress": "Av. San Martín 1900",
     "area": 120,
@@ -532,7 +532,7 @@
     "is_featured": false
   },
   {
-    "id": "39",
+    "estate_datail_id": "39",
     "description": "PH 3 ambientes en Villa Urquiza",
     "adress": "Av. Triunvirato 4200",
     "area": 130,
@@ -546,7 +546,7 @@
     "is_featured": false
   },
   {
-    "id": "40",
+    "estate_datail_id": "40",
     "description": "Departamento 3 ambientes en Belgrano",
     "adress": "Av. Cabildo 2100",
     "area": 75,
@@ -560,7 +560,7 @@
     "is_featured": false
   },
   {
-    "id": "41",
+    "estate_datail_id": "41",
     "description": "Casa 4 ambientes en Balvanera",
     "adress": "Av. Corrientes 2100",
     "area": 170,
@@ -574,7 +574,7 @@
     "is_featured": true
   },
   {
-    "id": "42",
+    "estate_datail_id": "42",
     "description": "Departamento 3 ambientes en Caballito",
     "adress": "Av. Rivadavia 3500",
     "area": 65,
@@ -588,7 +588,7 @@
     "is_featured": true
   },
   {
-    "id": "43",
+    "estate_datail_id": "43",
     "description": "Departamento 2 ambientes en Almagro",
     "adress": "Av. Rivadavia 3100",
     "area": 50,
@@ -602,7 +602,7 @@
     "is_featured": false
   },
   {
-    "id": "44",
+    "estate_datail_id": "44",
     "description": "Departamento 3 ambientes en Barracas",
     "adress": "Av. Caseros 1800",
     "area": 70,
@@ -616,7 +616,7 @@
     "is_featured": false
   },
   {
-    "id": "45",
+    "estate_datail_id": "45",
     "description": "PH 3 ambientes en Almagro",
     "adress": "Av. Medrano 1500",
     "area": 120,
@@ -630,7 +630,7 @@
     "is_featured": true
   },
   {
-    "id": "46",
+    "estate_datail_id": "46",
     "description": "Casa 8 ambientes en Barracas",
     "adress": "Av. Suarez 1400",
     "area": 530,
@@ -644,7 +644,7 @@
     "is_featured": false
   },
   {
-    "id": "47",
+    "estate_datail_id": "47",
     "description": "Casa 6 ambientes en Caballito",
     "adress": "Av. Rivadavia 2800",
     "area": 350,
@@ -658,7 +658,7 @@
     "is_featured": false
   },
   {
-    "id": "48",
+    "estate_datail_id": "48",
     "description": "Casa 4 ambientes en Agronomía",
     "adress": "Av. San Martín 2900",
     "area": 220,
@@ -672,7 +672,7 @@
     "is_featured": false
   },
   {
-    "id": "49",
+    "estate_datail_id": "49",
     "description": "Departamento 3 ambientes en Balvanera",
     "adress": "Av. Corrientes 2800",
     "area": 80,
@@ -686,7 +686,7 @@
     "is_featured": false
   },
   {
-    "id": "50",
+    "estate_datail_id": "50",
     "description": "PH 2 ambientes en Agronomía",
     "adress": "Av. San Juan 3200",
     "area": 120,
@@ -700,7 +700,7 @@
     "is_featured": false
   },
   {
-    "id": "51",
+    "estate_datail_id": "51",
     "description": "Departamento 2 ambientes en Almagro",
     "adress": "Av. Corrientes 2500",
     "area": 50,
@@ -714,7 +714,7 @@
     "is_featured": true
   },
   {
-    "id": "52",
+    "estate_datail_id": "52",
     "description": "PH 3 ambientes en Balvanera",
     "adress": "Av. Belgrano 4200",
     "area": 100,
@@ -728,7 +728,7 @@
     "is_featured": false
   },
   {
-    "id": "53",
+    "estate_datail_id": "53",
     "description": "Casa 6 ambientes en Barracas",
     "adress": "Av. Montes de Oca 2600",
     "area": 340,

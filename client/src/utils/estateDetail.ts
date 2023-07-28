@@ -1,4 +1,4 @@
-import { City, Type } from "../model/estate-detail";
+import { City, Type } from "../model/estate-detail"
 
 export const estateDetail = {
   estate_datail_id: 1,
