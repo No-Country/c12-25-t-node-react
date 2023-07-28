@@ -21,7 +21,6 @@ import { useFormik } from 'formik'
 import { loginSchema } from '../../../schemas/schemas'
 import { useSnackbar } from 'notistack'
 import { useUserStore } from '../../../store/auth'
-import loginBanner from '../../../assets/loginBanner.png'
 import RegisterModal from '../registerModal/RegisterModal'
 import { stylesLoginModal } from './LoginModal.styles'
 
@@ -106,7 +105,7 @@ const LoginModal: React.FC<LoginModalProps> = ({}) => {
         <Grid item xs={12} md={6} sx={stylesLoginModal.item}>
           <Box
             component="img"
-            src={loginBanner}
+            src="https://img.freepik.com/fotos-premium/fondo-interior-casa-moderna-mockups-3d-alta-calidad-generative-ai_913266-691.jpg"
             sx={stylesLoginModal.gridBox}
             alt="Cocina liminosa con isla"
           />
