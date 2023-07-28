@@ -5,7 +5,6 @@ import { EstateDetail } from '../../../model/estate-detail'
 import PrimaryButton from '../../atom/PrimaryButton'
 import ListItemButtonOptions from '../../molecule/ListItemButtonOptions'
 import CardsWithPagination from '../CardsWithPagination'
-import useOptionsToSearch from '../../../hooks/useOptionsToSearch'
 import MultipleSelect from '../../molecule/multiple-select/MultipleSelect'
 import SearchIcon from '@mui/icons-material/Search'
 import { stylesSearchResults } from './SearchResults.styles'
@@ -13,10 +12,12 @@ import { useSpinner } from '../../../context/SpinnerProvider'
 import { useEstateDetails } from '../../../store/database'
 import SkeletonMessage from '../../atom/SkeletonMessage'
 import { useSnackbar } from 'notistack'
+import { uniqueCities, uniqueTypeOfEstate } from '../../../utils/selectOptions'
+import { estatesDetailList } from '../../../utils/EstatesDetailsList'
 
 type SearchResultsProps = {}
 
-const SearchResults: React.FC<SearchResultsProps> = ({}) => {
+const SearchResults: React.FC<SearchResultsProps> = ({ }) => {
   // get the query paramas, when the user comes from home search
   const [params] = useSearchParams()
   let operationParam = params.get('operation')
@@ -36,20 +37,10 @@ const SearchResults: React.FC<SearchResultsProps> = ({}) => {
   const [selectedRoom, setSelectedRoom] = useState<number[]>([])
   // State for the search button
   const [isSearching, setIsSearching] = useState<boolean>(false)
-  /**
-   * Using the custom hook useOptionsToSearch to obtain
-   * an array of options to be display in the select
-   */
-  const cityOptions: string[] = useOptionsToSearch('city', estateDetails)
-  const typeOptions: string[] = useOptionsToSearch(
-    'property_type',
-    estateDetails
-  )
-  const bedroomsOptions: string[] = useOptionsToSearch(
-    'bedrooms',
-    estateDetails
-  )
 
+  const cityOptions: string[] = uniqueCities
+  const typeOptions: string[] = uniqueTypeOfEstate
+  const bedroomsOptions: string[] = ['1', '2', '3', '4', '5', '6']
   useEffect(() => {
     // Set the list of states from Firebase and Zustand store
     addLoading()
@@ -67,7 +58,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({}) => {
 
   // onClick at the search button, the filter states are updated
   useEffect(() => {
-    const filteredResults = estateDetails.filter((estate) => {
+    const filteredResults = estatesDetailList.filter((estate) => {
       const matchesOperation =
         selectedOperation.length === 0 ||
         (selectedOperation.includes('Alquiler') && estate.for_rent === true) ||
@@ -82,6 +73,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({}) => {
       return matchesOperation && matchesCity && matchesType && matchesRoom
     })
     setSearchResults(filteredResults)
+
   }, [isSearching, hasParams, estateDetails])
 
   const handleClick = () => {
@@ -93,68 +85,68 @@ const SearchResults: React.FC<SearchResultsProps> = ({}) => {
     <>
       <Container maxWidth="lg">
         <List
-          sx={stylesSearchResults.list}
+          sx={ stylesSearchResults.list }
           component="nav"
           aria-labelledby="Menu de filtro para búsqueda de propiedad"
         >
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Operación"
-              listOptions={['Alquiler', 'Venta']}
-              options={selectedOperation}
-              setOptions={setSelectedOperation}
+              listOptions={ ['Alquiler', 'Venta'] }
+              options={ selectedOperation }
+              setOptions={ setSelectedOperation }
             />
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Ubicación"
-              listOptions={cityOptions}
-              options={selectedCity}
-              setOptions={setSelectedCity}
+              listOptions={ cityOptions }
+              options={ selectedCity }
+              setOptions={ setSelectedCity }
             />
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Tipo de propiedad"
-              listOptions={typeOptions}
-              options={selectedType}
-              setOptions={setSelectedType}
+              listOptions={ typeOptions }
+              options={ selectedType }
+              setOptions={ setSelectedType }
             />
           </ListItemButtonOptions>
           <ListItemButtonOptions>
             <MultipleSelect
               textToDisplay="Dormitorios"
-              listOptions={bedroomsOptions}
-              options={selectedRoom}
-              setOptions={setSelectedRoom}
+              listOptions={ bedroomsOptions }
+              options={ selectedRoom }
+              setOptions={ setSelectedRoom }
             />
           </ListItemButtonOptions>
           <PrimaryButton
             text="Buscar"
             aria-label="Buscar propiedad"
-            icon={<SearchIcon />}
-            textDisplay={{ xs: 'flex', md: 'none' }}
-            sx={stylesSearchResults.btnPrimary}
-            onClick={handleClick}
+            icon={ <SearchIcon /> }
+            textDisplay={ { xs: 'flex', md: 'none' } }
+            sx={ stylesSearchResults.btnPrimary }
+            onClick={ handleClick }
           />
         </List>
-        {/* Mostrar total */}
+        {/* Mostrar total */ }
         <Grid container>
-          <Grid item xs={12}>
-            <Typography sx={stylesSearchResults.totalList}>
-              <Box component="span" sx={stylesSearchResults.totalListSpan}>
-                {searchResults.length}
+          <Grid item xs={ 12 }>
+            <Typography sx={ stylesSearchResults.totalList }>
+              <Box component="span" sx={ stylesSearchResults.totalListSpan }>
+                { searchResults.length }
               </Box>
               <Box component="span"> inmuebles</Box>
             </Typography>
           </Grid>
         </Grid>
-        {/* Cards with pagination*/}
-        {searchResults.length === 0 ? (
+        {/* Cards with pagination*/ }
+        { searchResults.length === 0 ? (
           <SkeletonMessage messageText="Sin propiedades para mostrar" />
         ) : (
-          <CardsWithPagination list={searchResults} />
-        )}
+          <CardsWithPagination list={ searchResults } />
+        ) }
       </Container>
     </>
   )

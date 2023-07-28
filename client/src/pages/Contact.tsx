@@ -6,7 +6,6 @@ import ContactForm from '../components/template/contactForm/ContactForm'
 import { CONTACT_TEXT } from '../utils/contact-form-conditions'
 import TitleText from '../components/molecule/text/Text'
 import BackButton from '../components/atom/BackButton'
-
 type ContactProps = {
 }
 

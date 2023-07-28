@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import favoriteBanner from '../assets/favorite-banner.png'
 import BackButton from '../components/atom/BackButton'
+import { estatesDetailList } from './../utils/EstatesDetailsList'
 import CardsWithPagination from '../components/template/CardsWithPagination'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import 'firebase/firestore'
@@ -14,10 +15,10 @@ const db = getFirestore()
 const auth = getAuth()
 
 const Favorites: React.FC<FavoritesProps> = () => {
-  const { getEstateDetails, estateDetails } = useEstateDetails()
+  const { estateDetails } = useEstateDetails()
   const { addLoading, removeLoading } = useSpinner()
-
   const [favoriteIds, setFavoriteIds] = useState<number[]>([])
+
   const checkFavoriteStatus = async (userId: string) => {
     const userFavoriteRef = doc(db, 'usersFavorites', userId)
     try {
@@ -34,10 +35,7 @@ const Favorites: React.FC<FavoritesProps> = () => {
   }
 
   useEffect(() => {
-    console.log('useeffect')
     addLoading()
-    // getEstateDetails()
-
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         checkFavoriteStatus(user.uid)
@@ -56,12 +54,16 @@ const Favorites: React.FC<FavoritesProps> = () => {
   return (
     <>
       <BackButton />
-      <BannerAndBackgroundPage imgSrc={favoriteBanner} imgHeight="350px" />
-      {filteredFav.length === 0 ? (
-        <Typography>Aun no tienes favoritos agregados</Typography>
-      ) : (
-        <CardsWithPagination list={filteredFav} />
-      )}
+      <BannerAndBackgroundPage imgSrc={ favoriteBanner } imgHeight="350px" />
+      <CardsWithPagination list={ estatesDetailList } />
+      <BannerAndBackgroundPage imgSrc={ favoriteBanner } imgHeight="350px" />
+      { filteredFav.length === 0 ?
+        (
+          <Typography>Aun no tienes favoritos agregados</Typography>
+        )
+        :
+        <CardsWithPagination list={ filteredFav } />
+      }
     </>
   )
 }

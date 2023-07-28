@@ -7,22 +7,19 @@ import ContactProperty from '../components/molecule/contact-property/ContactProp
 import BackButton from '../components/atom/BackButton'
 import { EstateDetail } from '../model/estate-detail'
 import { useSpinner } from '../context/SpinnerProvider'
-import { useEstateDetails } from '../store/database'
+import { estatesDetailList } from '../utils/EstatesDetailsList'
 
 type DetailProps = {
 }
 
 const Detail: React.FC<DetailProps> = () => {
   const { addLoading, removeLoading } = useSpinner()
-  // to get the state detail of Firebase and store
-  const { estateDetails, getEstateDetails } = useEstateDetails()
-  const [estateById, setEstateById] = useState<EstateDetail>(estateDetails[0])
+  const [estateById, setEstateById] = useState<EstateDetail>(estatesDetailList[0])
   const routeParams = useParams<{ id: string }>()
-  
+
   useEffect(() => {
     addLoading()
-    getEstateDetails()
-    const filteredState = estateDetails.find((estate) => estate.estate_datail_id === +routeParams.id)
+    const filteredState = estatesDetailList.find((estate) => estate.estate_datail_id === +routeParams.id)
     setEstateById(filteredState)
     removeLoading()
   }, []);
