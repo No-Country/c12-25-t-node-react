@@ -5,9 +5,9 @@ import Selector from './molecule/Selector'
 import SearchIcon from '@mui/icons-material/Search'
 import PrimaryButton from './atom/PrimaryButton'
 import { useEstateDetails } from '../store/database'
-import useOptionsToSearch from '../hooks/useOptionsToSearch'
 import { useSnackbar } from 'notistack'
 import { useNavigate } from 'react-router-dom'
+import { uniqueCities, uniqueTypeOfEstate } from '../utils/selectOptions'
 
 interface TabPanelProps {
   children?: React.ReactNode
@@ -65,12 +65,6 @@ function a11yProps(index: number) {
 export default function BasicTabs() {
   const navigate = useNavigate()
   const { enqueueSnackbar } = useSnackbar()
-  const { estateDetails } = useEstateDetails()
-  const uniqueCities: string[] = useOptionsToSearch('city', estateDetails)
-  const uniqueTypeOfEstate: string[] = useOptionsToSearch(
-    'property_type',
-    estateDetails
-  )
   const theme = useTheme()
   const isSm = useMediaQuery(theme.breakpoints.down('sm'))
   const [operationTab, setOperationTab] = useState(0) //seteo de valores para definir la pestaña de operaciones (compra o alquiler) en el buscador principal. 0 es compra, 1 es alquiler.

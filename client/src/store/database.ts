@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { EstateDetail } from '../model/estate-detail'
-import { getAllEstateDetails } from '../components/firebase/database'
-
+import { estatesDetailList } from '../utils/EstatesDetailsList'
 interface EstateDetailsState {
   estateDetails: EstateDetail[]
   open: boolean
@@ -15,8 +14,9 @@ export const useEstateDetails = create<EstateDetailsState>((set) => ({
   setOpen: (open) => set({ open }),
   getEstateDetails: async () => {
     try {
-      const estates = await getAllEstateDetails()
-      set((state) => ({ ...state, estateDetails: estates }))
+      let estateDetails: EstateDetail[] = []
+      estatesDetailList .map(estate => { estateDetails.push(estate) })
+      return estateDetails
     } catch (error) {
       console.log(error)
     }
