@@ -1,4 +1,3 @@
-import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import TextBox from '../components/molecule/text-box/TextBox'
 import TitleText from '../components/molecule/text/Text'
 import { ABOUT_US_TEXT } from '../utils/about-us-text'
@@ -26,7 +25,6 @@ const About: React.FC<AboutProps> = () => {
             backgroundRepeat: 'no-repeat',
           } }
         />
-      </Box>
         <TextBox subTitle={
           <Subtitle
             title="Conocé nuestra "
@@ -41,7 +39,7 @@ const About: React.FC<AboutProps> = () => {
           />
         </TextBox>
         <CardsGrid />
-      </BannerAndBackgroundPage>
+      </Box>
     </>
   )
 }
