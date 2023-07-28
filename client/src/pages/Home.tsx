@@ -10,49 +10,64 @@ type HomeProps = {}
 
 const Home: React.FC<HomeProps> = () => {
   const filteredForSaleEstates = estatesDetailList.filter(
-    (estate) => (estate.for_sale && estate.is_featured)
+    (estate) => estate.for_sale && estate.is_featured
   )
 
   const filteredForRentEstates = estatesDetailList.filter(
-    (estate) => (estate.for_rent && estate.is_featured)
+    (estate) => estate.for_rent && estate.is_featured
   )
 
   return (
     <main>
       <Grid
-        sx={ {
+        sx={{
           height: '50vh',
-          backgroundImage: `url(${ './assets/heroImage.png' })`,
+          backgroundImage: `url('https://i.postimg.cc/y60PF70y/hero-Image.png')`,
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
-        } }
+        }}
       />
       <Searcher />
-      <FeaturedAcordion textTitle="venta" estates={ filteredForSaleEstates } />
-      <FeaturedAcordion textTitle="alquiler" estates={ filteredForRentEstates } />
-      <Container maxWidth="lg" className={ `image-with-text-left` } sx={{minHeight: '300px'}}>
-        <Box sx={ { position: 'relative', display: 'flex', justifyContent: 'center', padding: '1rem 0rem' } }>
-          <img src='../assets/imageCtaRight.png' alt="Imagen" className="image-container" />
+      <FeaturedAcordion textTitle="venta" estates={filteredForSaleEstates} />
+      <FeaturedAcordion textTitle="alquiler" estates={filteredForRentEstates} />
+      <Container
+        maxWidth="lg"
+        className={`image-with-text-left`}
+        sx={{ minHeight: '300px' }}
+      >
+        <Box
+          sx={{
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '1rem 0rem',
+          }}
+        >
+          <img
+            src="https://i.postimg.cc/90TbNh4Z/image-Cta-Left.png"
+            alt="Imagen"
+            className="image-container"
+          />
           <Box
-            sx={
-              {
-                position: 'absolute',
-                top: '30%',
-                backgroundColor: '#f9f9f9',
-                zIndex: 2,
-                padding: '20px 30px',
-                width: '46%',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '25px',
-                borderRadius: '20px',
-                filter: 'drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25))',
-              }
+            sx={{
+              position: 'absolute',
+              top: '30%',
+              backgroundColor: '#f9f9f9',
+              zIndex: 2,
+              padding: '20px 30px',
+              width: '46%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '25px',
+              borderRadius: '20px',
+              filter: 'drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25))',
+            }}
+            className={
+              'left' === 'left' ? 'box-position-left' : 'box-position-right'
             }
-            className={ ('left' === 'left') ? 'box-position-left' : 'box-position-right' }
           >
-            { 'left' === "left" ? (
+            {'left' === 'left' ? (
               <>
                 <Typography align="left" variant="body1">
                   ¿Tenés una propiedad que <strong>comercializar</strong> ?
@@ -64,16 +79,17 @@ const Home: React.FC<HomeProps> = () => {
             ) : (
               <>
                 <Typography align="left" variant="body1">
-                  ¿Estás buscando <strong>invertir en un desarrollo inmobiliario</strong>?
+                  ¿Estás buscando{' '}
+                  <strong>invertir en un desarrollo inmobiliario</strong>?
                 </Typography>
                 <Link to="/contact" aria-label="pagina de contacto">
                   <PrimaryButton text="Contactanos" />
                 </Link>
               </>
-            ) }
+            )}
           </Box>
         </Box>
-      </Container >
+      </Container>
     </main>
   )
 }
