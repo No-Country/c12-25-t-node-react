@@ -48,7 +48,7 @@ const ContactProperty: React.FC<ContactPropertyProps> = () => {
         </Grid>
         <Grid item xs={ 12 } md={ 4 } lg={ 3 } sx={ stylesContactProperty.photoDown }>
           <img
-            src={ backgroundPhoto }
+            src='../../../assets/contact-property-by-id.png'
             width='100%'
             className="home-large"
             alt='Frente de inmueble con jardín'
