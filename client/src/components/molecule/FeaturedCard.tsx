@@ -133,13 +133,16 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
         title={ alt }
       />
       <CardContent sx={ stylesFeaturedCard.cardContext }>
-        <IconButton
-          size="small"
-          sx={ stylesFeaturedCard.iconButton }
-          onClick={ handleFavoriteClick }
-        >
-          { isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon /> }
-        </IconButton>
+        { auth.currentUser &&
+          <IconButton
+            size="small"
+            sx={ stylesFeaturedCard.iconButton }
+            onClick={ handleFavoriteClick }
+            aria-label="boton de favorito"
+          >
+            { isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon /> }
+          </IconButton>
+        }
         <PrimaryButton
           text="Ver más"
           sx={ stylesFeaturedCard.primaryButton }
