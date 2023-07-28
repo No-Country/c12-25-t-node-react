@@ -10,6 +10,7 @@ import SkeletonMessage from '../components/atom/SkeletonMessage'
 import { Container, Grid } from '@mui/material'
 import { Box } from '@mui/system'
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
+import { enqueueSnackbar } from 'notistack'
 
 type FavoritesProps = {}
 const db = getFirestore()
@@ -27,10 +28,9 @@ const Favorites: React.FC<FavoritesProps> = () => {
         setFavoriteIds(docSnapshot.data()?.favoriteIds)
       }
     } catch (error) {
-      console.error(
-        'Error al obtener la información de favoritos del usuario:',
-        error
-      )
+      enqueueSnackbar('Error al obtener la información de favoritos del usuario', {
+        variant: 'error',
+      })
     }
   }
 

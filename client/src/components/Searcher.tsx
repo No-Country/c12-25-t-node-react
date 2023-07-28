@@ -72,7 +72,6 @@ export default function BasicTabs() {
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setOperationTab(newValue)
-    console.log(`value: ${newValue}`)
   }
 
   useEffect(() => {

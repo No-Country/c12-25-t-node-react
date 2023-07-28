@@ -46,7 +46,7 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
     estate_photos,
   } = estate
 
-  const handleClick = () => navigate(`/detail/${estate_datail_id}`)
+  const handleClick = () => navigate(`/detail/${ estate_datail_id }`)
 
   const image = estate_photos[0]?.url
   const alt = estate_photos[0]?.alt
@@ -82,22 +82,18 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
         setIsFavorite(false)
       }
     } catch (error) {
-      console.error(
-        'Error al obtener la información de favoritos del usuario:',
-        error
-      )
+      enqueueSnackbar('Error al obtener la información de favoritos del usuario', {
+        variant: 'error',
+      })
     }
   }
 
   const handleFavoriteClick = async () => {
     const user = auth.currentUser
     if (!user) {
-      enqueueSnackbar(
-        '¡Debes iniciar sesión para agregar o quitar favoritos!',
-        {
-          variant: 'error',
-        }
-      )
+      enqueueSnackbar('¡Debes iniciar sesión para agregar o quitar favoritos!', {
+        variant: 'error',
+      })
       return
     }
     const userFavoriteRef = doc(db, 'usersFavorites', user.uid)
@@ -110,7 +106,6 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
         enqueueSnackbar('Propiedad quitada de favoritos', {
           variant: 'info',
         })
-        console.log('Objeto eliminado de favoritos en Firebase')
       } else {
         await setDoc(
           userFavoriteRef,
@@ -123,68 +118,67 @@ const FeaturedCard: React.FC<FeaturedCardProps> = ({ estate }) => {
         })
       }
     } catch (error) {
-      console.error(
-        'Error al agregar o eliminar de favoritos en Firebase:',
-        error
-      )
+      enqueueSnackbar('No se pudo agregar la propiedad agregada a favoritos', {
+        variant: 'error',
+      })
     }
   }
 
   return (
-    <Card sx={stylesFeaturedCard.card}>
+    <Card sx={ stylesFeaturedCard.card }>
       <CardMedia
-        sx={stylesFeaturedCard.cardMedia}
+        sx={ stylesFeaturedCard.cardMedia }
         component="img"
-        src={image}
-        title={alt}
+        src={ image }
+        title={ alt }
       />
-      <CardContent sx={stylesFeaturedCard.cardContext}>
+      <CardContent sx={ stylesFeaturedCard.cardContext }>
         <IconButton
           size="small"
-          sx={stylesFeaturedCard.iconButton}
-          onClick={handleFavoriteClick}
+          sx={ stylesFeaturedCard.iconButton }
+          onClick={ handleFavoriteClick }
         >
-          {isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+          { isFavorite ? <FavoriteIcon /> : <FavoriteBorderIcon /> }
         </IconButton>
         <PrimaryButton
           text="Ver más"
-          sx={stylesFeaturedCard.primaryButton}
-          onClick={handleClick}
+          sx={ stylesFeaturedCard.primaryButton }
+          onClick={ handleClick }
         />
-        <Box sx={stylesFeaturedCard.box}>
+        <Box sx={ stylesFeaturedCard.box }>
           <Typography
             variant="body1"
             color="text.primary"
-            sx={{ marginTop: '1rem', minHeight: '52px' }}
+            sx={ { marginTop: '1rem', minHeight: '52px' } }
           >
-            {name}
+            { name }
           </Typography>
           <Typography
             variant="body2"
             color="text.primary"
-            fontWeight={'bold'}
-            fontSize={'1rem'}
-            marginTop={2}
-            marginBottom={2}
+            fontWeight={ 'bold' }
+            fontSize={ '1rem' }
+            marginTop={ 2 }
+            marginBottom={ 2 }
           >
-            {address}
+            { address }
           </Typography>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Box sx={{ display: 'flex' }}>
+          <Box sx={ { display: 'flex', justifyContent: 'space-between' } }>
+            <Box sx={ { display: 'flex' } }>
               <SquareFootIcon className="primary-light" />
-              <Typography>{totalArea} m</Typography>
+              <Typography>{ totalArea } m</Typography>
             </Box>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={ { display: 'flex' } }>
               <BedIcon className="primary-light" />
-              <Typography>{bedrooms}</Typography>
+              <Typography>{ bedrooms }</Typography>
             </Box>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={ { display: 'flex' } }>
               <BathtubIcon className="primary-light" />
-              <Typography>{bathrooms}</Typography>
+              <Typography>{ bathrooms }</Typography>
             </Box>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={ { display: 'flex' } }>
               <DirectionsCarFilledIcon className="primary-light" />
-              <Typography>{garage}</Typography>
+              <Typography>{ garage }</Typography>
             </Box>
           </Box>
         </Box>
