@@ -1,13 +1,12 @@
 import {
   Box,
   Divider,
+  Grid,
   Typography
 } from '@mui/material'
-import termsAndConditionBanner from '../assets/terms-condition-banner.png'
 import Subtitle from '../components/atom/Subtitle'
 import { CONDITIONS, INTRODUCTION } from '../utils/terms-conditions-text'
 import './TermsConditions.style.css'
-import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 import TextBox from '../components/molecule/text-box/TextBox'
 
 type TermsConditionsProps = {
@@ -15,8 +14,17 @@ type TermsConditionsProps = {
 
 const TermsConditions: React.FC<TermsConditionsProps> = () => {
   return (
-    <BannerAndBackgroundPage imgSrc={ termsAndConditionBanner } >
-      <TextBox>
+    <Box sx={ { background: '#F1F1F9' } }>
+      <Grid
+      sx={ {
+        height: '460px',
+        backgroundImage: '../assets/terms-condition-banner.png',
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      } }
+    />
+       <TextBox>
         <Subtitle
           title="Términos y condiciones de "
           fontWeight="500"
@@ -44,7 +52,8 @@ const TermsConditions: React.FC<TermsConditionsProps> = () => {
           )) }
         </Box>
       </TextBox>
-    </BannerAndBackgroundPage>
+    </Box>
+
   )
 }
 

@@ -21,7 +21,7 @@ const HeroImage: React.FC<HeroImageProps> = ({ imgSrc, imgHeight }) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       } }
-    ></Grid>
+    />
   )
 }
 
