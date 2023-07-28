@@ -1,11 +1,11 @@
 import HeroImage from '../components/atom/heroImage/HeroImage.tsx'
 import CallToActionContactForm from '../components/molecule/cta-contact-form/CallToActionContactForm.tsx'
 import FeaturedAcordion from '../components/template/featuredAcordion/FeaturedAcordion.tsx'
-import heroImageBanner from '../assets/heroImage.png'
 import ImageCtaLeft from '../assets/imageCtaRight.png'
 import ImageCtaRight from '../assets/imageCtaLeft.png'
 import Searcher from '../components/Searcher.tsx'
 import { estatesDetailList } from '../utils/EstatesDetailsList.ts'
+import { Grid } from '@mui/material'
 
 type HomeProps = {}
 
@@ -20,6 +20,15 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <main>
+      <Grid
+        sx={ {
+          height: '50vh',
+          backgroundImage: `url(${ '../assets/heroImage.png' })`,
+          backgroundPosition: 'center center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+        } }
+      />
       <HeroImage imgSrc={ heroImageBanner } />
       <Searcher />
       <FeaturedAcordion textTitle="venta" estates={ filteredForSaleEstates } />
