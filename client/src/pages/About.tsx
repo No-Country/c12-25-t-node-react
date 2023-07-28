@@ -6,7 +6,6 @@ import CardsGrid from '../components/template/cardsAbout/CardsGrid'
 import BackButton from '../components/atom/BackButton'
 import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
 
-
 type AboutProps = {
 }
 
