@@ -1,0 +1,25 @@
+:root {
+  --primary: #1B17E7;
+  --primary-light: #1DAEFF;
+  --primary-lighter: #D8D8FB;
+  --primary-darker:#0C0C39;
+  --bg-dark: #010108;
+  --bg-gray: #787979;
+  --bg-light: #F1F1F9;
+  --bg-lighter: #F5F5F5;
+}
+
+/* Reset */
+*, 
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-light);
+}

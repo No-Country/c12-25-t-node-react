@@ -1,0 +1,121 @@
+.container-hero-detail {
+  margin-top: 1rem;
+}
+
+/* Botones del slider */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary-light);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-weight: 900;
+}
+
+.MuiPickersToolbar-root.MuiPickersLayout-toolbar {
+  display: none;
+}
+
+.css-1pduc5x-MuiStack-root {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.css-1pduc5x-MuiStack-root > .MuiTextField-root {
+  min-width: 100% !important;
+}
+
+.detail {
+  display: block;
+  margin-bottom: 12px;
+}
+
+@media all and (max-width: 600px) {
+  .detail {
+    display: inline-block;
+  }
+}
+
+/****** SLIDERS *****/
+.container-hero-detail .swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-hero-detail .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+/** one slider top **/
+.container-hero-detail .mySwiper2 {
+  height: 420px;
+  width: 100%;
+}
+
+/** 3 sliders bottom **/
+.container-hero-detail .mySwiper .swiper-wrapper {
+  overflow-x: hidden;
+}
+
+.container-hero-detail .mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.container-hero-detail .mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.container-hero-detail .mySwiper .swiper-slide-visible.swiper-slide-active {
+  opacity: 1;
+}
+
+.container-hero-detail .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Realizar consulta text */
+.consulta span {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Socilitar una visita Btn */
+.css-15tp8h6-MuiFormControl-root-MuiTextField-root input {
+  border: 2px solid #1b17e7 !important;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+.css-1b7hljl-MuiFormLabel-root-MuiInputLabel-root {
+  color: #1b17e7 !important;
+  font-size: 18px !important;
+  line-height: 1.4375em;
+  font-weight: 600 !important;
+}

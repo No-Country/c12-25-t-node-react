@@ -1,0 +1,27 @@
+footer {
+  background-color: var( --primary-darker);
+  padding: 1rem 0.75rem;
+  min-height: 1rem;
+  color: var(--bg-lighter);
+}
+
+.links-footer-social {
+  margin: 0px 0px 0px 6px;
+}
+
+.links-footer,
+.links-footer-social {
+  text-decoration: none;
+  color: var(--bg-lighter);
+}
+
+.links-footer:hover,
+.links-footer-social:hover {
+  color: var(--primary-light);
+}
+
+@media all and (max-width: 600px) {
+  .services-company {
+    display: none;
+  }
+}

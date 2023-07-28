@@ -1,0 +1,17 @@
+/* Logo colors */
+.primary-light {
+  color: var(--primary-light);
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.white {
+  color: var(--bg-lighter);
+}
+
+/* Links */
+.link-logo {
+  text-decoration: none;
+}
