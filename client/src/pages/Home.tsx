@@ -1,10 +1,8 @@
 import FeaturedAcordion from '../components/template/featuredAcordion/FeaturedAcordion.tsx'
 import Searcher from '../components/Searcher.tsx'
 import { estatesDetailList } from '../utils/EstatesDetailsList.ts'
-import { Grid, Typography } from '@mui/material'
-import { Box, Container } from '@mui/system'
-import { Link } from 'react-router-dom'
-import PrimaryButton from '../components/atom/PrimaryButton.tsx'
+import HeroImage from '../components/atom/heroImage/HeroImage.tsx'
+import CallToActionContactForm from '../components/molecule/cta-contact-form/CallToActionContactForm.tsx'
 
 type HomeProps = {}
 
@@ -19,77 +17,21 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <main>
-      <Grid
-        sx={{
-          height: '50vh',
-          backgroundImage: `url('https://i.postimg.cc/y60PF70y/hero-Image.png')`,
-          backgroundPosition: 'center center',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-        }}
+      <HeroImage
+        imgSrc='https://i.postimg.cc/zG78R2Lk/hero-Image.png'
+        imgHeight='50vh'
       />
       <Searcher />
-      <FeaturedAcordion textTitle="venta" estates={filteredForSaleEstates} />
-      <FeaturedAcordion textTitle="alquiler" estates={filteredForRentEstates} />
-      <Container
-        maxWidth="lg"
-        className={`image-with-text-left`}
-        sx={{ minHeight: '300px' }}
-      >
-        <Box
-          sx={{
-            position: 'relative',
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '1rem 0rem',
-          }}
-        >
-          <img
-            src="https://i.postimg.cc/90TbNh4Z/image-Cta-Left.png"
-            alt="Imagen"
-            className="image-container"
-          />
-          <Box
-            sx={{
-              position: 'absolute',
-              top: '30%',
-              backgroundColor: '#f9f9f9',
-              zIndex: 2,
-              padding: '20px 30px',
-              width: '46%',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '25px',
-              borderRadius: '20px',
-              filter: 'drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.25))',
-            }}
-            className={
-              'left' === 'left' ? 'box-position-left' : 'box-position-right'
-            }
-          >
-            {'left' === 'left' ? (
-              <>
-                <Typography align="left" variant="body1">
-                  ¿Tenés una propiedad que <strong>comercializar</strong> ?
-                </Typography>
-                <Link to="/contact" aria-label="pagina de contacto">
-                  <PrimaryButton text="Contactanos" />
-                </Link>
-              </>
-            ) : (
-              <>
-                <Typography align="left" variant="body1">
-                  ¿Estás buscando{' '}
-                  <strong>invertir en un desarrollo inmobiliario</strong>?
-                </Typography>
-                <Link to="/contact" aria-label="pagina de contacto">
-                  <PrimaryButton text="Contactanos" />
-                </Link>
-              </>
-            )}
-          </Box>
-        </Box>
-      </Container>
+      <FeaturedAcordion textTitle="venta" estates={ filteredForSaleEstates } />
+      <FeaturedAcordion textTitle="alquiler" estates={ filteredForRentEstates } />
+      <CallToActionContactForm
+        imageUrl='https://i.postimg.cc/8kL86X9r/image-Cta-Left.png'
+        textPosition={ 'left' }
+      />
+      <CallToActionContactForm
+        imageUrl='https://i.postimg.cc/MHSF5xNf/image-Cta-Right.png'
+        textPosition={ 'right' }
+      />
     </main>
   )
 }
