@@ -82,8 +82,8 @@ const Header: React.FC<HeaderProps> = () => {
               sx={stylesHeader.tabs}
               textColor="primary"
               value={selectedTab}
-              onChange={(e, value) => handleTab(value)}
-              indicatorColor={selectedTab > 4 ? 'white' : 'primary'}
+              onChange={(_, value) => handleTab(value)}
+              indicatorColor="primary"
             >
               {tabArray.map((tab) => (
                 <Tab label={tab} key={tab} sx={stylesHeader.tab} />
