@@ -1,4 +1,3 @@
-import HeroImage from '../components/atom/heroImage/HeroImage.tsx'
 import CallToActionContactForm from '../components/molecule/cta-contact-form/CallToActionContactForm.tsx'
 import FeaturedAcordion from '../components/template/featuredAcordion/FeaturedAcordion.tsx'
 import ImageCtaLeft from '../assets/imageCtaRight.png'
@@ -23,13 +22,13 @@ const Home: React.FC<HomeProps> = () => {
       <Grid
         sx={ {
           height: '50vh',
-          backgroundImage: `url(${ '../assets/heroImage.png' })`,
+          backgroundImage: `url(${ './assets/heroImage.png' })`,
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
         } }
       />
-      <HeroImage imgSrc={ heroImageBanner } />
+
       <Searcher />
       <FeaturedAcordion textTitle="venta" estates={ filteredForSaleEstates } />
       <FeaturedAcordion textTitle="alquiler" estates={ filteredForRentEstates } />
