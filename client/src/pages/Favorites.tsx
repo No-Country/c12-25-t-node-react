@@ -9,7 +9,6 @@ import { useSpinner } from '../context/SpinnerProvider'
 import SkeletonMessage from '../components/atom/SkeletonMessage'
 import { Container, Grid } from '@mui/material'
 import { Box } from '@mui/system'
-import HeroImage from '../components/atom/heroImage/HeroImage'
 
 type FavoritesProps = {}
 const db = getFirestore()

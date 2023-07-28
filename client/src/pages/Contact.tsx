@@ -1,11 +1,11 @@
-import BannerAndBackgroundPage from '../components/molecule/banner-background-page/BannerAndBackgroundPage'
-import contactUsBanner from '../assets/contact-us-banner.png'
 import TextBox from '../components/molecule/text-box/TextBox'
 import Subtitle from '../components/atom/Subtitle'
 import ContactForm from '../components/template/contactForm/ContactForm'
 import { CONTACT_TEXT } from '../utils/contact-form-conditions'
 import TitleText from '../components/molecule/text/Text'
 import BackButton from '../components/atom/BackButton'
+import { Box } from '@mui/system'
+import { Grid } from '@mui/material'
 type ContactProps = {
 }
 
@@ -13,7 +13,16 @@ const Contact: React.FC<ContactProps> = () => {
   return (
     <>
       <BackButton />
-      <BannerAndBackgroundPage imgSrc={ contactUsBanner } >
+      <Box sx={ { background: '#F1F1F9' } }>
+        <Grid
+          sx={ {
+            height: '350px' ,
+            backgroundImage:'../assets/contact-us-banner.png',
+            backgroundPosition: 'center center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+          } }
+        />
         <TextBox
           subTitle={
             <Subtitle
@@ -36,7 +45,7 @@ const Contact: React.FC<ContactProps> = () => {
             variant='h3'
           />
         </TextBox>
-      </BannerAndBackgroundPage>
+      </Box>
     </>
   )
 }
