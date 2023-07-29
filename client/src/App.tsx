@@ -11,6 +11,7 @@ import About from './pages/About'
 import TermsConditions from './pages/TerrmsConditions'
 import Favorites from './pages/Favorites'
 import './App.css'
+import Register from './pages/Register'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

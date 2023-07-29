@@ -38,10 +38,12 @@ const Header: React.FC<HeaderProps> = () => {
         tab = 4
         break
       default:
+      case '/':
+        tab = 0
         break
     }
     setSelectedTab(tab)
-  }, [pathname, selectedTab])
+  }, [pathname])
 
   const handleTab = (value: number) => {
     switch (value) {
@@ -66,6 +68,7 @@ const Header: React.FC<HeaderProps> = () => {
         navigate('/favorites')
         break
       default:
+        navigate('/')
         break
     }
   }

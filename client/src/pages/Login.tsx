@@ -1,19 +1,23 @@
-import { useState } from "react"
-import LoginModal from "../components/template/loginModal/LoginModal"
+import { useState } from 'react'
+import LoginModal from '../components/template/loginModal/LoginModal'
+import BackButton from '../components/atom/BackButton'
+import { Stack } from '@mui/material'
 
-type LoginProps = {
-}
+type LoginProps = {}
 
 const Login: React.FC<LoginProps> = () => {
   const [openLoginModal, setOpenLoginModal] = useState(true)
   const handleCloseLoginModal = () => setOpenLoginModal(false)
-  
+
   return (
     <main>
-      <LoginModal
-        openLoginModal={openLoginModal}
-        handleCloseLoginModal={handleCloseLoginModal}
-      />
+      <Stack>
+        <BackButton />
+        <LoginModal
+          openLoginModal={openLoginModal}
+          handleCloseLoginModal={handleCloseLoginModal}
+        />
+      </Stack>
     </main>
   )
 }

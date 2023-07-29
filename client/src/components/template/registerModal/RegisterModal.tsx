@@ -1,20 +1,21 @@
 import { useState } from 'react'
 import {
+  Container,
+  Grid,
   Button,
   Box,
   FormHelperText,
   InputAdornment,
   IconButton,
-  Modal,
-  Typography
+  Typography,
 } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
 import LogoText from '../../atom/LogoText'
 import TextField from '@mui/material/TextField'
 import FormControl from '@mui/material/FormControl'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import { styled } from '@mui/material/styles'
-import CloseIcon from '@mui/icons-material/Close'
 import useIsMd from '../../../hooks/useIsMd'
 import { useFormik } from 'formik'
 import { registerSchema } from '../../../schemas/schemas'
@@ -39,15 +40,10 @@ const RootFormControl = styled(FormControl)(() => ({
   paddingBottom: 0,
 }))
 
-interface RegisterModalProps {
-  openRegisterModal: boolean
-  handleCloseRegisterModal: () => void
-}
+interface RegisterModalProps {}
 
-const RegisterModal: React.FC<RegisterModalProps> = ({
-  openRegisterModal,
-  handleCloseRegisterModal,
-}) => {
+const RegisterModal: React.FC<RegisterModalProps> = ({}) => {
+  const navigate = useNavigate()
   const register = useUserStore((state) => state.register)
   const clearError = useUserStore((state) => state.clearError)
   const { enqueueSnackbar } = useSnackbar()
@@ -71,7 +67,7 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
             variant: 'success',
           }
         )
-        handleCloseRegisterModal()
+        //handleCloseRegisterModal()
       } catch (error) {
         enqueueSnackbar('¡El email ya se encuentra registrado!', {
           variant: 'error',
@@ -80,96 +76,55 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
     },
   })
   const isMd = useIsMd()
-  const style = {
-    position: 'absolute' as 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: isMd ? 'translate(-5%, -50%)' : 'translate(-15%, -50%)',
-    width: '50vw',
-    boxShadow: 24,
-    p: 1,
-    height: '90vh',
-  }
+
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [showPassword2, setShowPassword2] = useState<boolean>(false)
   const handleTogglePassword = () => setShowPassword(!showPassword)
   const handleTogglePassword2 = () => setShowPassword2(!showPassword2)
-
   return (
-    <>
-      <Modal
-        open={ openRegisterModal }
-        onClose={ handleCloseRegisterModal }
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        sx={ stylesRegisterModal.modal }
-        className="register-modal-appartamentos"
-      >
-        <Box sx={ style }>
+    <Container maxWidth="lg" className="register-appartamentos">
+      <Grid container sx={stylesRegisterModal.container}>
+        <Grid item xs={12} md={6} sx={stylesRegisterModal.item}>
           <Box
             component="img"
             src="https://i.postimg.cc/x85tPmLB/register-Banner.png"
-            sx={ {
-              height: '90%',
-              position: 'absolute',
-              left: -450,
-              top: 28,
-              borderRadius: 3,
-              display: isMd ? 'none' : 'block',
-            } }
+            sx={stylesRegisterModal.gridBox}
             alt="Living con sofa de cuero y mesa"
           />
-          <Box
-            sx={ {
-              backgroundColor: 'white',
-              height: '100%',
-              width: isMd ? '350px' : '550px',
-              position: 'absolute',
-              top: 0,
-              left: isMd ? -167 : 0,
-              p: 2,
-              zIndex: 999,
-              borderRadius: 3,
-            } }
-          >
-            <Box sx={ stylesRegisterModal.box } >
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Box sx={stylesRegisterModal.box1}>
+            <Box sx={stylesRegisterModal.box2}>
               <LogoText />
-              <IconButton onClick={ handleCloseRegisterModal }>
-                <CloseIcon sx={ { color: '#1daeff' } } />
-              </IconButton>
             </Box>
             <Box
               component="form"
-              onSubmit={ formik.handleSubmit }
-              sx={ stylesRegisterModal.box2 }
+              onSubmit={formik.handleSubmit}
+              sx={stylesRegisterModal.boxForm}
             >
-              <Box
-                sx={ stylesRegisterModal.box3 }
-              >
-                <Typography sx={ stylesRegisterModal.text }>
+              <Box sx={stylesRegisterModal.box3}>
+                <Typography sx={stylesRegisterModal.text}>
                   Te damos la<strong> bienvenida</strong>
                 </Typography>
-                <Typography
-                  sx={ stylesRegisterModal.text2 }
-                >
+                <Typography sx={stylesRegisterModal.text2}>
                   Completá tus datos y comenzá a navegar, miles de inmuebles te
                   están esperando.
                 </Typography>
               </Box>
-              <RootFormControl sx={ { width: '90%' } }>
-                <Box sx={ stylesRegisterModal.labelError }>
+              <RootFormControl sx={{ width: '90%' }}>
+                <Box sx={stylesRegisterModal.labelError}>
                   <FormHelperText
                     id="emailRegisterInput"
-                    sx={ stylesRegisterModal.helperText }
+                    sx={stylesRegisterModal.formHelperText}
                   >
                     Correo electrónico
                   </FormHelperText>
-                  { formik.errors.emailRegisterInput &&
+                  {formik.errors.emailRegisterInput &&
                     formik.touched.emailRegisterInput && (
-                      <Typography sx={ { color: 'red' } }>
-                        { formik.errors.emailRegisterInput }
+                      <Typography sx={{ color: 'red' }}>
+                        {formik.errors.emailRegisterInput}
                       </Typography>
-                    ) }
+                    )}
                 </Box>
                 <TextField
                   id="emailRegisterInput"
@@ -177,30 +132,30 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                   type="email"
                   variant="outlined"
                   placeholder="Ingresá tu correo electrónico"
-                  value={ formik.values.emailRegisterInput }
-                  onChange={ formik.handleChange }
-                  onBlur={ formik.handleBlur }
-                  sx={ { mb: 0.5 } }
-                  InputProps={ {
+                  value={formik.values.emailRegisterInput}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  sx={{ mb: 0.5 }}
+                  InputProps={{
                     style: {
                       borderRadius: '15px',
                       height: '35px',
                     },
-                  } }
+                  }}
                 />
-                <Box sx={stylesRegisterModal.labelError }>
+                <Box sx={stylesRegisterModal.labelError}>
                   <FormHelperText
                     id="firstNameRegisterInput"
-                    sx={ stylesRegisterModal.helperText }
+                    sx={stylesRegisterModal.formHelperText}
                   >
                     Nombre
                   </FormHelperText>
-                  { formik.errors.firstNameRegisterInput &&
+                  {formik.errors.firstNameRegisterInput &&
                     formik.touched.firstNameRegisterInput && (
-                      <Typography sx={ { color: 'red' } }>
-                        { formik.errors.firstNameRegisterInput }
+                      <Typography sx={{ color: 'red' }}>
+                        {formik.errors.firstNameRegisterInput}
                       </Typography>
-                    ) }
+                    )}
                 </Box>
                 <TextField
                   id="firstNameRegisterInput"
@@ -208,30 +163,30 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                   type="text"
                   variant="outlined"
                   placeholder="Ingresá tu nombre"
-                  value={ formik.values.firstNameRegisterInput }
-                  onChange={ formik.handleChange }
-                  onBlur={ formik.handleBlur }
-                  sx={ { mb: 0.5 } }
-                  InputProps={ {
+                  value={formik.values.firstNameRegisterInput}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  sx={{ mb: 0.5 }}
+                  InputProps={{
                     style: {
                       borderRadius: '15px',
                       height: '35px',
                     },
-                  } }
+                  }}
                 />
-                <Box sx={ stylesRegisterModal.labelError }>
+                <Box sx={stylesRegisterModal.labelError}>
                   <FormHelperText
                     id="lastNameRegisterInput"
-                    sx={ stylesRegisterModal.helperText }
+                    sx={stylesRegisterModal.formHelperText}
                   >
                     Apellido
                   </FormHelperText>
-                  { formik.errors.lastNameRegisterInput &&
+                  {formik.errors.lastNameRegisterInput &&
                     formik.touched.lastNameRegisterInput && (
-                      <Typography sx={ { color: 'red' } }>
-                        { formik.errors.lastNameRegisterInput }
+                      <Typography sx={{ color: 'red' }}>
+                        {formik.errors.lastNameRegisterInput}
                       </Typography>
-                    ) }
+                    )}
                 </Box>
                 <TextField
                   id="lastNameRegisterInput"
@@ -239,86 +194,41 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                   type="text"
                   variant="outlined"
                   placeholder="Ingresá tu apellido"
-                  value={ formik.values.lastNameRegisterInput }
-                  onChange={ formik.handleChange }
-                  onBlur={ formik.handleBlur }
-                  sx={ { mb: 0.5 } }
-                  InputProps={ {
+                  value={formik.values.lastNameRegisterInput}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  sx={{ mb: 0.5 }}
+                  InputProps={{
                     style: {
                       borderRadius: '15px',
                       height: '35px',
                     },
-                  } }
+                  }}
                 />
-                <Box sx={ stylesRegisterModal.labelError }>
+                <Box sx={stylesRegisterModal.labelError}>
                   <FormHelperText
                     id="passwordRegisterInput"
-                    sx={ stylesRegisterModal.helperText }
+                    sx={stylesRegisterModal.formHelperText}
                   >
                     Contraseña
                   </FormHelperText>
-                  { formik.errors.passwordRegisterInput &&
+                  {formik.errors.passwordRegisterInput &&
                     formik.touched.passwordRegisterInput && (
-                      <Typography sx={ { color: 'red' } } >
-                        { formik.errors.passwordRegisterInput }
+                      <Typography sx={{ color: 'red' }}>
+                        {formik.errors.passwordRegisterInput}
                       </Typography>
-                    ) }
+                    )}
                 </Box>
                 <TextField
                   id="passwordRegisterInput"
                   name="passwordRegisterInput"
                   placeholder="Ingresá tu contraseña"
-                  type={ showPassword ? 'text' : 'password' }
+                  type={showPassword ? 'text' : 'password'}
                   variant="outlined"
-                  value={ formik.values.passwordRegisterInput }
-                  onChange={ formik.handleChange }
-                  onBlur={ formik.handleBlur }
-                  InputProps={ {
-                    style: {
-                      borderRadius: '15px',
-                      height: '35px'
-                    },
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={ handleTogglePassword }
-                          edge="end"
-                          sx={ { color: '#1daeff' } }
-                        >
-                          { showPassword ? <VisibilityOff /> : <Visibility /> }
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  } }
-                />
-                <FormHelperText id="passwordRegisterInput">
-                  Alfanumérica, min. 6 caracteres, max. 15 caracteres.
-                </FormHelperText>
-                <Box sx={ stylesRegisterModal.labelError }>
-                  <FormHelperText
-                    id="passwordRegisterInput2"
-                    sx={ stylesRegisterModal.helperText }
-                  >
-                    Repetir Contraseña
-                  </FormHelperText>
-                  { formik.errors.passwordRegisterInput2 &&
-                    formik.touched.passwordRegisterInput2 && (
-                      <Typography sx={ { color: 'red' } }>
-                        { formik.errors.passwordRegisterInput2 }
-                      </Typography>
-                    ) }
-                </Box>
-                <TextField
-                  id="passwordRegisterInput2"
-                  name="passwordRegisterInput2"
-                  placeholder="Repetí tu contraseña"
-                  type={ showPassword2 ? 'text' : 'password' }
-                  variant="outlined"
-                  value={ formik.values.passwordRegisterInput2 }
-                  onChange={ formik.handleChange }
-                  onBlur={ formik.handleBlur }
-                  sx={ { mb: 2 } }
-                  InputProps={ {
+                  value={formik.values.passwordRegisterInput}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  InputProps={{
                     style: {
                       borderRadius: '15px',
                       height: '35px',
@@ -326,33 +236,80 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
                     endAdornment: (
                       <InputAdornment position="end">
                         <IconButton
-                          onClick={ handleTogglePassword2 }
+                          onClick={handleTogglePassword}
                           edge="end"
-                          sx={ { color: '#1daeff' } }
+                          sx={{ color: '#1daeff' }}
                         >
-                          { showPassword ? <VisibilityOff /> : <Visibility /> }
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
                         </IconButton>
                       </InputAdornment>
                     ),
-                  } }
+                  }}
+                />
+                <FormHelperText id="passwordRegisterInput">
+                  Alfanumérica, min. 6 caracteres, max. 15 caracteres.
+                </FormHelperText>
+                <Box sx={stylesRegisterModal.labelError}>
+                  <FormHelperText
+                    id="passwordRegisterInput2"
+                    sx={stylesRegisterModal.formHelperText}
+                  >
+                    Repetir Contraseña
+                  </FormHelperText>
+                  {formik.errors.passwordRegisterInput2 &&
+                    formik.touched.passwordRegisterInput2 && (
+                      <Typography sx={{ color: 'red' }}>
+                        {formik.errors.passwordRegisterInput2}
+                      </Typography>
+                    )}
+                </Box>
+                <TextField
+                  id="passwordRegisterInput2"
+                  name="passwordRegisterInput2"
+                  placeholder="Repetí tu contraseña"
+                  type={showPassword2 ? 'text' : 'password'}
+                  variant="outlined"
+                  value={formik.values.passwordRegisterInput2}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  sx={{ mb: 2 }}
+                  InputProps={{
+                    style: {
+                      borderRadius: '15px',
+                      height: '35px',
+                    },
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleTogglePassword2}
+                          edge="end"
+                          sx={{ color: '#1daeff' }}
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
                 <Button
-                  sx={ { display: 'flex' } }
+                  sx={{ display: 'flex' }}
                   type="submit"
-                  disabled={ formik.isSubmitting ? true : false }
+                  disabled={formik.isSubmitting ? true : false}
                   variant="contained"
                 >
                   Registrate
                 </Button>
               </RootFormControl>
-              <Box mt={ 2 }>
-                <Typography sx={ { lineHeight: '1.2', paddingLeft: '6px' } }>
-                  Al registrarte estás aceptando los <Box
+              <Box mt={2}>
+                <Typography sx={{ lineHeight: '1.2', paddingLeft: '6px' }}>
+                  Al registrarte estás aceptando los{' '}
+                  <Box
                     component="span"
-                    sx={ {
+                    sx={{
                       fontWeight: 'bold',
                       ':hover': { cursor: 'pointer' },
-                    } }
+                    }}
+                    onClick={() => navigate('/terms-conditions')}
                   >
                     términos y condiciones de uso.
                   </Box>
@@ -360,11 +317,16 @@ const RegisterModal: React.FC<RegisterModalProps> = ({
               </Box>
             </Box>
           </Box>
-        </Box>
-      </Modal>
-    </>
+        </Grid>
+      </Grid>
+      {/* {openRegisterModal && (
+        <RegisterModal
+          openRegisterModal={openRegisterModal}
+          handleCloseRegisterModal={handleCloseRegisterModal}
+        />
+      )} */}
+    </Container>
   )
 }
 
 export default RegisterModal
-

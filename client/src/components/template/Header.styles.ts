@@ -13,12 +13,12 @@ export const stylesHeader = {
     display: {
       xs: 'none',
       md: 'flex',
-      lg: 'flex'
-    }
+      lg: 'flex',
+    },
   },
-  tab: { 
-    color: 'black', 
+  tab: {
+    color: 'black',
     fontWeight: 10,
-     marginRight: 2 
-    }
+    marginRight: 2,
+  },
 }
