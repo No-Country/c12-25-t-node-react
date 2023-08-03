@@ -8,19 +8,19 @@ Appartamentos, plataforma de Alquiler y Venta de inmuebles, cuenta con:
 
 - Páginas:
 
--> **Home**, con un buscador de inmuebles, sliders con destacados en venta y alquiler y la sección de call to action para realizar consultas.
+    -> **Home**, con un buscador de inmuebles, sliders con destacados en venta y alquiler y la sección de call to action para realizar         consultas.
 
--> **Propiedades**, para realizar una búsqueda de inmuebles con más filtros.
+    -> **Propiedades**, para realizar una búsqueda de inmuebles con más filtros.
 
--> **Detalle** con información más extensa de la propiedad, cuenta con: slider, datos del inmueble, posibilidad de solicitar una visitar y realizar una consulta completando el formulario de contacto.
+    -> **Detalle** con información más extensa de la propiedad, cuenta con: slider, datos del inmueble, posibilidad de solicitar una           visitar y realizar una consulta completando el formulario de contacto.
 
--> **Contacto**, con formulario para contacto.
+    -> **Contacto**, con formulario para contacto.
 
--> **Quienes somos**, con un poco de la historia y tarjetas con los miembros de Appartamentos.
+    -> **Quienes somos**, con un poco de la historia y tarjetas con los miembros de Appartamentos.
 
--> **Términos y condiciones**, con el detalle legal al utilizar el sitio web. 
+    -> **Términos y condiciones**, con el detalle legal al utilizar el sitio web. 
 
--> **Favoritos**, entando registrado se pueden guardar los inmuebles de interés.
+    -> **Favoritos**, entando registrado se pueden guardar los inmuebles de interés.
 
 ---
 
@@ -28,7 +28,7 @@ Appartamentos, plataforma de Alquiler y Venta de inmuebles, cuenta con:
 
 - Front: [https://appartments-c12-25.vercel.app/](https://appartments-c12-25.vercel.app)
 
-- Back:
+- Back: [https://appartments-api.onrender.com/](https://appartments-api.onrender.com/)
 
 ---
 
