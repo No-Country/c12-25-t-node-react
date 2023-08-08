@@ -215,9 +215,11 @@ Creamos un Trello, donde creabamos una tarjeta por cada tarea, con:
 
 - establecemos una fecha de vencimiento de la tarea (la semana del Sprint)
 
+---
+
 ### Tablero
 
-[Trello](https://trello.com/b/DbZIDBeG/nocountry-c12-25-t-node-react):
+Pueden ver el [Trello](https://trello.com/b/DbZIDBeG/nocountry-c12-25-t-node-react)
 
 
 
